@@ -1,1 +1,0 @@
-/var/www/html/kikinben/lib/web/requirejs/domReady.js

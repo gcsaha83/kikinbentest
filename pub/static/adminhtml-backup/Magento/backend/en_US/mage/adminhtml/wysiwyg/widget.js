@@ -1,1 +1,0 @@
-/var/www/html/kikinben/lib/web/mage/adminhtml/wysiwyg/widget.js

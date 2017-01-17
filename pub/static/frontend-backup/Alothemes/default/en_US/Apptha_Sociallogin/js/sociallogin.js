@@ -1,1 +1,0 @@
-/var/www/html/kikinben/app/code/Apptha/Sociallogin/view/frontend/web/js/sociallogin.js

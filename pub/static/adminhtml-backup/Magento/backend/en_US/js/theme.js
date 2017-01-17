@@ -1,1 +1,0 @@
-/var/www/html/kikinben/vendor/magento/theme-adminhtml-backend/web/js/theme.js

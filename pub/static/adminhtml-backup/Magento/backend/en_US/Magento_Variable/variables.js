@@ -1,1 +1,0 @@
-/var/www/html/kikinben/vendor/magento/module-variable/view/adminhtml/web/variables.js

@@ -1,1 +1,0 @@
-/var/www/html/kikinben/vendor/magento/module-paypal/view/adminhtml/web/js/rules.js

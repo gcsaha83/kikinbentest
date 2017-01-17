@@ -1,1 +1,0 @@
-/var/www/html/kikinben/app/code/Magiccart/Magicproduct/view/frontend/web/js/magicproduct.js

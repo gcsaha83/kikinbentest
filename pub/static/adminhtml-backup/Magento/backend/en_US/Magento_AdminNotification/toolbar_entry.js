@@ -1,1 +1,0 @@
-/var/www/html/kikinben/vendor/magento/module-admin-notification/view/adminhtml/web/toolbar_entry.js
