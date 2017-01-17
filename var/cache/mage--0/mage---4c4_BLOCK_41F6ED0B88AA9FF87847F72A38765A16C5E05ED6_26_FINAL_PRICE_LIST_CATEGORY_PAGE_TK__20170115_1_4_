@@ -1,0 +1,27 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1484474936;s:6:"expire";i:1484478536;s:4:"tags";s:66:"4c4_BLOCK_HTML,4c4_CATALOG_PRODUCT_26,4c4_CATALOG_PRODUCT,4c4_MAGE";}
+<div class="price-box price-final_price" data-role="priceBox" data-product-id="26">
+    
+
+<span class="price-container price-final_price tax weee"
+        >
+        <span  id="product-price-26"                data-price-amount="19900"
+        data-price-type="finalPrice"
+        class="price-wrapper "
+        >
+        <span class="price">TK 19,900.00</span>    </span>
+        </span>
+
+            <a href="http://localhost/kikinben/en/ultrabook-thin-ux305ca-fc050t.html" class="minimal-price-link">
+            
+
+<span class="price-container price-final_price tax weee"
+        >
+            <span class="price-label">As low as</span>
+        <span  id="26"                data-price-amount="19000"
+        data-price-type=""
+        class="price-wrapper "
+        >
+        TK 19,000.00    </span>
+        </span>
+        </a>
+    </div>

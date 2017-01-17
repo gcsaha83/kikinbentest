@@ -1,0 +1,14 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1484474936;s:6:"expire";i:1484478536;s:4:"tags";s:273:"4c4_BLOCK_HTML,4c4_CATALOG_PRODUCT_14,4c4_CATALOG_PRODUCT,4c4_CATALOG_PRODUCT_90,4c4_CATALOG_PRODUCT_91,4c4_CATALOG_PRODUCT_92,4c4_CATALOG_PRODUCT_93,4c4_CATALOG_PRODUCT_94,4c4_CATALOG_PRODUCT_95,4c4_CATALOG_PRODUCT_96,4c4_CATALOG_PRODUCT_97,4c4_CATALOG_PRODUCT_98,4c4_MAGE";}
+<div class="price-box price-final_price" data-role="priceBox" data-product-id="14">
+    
+
+<span class="price-container price-final_price tax weee"
+        >
+        <span  id="product-price-14"                data-price-amount="999"
+        data-price-type="finalPrice"
+        class="price-wrapper "
+        >
+        <span class="price">TK 999.00</span>    </span>
+        </span>
+
+</div>

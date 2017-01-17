@@ -1,0 +1,19 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1484493902;s:6:"expire";d:9999999999;s:4:"tags";s:84:"4c4_CMS_WYSIWYG_IMAGES_INDEX,4c4_OVERLAY_POPUP,4c4_LAYOUT_GENERAL_CACHE_TAG,4c4_MAGE";}
+<container name="root">
+   <block class="Magento\Cms\Block\Adminhtml\Wysiwyg\Images\Content" name="wysiwyg_images.content" template="browser/content.phtml">
+      <block class="Magento\Cms\Block\Adminhtml\Wysiwyg\Images\Tree" name="wysiwyg_images.tree" template="browser/tree.phtml"/>
+      <block class="Magento\Cms\Block\Adminhtml\Wysiwyg\Images\Content\Uploader" name="wysiwyg_images.uploader" template="Magento_Cms::browser/content/uploader.phtml"/>
+   </block>
+</container>
+<body>
+   <referenceContainer name="header" remove="true"/>
+   <referenceBlock name="menu" remove="true"/>
+</body>
+<update handle="popup"/>
+<body>
+   <referenceBlock name="backend.page">
+      <action method="setTemplate">
+         <argument name="template" xsi:type="string">admin/overlay_popup.phtml</argument>
+      </action>
+   </referenceBlock>
+</body>

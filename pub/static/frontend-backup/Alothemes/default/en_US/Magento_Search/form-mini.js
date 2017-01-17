@@ -1,0 +1,1 @@
+/var/www/html/kikinben/app/design/frontend/Alothemes/default/Magento_Search/web/form-mini.js
