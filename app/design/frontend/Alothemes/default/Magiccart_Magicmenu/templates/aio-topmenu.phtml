@@ -1,0 +1,114 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2016-02-08 22:57:12
+ * @@Modify Date: 2016-08-05 16:04:43
+ * @@Function:
+ */
+ ?>
+<?php
+
+// $_aloHelper = $this->helper('Magiccart\Magicmenu\Helper\Data');
+// var_dump($_aloHelper->getConfig('magicmenu'));
+
+$menu = $this->_sysCfg->topmenu;
+$vmenu = $this->_sysCfg->vmenu;
+if(!$menu['enabled']) return;
+
+// drawMainMenu vs DrowMobileMenu
+$menuHtml = $this->drawMainMenu();
+$mobileMenu = $menuHtml['mobile'];
+$desktop 	= $menuHtml['desktop'];
+$vdesktop 	= $menuHtml['desktop'];
+$ids  = explode(',', $menu['notIncludeNav']);
+$vids  = explode(',', $vmenu['notIncludeNav']);
+foreach ($ids as $id) { unset($desktop[$id]); }
+foreach ($vids as $vid) { unset($vdesktop[$vid]); }
+// drawHomeMenu
+$drawHomeMenu 	= $menu['home'] ? $this->drawHomeMenu() : '';
+$vdrawHomeMenu 	= $vmenu['home'] ? $this->drawHomeMenu() : '';
+// drawMainMenu
+$drawMainMenu 	= $menu['mainCat'] ? implode("\n", $desktop) : '';
+$vdrawMainMenu 	= $vmenu['mainCat'] ? implode("\n", $vdesktop) : '';
+// drawExtMenu ExtraMenu
+$drawExtraMenu 	= $menu['extraCat'] ? $this->drawExtraMenu() : '';
+$vdrawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
+
+?>
+<?php if($vmenu['enabled']): ?> 
+<div class="vmagicmenu vertical-menu clearfix">
+	<div class="block-title block-title-vmagicmenu">
+        <strong>
+            <span class="fa icon icon-category-icon"></span>
+            <span class="vmagicmenu-subtitle"><?php echo __($this->getRootName())?></span>
+        </strong>
+    </div>
+	<div class="block-vmagicmenu-content">
+		<ul class="nav-desktop vmagicmenu-narrow clearfix">
+			<?php echo $vdrawHomeMenu ?>
+			<?php 
+				$vdrawMainMenu = str_replace('Kikinben Launching Offer', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/offer.png" style="width:20px">Kikinben Launching Offer', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Phones, Tablets & Accessories', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/mobile.png" style="width:20px">Phones, Tablets & Accessories', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Computers & Electronics', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/computer.png" style="width:20px">Computers & Electronics', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('TV, Audio & Gaming', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/tv.png" style="width:20px">TV, Audio & Gaming', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Makeup & Glam', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/makeup.png" style="width:20px">Makeup & Glam', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Men\'s Fashion', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/mens.png" style="width:20px">Men\'s Fashion', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Women\'s Fashion', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/womens.png" style="width:20px">Women\'s Fashion', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Toys, Kids & Baby', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/toys.png" style="width:20px">Toys, Kids & Baby', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Kitchen & Home Appliances', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/kitchen.png" style="width:20px">Kitchen & Home Appliances', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Home & Decor', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/decor.png" style="width:20px">Home & Decor', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Bags & Luggage', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/bags.png" style="width:20px">Bags & Luggage', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Car & Motorbike', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/car.png" style="width:20px">Car & Motorbike', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Building & Constructions', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/building.png" style="width:20px">Building & Constructions', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Beauty & Fragrances', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/beauty.png" style="width:20px">Beauty & Fragrances', $vdrawMainMenu);
+
+				$vdrawMainMenu = str_replace('Groceries', '<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/grocery.png" style="width:20px">Groceries', $vdrawMainMenu);
+
+					$vdrawMainMenu = str_replace('Shahnaz Shimul\'s Favourites', '<sapn>Shahnaz Shimul\'s Favourites<img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/shimul.jpg" style="width:185px"></span>', $vdrawMainMenu);
+
+				echo $vdrawMainMenu 
+			?>
+			<?php echo $vdrawExtraMenu ?>
+		</ul>
+		<div class="all-cat"><span><?php echo __('All Categories')?></span><span style="display:none"><?php echo __('Close')?></span></div>
+	</div>
+</div>
+<?php endif ?>
+<div class="magicmenu categories_cust clearfix">
+	<ul class="nav-desktop <?php echo $menu['sticker'] ? 'sticker' : '' ?>">
+		<?php echo $drawHomeMenu ?>
+		<?php echo $drawMainMenu ?>
+		<?php echo $drawExtraMenu ?>
+	</ul>
+	<div class="navigation-mobile">
+		<ul class="nav-mobile">
+			<?php echo $mobileMenu ?>
+			<?php echo $drawExtraMenu ?>
+		</ul>		
+	</div>
+</div>
+<nav class="navigation" role="navigation">
+	<ul class="nav-mobile" data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+	</ul>
+</nav>
+
+<script type="text/javascript">
+	require(['jquery','magiccart/easing','magicmenu']);
+</script>

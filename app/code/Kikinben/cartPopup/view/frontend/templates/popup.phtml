@@ -1,0 +1,71 @@
+
+
+<div id="popup-mpdal">
+	<div  id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div >
+			<div >
+				<div >
+					<div >
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div >
+						<div >
+							<i ></i>
+						</div>
+						<div >
+							<div >
+								<h4  id="loginModalLabel"> A new item has been added to your Shopping Cart. You now have 1 items in your Shopping Cart.</h4>
+							</div>
+							<div >
+								<input type="button"  name="" value="View Shopping Cart">
+								<input type="button"  name="" value="Continue Shopping">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">							
+				<?php 						
+				
+				
+				?>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- - Login Model Ends Here -->				
+</div>
+
+<script>
+require(
+    [
+        'jquery',
+        'Magento_Ui/js/modal/modal'
+    ],
+    function(
+        $,
+        modal
+    ) {
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            title: 'popup mpdal title',
+            buttons: [{
+                text: $.mage.__('Continue'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#popup-mpdal'));
+
+        $('#popup-mpdal').modal('loginModal');
+    }
+);
+
+
+</script>
