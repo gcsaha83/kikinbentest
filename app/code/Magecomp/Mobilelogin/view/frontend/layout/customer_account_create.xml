@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance dc" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   
+	<referenceContainer name="form.additional.info">
+            <block class="Magento\Framework\View\Element\Template" name="my_form_additional_info_customer" template="Magecomp_Mobilelogin::mobilelogin.phtml" ifconfig="mobilelogin_Configuration/moduleoption/enable"/>
+        </referenceContainer>
+</page>

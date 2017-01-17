@@ -1,0 +1,97 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2016-02-08 22:57:12
+ * @@Modify Date: 2016-08-05 16:04:43
+ * @@Function:
+ */
+ ?>
+<?php
+
+// $_aloHelper = $this->helper('Magiccart\Magicmenu\Helper\Data');
+// var_dump($_aloHelper->getConfig('magicmenu'));
+
+$menu = $this->_sysCfg->topmenu;
+$vmenu = $this->_sysCfg->vmenu;
+if(!$menu['enabled']) return;
+
+// drawMainMenu vs DrowMobileMenu
+//$menuHtml = $this->drawMainMenu();
+//custom code added by Apptha in app/code/Magiccart/Magicmenu/Block/Menu.php
+$menuHtml = $this->appthaDrawMainMenu();
+//custom code ends
+$mobileMenu = $menuHtml['mobile'];
+$desktop 	= $menuHtml['desktop'];
+$vdesktop 	= $menuHtml['desktop'];
+$ids  = explode(',', $menu['notIncludeNav']);
+$vids  = explode(',', $vmenu['notIncludeNav']);
+foreach ($ids as $id) { unset($desktop[$id]); }
+foreach ($vids as $vid) { unset($vdesktop[$vid]); }
+// drawHomeMenu
+$drawHomeMenu 	= $menu['home'] ? $this->drawHomeMenu() : '';
+$vdrawHomeMenu 	= $vmenu['home'] ? $this->drawHomeMenu() : '';
+// drawMainMenu
+$drawMainMenu 	= $menu['mainCat'] ? implode("\n", $desktop) : '';
+$vdrawMainMenu 	= $vmenu['mainCat'] ? implode("\n", $vdesktop) : '';
+// drawExtMenu ExtraMenu
+$drawExtraMenu 	= $menu['extraCat'] ? $this->drawExtraMenu() : '';
+$vdrawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
+
+?>
+<?php if($vmenu['enabled']): ?> 
+<div class="vmagicmenu vertical-menu clearfix">
+	<div class="block-title block-title-vmagicmenu">
+        <strong>
+            <span class="fa icon icon-category-icon"></span>
+            <span class="vmagicmenu-subtitle"><?php echo __($this->appthaGetRootName())?></span>
+        </strong>
+    </div>
+	<div class="block-vmagicmenu-content">
+		<ul class="nav-desktop vmagicmenu-narrow clearfix">
+			<?php echo $vdrawHomeMenu ?>
+			<?php 
+				$vdrawMainMenu = str_replace('Fashion', '<span class="glyphicon glyphicon-sunglasses"></span> Fashion', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Clothes', '<span class="glyphicon glyphicon-sunglasses"></span> Clothes', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Footwear', '<span class="glyphicon glyphicon-shopping-cart"></span> Footwear', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Electronics', '<span class="glyphicon glyphicon-headphones"></span> Electronics', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Laptop & computers', '<i class="fa fa-laptop" aria-hidden="true"></i>
+ Laptop & computers', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Smartphones & tablets', '<span class="glyphicon glyphicon-phone"></span> Smartphones & tablets', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Cameras', '<i class="fa fa-camera" aria-hidden="true"></i> Cameras', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Video games & consoles', '<i class="fa fa-gamepad" aria-hidden="true"></i> Video games & consoles', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('TV & audio', '<i class="fa fa-desktop" aria-hidden="true"></i> TV & audio', $vdrawMainMenu);
+				$vdrawMainMenu = str_replace('Gadgets', '<i class="fa fa-headphones" aria-hidden="true"></i> Gadgets', $vdrawMainMenu);
+				echo $vdrawMainMenu 
+			?>
+			<?php echo $vdrawExtraMenu ?>
+		</ul>
+		<div class="all-cat"><span><?php echo __('All Categories')?></span><span style="display:none"><?php echo __('Close')?></span></div>
+	</div>
+</div>
+<?php endif ?>
+<div class="magicmenu clearfix">
+	<ul class="nav-desktop <?php echo $menu['sticker'] ? 'sticker' : '' ?>">
+		<?php echo $drawHomeMenu ?>
+		<?php echo $drawMainMenu ?>
+		<?php echo $drawExtraMenu ?>
+	</ul>
+	<div class="navigation-mobile">
+		<ul class="nav-mobile">
+			<?php echo $mobileMenu ?>
+			<?php echo $drawExtraMenu ?>
+		</ul>		
+	</div>
+</div>
+<nav class="navigation" role="navigation">
+	<ul class="nav-mobile" data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+	</ul>
+</nav>
+
+<script type="text/javascript">
+	require(['jquery','magiccart/easing','magicmenu']);
+</script>
+

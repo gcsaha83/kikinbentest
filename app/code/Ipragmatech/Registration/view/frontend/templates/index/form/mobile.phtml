@@ -1,0 +1,12 @@
+<fieldset class="fieldset create account"
+	data-hasrequired="<?php echo __('* Required Fields') ?>">
+	<div class="field my_attribute required">
+		<label for="mobilenumber" class="label"><span><?php echo __('Mobile Number') ?></span></label>
+		<div class="control">
+			<input required="required"
+				data-validate="{required:true, 'validate-number':true}" type="text"
+				name="mobilenumber" id="mobilenumber"
+				value="<?php echo $mobileNumber;?>" disabled />
+		</div>
+	</div>
+</fieldset>
