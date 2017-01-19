@@ -10,6 +10,8 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\SecurityViolationException;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
+use Ipragmatech\Registration\Model\Otp;
+use Magento\Customer\Model\Customer;
 
 class Forgotpassword extends \Magento\Framework\App\Action\Action
 {
@@ -18,12 +20,16 @@ class Forgotpassword extends \Magento\Framework\App\Action\Action
         Session $customerSession,
         AccountManagementInterface $customerAccountManagement,
         CustomerRepositoryInterface $customerRepositoryInterface,
+        Otp $otp,
+        Customer $customer,
         Escaper $escaper
     ) {
         $this->session = $customerSession;
         $this->customerAccountManagement = $customerAccountManagement;
         $this->escaper = $escaper;
         $this->_customerRepositoryInterface = $customerRepositoryInterface;
+        $this->_otp = $otp;
+        $this->_customer = $customer;
         parent::__construct($context);
    }
 
@@ -37,8 +43,10 @@ class Forgotpassword extends \Magento\Framework\App\Action\Action
         /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         $email = (string)$this->getRequest()->getPost('email');
-        echo $customerDetails = $this->_customerRepositoryInterface->get($email)->getId();die;
+        $phone = (string)$this->getRequest()->getPost('mobilenumber');
+       
         if ($email) {
+
             if (!\Zend_Validate::is($email, 'EmailAddress')) {
                 $this->session->setForgottenEmail($email);
                 $this->messageManager->addErrorMessage(__('Please correct the email address.'));
@@ -64,10 +72,63 @@ class Forgotpassword extends \Magento\Framework\App\Action\Action
             }
             $this->messageManager->addSuccessMessage($this->getSuccessMessage($email));
             return $resultRedirect->setPath('*/*/');
-        } else {
+        }
+       
+         /*  *
+          * Send sms with the OTP and reset the ipragmatech_otp table for corresponding
+          * mobile number.
+          *
+          *
+          * */
+        //contus code starts
+        
+        else if($phone){
+            
+            $mobileNumber = $this->_customer->getCollection()->addFieldToFilter('mobilenumber',
+                            [
+                                'like' =>  $phone 
+                            ]);
+            
+            foreach($mobileNumber as $model){
+                 $customerId = $model->getId(); 
+                 $mobile     = $model->getMobilenumber();
+                 $customerEmail   = $model->getEmail();
+            }
+            if(isset($customerId)){
+                $modelOtp = $this->_otp->getCollection()->addFieldToFilter('mobile_number',[
+                                'like' => '%' . $mobile . '%'
+                            ]
+                        );
+
+                $otp = rand(100000, 999999);
+                $fromNumber = $phone;
+                $message = "Your One Time Password is " . $otp;
+
+                try{
+                    $to = str_replace('+', '', $fromNumber);
+                    $api = 'http://api.bulksms.top/2/?user=kikinben&pass=kikinben2016&to='.$to.'&sender=kikinben&message='.urlencode($message);
+                    $sms = file_get_contents($api);
+                    $this->session->setMobilenumber($fromNumber);
+                    $this->session->setForgottenEmail($customerEmail);
+                    return $resultRedirect->setPath('*/*/forgotpassword');
+
+            }catch(\Exception $exception){
+
+            }
+                
+            }else{
+                $this->messageManager->addErrorMessage(__('Phone number does not match.'));
+                return $resultRedirect->setPath('*/*/forgotpassword');
+            }
+            
+        }
+        //contus code ends
+
+         else {
             $this->messageManager->addErrorMessage(__('Please enter your email.'));
             return $resultRedirect->setPath('*/*/forgotpassword');
         }
+       
     }
 
     /**
