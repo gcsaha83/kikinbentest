@@ -74,10 +74,8 @@ class Forgotpassword extends \Magento\Framework\App\Action\Action
             return $resultRedirect->setPath('*/*/');
         }
        
-         /*  *
-          * Send sms with the OTP and reset the ipragmatech_otp table for corresponding
-          * mobile number.
-          *
+         /* 
+          * get email with mobile number
           *
           * */
         //contus code starts
