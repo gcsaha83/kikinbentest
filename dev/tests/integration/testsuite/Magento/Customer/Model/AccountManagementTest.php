@@ -593,7 +593,8 @@ class AccountManagementTest extends \PHPUnit_Framework_TestCase
         $lastName = 'Lastsave';
         $customerData = array_merge(
             $existingCustomer->__toArray(),
-            [ 
+            [
+                'email' => $email,
                 'firstname' => $firstName,
                 'lastname' => $lastName,
                 'id' => null
@@ -642,7 +643,7 @@ class AccountManagementTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedInBefore, $actualInBeforeOnly);
         $expectedInAfter = [
             'created_in',
-             
+            'email',
             'firstname',
             'id',
             'lastname',
@@ -699,7 +700,8 @@ class AccountManagementTest extends \PHPUnit_Framework_TestCase
         );
         $expectedDifferences = [
             'created_at',
-            'updated_at', 
+            'updated_at',
+            'email',
             'is_active',
             'entity_id',
             'entity_type_id',

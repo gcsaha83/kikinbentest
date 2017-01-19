@@ -43,7 +43,7 @@ class InstallData implements InstallDataInterface
         ModuleDataSetupInterface $setup,
         ModuleContextInterface $context
     ) {
-        //$configContext =  $context->getConfig();
+        $configContext =  $context->getConfig();
         $setup->startSetup();
 
         /** @var CustomerSetup $customerSetup */

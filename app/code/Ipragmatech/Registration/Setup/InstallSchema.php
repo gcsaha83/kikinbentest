@@ -24,7 +24,7 @@ class InstallSchema implements InstallSchemaInterface
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
     ) {
-        //$configContext =  $context->getConfig();
+        $configContext =  $context->getConfig();
         $installer = $setup;
 
         $installer->startSetup();

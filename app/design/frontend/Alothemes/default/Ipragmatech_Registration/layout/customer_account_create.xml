@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="customer_form_register" remove="true" />
+		<referenceContainer name="content">
+			<block class="Magento\Customer\Block\Form\Register" name="my_customer_form_register"
+				template="Ipragmatech_Registration::index/mobile.phtml">
+				<container name="form.additional.info" as="form_additional_info" />
+				<container name="customer.form.register.fields.before" as="form_fields_before"
+					label="Form Fields Before" htmlTag="div" htmlClass="customer-form-before" />
+			</block>
+		</referenceContainer>
+			
+	</body>
+</page>

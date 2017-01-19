@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/Ui/etc/ui_configuration.xsd">
+<argument name="data" xsi:type="array">
+     <item name="js_config" xsi:type="array">
+         <item name="provider" xsi:type="string">kikinben_advancedcommission_sellerproduct_edit.kikinben_advancedcommission_sellerproduct_edit_data_source</item>
+         <item name="deps" xsi:type="string">kikinben_advancedcommission_sellerproduct_edit.kikinben_advancedcommission_sellerproduct_edit_data_source</item>
+     </item>
+     <item name="label" xsi:type="string" translate="true">Sample Form</item>
+     <item name="layout" xsi:type="array">
+        <!-- <item name="dataScope" xsi:type="string">data</item>
+         <item name="namespace" xsi:type="string">kikinben_advancedcommission_sellerproduct_edit</item>-->
+     </item>
+     
+     <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <!--<item name="back" xsi:type="string">Magento\Cms\Block\Adminhtml\Page\Edit\BackButton</item>  
+            <item name="delete" xsi:type="string">Magento\Cms\Block\Adminhtml\Page\Edit\DeleteButton</item>          
+            <item name="reset" xsi:type="string">Magento\Cms\Block\Adminhtml\Page\Edit\ResetButton</item>-->
+            <item name="save" xsi:type="string">Kikinben\AdvancedCommission\Block\Adminhtml\Sellerproduct\Edit\SaveButton</item>
+            <!--<item name="save_and_continue" xsi:type="string">Magento\Cms\Block\Adminhtml\Page\Edit\SaveAndContinueButton</item>-->
+        </item>
+     
+</argument>
+ 
+	<dataSource name="kikinben_advancedcommission_sellerproduct_edit_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Kikinben\AdvancedCommission\Ui\Component\Listing\DataProviders\Kikinben\Advancedcommission\Sellerproduct\Edit</argument>
+            <argument name="name" xsi:type="string">kikinben_advancedcommission_sellerproduct_edit_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">kikinben_advancedcommission_sellerproductcommission_id</argument>
+            <argument name="requestFieldName" xsi:type="string">kikinben_advancedcommission_sellerproductcommission_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="kikinben_advancedcommission/sellerproduct/edit"/>                   
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    
+   
+   
+   <fieldset name="sample_fieldset">
+     <argument name="data" xsi:type="array">
+         <item name="config" xsi:type="array">
+             <item name="label" xsi:type="string" translate="true">Seller Commission</item>
+         </item>
+     </argument>
+ 
+     <!-- This field represents form id and is hidden -->
+     <field name="kikinben_advancedcommission_sellerproductcommission_id">
+         <argument name="data" xsi:type="array">
+             <item name="config" xsi:type="array">
+                 <item name="visible" xsi:type="boolean">false</item>
+                 <item name="dataType" xsi:type="string">text</item>
+                 <item name="formElement" xsi:type="string">input</item>
+                 <item name="source" xsi:type="string">sampleform</item>
+             </item>
+         </argument>
+     </field>
+ 
+     
+     
+     <field name="kikibin_fulfiled">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Kikinben\AdvancedCommission\Ui\Component\Listing\DataProviders\Kikinben\Advancedcommission\Sellerproduct\KikinbenFulfilledOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Fullfiled By kikinben</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">kikibin_fulfiled</item>
+                </item>
+            </argument>
+        </field>
+        
+        <field name="commission_type">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Kikinben\AdvancedCommission\Ui\Component\Listing\DataProviders\Kikinben\Advancedcommission\Sellerproduct\KikinbenCommissionOptions</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Commission Type</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">commission_type</item>
+                </item>
+            </argument>
+        </field>
+        
+        <field name="amount">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Amount</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">meta_title</item>
+                </item>
+            </argument>
+        </field>
+        
+  
+</fieldset>
+ 
+
+ </form>

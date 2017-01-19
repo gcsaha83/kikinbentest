@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left-kikinben" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<body>
+	<referenceContainer name="left">
+            <block class="Kikinben\AdvancedCommission\Block\Adminhtml\SellerProductCommission\Edit\Tabs" name="seller_product_edit"/>
+        </referenceContainer>
+	
+	<referenceContainer name="content">
+			<block class="Kikinben\AdvancedCommission\Block\Adminhtml\SellerProductCommission\Edit"
+				name="kikinben_advancedcommission_sellerproductlist.edit" />
+		</referenceContainer>
+		
+        <!--<referenceContainer name="content">
+           <uiComponent name="kikinben_advancedcommission_sellerproduct_edit"/>            
+        </referenceContainer>-->
+	</body>
+</page>

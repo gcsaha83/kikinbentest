@@ -182,7 +182,7 @@ class Saveprofile extends \Magento\Framework\App\Action\Action {
             if (! empty ( $internationalShippingAmount )) {
                 $sellerDetails->setInternationalShippingAmount ( $internationalShippingAmount );
             }
-            $trimStr = trim ( preg_replace ( '/[^a-z0-9-]+/', '-', strtolower ( $storeName ) ), '-' );
+            $trimStr = trim ( preg_replace ( '/[^a-z0-9-]+/', '', strtolower ( $storeName ) ), '-' );
             $mainUrlRewrite = $objectManager->get ( 'Magento\UrlRewrite\Model\UrlRewrite' )->load ( $trimStr, 'request_path' );
             $getUrlRewriteId = $mainUrlRewrite->getUrlRewriteId ();
             $id = null;

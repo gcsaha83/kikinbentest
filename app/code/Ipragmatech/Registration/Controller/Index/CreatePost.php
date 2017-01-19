@@ -238,27 +238,6 @@ class CreatePost extends \Magento\Customer\Controller\AbstractAccount
                 $this->_session->setCustomerDataAsLoggedIn($customer);
                 $this->messageManager->addSuccess($this->getSuccessMessage());
                 $resultRedirect = $this->_accountRedirect->getRedirect();
-                /*
-                * Kikinben custom code
-                */
-
-                    // $CustomerEmail = $moile_number;
-                    // $Customer = Mage::getModel("customer/customer");
-                    // $Customer->setWebsiteId(Mage::app()->getWebsite()->getId());
-                    // $Customer->loadByEmail($mobile_number); //load customer by email id
-                    //use
-                     
-                    //print_r($Customer->getFirstName()); 
-                    //print_r($customer->getData()); 
-                    // $customer = Mage::getSingleton('customer/session')->getCustomer();
-                    // $customerData = Mage::getModel('customer/customer')->load($customer->getId())->getData();
-                    // var_dump($customerData);
-                     //exit();
-                    // Mage::log($customerData);
-                 
-                /*
-                * Kikinben custom code ends
-                */
             }
             return $resultRedirect;
         } catch (StateException $e) {
