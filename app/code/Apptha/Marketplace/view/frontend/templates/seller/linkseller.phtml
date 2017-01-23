@@ -43,7 +43,7 @@ if ($isLinkEnabled == 1) {
     if ($sellerProfile && $requestPath ['request_path'] != '') {
         ?>
 <div class="linker_seller">
-	<strong><?php echo __('SELLER'); ?></strong> <a
+	<strong><?php echo __('Sold by:'); ?></strong> <a
 		href="<?php echo $block->getUrl($requestPath['request_path']);?>"
 		class="link_seller">
             <?php echo ucfirst($requestPath['store_name']); ?></a>

@@ -19,7 +19,7 @@
                 </item>
             </argument>
         </field>
-<!--         <field name="magic_thumbnail">
+        <!-- <field name="magic_thumbnail">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
@@ -36,8 +36,8 @@
                     </item>
                 </item>
             </argument>
-        </field> -->
-        <!-- <field name="magic_image">
+        </field>--> 
+        <!--<field name="magic_image">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
