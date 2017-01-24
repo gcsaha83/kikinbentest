@@ -96,23 +96,10 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 
 					<div class="content-logo col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="header-logo">
-							<?php
-								 $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt(); 
-
-									$urlParts = explode('/',$this->getBaseUrl());
-									$storePart =$urlParts[count($urlParts)-2];
-									$baseUrl=str_replace($storePart.'/', "", $this->getBaseUrl());
-									// print_r($baseUrl);
-									// exit();	
-
-							?>
-
-							<a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
-
-								<img src="http://localhost/kikinben/pub/media/logo/stores/1/Ki_kinben_bold.png"/>
-							</a>
+							<?php echo $this->getChildHtml('logo'); ?>
 						</div>
 					</div>
+					
 
 					<div class="content-seach col-lg-6 col-md-5 col-sm-12 col-xs-12">
 						<div class="search-area header-search">
@@ -222,6 +209,7 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 
 
 					</div>
+					</div>
 
 				</div>
 			</div>
@@ -235,6 +223,5 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 				</div>
 			</div>
 		</div>
-	</div>
 
 </header>

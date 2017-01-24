@@ -44,6 +44,8 @@ atlassian*
 /pub/media/captcha/*
 /pub/static/*
 !/pub/static/.htaccess
+/pub/static
+pub/media
 
 /var/*
 !/var/.htaccess
@@ -52,3 +54,4 @@ atlassian*
 
 /sonarlint-cli-2.0
 /.sonarlint
+

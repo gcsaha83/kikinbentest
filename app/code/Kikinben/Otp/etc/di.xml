@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+      <preference for="Ipragmatech\Registration\Controller\Index\Sendotp" type="Kikinben\Otp\Controller\Index\Sendotp" />
+      <preference for="Magento\Customer\Controller\Account\ForgotPasswordPost" type="Kikinben\Otp\Controller\Index\Forgotpassword" />
+      <preference for="Magento\Customer\Block\Account\Forgotpassword" type="Kikinben\Otp\Block\Forgotpassword" />
+</config>

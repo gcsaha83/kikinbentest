@@ -306,12 +306,23 @@ class Menu extends \Magento\Catalog\Block\Navigation
 
     public function getChildExt($parentId)
     {
-        $collection = $this->_categoryInstance->getCollection()
+        /*$collection = $this->_categoryInstance->getCollection()
                         ->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail'))
                         ->addAttributeToFilter('parent_id', $parentId)
                         ->addAttributeToFilter('include_in_menu', 1)
                         ->addIsActiveFilter()
+                        ->addAttributeToSort('position', 'asc'); //->addOrderField('name');*/
+
+        $collection = $this->_categoryInstance->getCollection()
+                        ->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','image'))
+                        ->addAttributeToFilter('parent_id', $parentId)
+                        ->addAttributeToFilter('include_in_menu', 1)
+                        ->addIsActiveFilter()
                         ->addAttributeToSort('position', 'asc'); //->addOrderField('name');
+
+
+
+
         return $collection;
     }
 
@@ -408,7 +419,8 @@ class Menu extends \Magento\Catalog\Block\Navigation
     public function getThumbnail($object)
     {
         $url = false;
-        $image = $object->getMagicThumbnail();
+        //$image = $object->getMagicThumbnail();
+        $image = $object->getImage();
         if ($image) {
             $url = $this->_storeManager->getStore()->getBaseUrl(
                 \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
