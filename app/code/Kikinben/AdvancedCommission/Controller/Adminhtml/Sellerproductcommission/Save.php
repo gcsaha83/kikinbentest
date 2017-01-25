@@ -16,8 +16,11 @@ class Save extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
 		/** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-		$resultPage = $this->resultPageFactory->create();
+       	$resultPage = $this->resultPageFactory->create();
 		$resultPage->getConfig ()->getTitle ()->prepend ( __ ( 'Advanced Commission' ) );
+        $data = $this->getRequest()->getPost('post');
+        print_r($data);die;
+
 		return $resultPage;
 	}
 	protected function _isAllowed()
