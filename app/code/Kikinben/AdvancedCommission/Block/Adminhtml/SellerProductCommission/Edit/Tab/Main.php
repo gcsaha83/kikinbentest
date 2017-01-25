@@ -81,7 +81,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 		}
 				
 		$fieldset->addField('seller_id','hidden', ['name' => 'seller_id']);
-		$fieldset->addField('product_id','hidden', ['name' => 'seller_id']);
+		$fieldset->addField('product_id','hidden', ['name' => 'product_id']);
 	
 		$fieldset->addField('kikibin_fulfiled', 'select', array(
 				'label'     => 'Fullfiled By kikinben',
