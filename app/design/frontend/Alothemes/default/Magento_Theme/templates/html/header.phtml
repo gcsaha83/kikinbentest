@@ -29,7 +29,7 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $obj = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 $isLoggedIn = $customerSession->isLoggedIn();
-$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getName() : $this->getWelcome(); 
+$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getName() : $this->getWelcome() 
 ?>
 <header class="page-header alothemes">
     <div class="header">
@@ -40,16 +40,60 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 						<?php echo $this->getChildHtml('cms-static-top-support'); ?>
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 top-right mobile-center">
-						<div class="header-setting">
+						<div class="header-setting lang_cust_l">
 
-								<div class="btn-group lang_toggle">
-								   <button type="button" class="eng active btn-sm btn btn-warning btn-responsive"><a href="http://localhost/kikinben/en/?___from_store=bn">Eng</a></button>
+
+							<div class="switch switch-yellow">
+							    <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
+							    <label for="week3" class="switch-label switch-label-off"><a href="http://kikinbenbd.com/site2/en/">ENG</a></label>
+							    <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
+							    <label for="month3" class="switch-label switch-label-on">বাংলা</label>
+							    <span class="switch-selection"></span>
+							</div>
+
+						<!-- <div class="btn-group language_toggle"> -->
+
+
+								<!-- <div class="btn-group lang_toggle">
+								   <button type="button" class="eng active btn-sm btn btn-warning btn-responsive"><a href="http://kikinbenbd.com/site2/en/?___from_store=bn">Eng</a></button>
 
 								   
-								   <button type="button" class="bn btn btn-sm btn-warning btn-responsive">বাংলা</button>
-								 </div>
+								   <button type="button" class="bn btn btn-sm btn-warning btn-responsive"><!-- <a href="http://192.168.0.109/kikinben2/bn/?___from_store=en"> --><!-- </button>
+								 </div> --> 
 
 
+					        <!-- <a class="btn-groupeng_toggle" href="http://localhost/kikinben2/en/?___from_store=bn">
+					        <button type="button" class="eng active btn btn-warning">ENG
+					        </button></a>
+
+					        <a class="bn_toggle" href="http://localhost/kikinben2/bn/?___from_store=en">
+					        <button type="button" class="bn btn btn-warning">বাংলা
+					            </button></a>
+					        </div> -->
+
+						    <!-- <?php echo $this->getChildHtml('store_language'); ?>
+							<?php echo $this->getChildHtml('currency'); ?> -->
+							<!-- 
+
+
+
+							<div class="customer dropdown">
+							  <ul class="top-links dropbtn">
+							  <span class="icon icon-user"><i class="hidden">hidden</i></span>
+								<li class="login">
+									<a href="http://10.0.0.42/kikinben2/en/customer/account/login/" title="Sign In">Sign In									  </a>
+								</li>
+								<li class="first ">
+									<a id="quick_sigup_link" style="positon:relative;" href="http://10.0.0.42/kikinben2/en/customer/account/create/" title="Register">My kikinben</a>
+								</li>
+							  </ul>
+							  <div class="dropdown-content">
+							    <p>Welcome to kikinben</p>
+							    <input type="button" class="btn btn-sm btn-signIn btn-block" value="Sign in"><br>
+							    <p>New Customer? Join free</p>
+							    <input type="button" class="btn btn-sm btn-register btn-block" value="Register free">
+							  </div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -88,7 +132,7 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 										    <li class="first">
 
 												<a id="quick_sigup_link" style="positon:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
-                                                <span>Hello! <?php echo $customerSession->getCustomer()->getName()  ?> </span>
+													<span>Hello! User </span>
 
 													<span class="youraccount" style="margin-top:-25px;">My Account</span>
 												</a>
@@ -125,13 +169,13 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 
 										<div class="dropdown-content">
 								    		<a href="<?php echo $this->getUrl('customer/account/login'); ?>" title="Sign In" style="padding:0">
-											<input type="button" class="btn btn-sm btn-signIn btn-block" value="Sign in">
+											<input type="button" class="btn btn-sm btn-signIn btn-block register_cust_l" value="Sign in">
 											</a><br>
 								    
 								    		<p><span style="float: left;">New Customer? </span>&nbsp;
 								    		<a href="#" style="float: left;margin-left:5px;"> Join Free</a></p>
 								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" title="Register" style="padding:0">
-								    		<input type="button" class="btn btn-sm btn-register btn-block" value="Register Here" >
+								    		<input type="button" class="btn btn-sm btn-register register_cust_l btn-block" value="Register Here" >
 								    		</a>
 
 
