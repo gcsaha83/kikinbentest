@@ -29,7 +29,7 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $obj = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 $isLoggedIn = $customerSession->isLoggedIn();
-$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getName() : $this->getWelcome() 
+$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getName() : $this->getWelcome(); 
 ?>
 <header class="page-header alothemes">
     <div class="header">
@@ -132,7 +132,7 @@ $msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getNa
 										    <li class="first">
 
 												<a id="quick_sigup_link" style="positon:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
-													<span>Hello! User </span>
+                                                <span>Hello! <?php echo $msg; ?> </span>
 
 													<span class="youraccount" style="margin-top:-25px;">My Account</span>
 												</a>
