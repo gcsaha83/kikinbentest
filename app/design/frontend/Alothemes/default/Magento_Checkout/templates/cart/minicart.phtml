@@ -9,12 +9,21 @@
 /** @var $block \Magento\Checkout\Block\Cart\Sidebar */
 ?>
 
+<?php
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance(); //instance of\Magento\Framework\App\ObjectManager
+$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface'); 
+$currentStore = $storeManager->getStore();
+$baseUrl = $currentStore->getBaseUrl();
+$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+
+?>
+
 <div data-block="minicart" class="minicart-wrapper">
     <a class="action showcart" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
         <!--<span class="text"><?php /* @escapeNotVerified */ //echo __('My Cart'); ?></span>-->
         <span><!-- <i class="fa fa-shopping-cart"></i> -->
-            <img src="http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/cart.png"  style="width:27px">
+            <img src="<?php echo $mediaUrl;  ?>cart.png"  style="width:27px">
         </span>
         <span class="counter qty empty" 
               data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
