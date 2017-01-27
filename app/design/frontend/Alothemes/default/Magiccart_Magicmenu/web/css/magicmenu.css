@@ -228,7 +228,7 @@
 }
 
 
-.vmagicmenu .level0 .level-top img{vertical-align: middle;margin-right: 10px;display: inline-block;}
+.vmagicmenu .level0 .level-top img{vertical-align: middle;margin-right: 10px;display: inline-block;width:20px;}
 /*.vmagicmenu .level0.hasChild .level-top:after{content: "";font-family:FontAwesome;float:right;font-style:normal;font-weight:normal;text-decoration:inherit;vertical-align:middle;font-size: 12px;}*/
 .vmagicmenu .level0 .level-top span{font-size:12px !important;}
 .vmagicmenu .level0 .level-top-mega,.vmagicmenu .vmagicmenu-narrow .level0.dropdown > .level0{
