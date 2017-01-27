@@ -23,10 +23,7 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
        data-bind="scope: 'minicart_content'">
         <!--<span class="text"><?php /* @escapeNotVerified */ //echo __('My Cart'); ?></span>-->
         <span><!-- <i class="fa fa-shopping-cart"></i> -->
-           <!-- <img src="http://kikinbenbd.com/site2/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/cart.png"  style="width:27px">-->
-           <img src="<?php echo $mediaUrl;  ?>cart.png"  style="width:27px">
-
-
+            <img src="<?php echo $mediaUrl;  ?>cart.png"  style="width:27px">
         </span>
         <span class="counter qty empty" 
               data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
