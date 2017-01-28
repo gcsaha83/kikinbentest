@@ -26,10 +26,9 @@
  */
  
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$obj = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 $isLoggedIn = $customerSession->isLoggedIn();
-$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getName() : $this->getWelcome(); 
+$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getFirstname() : $this->getWelcome() 
 ?>
 <header class="page-header alothemes">
     <div class="header">
