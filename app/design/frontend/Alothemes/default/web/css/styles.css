@@ -5492,3 +5492,200 @@ font-size: 12px;
 
 		color: #356ae7 !important;
 	}
+
+
+  /* Contus css start */
+
+    .marketplace-seller-displayseller li.item.product.product-item:hover  .product-item-info {margin-bottom: 0 !important;}
+
+body.marketplace-seller-displayseller li.item.product.product-item {
+   width: 33% !important;
+}
+
+/* ----------------- Modal Start ----------------------- */
+
+.modal-dialog {
+	width: 800px;
+}
+.close-button {
+	padding-right: 10px;
+}
+
+.modal-popup i {
+	font-size: 20px;
+}
+.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+    background-color: #ff8627;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+}
+
+
+.login-tab {
+	margin: 0 auto;
+	max-width: 1500px;
+}
+
+.login-modal{
+	  margin-top: 186px;
+}
+.login-modal-header {
+	background: #262029;
+	color: #fff;
+}
+
+.login-modal-header .modal-title {
+	color: #fff;
+}
+
+.login-modal-header .close {
+	color: #fff;
+}
+
+.modal-button {
+	padding: 5px 0px;
+	font-family: calibri;
+}
+
+.login-modal i {
+	color: #2fa72e;
+	font-size: 30px;
+}
+
+.login-modal form {
+	max-width: 1500px;
+}
+
+.tab-pane form {
+	margin: 0 auto;
+}
+.login-modal-footer{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.login_social_bookmarks{
+	padding:20px 0px 0px 60px;
+	font-family:calibri;
+}
+.login_social_bookmarks ul{
+	margin:0px;padding:0px;
+	list-style:none;
+}
+.login_social_bookmarks ul li{
+	float:left;
+}
+.login_social_bookmarks ul li a{
+	display:block;
+	padding:10px;
+	margin-left:-12px;
+	margin-right:12px;
+}
+.login_social_bookmarks ul li a:hover{}
+.fb_icon {
+  margin-left: 15px;
+  margin-top: -22px;
+}
+.g_icon{
+  margin-left: 15px;
+  margin-top: -20px;
+}
+#home{
+  border: 1px solid lightgray;
+  border-top: 0px;
+}
+#profile{
+  border: 1px solid lightgray;
+  border-top: 0px;
+}
+#forget_password{
+  border: 1px solid lightgray;
+  border-top: 0px;
+}
+.popup-modal #related_products{
+  border:1px solid red;
+} 
+/*----------------- MOdal Finish ---------------------- */
+
+.product-carosoul .single-product .name {
+	color: #000;
+	margin-bottom: 5px;
+	height: 35px;
+	overflow: hidden;
+	font-size: 13px;
+
+}
+.product-carosoul .single-product .price {
+	color: #F60;
+	font-weight: bold;
+}
+.product-carosoul .single-product .item {
+	margin-bottom: 15px
+}
+.product-carosoul .owl-item {
+    padding: 10px 15px;
+    height: 205px;
+    margin-bottom: 15px;
+    border-right: 1px solid #ccc;
+}
+.product-carosoul .owl-pagination {
+	display: none
+}
+.product-carosoul .owl-buttons {
+	position: absolute;
+	top: 45%;
+	width: 100%
+}
+.product-carosoul .owl-buttons .owl-prev {
+	position: absolute;
+	left: -30px;
+	top: 0;
+	font-size: 0 !important;
+}
+.product-carosoul .owl-buttons .owl-next {
+	position: absolute;
+	right: -31px;
+	top: 0;
+}
+.product-carosoul .owl-buttons .owl-next, .product-carosoul .owl-buttons .owl-prev  {
+    width: 30px;
+    height: 50px;
+    margin-top: 70px;
+    text-indent: -9999em;
+    cursor: pointer;
+    opacity: .5 !important;
+    background-image: url(../images/slider-buttons.png) !important;
+    background-color: #000 !important;
+    border-radius: 2px !important;
+}
+.product-carosoul .owl-buttons .owl-next {
+    float: right;
+    background-position: -29px 0!important;
+}
+.popup-button {
+    color: #333;
+    border: 1px solid #bcbcbc;
+    background-color: #eee;
+    background-image: -moz-linear-gradient(top,#fafafa,#e8e8e8);
+    background-image: -ms-linear-gradient(top,#fafafa,#e8e8e8);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fafafa),to(#e8e8e8));
+    background-image: -webkit-linear-gradient(top,#fafafa,#e8e8e8);
+    background-image: -o-linear-gradient(top,#fafafa,#e8e8e8);
+    background-image: linear-gradient(top,#fafafa,#e8e8e8);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#e8e8e8', GradientType=0);
+    margin: 0;
+    font-family: inherit;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    padding: 4px 10px;
+}
+  /* Contus css end */  
