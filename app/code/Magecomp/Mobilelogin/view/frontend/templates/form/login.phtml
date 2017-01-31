@@ -46,7 +46,7 @@
                         <span><?php /* @escapeNotVerified */ echo __('Password') ?></span>
                     </label>
                     <div class="secondary">
-                        <a class="action remind" href="<?php /* @escapeNotVerified */ echo $block->getForgotPasswordUrl() ?>">
+                        <a class="action remind forgot_pass_l" href="<?php /* @escapeNotVerified */ echo $block->getForgotPasswordUrl() ?>">
                             <span><?php /* @escapeNotVerified */ echo __('Forgot Your Password?') ?></span>
                         </a>
                     </div>
@@ -84,8 +84,8 @@
                               <h2>"Keep Me Signed In" Checkbox</h2>
                             </div>
                             <div class="moda1-body">
-                              <p>If this is a personal device that you don't share with others, we recommend that you check the "Keep me signed in" checkbox. This will keep you signed in to your Amazon account on this device, so you'll be asked to sign in less frequently. To make sure that your account remains safe, we may still occasionally ask you to confirm your identity - for example, by entering your password, or responding to a message on your mobile device.</p>
-                              <p>To prevent others from accessing your Amazon account, we strongly recommend that you don't use this feature on devices and computers that are shared with other people.</p>
+                              <p>If this is a personal device that you don't share with others, we recommend that you check the "Keep me signed in" checkbox. This will keep you signed in to your KiKinben account on this device, so you'll be asked to sign in less frequently. To make sure that your account remains safe, we may still occasionally ask you to confirm your identity - for example, by entering your password, or responding to a message on your mobile device.</p>
+                              <p>To prevent others from accessing your KiKinben account, we strongly recommend that you don't use this feature on devices and computers that are shared with other people.</p>
                             </div>
                           </div>
 
@@ -102,7 +102,9 @@
                     <div class="block-content" aria-labelledby="block-new-customer-heading">
                         <div class="actions-toolbar">
                             <div class="primary btn btn-custom2">
-                                <a href="<?php /* @escapeNotVerified */ echo $block->getCreateAccountUrl() ?>" class="action create primary">
+                               <!-- <a href="<?php /* @escapeNotVerified */ echo $block->getCreateAccountUrl() ?>" class="action create primary">-->
+ <a href="<?php echo $this->getUrl('customer/account/create'); ?>" class="action create primary">
+
                                 <span><?php /* @escapeNotVerified */ echo __('Create your KiKinben account') ?></span></a>
                             </div>
                         </div>

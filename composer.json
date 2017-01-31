@@ -9,7 +9,8 @@
     ],
     "require": {
         "magento/product-community-edition": "2.1.1",
-        "composer/composer": "@alpha"
+        "composer/composer": "@alpha",
+        "vmasciotta/magento2-owl-carousel":"^1.0.0"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.0",

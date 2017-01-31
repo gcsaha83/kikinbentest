@@ -173,7 +173,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 											</a><br>
 								    
 								    		<p><span style="float: left;">New Customer? </span>&nbsp;
-								    		<a href="#" style="float: left;margin-left:5px;"> Join Free</a></p>
+								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" style="float: left;margin-left:5px;"> Join Free</a></p>
 								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" title="Register" style="padding:0">
 								    		<input type="button" class="btn btn-sm btn-register register_cust_l btn-block" value="Register Here" >
 								    		</a>
@@ -191,7 +191,30 @@ $isLoggedIn = $customerSession->isLoggedIn();
 								  		</div>
 								  		<?php }  ?>
 								  	</ul>
-								</div>
+                                </div>
+                                        <?php if( $isLoggedIn ) { ?>
+		
+											<?php } else { ?>
+											<div class="nav-signin-cus-l nav-flyout-cus-l">
+
+											<div class="nav-arrow-cus-l">
+												<div class="nav-arrow-cus-l-inner"></div>
+											</div>
+
+											<div id="nav-signin-tooltip-cus-l">
+												<a href="<?php echo $this->getUrl('customer/account/login'); ?>" class="nav-action-button" data-nav-role="signin" data-nav-ref="nav_custrec_signin">
+													<button class="nav-action-inner">Sign in</button>
+												</a>
+
+												<div class="nav-signin-tooltip-cus-l-footer">New customer? 
+													<a href="<?php echo $this->getUrl('customer/account/create'); ?>" class="nav-a">Start here</a>
+												</div>
+
+											</div>
+										</div>
+										<?php }  ?>
+
+
 							</li>
 
 							<li>
