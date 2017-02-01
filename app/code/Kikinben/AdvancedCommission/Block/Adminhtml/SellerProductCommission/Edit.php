@@ -38,20 +38,23 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
 	protected $_coreRegistry = null;
 	public function __construct(
+            \Magento\Framework\App\Request\Http $request,
 			\Magento\Backend\Block\Widget\Context $context,
 			\Magento\Framework\Registry $registry,
 			array $data = []
 			) {
-				$this->_coreRegistry = $registry;
+                $this->_coreRegistry = $registry;
+                $this->request = $request;
 				parent::__construct($context, $data);
 	}
-	protected function _construct(){
-		$this->_objectId = 'id';
+    protected function _construct(){
+        $parameter = $this->request->getParams();    
+		$this->_objectId   = 'id';
 		$this->_controller = 'adminhtml_sellerproduct';
 		$this->_blockGroup = 'Kikinben_AdvancedCommission';
 		parent::_construct();
 		$this->buttonList->remove('delete');
-		//$this->buttonList->remove('save');
+        $this->buttonList->remove('back');
         
 		$this->buttonList->update('save', 'label', __('Save Info'));
 		$this->buttonList->add(
@@ -67,6 +70,16 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
 				],
 				-100
 				);
+         $this->addButton(
+            'my_back_button',
+            [
+                'label' => __('Back'),
+                'onclick' => 'setLocation(\'' . $this->getUrl('kikinben_advancedcommission/sellerproduct/index',['id'=>$parameter['seller_id']]) . '\')',
+                'class' => 'back'
+            ],
+            -1
+        );
+
 		
 		
 	}
@@ -84,6 +97,6 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         ";
 		return parent::_prepareLayout();
 	}
-	
+    	
 	
 }

@@ -36,7 +36,8 @@ class Tabs extends WidgetTabs {
 	
 	
 	protected function _beforeToHtml() {
-		$product_id = $this->getRequest()->getParam('id');
+        $product_id = $this->getRequest()->getParam('id');
+        $seller_id  = $this->getRequest()->getParam('seller_id');
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$productCollection = $objectManager->create('Magento\Catalog\Model\Product');
 		$product = $productCollection->load($product_id);
@@ -48,7 +49,7 @@ class Tabs extends WidgetTabs {
 						//'Kikinben\AdvancedCommission\Block\Adminhtml\SellerProductCommission\Edit\Form',
 						'Kikinben\AdvancedCommission\Block\Adminhtml\SellerProductCommission\Edit\Tab\Main',
 						"seller_products",
-						['data' => ['customer_id' => $product_id]
+						['data' => ['product_id' => $product_id,'seller_id'=>$seller_id]
                     ])->toHtml(),			
 				'active' => true
 		] );

@@ -92,7 +92,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 				]
 				);
 
-		$fieldset->addField('global_commission', 'checkbox', array(
+		/*$fieldset->addField('global_commission', 'checkbox', array(
 				'label'     => '',
 				'name'      => 'Checkbox',
 				'checked' => false,
@@ -102,7 +102,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 				'disabled' => false,
 				'after_element_html' => 'Set Global Commission-Flat Commission rate for all products sold by this seller',
 				'tabindex' => 1
-		));
+            ));*/
 		
 		$fieldset->addField('price_range', 'checkbox', array(
 				'label'     => '',

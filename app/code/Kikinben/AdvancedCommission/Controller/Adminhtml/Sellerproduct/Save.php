@@ -8,7 +8,6 @@ class Save extends \Magento\Framework\App\Action\Action
 			\Magento\Framework\View\Result\PageFactory $resultPageFactory)
 	{
 		
-			die("comes");
 		$this->resultPageFactory = $resultPageFactory;
 		return parent::__construct($context);
 	}
