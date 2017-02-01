@@ -15,7 +15,7 @@ use Magento\Catalog\Model\Product;
  */
 class View  extends \Magento\Catalog\Block\Product\View
 {
-		
+    		
    public function getRelatedProductCollection($id){
    	   	   	
    	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
@@ -36,5 +36,10 @@ class View  extends \Magento\Catalog\Block\Product\View
    }
    public function getProductName($id){
    	
+   }
+   public function getCurrentUrl() {
+       $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+       $storeCollection = $objectManager->create('\Magento\Store\Model\StoreManagerInterface'); 
+       return $storeCollection->getStore()->getCurrentUrl();
    }
 }
