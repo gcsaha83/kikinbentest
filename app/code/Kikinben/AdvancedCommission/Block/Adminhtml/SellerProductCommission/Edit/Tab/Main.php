@@ -34,7 +34,8 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 	protected $_systemStore;
 	protected $_formFactory;
 	protected $_status;
-	protected $_sellerProductCommission;
+    protected $_sellerProductCommission;
+    protected $_sellerCollectionFactory;
 	
 	public function __construct(
 			\Magento\Backend\Block\Template\Context $context,
@@ -42,11 +43,13 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 			\Magento\Framework\Data\FormFactory $formFactory,
 			\Magento\Store\Model\System\Store $systemStore,
 			\Kikinben\AdvancedCommission\Model\SellerProductCommission $sellerProductCommission,
+            \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $sellerfactory,
 			array $data = []
 			) {
 				$this->_systemStore = $systemStore;
 				$this->_formFactory =  $formFactory;
-				$this->_sellerProductCommission = $sellerProductCommission;
+                $this->_sellerProductCommission = $sellerProductCommission;
+                $this->_sellerCollectionFactory = $sellerfactory;
 				parent::__construct($context, $registry, $formFactory, $data);
     }
 
@@ -59,47 +62,55 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 	}	
 	
 	protected function _prepareForm() {
+
+        $productFilter = $this->getCollection()
+            ->addFieldToFilter('product_id',['eq'=>$this->getData('product_id')])
+            ->addFieldToFilter('seller_id',['eq'=>$this->getData('seller_id')])
+            ->getData();
+
 	
 		$form = $this->_formFactory->create(['data' => ['id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post']]);
-				
-				
-	
-	
+		
 		$fieldset = $form->addFieldset(
 				'base_fieldset',
 				['legend' => __('Commission Information'), 'class' => 'fieldset-wide']
 				);
 
 
-        $fieldset->addField('form_key','hidden', ['name' => 'form_key','value']);
+        $this->_sellerProductCommission->setData('seller_id',$this->getData('seller_id'));
+        $this->_sellerProductCommission->setData('product_id',$this->getData('product_id'));
 
-	
-		if($this->_sellerProductCommission->getId()){
-			$fieldset->addField('kikinben_advancedcommission_sellerproductcommission_id',
-					'hidden', ['name' => 'kikinben_advancedcommission_sellerproductcommission_id']);
-			
-		}
+
+
+        if(!empty($productFilter[0])){
+            $this->_sellerProductCommission->setData('kikibinfullfiled', $productFilter[0]['kikibinfullfiled']);
+            $this->_sellerProductCommission->setData('percentage', $productFilter[0]['percentage']);
+            $this->_sellerProductCommission->setData('amount', $productFilter[0]['amount']);
+            $this->_sellerProductCommission->setData('kikinben_advancedcommission_sellerproductcommission_id', $productFilter[0]['kikinben_advancedcommission_sellerproductcommission_id']);
+        }
+
 				
 		$fieldset->addField('seller_id','hidden', ['name' => 'seller_id']);
 		$fieldset->addField('product_id','hidden', ['name' => 'product_id']);
+        $fieldset->addField('kikinben_advancedcommission_sellerproductcommission_id','hidden', ['name' => 'kikinben_advancedcommission_sellerproductcommission_id']);
 	
-		$fieldset->addField('kikibin_fulfiled', 'select', array(
+		$fieldset->addField('kikibinfullfiled', 'select', array(
 				'label'     => 'Fullfiled By kikinben',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'title',
+				'name'      => 'kikibinfullfiled',
 				'value'  => '2',
-				'values' => array('-1'=>'Please Select..','1' => 'Yes','2' => 'No'),
+				'values' => array('-1'=>'Please Select..',1 => 'Yes',2 => 'No'),
 	
 		));
 	
-		$fieldset->addField('commission_type', 'select', array(
+		$fieldset->addField('percentage', 'select', array(
 				'label'     => 'Commission Type',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'title',
+				'name'      => 'percentage',
 				'value'  => '2',
-				'values' => array('-1'=>'Please Select..','1' => 'Fixed','2' => 'Percentage'),
+				'values' => array('-1'=>'Please Select..',1 => 'Fixed',2 => 'Percentage'),
 	
 		));
 	
@@ -110,10 +121,18 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 				'name'      => 'amount'
 				
 		));
-			
-		$form->setAction($this->getUrl('kikinben_advancedcommission/sellerproductcommission/save'));
+
+        		$form->setAction($this->getUrl('kikinben_advancedcommission/sellerproductcommission/save'));
 		
-		$form->setUseContainer(true);
+        $form->setUseContainer(true);
+
+        $SellerProductCommissionData = $this->_sellerProductCommission->getData();
+        $form->setValues ( $SellerProductCommissionData  );
+
+        
+
+
+
 		$this->setForm($form);
 	
 		return parent::_prepareForm();
@@ -147,6 +166,11 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 	 */
 	public function isHidden() {
 		return false;
-	}
+    }
+    public function getCollection(){
+
+        return $this->_sellerCollectionFactory->create()->getCollection();
+
+   }
 	
 }

@@ -37,7 +37,6 @@ class Edit extends \Magento\Framework\App\Action\Action
 			\Magento\Backend\App\Action\Context $context,
 			\Magento\Framework\View\Result\PageFactory $resultPageFactory)
 	{		
-			
 		$this->resultPageFactory = $resultPageFactory;
 		return parent::__construct($context);
 	}

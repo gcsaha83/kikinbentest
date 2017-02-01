@@ -196,7 +196,7 @@ $installer->getConnection()->createTable($sellerCommissionCatgMap);
             [ 'nullable' => false, ],
             'Product Id'
     )->addColumn(
-            'kikibin_fullfiled',
+            'kikibinfullfiled',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             255,
             [ 'nullable' => false, ],

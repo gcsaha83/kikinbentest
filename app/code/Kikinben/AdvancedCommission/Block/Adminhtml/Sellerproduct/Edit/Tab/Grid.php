@@ -113,7 +113,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended {
 	}
 	public function getRowUrl($row)
 	{
-		return $this->getUrl('kikinben_advancedcommission/sellerproduct/edit', ['id' => $row->getId()]);
+		return $this->getUrl('kikinben_advancedcommission/sellerproduct/edit', ['id' => $row->getId(),'seller_id'=>$this->getData('customer_id')]);
 	}
 	
 }
