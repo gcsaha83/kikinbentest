@@ -22,7 +22,7 @@ class Save extends \Magento\Framework\App\Action\Action
         $id = $this->getRequest()->getParam('kikinben_advancedcommission_sellerproductcommission_id');
         $sellerId = $this->getRequest()->getParam('seller_id');
         $productId = $this->getRequest()->getParam('product_id');
-        $kikibinFulfiled = $this->getRequest()->getParam('kikibinfullfiled');
+        $kikibinFulfiled = $this->getRequest()->getParam('kikibin_fullfiled');
         $commissionType = $this->getRequest()->getParam('percentage');
         $amount = $this->getRequest()->getParam('amount');
 
@@ -31,7 +31,7 @@ class Save extends \Magento\Framework\App\Action\Action
         }
         $this->_sellerProductCommission->setSellerId($sellerId);
         $this->_sellerProductCommission->setProductId($productId);
-        $this->_sellerProductCommission->setKikibinfullfiled($kikibinFulfiled);
+        $this->_sellerProductCommission->setKikibinFullfiled($kikibinFulfiled);
         $this->_sellerProductCommission->setPercentage($commissionType);
         $this->_sellerProductCommission->setAmount($amount);
         try{

@@ -83,7 +83,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 
 
         if(!empty($productFilter[0])){
-            $this->_sellerProductCommission->setData('kikibinfullfiled', $productFilter[0]['kikibinfullfiled']);
+            $this->_sellerProductCommission->setData('kikibin_fullfiled', $productFilter[0]['kikibin_fullfiled']);
             $this->_sellerProductCommission->setData('percentage', $productFilter[0]['percentage']);
             $this->_sellerProductCommission->setData('amount', $productFilter[0]['amount']);
             $this->_sellerProductCommission->setData('kikinben_advancedcommission_sellerproductcommission_id', $productFilter[0]['kikinben_advancedcommission_sellerproductcommission_id']);
@@ -94,7 +94,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 		$fieldset->addField('product_id','hidden', ['name' => 'product_id']);
         $fieldset->addField('kikinben_advancedcommission_sellerproductcommission_id','hidden', ['name' => 'kikinben_advancedcommission_sellerproductcommission_id']);
 	
-		$fieldset->addField('kikibinfullfiled', 'select', array(
+		$fieldset->addField('kikibin_fullfiled', 'select', array(
 				'label'     => 'Fullfiled By kikinben',
 				'class'     => 'required-entry',
 				'required'  => true,
