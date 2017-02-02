@@ -81,7 +81,6 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
         $this->_sellerProductCommission->setData('product_id',$this->getData('product_id'));
 
 
-
         if(!empty($productFilter[0])){
             $this->_sellerProductCommission->setData('kikibin_fullfiled', $productFilter[0]['kikibin_fullfiled']);
             $this->_sellerProductCommission->setData('percentage', $productFilter[0]['percentage']);
@@ -98,7 +97,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 				'label'     => 'Fullfiled By kikinben',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'kikibinfullfiled',
+				'name'      => 'kikibin_fullfiled',
 				'value'  => '2',
 				'values' => array('-1'=>'Please Select..',1 => 'Yes',2 => 'No'),
 	
@@ -122,8 +121,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 				
 		));
 
-        		$form->setAction($this->getUrl('kikinben_advancedcommission/sellerproductcommission/save'));
-		
+        $form->setAction($this->getUrl('kikinben_advancedcommission/sellerproductcommission/save'));		
         $form->setUseContainer(true);
 
         $SellerProductCommissionData = $this->_sellerProductCommission->getData();

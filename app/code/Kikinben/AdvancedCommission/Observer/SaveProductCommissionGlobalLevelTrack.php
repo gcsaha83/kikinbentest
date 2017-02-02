@@ -3,15 +3,45 @@ namespace Kikinben\AdvancedCommission\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack;
+
 
 class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
 {
     protected $_commissionSave;
-    public function __construct(GlobalLevelProductTrack $commissionSave){
+    public function __construct(
+        \Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
+        \Magento\Sales\Model\Order $order,
+        \Magento\Catalog\Model\Product $product,
+        \Apptha\Marketplace\Model\Seller $seller
+    
+    
+    ){
         $this->_commissionSave = $commissionSave;
+        $this->_order          = $order;
+        $this->_product        = $product;
+        $this->_seller         = $seller;
     }
-	public function execute(Observer $observer)
+
+   /* Order of execution
+    * 0)When a category has a fixed commission for whole category (set in category space)
+    * 1)when a product has fixed commission in global level (catalog/product space)
+    * 2)else when the product has commission set in each seller's space (marketplace mannage seller with product grid) 
+    * 3)else the product has commission set for all product for specific seller (marketplace mannage seller with seller's all product)
+    * 4)else category commission set for specified seller's category
+    *
+    * */
+
+    public function execute(Observer $observer){
+
+        $order = $observer->getOrderIds ();
+        $orderId = $order [0];
+        $orderData = $this->_order->load ( $orderId );
+        print_r($orderData->getData());die;
+
+
+    }
+
+	/*public function execute(Observer $observer)
     {
         $order = $observer->getOrderIds ();
         $orderId = $order [0];
@@ -23,7 +53,6 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $sellerData = array ();
         $customOptions = array ();
          
-
         foreach ( $orderItems as $item ) {
             $productId = $item->getProductId ();
             $itemId = $item->getItemId ();
@@ -36,7 +65,6 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
                 $commissionAmount =$product->getkikinbenProductCommission();
                 $fullFill         =$product->getKikinbenFulfilled();
                 
-
 
                 if($commissionType == 1){ // percentage commission set
                     $priceAfterCommissionPercent =  $productPrice - (($commissionAmount / 100) * $productPrice);
@@ -56,19 +84,19 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
 
 
                 } 
-                /*else{
+                else{
                     $sellerCommission[] =  $commissionAmount;
                     $priceAfterCommission[] = $productPrice - $commissionAmount; 
 
                   //  $this->_commissionSave->setSellerAmount($sellerCommission)
                    //     ->setProductPrice($priceAfterCommission)->save();
 
-                }*/
+                }
                                  
             }
             
         }
         
 		return $this;
-	}
+    }*/
 }

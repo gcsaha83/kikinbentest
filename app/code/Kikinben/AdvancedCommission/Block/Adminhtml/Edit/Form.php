@@ -29,7 +29,7 @@
  */
 
 namespace Kikinben\AdvancedCommission\Block\Adminhtml\Edit;
-use Kikinben\AdvancedCommission\Model\ResourceModel\Commission\CollectionFactory AS CommissionCollectionFactory;
+use Kikinben\AdvancedCommission\Model\CommissionFactory AS CommissionCollectionFactory;
 use Apptha\Marketplace\Model\Seller AS SellerCollectionFactory;
 use Magento\Customer\Model\Customer AS Customer;
 use Kikinben\AdvancedCommission\Helper\KikinbenAdvancedCommissionAdminCategoryOptions AS HelperOptions;
@@ -49,6 +49,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 			\Magento\Framework\Data\FormFactory $formFactory,
 			CommissionCollectionFactory $commissionCollectionFactory,
 			SellerCollectionFactory $sellerCollectionFactory,
+            \Kikinben\AdvancedCommission\Model\Commission $commission,
 			Customer $customer,
 			HelperOptions $helperoptions,
 			array $data = []
@@ -58,6 +59,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 				$this->_sellerCollectionFactory =  $sellerCollectionFactory;
 				$this->_customer = $customer;
 				$this->_helperoptions = $helperoptions;
+                $this->commission = $commission;
 
 
 				parent::__construct($context, $registry, $formFactory, $data);
@@ -72,14 +74,39 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 	protected function _prepareForm()
 	{
 		$customerId = $this->_sellerCollectionFactory->load($this->getData('customer_id'))->getCustomerId();
-		$this->_helperoptions->getSellerId($customerId);
+        $this->_helperoptions->getSellerId($customerId);
+
+        $sellerCommissionFilter = $this->getCollection()
+            ->addFieldToFilter('seller_id',['eq'=>$customerId])
+            ->getData();
+
+
 		$form = $this->_formFactory->create(
 				['data' => ['id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post']]
 				);
-		$fieldset = $form->addFieldset(
+        $fieldset = $form->addFieldset(
 				'base_fieldset',
 				[ 'class' => 'fieldset-wide']
 				);
+        $this->commission->setData('seller_id',$customerId );
+        $this->commission->setData('seller_list_id',$this->getData('customer_id'));
+
+        if(!empty($sellerCommissionFilter[0])){
+
+            $this->commission->setData('uprice_range_from',$sellerCommissionFilter[0]['uprice_range_from'] );
+            $this->commission->setData('uprice_range_to',$sellerCommissionFilter[0]['uprice_range_to'] );
+            $this->commission->setData('amount',$sellerCommissionFilter[0]['amount'] );
+            $this->commission->setData('commission_type',$sellerCommissionFilter[0]['commission_type'] );
+            $this->commission->setData('global_commission',$sellerCommissionFilter[0]['global_commission'] );
+            $this->commission->setData('kikinben_advancedcommission_commission_id',$sellerCommissionFilter[0]['kikinben_advancedcommission_commission_id'] );
+            $this->commission->setData('product_id',$sellerCommissionFilter[0]['product_id'] );
+
+        }
+
+        $fieldset->addField('kikinben_advancedcommission_commission_id','hidden',['name'=>'kikinben_advancedcommission_commission_id']);
+        $fieldset->addField('seller_id','hidden', ['name' => 'seller_id']);
+        $fieldset->addField('seller_list_id','hidden', ['name' => 'seller_list_id']);
+
 		$fieldset->addField(
 				'name',
 				'label',
@@ -90,7 +117,9 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 						'value' => $this->_customer->load($customerId)->getName()
 
 				]
-				);
+            );
+
+        
 
 		/*$fieldset->addField('global_commission', 'checkbox', array(
 				'label'     => '',
@@ -102,35 +131,50 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 				'disabled' => false,
 				'after_element_html' => 'Set Global Commission-Flat Commission rate for all products sold by this seller',
 				'tabindex' => 1
-            ));*/
+            ));
 		
-		$fieldset->addField('price_range', 'checkbox', array(
-				'label'     => '',
-				'name'      => 'Checkbox',
+		$fieldset->addField('product_id', 'checkbox', array(
+				'label'     => 'Enable Price Range Commission Rule',
+				'name'      => 'product_id',
 				'checked' => false,
-				'onclick' => "",
-				'onchange' => "",
 				'value'  => '1',
 				'disabled' => false,
 				'after_element_html' => 'Enable Price Range Commission Rule',
 				'tabindex' => 1
-		));
+            ));*/
 
-		$fieldset->addField('price_range_from', 'text', array(
+
+        $fieldset->addField('product_id', 'radios', array(
+          'label'     => 'Enable Price Range Commission Rule',
+          'name'      => 'product_id',
+          'onclick' => "",
+          'onchange' => "",
+          'value'  => '2',
+          'values' => array(
+                            array('value'=>'1','label'=>'Yes'),
+                            array('value'=>'2','label'=>'No'),
+                            ),
+          'disabled' => false,
+          'readonly' => false,
+          'after_element_html' => '',
+          'tabindex' => 1
+        ));
+
+		$fieldset->addField('uprice_range_from', 'text', array(
 				'label'     => 'Price Range From',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'title',
+				'name'      => 'uprice_range_from',
 				'disabled' => false,
 				'after_element_html' => '',
 				'tabindex' => 1
 		));
 
-		$fieldset->addField('price_range_to', 'text', array(
+		$fieldset->addField('uprice_range_to', 'text', array(
 				'label'     => 'Price Range To',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'title',
+				'name'      => 'uprice_range_to',
 				'disabled' => false,
 				'after_element_html' => '',
 				'tabindex' => 1
@@ -140,7 +184,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 				'label'     => 'Commission Type',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'title',
+				'name'      => 'commission_type',
 				
 				'value'  => '2',
 				'values' => array('-1'=>'Please Select..','1' => 'Fixed','2' => 'Percentage'),
@@ -151,14 +195,17 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 				'label'     => 'Amount',
 				'class'     => 'required-entry',
 				'required'  => true,
-				'name'      => 'title',
+				'name'      => 'amount',
 				'disabled' => false,
 				'after_element_html' => '',
 				'tabindex' => 1
 		));
-
 		$form->setAction($this->getUrl('*/*/save'));
-		$form->setUseContainer(true);
+        $form->setUseContainer(true);
+
+        $SellerCommissionData = $this->commission->getData();
+        $form->setValues ( $SellerCommissionData  );
+
 		$this->setForm($form);
 
 		return parent::_prepareForm();
@@ -193,5 +240,12 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements TabInte
 	public function isHidden() {
 		return false;
 	}
+
+    public function getCollection(){
+
+        return $this->_commissionCollectionFactory->create()->getCollection();
+
+   }
+
 
 }

@@ -48,8 +48,14 @@ $advanceCommissionTable = $installer->getConnection()->newTable(
             'Entity ID'
         )->addColumn(
             'seller_id',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            255,
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            [ 'nullable' => false, ],
+            'Seller Id'
+        )->addColumn(
+            'seller_list_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
             [ 'nullable' => false, ],
             'Seller Id'
         )->addColumn(
@@ -61,19 +67,19 @@ $advanceCommissionTable = $installer->getConnection()->newTable(
         )->addColumn(
             'uprice_range_from',
             \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
-            null,
+            '10,2',
             [ 'nullable' => false ],
             'Price Range From'
         )->addColumn(
             'uprice_range_to',
             \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
-            null,
+            '10,2',
             [ 'nullable' => false ],
             'Price Range To'
         )->addColumn(
             'uprice_range_from',
             \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
-            null,
+            '10,2',
             [ 'nullable' => false ],
             'Price Range From'
         )->addColumn(
@@ -97,7 +103,7 @@ $advanceCommissionTable = $installer->getConnection()->newTable(
         )->addColumn(
             'amount',
             \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
-            null,
+            '10,2',
             [ 'nullable' => false ],
             'Amount'
         )->addColumn(
