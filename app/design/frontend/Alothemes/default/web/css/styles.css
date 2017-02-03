@@ -5518,7 +5518,7 @@ font-size: 12px;
     .marketplace-seller-displayseller li.item.product.product-item:hover  .product-item-info {margin-bottom: 0 !important;}
 
 body.marketplace-seller-displayseller li.item.product.product-item {
-   width: 33% !important;
+   width: 32% !important;
 }
 
 /* ----------------- Modal Start ----------------------- */
@@ -5707,4 +5707,6 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
     padding: 4px 10px;
 }
-  /* Contus css end updated for git */  
+
+  /*Contus css end */  
+
