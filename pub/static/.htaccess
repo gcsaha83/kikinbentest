@@ -1,5 +1,3 @@
-Options All -Indexes
-
 <IfModule mod_php5.c>
 php_flag engine 0
 </IfModule>
@@ -8,25 +6,19 @@ php_flag engine 0
 php_flag engine 0
 </IfModule>
 
-AddHandler cgi-script .php .pl .py .jsp .asp .htm .shtml .sh .cgi
-Options -ExecCGI
+# To avoid situation when web server automatically adds extension to path
+Options -MultiViews
 
 <IfModule mod_rewrite.c>
+    RewriteEngine On
 
-############################################
-## enable rewrites
+    # Remove signature of the static files that is used to overcome the browser cache
+    RewriteRule ^version.+?/(.+)$ $1 [L]
 
-    Options +FollowSymLinks
-    RewriteEngine on
-
-############################################
-## never rewrite for existing files
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
 
-############################################
-## rewrite everything else to index.php
-
-    RewriteRule .* ../get.php [L]
+    RewriteRule .* ../static.php?resource=$0 [L]
 </IfModule>
 
 ############################################
