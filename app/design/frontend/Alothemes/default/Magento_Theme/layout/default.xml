@@ -52,7 +52,7 @@
         </container>
 
 		<referenceContainer name="sections.page.bottom">
-            <block class="Magento\Cms\Block\Block" name="brands">
+            <!-- <block class="Magento\Cms\Block\Block" name="brands">
                 <arguments>
                     <argument name="block_id" xsi:type="string">cms-static-brands</argument>
                 </arguments>
@@ -61,7 +61,7 @@
                 <arguments>
                     <argument name="block_id" xsi:type="string">cms-static-mix-custom-product</argument>
                 </arguments>
-            </block>
+            </block>-->
             <block class="Magento\Cms\Block\Block" name="page.bottom" after="custom.product">
                 <arguments>
                     <argument name="block_id" xsi:type="string">cms-static-page-bottom</argument>
