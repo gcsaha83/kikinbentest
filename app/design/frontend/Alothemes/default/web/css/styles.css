@@ -5710,3 +5710,375 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
   /*Contus css end */  
 
+/*.......... Makeup & Glam Category..........*/
+	.cust_blk_sction {
+		    float: left;/*
+		    height: 551px;*/
+		    border-right: 1px solid #eee;
+		}
+
+		.cust_blk_sction .cust_blk_tit a {
+		    display: block;
+		    height: 100px;
+		    padding-top: 22px;
+		    border-bottom: 1px solid #eee;
+		    font-size: 20px;
+		    line-height: 28px;
+		    text-align: center;
+		    font-weight: 700;
+		    color: #f31349;
+		}
+
+		.cust_blk_sction .cust_blk_tit a:hover {
+		    position: relative;
+		    z-index: 3;
+		    box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+		    text-decoration: none;
+		}
+
+		.cust_blk_sction .cust_blk_img {
+		    line-height: 22px;
+		    text-align: center;/*
+		    max-height: 435px;*/
+		    overflow: hidden;
+		}
+
+		.cust_blk_sction .cust_blk_img a.highlight {
+		    color: #f31349;
+		}
+
+		.cust_blk_sction .cust_blk_img a {
+		    display: block;
+		    color: #4e4e4e;
+		    margin-top: 14px;
+		}
+
+		/*slider*/
+		.recommend-box {
+		    position: relative;
+		    float: left;
+		    overflow: hidden;
+		    padding: 0;
+		}
+		.recommend-box:hover {
+		    /*box-shadow: 0 3px 6px 0 rgba(51,51,51,.3);*/
+		}
+
+		.recommend-slider-box {
+		    width: 50%;
+		    margin-left: 50%;
+		}
+
+		.recommend-slider-wrapper {
+		    width: 480px;
+		    margin-left: -240px;
+		}
+
+		.recommend-slider-box ul {
+		    float: left;
+		}
+
+		.recommend-slider-box li {
+		    position: relative;
+		    width: 480px;
+		    list-style: none;
+		    margin-left: 0;
+		    float: left;
+		}
+
+		.recommend-box .blk_pic {
+		    text-align: center;
+		    overflow: hidden;
+		    height: 550px;
+		    min-width: 400px;
+		}
+
+		:root .recommend-box .event-info {
+		    filter: none;
+		    background-color: rgba(243,18,74,.8);
+		}
+
+
+		.recommend-box .event-info {
+		    position: absolute;
+		    width: 360px;
+		    left: 50%;
+		    margin-left: -180px;
+		    bottom: 50px;
+		    padding: 15px 0;
+		    font-size: 18px;
+		    overflow: hidden;
+		    text-align: center;
+		    color: #fff;
+		    filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#CCF3124A', endColorstr='#CCF3124A');
+		}
+
+		.recommend-box .event-info .main-title {
+		    display: block;
+		    font-size: 24px;
+		    font-weight: 700;
+		    color: #fff;
+		    line-height: 26px;
+		    max-height: 52px;
+		    overflow: hidden;
+		    text-transform: uppercase;
+		    margin: 0 20px;
+		}
+
+		.recommend-box .event-info .sub-title {
+		    display: block;
+		    padding-top: 10px;
+		    margin: 10px 20px 0 20px;
+		    font-size: 13px;
+		    line-height: 18px;
+		    max-height: 46px;
+		    overflow: hidden;
+		    border-top: 1px solid rgba(255,255,255,.3);
+		}
+
+		.recommend-slider-box .ui-banner-slider-nav {
+		    display: block;
+		    position: absolute;
+		    bottom: 17px;
+		    width: 360px;
+		    text-align: center;
+		    left: 50%;
+		    margin-left: -180px;
+		}
+
+		.recommend-slider-box .ui-banner-slider-nav span {
+		    display: inline-block;
+		    width: 10px;
+		    height: 10px;
+		    border-radius: 10px;
+		    background-color: rgba(255,255,255,.5);
+		    border: 1px solid rgba(255,255,255,.3);
+		    margin: 0 10px;
+		    text-indent: -999px;
+		    cursor: pointer;
+		}
+
+		.rec-slider-prev {
+		    border-radius: 0 2px 2px 0;
+		    left: 0;
+		    text-indent: -999em;
+		    overflow: hidden;
+		}
+
+		.rec-slider-next, .rec-slider-prev {
+		    visibility: hidden;
+		    display: none;
+		    position: absolute;
+		    top: 50%;
+		    margin-top: -25px;
+		    width: 30px;
+		    height: 50px;
+		    cursor: pointer;
+		    background: url(/ae-wholesale-ui/common/img/banner-slider-buttons.ba68a2bd.png) no-repeat;
+		    background-color: #000;
+		    overflow: hidden;
+		    z-index: 1;
+		    opacity: .4;
+		}
+
+		.rec-slider-next {
+		    border-radius: 2px 0 0 2px;
+		    right: 0;
+		    text-indent: -999em;
+		    overflow: hidden;
+		    background-position: -29px 0;
+		}
+
+		.rec-slider-next, .rec-slider-prev {
+		    visibility: hidden;
+		    display: none;
+		    position: absolute;
+		    top: 50%;
+		    margin-top: -25px;
+		    width: 30px;
+		    height: 50px;
+		    cursor: pointer;
+		    background: url(/ae-wholesale-ui/common/img/banner-slider-buttons.ba68a2bd.png) no-repeat;
+		    background-color: #000;
+		    overflow: hidden;
+		    z-index: 1;
+		    opacity: .4;
+		}
+
+		.cust_blk_prod {
+		    float: left;
+		    padding: 0;
+		}
+
+		.cust_blk_prod1 {
+		    /*width: 100%;*/
+		    position: relative;
+		    z-index: 6;
+		}
+
+		.cust_blk_prod1 a {
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    border: 1px solid #eee;
+		    border-top: 0 none;
+		}
+
+		.cust_blk_prod1 .blk_pic {
+		    display: block;
+		    padding: 10px 10px;
+		    overflow: hidden;
+		    text-align: center;
+		}
+
+		.cust_blk_prod1 a:hover {
+		    box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+		    text-decoration: none;
+		}
+
+		.cust_blk_prod1 .blk_pic img {
+		    
+		}
+
+		.cust_bottom_prod1 {
+		    /* height: 274px; */
+		    padding: 0;
+		    margin: 0;
+		}
+
+		.cust_blk_prod li {
+		    position: relative;
+		    width: 50%;
+		    float: left;
+		    margin: 0 0 -1px 0;
+		    list-style: none;
+		    text-align: center;
+		    line-height: 18px;
+		}
+
+		.cust_blk_prod li a {
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    border: 1px solid #eee;
+		    border-top: 0 none;
+		}
+
+		.cust_blk_prod li a:hover {
+		    box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+		    text-decoration: none;
+		}
+
+		.cust_blk_prod li .cust_blk_sub {
+		    display: block;
+		    color: #333;
+		    padding: 15px 5px 4px;
+		    height: 37px;
+		    overflow: hidden;
+		    font-weight: 700;
+		}
+
+		.cust_blk_prod li .cust_blk_sub_head {
+		    display: block;
+		    color: #aaa;
+		    padding: 0 5px;
+		    height: 18px;
+		    overflow: hidden;
+		}
+
+		.cust_blk_prod li .blk_pic {
+		    display: block;
+		    padding: 10px;
+		    /*height: 220px;*/
+		}
+
+		.cust_blk_prod li .blk_pic img {
+		    width: 100%;
+		    height: 100%;
+		}
+
+		.cust_blk_prod_right {
+		    float: left;
+		    padding: 0;
+		}
+
+		.cust_blk_prod_right ul {
+		    padding: 0;
+		}
+
+		.cust_blk_prod_right li:first-child {
+		    margin-left: -1px;
+		    padding-left: 1px;
+		}
+
+		.cust_blk_prod_right li {
+		    list-style: none;
+		    text-align: center;
+		    line-height: 18px;
+		    margin: 0;
+		}
+
+		.cust_blk_prod_right li a {
+		    text-decoration: none;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    border-top: 1px solid transparent;
+		    border-bottom: 1px solid #eee;
+		    border-left: 1px solid transparent;
+		}
+
+		.cust_blk_prod_right .cust_blk_sub {
+		    display: block;
+		    color: #333;
+		    padding: 15px 5px 2px;
+		    height: 35px;
+		    overflow: hidden;
+		    font-weight: 700;
+		}
+
+		.cust_blk_prod_right .cust_blk_sub_head {
+		    display: block;
+		    padding: 0 5px;
+		    color: #aaa;
+		    height: 18px;
+		    overflow: hidden;
+		}
+
+		.cust_blk_prod_right li a .blk_pic {
+		    /*height: 246px;*/
+		}
+
+		.cust_blk_prod_right .blk_pic {
+		    padding: 10px;
+		    display: block;
+		}
+
+		.cust_blk_prod_right .blk_pic_custom img {
+		   	/*width: 194px;
+		    height: 246px;*/
+		    padding: 10px;
+		}
+
+		.cust_blk_prod_right:last-child .blk_pic img {
+		    /*width: 180px;
+		    height: 201px;*/
+		}
+
+		.cust_blk_prod_right li:last-child a {
+		    /*border-bottom: 0 none;*/
+		}
+
+		.cust_blk_prod_right li a:hover {
+		    box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+		    text-decoration: none;
+		}
+
+
+		.mySlides {
+			padding: 10px 0;
+		}
+		
+		
+
+/*..... End of Makeup & Glam Category Blocks Css.......*/
