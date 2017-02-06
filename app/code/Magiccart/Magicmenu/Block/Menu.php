@@ -253,7 +253,9 @@ class Menu extends \Magento\Catalog\Block\Navigation
 									$url =  '<a href="'. $child->getUrl().'"><span>'.__($child->getName()) . $this->getCatLabel($child) . '</span></a>';
 									$childHtml = $this->getTreeCategoriesExt($id); // include magic_label
 									// $childHtml = $this->getTreeCategoriesExtra($id); // include magic_label
-									$desktopTmp .= '<li class="children' . $class . '">' . $this->getImage($child) . $url . $childHtml . '</li>';
+									//$desktopTmp .= '<li class="children' . $class . '">' . $this->getImage($child) . $url . $childHtml . '</li>';
+                                    $desktopTmp .= '<li class="children' . $class . '">'. $url . $this->getImage($child) . $childHtml . '</li>';
+
 									$mobileTmp  .= '<li class="' . $class . '">' . $url . $childHtml . '</li>';
 								}
 								$desktopTmp .= '<li>'  .$blocks['bottom']. '</li>';
@@ -314,7 +316,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
                         ->addAttributeToSort('position', 'asc'); //->addOrderField('name');*/
 
         $collection = $this->_categoryInstance->getCollection()
-                        ->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','kinkinbin_icon_thumb'))
+                        ->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','kinkinbin_icon_thumb','image'))
                         ->addAttributeToFilter('parent_id', $parentId)
                         ->addAttributeToFilter('include_in_menu', 1)
                         ->addIsActiveFilter()
@@ -407,7 +409,9 @@ class Menu extends \Magento\Catalog\Block\Navigation
     public function getImage($object)
     {
         $url = false;
-        $image = $object->getMagicImage();
+        //$image = $object->getMagicImage(); 
+        $image = $object->getImage();
+        
         if ($image) {
             $url = $this->_storeManager->getStore()->getBaseUrl(
                 \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
