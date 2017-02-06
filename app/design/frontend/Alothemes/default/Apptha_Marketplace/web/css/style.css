@@ -8727,7 +8727,8 @@ button.action.tocart.primary.mp_addtocart_button { white-space: nowrap; }
 .marketplace-seller-displayseller li.item.product.product-item .product-item-info button.action.tocart.primary i{
     font-size: 20px;
     color: #fff;    position: relative;
-    top: 4px;
+    /*top: 4px;*/
+    top:0px;
     display: inline-block;
     line-height: 20px;
 }
