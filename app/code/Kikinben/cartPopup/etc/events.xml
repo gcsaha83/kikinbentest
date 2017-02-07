@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-	<event name="checkout_cart_product_add_after">
+    <!--<event name="checkout_cart_product_add_after">
+	<observer name="kikinben_cartpopup_listener" instance="Kikinben\cartPopup\Model\Observer"/>
+    </event>-->
+
+
+    	<event name="controller_action_postdispatch_checkout_cart_add">
 	<observer name="kikinben_cartpopup_listener" instance="Kikinben\cartPopup\Model\Observer"/>
 	</event>
 </config>
