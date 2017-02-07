@@ -17,6 +17,7 @@ $storeUrl =  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfa
 $objectManagerRegistry = \Magento\Framework\App\ObjectManager::getInstance();
 $productCurent = $objectManagerRegistry->get('Magento\Framework\Registry')->registry('current_product');//get current product
 $productId = $productCurent->getId();
+$productType = $productCurent->getTypeId();
 
 
 $currentProduct = $block->getRelatedProductCollection($productId);
@@ -32,7 +33,9 @@ $itemCollection = $currentProduct->getRelatedProductCollection()->addAttributeTo
 			$productDetailsAll[] = $productDetails->getData() ;
 		}
 ?>
-
+<?php
+if ($productType === 'simple') {
+?>
         <div id="popup-mpdal">
             <div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 				<div >
@@ -101,8 +104,8 @@ $itemCollection = $currentProduct->getRelatedProductCollection()->addAttributeTo
 			</div>
 			<!-- - Login Model Ends Here -->
 			
-			
         </div>
+<?php } ?>
 
 <?php $_product = $block->getProduct(); ?>
 
