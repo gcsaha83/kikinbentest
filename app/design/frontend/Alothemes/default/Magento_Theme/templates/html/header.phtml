@@ -25,12 +25,17 @@
  * @var \Magento\Theme\Block\Html\Header $this
  */
  
+
+
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 $isLoggedIn = $customerSession->isLoggedIn();
 //$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getFirstname() : $this->getWelcome() 
  $msg = $isLoggedIn ? $customerSession->getCustomer()->getFirstname() : $this->getWelcome()    
 ?>
+
+<?php $request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();?>
+
 <header class="page-header alothemes">
     <div class="header">
 		<div class="header-top">
