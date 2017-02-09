@@ -121,17 +121,17 @@ $isLoggedIn = $customerSession->isLoggedIn();
 					<div class="righ-header-content col-lg-3 col-md-4 col-sm-12 col-xs-12">
 						<ul class="top-link-product">
 							<li>
-							    <div class="customer dropdown">
-								  	<ul class="top-links dropbtn">
+							    <div class="customer signInHover dropdown">
+								  	<ul class="top-links dropbtn signInHover">
 								  		<span class="icon icon-user">
 								  			<i class="hidden">hidden</i>
 								  		</span>
 									  		
 									  		<?php if( $isLoggedIn ) { ?>
 										    
-										    <li class="first">
+										    <li class="first signInHover">
 
-												<a id="quick_sigup_link" style="positon:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
+												<a id="quick_sigup_link" style="position:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
                                                 <span>Hello, <?php echo $msg; ?> </span>
 
 													<span class="youraccount" style="margin-top:-25px;">My Account</span>
@@ -160,8 +160,8 @@ $isLoggedIn = $customerSession->isLoggedIn();
 
 										<?php } else { ?>
 
-										<li class="first">
-											<a id="quick_sigup_link" style="positon:relative;" ><span>Hello. Sign In</span><span class="youraccount" style="
+										<li onmouseover="popsup(this);" class="first">
+											<a  id="quick" style="positon:relative;" ><span>Hello. Sign In</span><span class="youraccount" style="
 												   margin-top: -25px;
 												   /* float: left; */
 												">Your Account</span></a>
@@ -194,8 +194,8 @@ $isLoggedIn = $customerSession->isLoggedIn();
                                 </div>
                                         <?php if( $isLoggedIn ) { ?>
 		
-											<?php } else { ?>
-											<div class="nav-signin-cus-l nav-flyout-cus-l">
+											<?php } elseif($request->getFullActionName() == 'cms_index_index') { ?>
+											<div  id="nav-signin" data-toggle='popover' class="nav-flyout-cus-l">
 
 											<div class="nav-arrow-cus-l">
 												<div class="nav-arrow-cus-l-inner"></div>
@@ -257,3 +257,15 @@ $isLoggedIn = $customerSession->isLoggedIn();
 		</div>
 
 </header>
+
+<script>
+ setTimeout(function(){  jQuery('#nav-signin').fadeOut(400);}, 10000);
+ function popsup(obj)
+  {
+  	document.getElementById('nav-signin').style.display = 'none';
+  }
+/* jQuery('#quick').hover(function(){
+ 	alert('this');
+ });*/
+ 
+</script>
