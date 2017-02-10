@@ -6083,6 +6083,599 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 /*..... End of Makeup & Glam Category Blocks Css.......*/
 
+/*.....About Us & Kikinben History.....*/ 
+.about_sec_cus {
+    background: #fcfcfc;
+    padding: 50px;
+}
+
+.about_sec_tit {
+    text-align: center;
+}
+
+.about_sec_tit h1 {
+    font-size: 33px;
+    color: #f89a22;
+}
+
+.about_sec_tit p {
+    font-size: 15px;
+}
+
+.about_sec_tit .about_para {
+    text-align: justify;
+}
+
+.leadership_section {
+    text-align: center;
+    padding: 50px;
+    background: #fcfcfc;
+    margin-top: 20px;
+}
+
+.leadership_section_tit h1 {
+    padding: 20px;
+    color: #f89a22;
+    font-size: 33px;
+}
+
+.leader_sec {
+    padding: 20px;
+}
+ 
+.leader_sec .about_para {
+    text-align: justify;
+}
+
+.leader_sec img {
+    border-radius: 75px;
+}
+
+.leader_sec h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.steps_area {
+    background: #f3f3f3;
+}
+
+.steps_l {
+    margin-top: 50px;
+}
+
+.steps_l_n h1 {
+    color: #f89a22;
+}
+
+.location_section {
+    padding: 50px;
+    background: #fcfcfc;
+    margin-top: 20px;
+}
+
+.location_section_tit h1 {
+    text-align: center;
+    color: #f89a22;
+    font-size: 33px;
+}
+
+.mapKikinben {
+    height: 400px;
+    width: 100%;
+}
+
+.loc_sec_cont {
+    margin-top: 20px;
+}
+
+.loc_sec_cont h3 {
+    font-size: 24px;
+}
+
+/*..... End of About Kikinben History.....*/
+
+
+ /*......... Super deals Css Started from here.........*/
+     .blk_sd_sction {
+        float: left;
+    }
+
+    .blk_sd_sction .blk_sd_tit a {
+        display: block;
+        height: 100px;
+        padding: 36px 0 36px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        font-weight: 700;
+        color: #f31349;
+    }
+
+    .blk_sd_sction .blk_sd_tit a:hover {
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+        text-decoration: none;
+    }
+
+    .blk_sd_1st {
+        text-align: center;
+        overflow: hidden;
+        padding: 20px;
+        margin-top: 25px;
+    }
+
+    .blk_sd_time {
+
+    }
+
+    .blk_sd_clock {
+        font-size: 18px;
+    }
+
+    .alo-count-down {
+        clear: both;
+        text-align: center;
+        margin-top: 12px;
+        margin-bottom: 26px;
+    }
+
+    .alo-count-down .countdown {
+    display: block;
+}
+    .timer-box {
+        float: left;
+    }
+
+    .blk_sd_prod .event-info .main-title {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 26px;
+        max-height: 52px;
+        overflow: hidden;
+        text-transform: uppercase;
+        margin: 0 20px;
+    }
+
+    .blk_sd_prod .event-info .sub-title {
+        display: block;
+        padding-top: 10px;
+        margin: 10px 20px 0 20px;
+        font-size: 13px;
+        line-height: 18px;
+        max-height: 46px;
+        overflow: hidden;
+        border-top: 1px solid rgba(255,255,255,.3);
+    }
+
+    .cust_blk_prod {
+        float: left;
+        padding: 0;
+    }
+
+    .blk_sd_prod {
+        position: relative;
+        z-index: 6;
+        padding: 10px;
+        border-left: 1px solid #eee;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .blk_sd_prod a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-top: 0 none;
+        color: #333;
+    }
+
+    .blk_sd_prod a:hover, a:focus {
+        color: #333;
+        text-decoration: none !important;
+    }
+
+    .blk_sd_prod:hover {
+        /*box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);*/
+        text-decoration: none;
+        border: 1px solid #f89a22;
+    }
+
+    .blk_sd_prod .blk_pic img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .blk_sd_prod1 .best_prod_tit {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .blk_sd_prod1 p {
+        text-align: center;
+    }
+
+    .glow_cust {
+        float: right;
+    }
+
+    .price_best_blk {
+        font-weight: bold;
+    }
+
+    .off_blk_cus {
+        background: #f31349;
+        color: #fff;
+    }
+
+    .blk_sd_tit:hover .cust_best_tit, .blk_sd_tit.hover .cust_best_tit {
+        pointer-events: auto;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        -moz-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        transition: opacity 0.2s 0s, visiblity 0s 0s;
+    }
+
+    .cust_best_tit {
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        bottom: 60%;
+        width: 100%;
+        /* padding: 5px; */
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        /* top: 0%; */
+        background: rgba(238, 238, 238, 0.5);
+    }
+
+    .blk_sd_prod1:hover .cd_cust_best, .blk_sd_prod1.hover .cd_cust_best {
+        pointer-events: auto;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        -moz-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        transition: opacity 0.2s 0s, visiblity 0s 0s;
+    }
+
+    .cd_cust_best {
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        /* bottom: 0; */
+        width: 100%;
+        padding: 5px;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        top: 0%;
+        background: rgba(238, 238, 238, 0.5);
+    }
+
+    .cd_cust_best span {
+
+    }
+
+    .sup_del_in_1 {
+        padding-top: 18px;
+    }
+
+    .sup_del_inside {
+        padding-top: 10px;
+    }
+
+    .sup_del_last {
+        padding: 8px 0 0 0;
+        text-align: center;    }
+
+    .sup_del_last p {
+        background: #f31349;
+        color: #fff;
+        padding: 0;
+    }
+
+    .blk_sd_lastchild:hover .cd_cust_lastchild, .blk_sd_lastchild.hover .cd_cust_lastchild {
+        pointer-events: auto;
+        visibility: visible;
+        background: #f89a22;
+        opacity: 1;
+        -webkit-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        -moz-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        transition: opacity 0.2s 0s, visiblity 0s 0s;
+    }
+
+    .cd_cust_lastchild {
+        text-align: center;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        /* bottom: 0; */
+        width: 100%;
+        padding: 5px;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        transition: opacity 0.2s 0s, visibility 0s 0.2s;
+        top: 0%;
+        background: #f89a22;
+        padding-top: 95px;
+        color: #fff;
+        font-size: 33px;
+        cursor: pointer;
+        height: 268px;
+    }
+
+
+    .cd_cust_lastchild span {
+    	font-size: 33px;
+    }
+
+    .blk_sd_btn_area {
+        padding: 0;
+    }
+
+    .blk_sd_btn input {
+        width: 100%;
+        border-radius: 0px;
+        color: #fff;
+        background: #f89a22;
+    }
+
+   /*....... End of Super deals css..........*/
+
+   /*........ Shop by brand block...........*/
+       .blk_brand_sction {
+        float: left;
+    }
+
+    .blk_brand_sction .blk_brand_tit a {
+        display: block;
+        height: 299px;
+        padding: 36px 0 36px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        font-weight: 700;
+        color: #f89a22;
+    }
+
+    .blk_brand_tit h1 {
+        font-size: 25px;
+    }
+
+    .blk_brand_sction .blk_brand_tit a:hover {
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+        text-decoration: none;
+    }
+
+    /*.cust_brand_btn {
+        text-align: center;
+        padding: 20px;
+        margin-top: 47px;
+        font-size: 18px;
+    }*/
+
+    .blk_brand_prod .event-info .main-title {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 26px;
+        max-height: 52px;
+        overflow: hidden;
+        text-transform: uppercase;
+        margin: 0 20px;
+    }
+
+    .blk_brand_prod .event-info .sub-title {
+        display: block;
+        padding-top: 10px;
+        margin: 10px 20px 0 20px;
+        font-size: 13px;
+        line-height: 18px;
+        max-height: 46px;
+        overflow: hidden;
+        border-top: 1px solid rgba(255,255,255,.3);
+    }
+
+    .cust_blk_prod {
+        float: left;
+        padding: 0;
+    }
+
+    .blk_brand_prod {
+        position: relative;
+        z-index: 6;
+        padding: 0px;
+        border-left: 1px solid #eee;
+        /*border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;*/
+    }
+
+    .blk_brand_lastchild {
+        position: relative;
+        z-index: 6;
+        padding: 0px;
+    }
+
+    .blk_brand_prod a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-top: 0 none;
+        color: #333;
+    }
+
+    .blk_brand_prod a:hover, a:focus {
+        color: #333;
+        text-decoration: none !important;
+    }
+
+    .blk_brand_prod:hover {
+        /*box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);*/
+        text-decoration: none;
+        /*border: 1px solid #f89a22;*/
+    }
+
+    .blk_brand_prod .blk_pic img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .blk_brand_prod1 .best_prod_tit {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .blk_brand_prod1 p {
+        text-align: center;
+    }
+
+    .brand_row {
+        border-bottom: 1px solid #eee;
+        padding: 0px;
+    }
+
+    .brand_row_prod  {
+        border-right: 1px solid #eee;
+    }
+
+    .brand_row_prod:hover  {
+        box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+    }
+
+
+    /*.blk_brand_tit:hover .cust_best_tit, .blk_brand_tit.hover .cust_best_tit {
+        pointer-events: auto;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        -moz-transition: opacity 0.2s 0s, visiblity 0s 0s;
+        transition: opacity 0.2s 0s, visiblity 0s 0s;
+    }*/
+
+    .blk_sd_btn_area {
+        padding: 0;
+    }
+
+    .blk_sd_btn input {
+        width: 100%;
+        border-radius: 0px;
+        color: #fff;
+        background: #f89a22;
+    }
+
+    /*....... End of shop by brand css..........*/
+
+
+    /*....... Start css for All Categories..........*/
+
+    .cat_sec_cus {
+    padding: 20px;
+}
+
+.cat_sec_tit {
+    text-align: center;
+}
+
+.cat_sec_tit h1 {
+    font-size: 33px;
+    color: #f89a22;
+}
+
+.cat_details {
+    padding: 0;
+}
+
+.cat_details_each {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.cat_each_img {
+    padding:0;
+    margin-bottom: 15px;
+}
+
+.cat_details_each h3 {
+    font-size: 14px;
+    color: #333;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-weight: bold;
+}
+
+.cat_details_each h3 a {
+    color: #333;
+}
+
+.cat_details_each h3 a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.cat_details_each ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.cat_details_each ul li {
+    padding: 5px 13px;
+}
+
+.cat_details_each ul li a {
+    color: #333;
+}
+
+.cat_details_each ul li a:hover {
+    color: #f89a22;
+    text-decoration: none;
+}
+
+/*....... End css of All Categories..........*/
+
+
+/*....... See All CATs CSS.......*/
+.all_see_cats{
+	margin-left: 5px;
+}
+
+.all_see_cats a {
+	color: #fff !important;
+}
+
+.all_see_cats a:hover {
+	text-decoration: underline;
+}
+
+.header-container-fixed .vmagicmenu .block-title .all_see_cats {
+    display: none;
+}
+
 
 /*....... Start css for All Categories..........*/
 
