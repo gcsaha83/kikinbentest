@@ -6179,6 +6179,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
  /*......... Super deals Css Started from here.........*/
      .blk_sd_sction {
         float: left;
+        border-top: 3px solid #f89a22;
     }
 
     .blk_sd_sction .blk_sd_tit a {
@@ -6260,11 +6261,12 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     .blk_sd_prod {
         position: relative;
         z-index: 6;
-        padding: 10px;
-        border-left: 1px solid #eee;
-        border-top: 1px solid #fff;
-        border-right: 1px solid #fff;
-        border-bottom: 1px solid #fff;
+		padding: 10px;
+		border-left: 1px solid #eee;
+		border-top: 1px solid #fff;
+		border-right: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+		border-top: 3px solid #f89a22;
     }
 
     .blk_sd_prod a {
@@ -6380,7 +6382,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     }
 
     .sup_del_last {
-        padding: 8px 0 0 0;
+        padding: 71px 0 0 0;
         text-align: center;    }
 
     .sup_del_last p {
@@ -6419,7 +6421,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
         color: #fff;
         font-size: 33px;
         cursor: pointer;
-        height: 268px;
+        height: 272px;
     }
 
 
@@ -6587,4 +6589,176 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     }
 
     /*....... End of shop by brand css..........*/
+/*....... Start css for All Categories..........*/
 
+    .cat_sec_cus {
+    padding: 20px;
+}
+
+.cat_sec_tit {
+    text-align: center;
+}
+
+.cat_sec_tit h1 {
+    font-size: 33px;
+    color: #f89a22;
+}
+
+.cat_details {
+    padding: 0;
+}
+
+.cat_details_each {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.cat_each_img {
+    padding:0;
+    margin-bottom: 15px;
+}
+
+.cat_details_each h3 {
+    font-size: 14px;
+    color: #333;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-weight: bold;
+}
+
+.cat_details_each h3 a {
+    color: #333;
+}
+
+.cat_details_each h3 a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.cat_details_each ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.cat_details_each ul li {
+    padding: 5px 13px;
+}
+
+.cat_details_each ul li a {
+    color: #333;
+}
+
+.cat_details_each ul li a:hover {
+    color: #f89a22;
+    text-decoration: none;
+}
+
+/*....... End css of All Categories..........*/
+
+
+/*....... See All CATs CSS.......*/
+.all_see_cats{
+	margin-left: 5px;
+}
+
+.all_see_cats a {
+	color: #fff !important;
+}
+
+.all_see_cats a:hover {
+	text-decoration: underline;
+}
+
+.header-container-fixed .vmagicmenu .block-title .all_see_cats {
+    display: none;
+}
+
+
+/*....... Start css for All Categories..........*/
+
+    .cat_sec_cus {
+    padding: 20px;
+}
+
+.cat_sec_tit {
+    text-align: center;
+}
+
+.cat_sec_tit h1 {
+    font-size: 33px;
+    color: #f89a22;
+}
+
+.cat_details {
+    padding: 0;
+}
+
+.cat_details_each {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.cat_each_img {
+    padding:0;
+}
+
+.cat_details_each h3 {
+    font-size: 14px;
+    color: #333;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-weight: bold;
+}
+
+.cat_details_each h3 a {
+    color: #333;
+}
+
+.cat_details_each h3 a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.cat_details_each ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.cat_details_each ul li {
+    padding: 5px 13px;
+}
+
+.cat_details_each ul li a {
+    color: #333;
+}
+
+.cat_details_each ul li a:hover {
+    color: #f89a22;
+    text-decoration: none;
+}
+
+/*....... End css of All Categories..........*/
+
+
+/*....... See All CATs CSS.......*/
+.all_see_cats{
+	margin-left: 5px;
+}
+
+.all_see_cats a {
+	color: #fff !important;
+}
+
+.all_see_cats a:hover {
+	text-decoration: underline;
+}
+
+.header-container-fixed .vmagicmenu .block-title .all_see_cats {
+    display: none;
+}
