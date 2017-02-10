@@ -30,7 +30,7 @@
  */
 namespace Apptha\Marketplace\Model;
 
-use Magento\Customer\Model\Session;
+use Magento\Customer\Model\Session as AppthaSession;
 use Apptha\Marketplace\Model\Url as CustomerUrl;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\UrlInterface;
@@ -90,7 +90,7 @@ class Redirect {
      * @param CustomerUrl $customerUrl            
      * @param RedirectFactory $resultRedirectFactory            
      */
-    public function __construct(RequestInterface $request, Session $customerSession, ScopeConfigInterface $scopeConfig, UrlInterface $url, DecoderInterface $urlDecoder, CustomerUrl $customerUrl, RedirectFactory $resultRedirectFactory) {
+    public function __construct(RequestInterface $request, AppthaSession $customerSession, ScopeConfigInterface $scopeConfig, UrlInterface $url, DecoderInterface $urlDecoder, CustomerUrl $customerUrl, RedirectFactory $resultRedirectFactory) {
         $this->request = $request;
         $this->session = $customerSession;
         $this->scopeConfig = $scopeConfig;

@@ -8,6 +8,8 @@
 
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
+
+
 <?php 
 $cartUrl = $block->getUrl('checkout/cart', ['_secure' => true]);
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
@@ -36,7 +38,7 @@ $itemCollection = $currentProduct->getRelatedProductCollection()->addAttributeTo
 <?php
 if ($productType === 'simple') {
 ?>
-        <div id="popup-mpdal">
+        <!--<div id="popup-mpdal">
             <div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 				<div >
 					<div >
@@ -69,7 +71,7 @@ if ($productType === 'simple') {
 
 						<div class="modal-body">
 
-    						<div id="owl-demo" class="product-carosoul">						
+    					<div id="owl-demo" class="product-carosoul">						
         						<?php 
         						foreach($productDetailsAll as $key => $val){
         							
@@ -102,10 +104,15 @@ if ($productType === 'simple') {
 					</div>
 				</div>
 			</div>
-			<!-- - Login Model Ends Here -->
 			
-        </div>
+			
+        </div>-->
 <?php } ?>
+
+
+
+<div id="popup-modal">
+</div>
 
 <?php $_product = $block->getProduct(); ?>
 
@@ -176,16 +183,16 @@ if ($productType === 'simple') {
                 });
 
                 widget.catalogAddToCart('submitForm', $(form));
-
                 return false;
             }
         });
     });
 
-    require(
+   /* require(
             [
                 'jquery',
-                'Magento_Ui/js/modal/modal'
+                'Magento_Ui/js/modal/modal',
+		
             ],
             function(
                 $,
@@ -208,31 +215,19 @@ if ($productType === 'simple') {
                 $("#product-addtocart-button").click(function() {
                 	$('#popup-mpdal').modal('openModal');
 
-                });
-                
-
+                });                
             }
+	
+	
+
     );
 
     function closeit(){ 
     document.getElementById('avviso').setAttribute("style", "display:none");
-} 
+} */
 
 </script>
 <?php endif; ?>
 
 
-<script type="text/x-magento-init">
-     {
-         "#owl-demo": {
-             "OwlCarousel": {
-                 "autoPlay": 3000,
-                 "items": 4,
-                 "itemsDesktop": [1199, 3],
-                 "itemsDesktopSmall": [979, 3],
-		"navigation": true
-             }
-         }
-     }
 
- </script>
