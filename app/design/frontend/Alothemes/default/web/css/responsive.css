@@ -1535,6 +1535,44 @@
 }
 
 
+/*............Start css for All categories...........*/
+
+    @media (max-width: 1199px) and (min-width: 992px) {
+    .cat_sec_cus {
+        padding: 10px;
+    }
+
+    .cat_each_img img {
+            width: 283px;
+        }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .cat_sec_cus {
+        padding: 10px;
+    }
+
+    .cat_each_img img {
+        width: 330px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cat_sec_cus {
+        padding: 0px;
+    }
+
+    .cat_each_img img {
+        width: 707px;
+    }
+
+    .cat_sec_tit h1 {
+        font-size: 23px;
+    }
+}
+
+    /*............End css of All categories...........*/
+
 
 
 
