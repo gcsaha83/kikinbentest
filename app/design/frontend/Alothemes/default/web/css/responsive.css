@@ -1537,7 +1537,7 @@
 
 /*............Start css for All categories...........*/
 
-    @media (max-width: 1199px) and (min-width: 992px) {
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
     .cat_sec_cus {
         padding: 10px;
     }
@@ -1547,7 +1547,7 @@
         }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media only screen and (max-width: 991px) and (min-width: 768px) {
     .cat_sec_cus {
         padding: 10px;
     }
@@ -1557,7 +1557,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     .cat_sec_cus {
         padding: 0px;
     }
@@ -1571,7 +1571,7 @@
     }
 }
 
-@media (min-width:1200px) {
+@media only screen and (min-width:1200px) {
 .cust_blk_prod_right .blk_pic_custom img {
    height: 250px;
    width: 194px;
@@ -1595,7 +1595,7 @@ height: 192px;
 
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media only screen and (min-width:992px) and (max-width:1199px) {
 .cust_blk_prod_right .blk_pic_custom img {
    height: 196px;
    width: 156px;
@@ -1622,7 +1622,7 @@ height: 152px;
 
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media only screen and (min-width:768px) and (max-width:991px) {
 .home-slider.slick-slider {
    margin-bottom: 0px;
 }
@@ -1653,7 +1653,7 @@ height: 152px;
 
 }
 
-@media (max-width:767px) {
+@media only screen and (max-width:767px) {
 .home-slider.slick-slider {
    margin-bottom: 0px;
 }
