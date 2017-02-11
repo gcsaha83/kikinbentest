@@ -15,6 +15,7 @@ use Magento\Framework\App\Action\Action;
  * @var $block \Magento\Catalog\Block\Product\ListProduct
  */
 ?>
+
 <?php
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
@@ -46,9 +47,12 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
      */
     $pos = $block->getPositioned();
     ?>
+
     <div class="products wrapper <?php /* @escapeNotVerified */ echo $viewMode; ?> products-<?php echo $viewMode; ?> category-product-<?php echo $viewMode; ?>">
         <?php $iterator = 1; ?>
         <ol class="products list items product-items">
+<div id="popup-modal">
+</div>
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
                 <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
@@ -84,6 +88,7 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
 							<div class="rating">
 								<?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
                             </div>
+
 							<?php if ($showDescription):?>
 								<div class="short-desc">
 									<div class="product description product-item-description">
