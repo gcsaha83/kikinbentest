@@ -1686,8 +1686,72 @@ height: 152px;
 
     /*............End css of All categories...........*/
 
+/*....... Three blocks resposives start CSS........*/
 
+@media (min-width: 767px) and (max-width: 991px) {
 
+  .prod_blk_cont1:nth-child(even) {
+    border-right: none;
+  }
 
+  .prod_blk_cont_big {
+    border-left: 1px solid #fff;
+  }
 
+  .prod_blk_contL {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_cont1 {
+    border-bottom: 1px solid #eee;
+  }
+
+.banner_area img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .prod_blk_cont1 {
+    border-right: none;
+  }
+
+  .banner_area {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .prod_blk_cont_big {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_contL {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_cont1 {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+
+  .fashion_blk1:nth-child(even) {
+    border-right: none;
+  }
+
+  .fashion_blk1 {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .fashion_blk1 {
+    border-right: none;
+  }
+}
+
+/*....... Three blocks resposives END CSS........*/
 
