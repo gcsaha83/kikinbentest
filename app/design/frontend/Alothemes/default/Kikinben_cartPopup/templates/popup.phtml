@@ -1,0 +1,89 @@
+
+<?php
+$cartUrl = $block->getUrl('checkout/cart', ['_secure' => true]);
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$storeUrl =  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$productId = $this->getData('product_id');
+$currentProduct = $block->getRelatedProductCollection($productId);
+
+$itemCollection = $currentProduct->getRelatedProductCollection()->addAttributeToSelect(
+		'required_options'
+		)->setPositionOrder()->addStoreFilter()->load();		
+		
+		foreach ($itemCollection as $productDetails) {
+			$productDetailsAll[] = $productDetails->getData() ;
+		}
+
+ 
+?>
+
+<script>
+document.getElementById('light').style.display='block';
+document.getElementById('fade').style.display='block';
+</script>
+
+<div id="light" class="white_content">
+
+<?php if(!empty($productDetailsAll)):?>
+			<div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+			  <div class="related_products">
+
+			     <div class="col-lg-1 check_custom">
+                                        <i class="fa fa-check-circle"></i> 
+                             </div>
+
+			    <div class="col-lg-11 pop_titile">
+				<h4  id="loginModalLabel">
+					A new item has been added to your Shopping Cart. You now have 1 items in your Shopping Cart.
+				</h4>
+			    </div>
+
+			   <div>
+			<input type="button" class="popup-button"  name="" value="View Shopping Cart" onclick="location.href='<?php echo $cartUrl;?>'">
+                        <input type="button" class="popup-button" name="" value="Continue Shopping" onclick="location.href='<?php echo $block->getCurrentUrl();?>'">
+			 </div>	
+
+			 </div>
+
+                        <div class="pop_scroll_title">
+                            <h3>Buyers Who Bought This Item Also Bought:</h3>
+                        </div>
+				<div class="popup_modal-body">
+    					<div id="owl-demo" class="product-carosoul">						
+        						<?php 
+        						foreach($productDetailsAll as $key => $val){
+        							
+        							$relatedId = $val['entity_id']; 
+        							$details = $block->getProductImageDetails($relatedId);
+        							$name = $details['name'];
+        							$image = $details['image'];
+        							$price = $details['price'];
+        							$imageUrl ='catalog/product'.$image;
+        							?>
+        						<div class="single-product">
+        	     					<div class="item">
+        	     					     <img src="<?php echo $storeUrl.$imageUrl;?>" alt="Owl Image">
+        	     					</div> 
+        							<div class="name"><?php echo $name;?></div>	
+        							<div class="price"><?php echo $price;?></div>	
+        						</div>    
+            					
+        							
+        						<?php
+        							
+        						}
+        						
+        						?>
+    					</div>
+				</div>
+                     </div>
+                        
+              <?php endif;?>   
+</div>
+
+  <div id="fade" class="black_overlay"></div>
+		
+
+
+
