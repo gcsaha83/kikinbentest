@@ -1,4 +1,7 @@
 <?php
+
+//https://github.com/magento/magento2/issues/5502
+
 namespace Kikinben\Breadcrumbs\Model;
 
 class Observer implements \Magento\Framework\Event\ObserverInterface
@@ -20,6 +23,7 @@ class Observer implements \Magento\Framework\Event\ObserverInterface
         \Magento\Catalog\Helper\Data $helper,
         \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Catalog\Helper\Category $categoryHelper,    
         array $data = []
     )
     {        
@@ -33,10 +37,11 @@ class Observer implements \Magento\Framework\Event\ObserverInterface
         $this->categoryRepository = $categoryRepository;
         $this->_storeManager = $storeManager;
         $this->context      = $context;
+        $this->_categoryHelper = $categoryHelper;
     }
 
 
-    public function execute(\Magento\Framework\Event\Observer $observer){
+    public function execute(\Magento\Framework\Event\Observer $observer){        
 
         $title = array();
         $breadcrumbBlock = $this->_getBreadcrumbBlock();
@@ -59,19 +64,40 @@ class Observer implements \Magento\Framework\Event\ObserverInterface
             $catUrl = $cat->getUrl();
             }
 
-            $categoryPath = explode("/",$catgPath);
-
+            $categoryPathFull = explode("/",$catgPath);
+            
+            $categoryPath = array_diff($categoryPathFull,array(1,2));
+            
+            
+        //$breadcrumbBlock->addCrumb('product', array('label'=>''));    
+        
         foreach($categoryPath as $Ckey => $Cval){
-
+                        
             $catgPathLink   = $this->_category->load($Cval);
-            $getsubCatgName = $catgPathLink->getName();
-            $getsubCatgLink = $catgPathLink->getUrl();
+            //$getsubCatgName = $catgPathLink->getName();
+            //$getsubCatgLink = $catgPathLink->getUrl(); 
+            
             $catgId         = $catgPathLink->getId();
+            
+            $categoryObj = $this->categoryRepository->get($catgId);
+
+            $catgLinks =  $this->_categoryHelper->getCategoryUrl($categoryObj);
+            $catgName  =  $catgPathLink->getName();
+            //echo $catgName.$catgLinks.'<br/>';
             $category = $this->categoryRepository->get($Cval, $this->_storeManager->getStore()->getId());
-            $breadcrumbBlock->addCrumb('product', array('label'=>$getsubCatgName,'link'=>$category->getUrl()));
+            
+            //$breadcrumbBlock->addCrumb('product', array('label'=>''));
+            $breadcrumbBlock->addCrumb('product', array('label'=>$catgName,'link'=>$catgLinks));
+            
+            
+            
            
         }
-            $breadcrumbBlock->addCrumb('product', array('label'=>$product->getName()));
+        //$breadcrumbBlock->addCrumb('product__', array('label'=>$product->getName()));
+        
+        //$breadcrumbBlock->addCrumb('product1', array('label'=>1,'link'=>1));
+        //$breadcrumbBlock->addCrumb('product2', array('label'=>2,'link'=>2));
+            
 
 
     }

@@ -9227,3 +9227,6 @@ body.marketplace-seller-displayseller li.item.product.product-item{width:32% !im
     float: right;
     background-position: -29px 0!important;
 }
+.item product{
+    border:1px solid red;
+}
