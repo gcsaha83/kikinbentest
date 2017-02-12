@@ -87,7 +87,7 @@ class Observer implements \Magento\Framework\Event\ObserverInterface
             $category = $this->categoryRepository->get($Cval, $this->_storeManager->getStore()->getId());
             
             //$breadcrumbBlock->addCrumb('product', array('label'=>''));
-            $breadcrumbBlock->addCrumb('product', array('label'=>$catgName,'link'=>$catgLinks));
+            //$breadcrumbBlock->addCrumb('product', array('label'=>$catgName,'link'=>$catgLinks));
             
             
             
