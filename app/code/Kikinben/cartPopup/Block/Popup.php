@@ -17,6 +17,7 @@ public function getRelatedProductCollection($id){
    	$thumb = $product->getThumbnail();
    	$price = $product->getPrice();
    	$name  = $product->getName();
+        
    	$productDetails = array('name'=>$name,'image'=>$thumb,'price'=>$price);
    	return $productDetails;
    }
