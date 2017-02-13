@@ -148,7 +148,7 @@ define([
 	  contentType: "application/html; charset=utf-8",
 	  success: function (data) {
 
-			var iDiv = document.createElement('div');
+			/*var iDiv = document.createElement('div');
 			iDiv.id = 'block';
 			document.getElementsByTagName('body')[0].appendChild(iDiv);
 
@@ -157,7 +157,7 @@ define([
 			innerDiv.id = 'popup-modal';
 
 			// The variable iDiv is still good... Just append to it.
-			iDiv.appendChild(innerDiv);
+			iDiv.appendChild(innerDiv);*/
 
 		$('#popup-modal').html(data);		
 		
@@ -173,7 +173,7 @@ define([
 	  },
 	  error: function(xhr, status, error){
 	    
-	    alert('error');
+	    //alert('error');
   	  }
 	
 
