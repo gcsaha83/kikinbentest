@@ -9109,10 +9109,10 @@ body.marketplace-seller-displayseller li.item.product.product-item{width:32% !im
   position: absolute;
   top: 25%;
   left: 25%;
-  width: 50%;
+  width: 51%;
   /*height: 50%;*/
   padding: 16px;
-  border: 3px solid orange;
+  /*border: 3px solid orange;*/
   background-color: white;
   z-index: 1002;
   overflow: auto;
@@ -9230,3 +9230,29 @@ body.marketplace-seller-displayseller li.item.product.product-item{width:32% !im
 .item product{
     border:1px solid red;
 }
+.popup_close{
+	display: block;		
+	position: absolute;
+	overflow: hidden;
+	cursor: pointer;
+	top: -8px;
+	right: -7px;
+	padding: 0;
+	border: 1px solid #000;
+	z-index: 111;
+	/*background: #f89922;*/
+	background: #fff;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+}
+
+.popup_close a {
+    text-decoration: none;
+    color: #FFFFFF;
+    background: url("../images/close.png") no-repeat 0 -2px;
+    padding: 7px 8px;
+    display: inline-block;
+}
+div.white_content{overflow:visible;}

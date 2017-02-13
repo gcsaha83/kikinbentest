@@ -110,8 +110,9 @@ if ($productType === 'simple') {
 <?php } ?>
 
 
-
+<div id="demoContainer">
 <div id="popup-modal">
+</div>
 </div>
 
 <?php $_product = $block->getProduct(); ?>
@@ -186,6 +187,7 @@ if ($productType === 'simple') {
                 return false;
             }
         });
+
     });
 
    /* require(
@@ -225,6 +227,29 @@ if ($productType === 'simple') {
     function closeit(){ 
     document.getElementById('avviso').setAttribute("style", "display:none");
 } */
+
+require([
+'jquery'
+],function ($) {
+
+$(document).ready(function()
+{
+    $('#demoContainer').mouseup(function(e)
+    {
+        var subject = $("#popup-modal"); 
+
+        if(e.target.id === 'fade')
+        {
+            subject.fadeOut();
+		
+        }
+    });
+    
+});
+
+
+
+});
 
 </script>
 <?php endif; ?>
