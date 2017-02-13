@@ -23,11 +23,14 @@ $counter = $this->helper('\Magento\Checkout\Helper\Cart');
 document.getElementById('light').style.display='block';
 document.getElementById('fade').style.display='block';
 
-function hidePopup()
-	 {
-                document.getElementById('light').style.display='none';		
-                document.getElementById('fade').style.display='none';
-	 }
+function hidePopup(){
+  document.getElementById('light').style.display='none';		
+  document.getElementById('fade').style.display='none';
+}
+function ahrefHidePopup(){
+  document.getElementById('light').style.display='none';		
+  document.getElementById('fade').style.display='none';
+}
 
 </script>
 
@@ -40,6 +43,8 @@ function hidePopup()
 			     <div class="col-lg-1 check_custom">
                                         <i class="fa fa-check-circle"></i> 
                              </div>
+
+				<div class="popup_close" id="popup_close"><a href='#' id="close_href" onclick="ahrefHidePopup();"></a></div>
 
 			    <div class="col-lg-11 pop_titile">
 				<h4  id="loginModalLabel">
