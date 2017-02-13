@@ -6843,6 +6843,96 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 .banner_area img {
     margin: 0 auto;
   }
+/*...... Three blocks CSS Start from here.........*/
+.zero_padd {
+  padding: 0;
+}
+
+.new_blk_tit {
+    font-size: 25px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    height: 43px;
+}
+
+.new_blk_tit h3 {
+    float: left;
+}
+
+.new_blk_tit .blk_tit a {
+    color: #f03f68;
+    font-size: 24px;
+	font-weight: normal;
+}
+
+.new_blk_tit h3 a:hover {
+    text-decoration: none;
+}
+
+.new_blk_tit .see_all_right {
+    float: right;
+    font-size: 15px;
+    padding-top: 15px;
+    font-weight: normal;
+}
+
+.new_blk_tit .see_all_right a {
+    color: #333;
+    font-size: 15px;
+}
+
+.prod_blk_cont {
+  padding: 0;
+  padding-top: 15px;
+}
+
+.prod_blk_cont1 {
+  padding: 0;
+  border-left: 1px solid #eee;/*
+  border-bottom: 1px solid #eee;*/
+  padding: 10px;
+}
+
+.prod_blk_cont1:last-child {
+  border-right: none;
+}
+
+.prod_blk_cont1:hover {
+  box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+  cursor: pointer;
+}
+
+.prod_blk_cont_big {
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-right: none;
+}
+
+.prod_blk_img {
+  padding: 0;
+}
+
+.prod_blk_cont_tit {
+  text-align: center;
+}
+
+.prod_blk_cont_tit h1 {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+}
+
+.prod_blk_cont_tit p {
+  margin-bottom: 10px !important;
+}
+
+.banner_area img {
+    margin: 0 auto;
+  }
 
   .prod_blk_img img {
     margin: 0 auto;
@@ -6853,17 +6943,15 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 /*----------- Fashion ------------*/
 .prod_blk_tit {
-    font-size: 25px;
     color: #333;
     border-bottom: 1px solid #ddd;
+    height: 43px;
 }
 
-.prod_blk_tit h3 {
+.prod_blk_tit .prod_blk_tit_bor a {
     float: left;
-}
-
-.prod_blk_tit h3 a {
-    color: #333;
+    font-size: 24px;
+	font-weight: normal;
 }
 
 .prod_blk_tit h3 a:hover {
@@ -6873,7 +6961,14 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 .prod_blk_tit .see_all_right {
     float: right;
     font-size: 15px;
-    padding-top: 10px;
+	padding-top: 15px;
+	font-weight: normal;
+}
+
+.prod_blk_tit .see_all_right a {
+    color: #333;
+    font-size: 15px;
+	font-weight: normal;
 }
 
 .fashion_blk {
@@ -6907,9 +7002,50 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 .fashion_blk_tit h1 {
   text-align: center;
-  font-size: 15px;
-  margin-bottom: 0;
-  font-weight: bold;
+font-size: 15px;
+margin-bottom: 0;
+font-weight: bold;
+color: #333;
+margin-top: 15px;
 }
 
 /*...... Three blocks CSS Here here.........*/
+
+
+/*.........Minicart remove button...........*/
+.minicart_remov_l{
+margin: 0px !important;
+}
+
+/*------- Protection Shield -------*/
+.protection_kk {
+	padding: 7px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.protection_kk_img {
+	margin: 0 auto;
+	display: block;
+	width: 40px;
+	padding: 0px;
+	float: left;
+}
+
+.protection_kk_cont {
+	text-align: center;
+	padding: 0;
+	float: left;
+}
+
+.protection_kk_cont h1 {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 0;
+}
+
+.protection_kk_cont p {
+	font-size: 10px;
+	color: #f89a22;
+	margin-bottom: 0;
+}
