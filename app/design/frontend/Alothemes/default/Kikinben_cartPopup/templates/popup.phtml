@@ -16,16 +16,24 @@ $itemCollection = $currentProduct->getRelatedProductCollection()->addAttributeTo
 		}
 
  
+$counter = $this->helper('\Magento\Checkout\Helper\Cart');                 
 ?>
 
 <script>
 document.getElementById('light').style.display='block';
 document.getElementById('fade').style.display='block';
+
+function hidePopup()
+	 {
+                document.getElementById('light').style.display='none';		
+                document.getElementById('fade').style.display='none';
+	 }
+
 </script>
 
 <div id="light" class="white_content">
 
-<?php if(!empty($productDetailsAll)):?>
+
 			<div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 			  <div class="related_products">
 
@@ -35,16 +43,17 @@ document.getElementById('fade').style.display='block';
 
 			    <div class="col-lg-11 pop_titile">
 				<h4  id="loginModalLabel">
-					A new item has been added to your Shopping Cart. You now have 1 items in your Shopping Cart.
+					A new item has been added to your Shopping Cart. You now have <?php echo $counter->getItemsCount(); ?> items in your Shopping Cart.
 				</h4>
 			    </div>
 
 			   <div>
 			<input type="button" class="popup-button"  name="" value="View Shopping Cart" onclick="location.href='<?php echo $cartUrl;?>'">
-                        <input type="button" class="popup-button" name="" value="Continue Shopping" onclick="location.href='<?php echo $block->getCurrentUrl();?>'">
+                        <input type="button" class="popup-button" name="" value="Continue Shopping" onclick="hidePopup()" >
 			 </div>	
 
 			 </div>
+                            <?php if(!empty($productDetailsAll)):?>
 
                         <div class="pop_scroll_title">
                             <h3>Buyers Who Bought This Item Also Bought:</h3>
@@ -56,6 +65,8 @@ document.getElementById('fade').style.display='block';
         							
         							$relatedId = $val['entity_id']; 
         							$details = $block->getProductImageDetails($relatedId);
+                                                                $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                                                                $product = $objectManager->create('Magento\Catalog\Model\Product')->load($relatedId);
         							$name = $details['name'];
         							$image = $details['image'];
         							$price = $details['price'];
@@ -63,9 +74,9 @@ document.getElementById('fade').style.display='block';
         							?>
         						<div class="single-product">
         	     					<div class="item">
-        	     					     <img src="<?php echo $storeUrl.$imageUrl;?>" alt="Owl Image">
+        	     					     <img src="<?php echo $storeUrl.$imageUrl;?>" alt="<?php echo $name; ?>">
         	     					</div> 
-        							<div class="name"><?php echo $name;?></div>	
+                                                            <div class="name"><a href="<?php echo $product->getProductUrl();?>"><?php echo $name;?></a></div>	
         							<div class="price"><?php echo $price;?></div>	
         						</div>    
             					
@@ -77,13 +88,12 @@ document.getElementById('fade').style.display='block';
         						?>
     					</div>
 				</div>
+                             <?php endif;?>
                      </div>
-                        
-              <?php endif;?>   
+              
+                
 </div>
 
   <div id="fade" class="black_overlay"></div>
 		
-
-
 

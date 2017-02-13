@@ -9112,7 +9112,7 @@ body.marketplace-seller-displayseller li.item.product.product-item{width:32% !im
   width: 50%;
   /*height: 50%;*/
   padding: 16px;
-  border: 8px solid orange;
+  border: 3px solid orange;
   background-color: white;
   z-index: 1002;
   overflow: auto;
@@ -9226,4 +9226,7 @@ body.marketplace-seller-displayseller li.item.product.product-item{width:32% !im
 .popup_modal-body .product-carosoul .owl-buttons .owl-next {
     float: right;
     background-position: -29px 0!important;
+}
+.item product{
+    border:1px solid red;
 }
