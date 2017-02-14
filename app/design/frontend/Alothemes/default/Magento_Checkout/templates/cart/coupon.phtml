@@ -24,14 +24,14 @@
                 <div class="field">
                     <label for="coupon_code" class="label"><span><?php /* @escapeNotVerified */ echo __('Enter discount code') ?></span></label>
                     <div class="control">
-                        <input type="text" class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $block->escapeHtml($block->getCouponCode()) ?>" placeholder="<?php echo $block->escapeHtml(__('Enter discount code'));?>" />
+                        <input type="text" class="coupon_custom input-text" id="coupon_code" name="coupon_code" value="<?php echo $block->escapeHtml($block->getCouponCode()) ?>" placeholder="<?php echo $block->escapeHtml(__('Enter discount code'));?>" />
                     </div>
                 </div>
-                <div class="actions-toolbar">
+                <div class="coupon_btn actions-toolbar">
                     <?php if (!strlen($block->getCouponCode())): ?>
                     <div class="primary">
-                        <button class="action apply primary" type="button" value="<?php /* @escapeNotVerified */ echo __('Apply Discount') ?>">
-                            <span><?php /* @escapeNotVerified */ echo __('Apply Discount') ?></span>
+                        <button class="coupon_custom_button action apply primary" type="button" value="<?php /* @escapeNotVerified */ echo __('Apply Discount') ?>">
+                            <span><?php /* @escapeNotVerified */ echo __('Apply') ?></span>
                         </button>
                     </div>
                     <?php else: ?>
