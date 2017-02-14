@@ -19,7 +19,10 @@ $vmenu = $this->_sysCfg->vmenu;
 if(!$menu['enabled']) return;
 
 // drawMainMenu vs DrowMobileMenu
-$menuHtml = $this->drawMainMenu();
+//$menuHtml = $this->drawMainMenu();
+//custom code added by Apptha in app/code/Magiccart/Magicmenu/Block/Menu.php
+$menuHtml = $this->appthaDrawMainMenu();
+//custom code ends
 $mobileMenu = $menuHtml['mobile'];
 $desktop 	= $menuHtml['desktop'];
 $vdesktop 	= $menuHtml['desktop'];
