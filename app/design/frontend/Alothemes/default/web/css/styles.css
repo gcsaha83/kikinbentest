@@ -6111,6 +6111,16 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     padding: 50px;
     background: #fcfcfc;
     margin-top: 20px;
+    height: 600px;
+}
+
+
+.team_section {
+    text-align: center;
+    padding: 50px;
+    background: #fcfcfc;
+    margin-top: 20px;
+    height: 970px;
 }
 
 .leadership_section_tit h1 {
@@ -6152,6 +6162,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     padding: 50px;
     background: #fcfcfc;
     margin-top: 20px;
+    height: 610px;
 }
 
 .location_section_tit h1 {
