@@ -7140,3 +7140,9 @@ display: none !important;
 }
 
 /*............END CSS for Shield............*/
+
+/*............Start CSS for Verify...........*/
+.verify_otp_l{
+	margin-bottom: 20px !important;
+}
+/*............END CSS for Verify...........*/
