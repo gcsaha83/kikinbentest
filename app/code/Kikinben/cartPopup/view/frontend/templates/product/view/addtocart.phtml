@@ -143,7 +143,8 @@ if ($productType === 'simple') {
             </div>
         </div>
         <?php endif; ?>
-        <div class="actions">
+        <!--<div class="actions">-->
+        <div class="actions prod_detail_btn_l">
             <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
                     class="action primary tocart"
@@ -153,8 +154,9 @@ if ($productType === 'simple') {
             </button>
             <?php echo $block->getChildHtml('', true) ?>
         </div>
+        <!--</div>-->
+       </div>
     </div>
-</div>
 <?php endif; ?>
 <?php if ($block->isRedirectToCartEnabled()) : ?>
 <script type="text/x-magento-init">
