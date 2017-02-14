@@ -44,17 +44,9 @@ $isLoggedIn = $customerSession->isLoggedIn();
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 top-left mobile-center">
 						<?php echo $this->getChildHtml('cms-static-top-support'); ?>
 					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 top-right mobile-center">
-						<div class="header-setting lang_cust_l">
-
-
-							<div class="switch_cust_l switch-yellow">
-							    <input type="radio" class="switch-input" name="view3" value="week3" id="week3" checked>
-							    <label for="week3" class="switch-label switch-label-off"><a href="http://kikinbenbd.com/site2/en/">ENG</a></label>
-							    <input type="radio" class="switch-input" name="view3" value="month3" id="month3">
-							    <label for="month3" class="switch-label switch-label-on">বাংলা</label>
-							    <span class="switch-selection"></span>
-							</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 top-right mobile-center shield_top">
+						<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/shield_top.png')?>">
+						</div>
 
 						<!-- <div class="btn-group language_toggle"> -->
 
@@ -99,7 +91,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 							    <input type="button" class="btn btn-sm btn-register btn-block" value="Register free">
 							  </div>
 							</div> -->
-						</div>
+						
 					</div>
 				</div>
 			</div>
