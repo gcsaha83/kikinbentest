@@ -7112,3 +7112,14 @@ margin: 0px !important;
 }
 
 /*............End CSS for Makeup & Glam Slider............*/ 
+
+/*............Start CSS for Shield............*/ 
+.shield_top {
+	padding: 0px;
+}
+
+.shield_top img {
+	padding: 5px;
+}
+
+/*............END CSS for Shield............*/
