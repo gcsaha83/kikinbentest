@@ -56,7 +56,7 @@
                                 <referenceBlock name="product.info.mailto" remove="true" />
 		                    </container>
 		                </container>
-                       <!--<block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" after="product.info.stock.sku" />         
+                       <block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" after="product.info.stock.sku" />         
                        <container name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku">
                         <container name="product.info.type" before="-"/>
                         <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
@@ -68,7 +68,7 @@
                                 <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
                             </arguments>
                         </block>
-                    </container>-->
+                    </container>
 
                                 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.overview" template="product/view/attribute.phtml" group="detailed_info" before="product.price.final" after="product.info.stock.sku">
 		                    <arguments>
@@ -111,11 +111,11 @@
 					</container>                                        
 					<!-- end product main info -->
 				</container>
-                                <!--<block class="Magento\Cms\Block\Block" name="product_display_images_block">
+                                <block class="Magento\Cms\Block\Block" name="product_display_images_block">
                                             <arguments>
                                                  <argument name="block_id" xsi:type="string">product_display_images_block</argument>
                                             </arguments>
-                                        </block>-->
+                                        </block>
 			</container> 
 			<!-- end detail box -->
                         
