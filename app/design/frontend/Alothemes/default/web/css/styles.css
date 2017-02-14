@@ -7122,4 +7122,8 @@ margin: 0px !important;
 	padding: 5px;
 }
 
+.checkout-index-index .nav-toggle {
+display: none !important;
+}
+
 /*............END CSS for Shield............*/
