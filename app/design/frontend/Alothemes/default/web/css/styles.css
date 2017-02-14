@@ -6144,6 +6144,8 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 .leader_sec h3 {
     font-size: 20px;
     margin-bottom: 0px;
+    padding: 10px;
+    color: #333;
 }
 
 .steps_area {
