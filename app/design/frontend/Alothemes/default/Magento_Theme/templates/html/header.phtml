@@ -38,15 +38,26 @@ $isLoggedIn = $customerSession->isLoggedIn();
 
 <header class="page-header alothemes">
     <div class="header">
+	    
 		<div class="header-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 top-left mobile-center">
+					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 top-left mobile-center">
 						<?php echo $this->getChildHtml('cms-static-top-support'); ?>
 					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 top-right mobile-center shield_top">
-						<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/shield_top.png')?>">
-						</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 top-right mobile-center shield_top" style="/*! display: block; *//*! margin: 0 auto; */">
+				            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 protection_kk_img">
+				                <img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/shield.png')?>">
+				            </div>
+				            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 protection_kk_cont">
+				                <h1>100% Purchase Protection</h1>
+				                <p>Original Products | Easy Returns<br> Secure Payments</p>
+				            </div>
+					</div>
+
+				</div>
+			</div>
+		</div>
 
 						<!-- <div class="btn-group language_toggle"> -->
 
@@ -93,9 +104,9 @@ $isLoggedIn = $customerSession->isLoggedIn();
 							</div> -->
 						
 				
-				</div>
-			</div>
-		</div>
+				
+			
+		
 		<div class="header-content">
 			<div class="container">
 				<div class="row">

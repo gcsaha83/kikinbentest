@@ -7126,14 +7126,41 @@ margin: 0px !important;
 
 /*............End CSS for Makeup & Glam Slider............*/ 
 
-/*............Start CSS for Shield............*/ 
-.shield_top {
-	padding: 0px;
+/*------- Protection Shield -------*/
+.protection_kk {
+	padding: 7px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 
-.shield_top img {
-	padding: 5px;
+.protection_kk_img {
+	margin: 0 auto;
+	display: block;
+	width: 40px;
+	padding: 0px;
+	margin-left: 59px;
 }
+
+.protection_kk_cont {
+	text-align: center;
+	padding: 0;
+	float: right;
+}
+
+.protection_kk_cont h1 {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 0;
+}
+
+.protection_kk_cont p {
+	font-size: 10px;
+	color: #333;
+	margin-bottom: 0;
+	line-height: 11px;
+}
+
+/*.........END CSS for Shield............*/
 
 .checkout-index-index .nav-toggle {
 display: none !important;
