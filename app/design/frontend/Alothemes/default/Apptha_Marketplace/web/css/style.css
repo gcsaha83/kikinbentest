@@ -6062,7 +6062,6 @@ fieldset {
 }
 
 img {
-/* width:250px; */
     display: block;
 }
 
@@ -8912,7 +8911,7 @@ body.marketplace-seller-displayseller ol.products.list.items.product-items li.it
 
 
 body.page-layout-1column a, body.page-layout-2columns-left a, body.page-layout-2columns-right a, .block-collapsible-nav .item a {
-/*     color: #0062bd !important; */
+	color: #0062bd;
 }
 
 .main-product .products-grid .product-item {
