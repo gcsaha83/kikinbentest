@@ -11,10 +11,10 @@
  */
 $cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
 $title = '';
-/*if (trim($block->getPageHeading())) {
+if (trim($block->getPageHeading())) {
     $title = '<span class="base" data-ui-id="page-title-wrapper" ' .  $block->getAddBaseAttribute() . '>'
         . $block->escapeHtml($block->getPageHeading()) . '</span>';
-}*/
+}
 ?>
 <?php if ($title): ?>
 <div class="page-title-wrapper<?php /* @escapeNotVerified */ echo $cssClass; ?>">
