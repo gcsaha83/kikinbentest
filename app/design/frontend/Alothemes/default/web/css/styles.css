@@ -675,7 +675,12 @@ tr.summary-details-excluded{font-style:italic}
 	}
 }
 .header-top .top-left {float: left;padding-left: 15px;}
-.header-top .top-right {float: right;padding-right: 0px;}
+.header-top .top-right {
+	float: right;
+	padding-right: 0px;
+	padding-top: 3px;
+        padding-bottom: 3px;
+}
 .header-top{border-width: 0 0 1px; border-style: solid; border-color: #efefef;}
 .header-content{padding: 20px 0; border-bottom: 1px solid #eee !important; padding-bottom: 8px !important;}
 /*Top support/hot support*/
@@ -7138,13 +7143,14 @@ margin: 0px !important;
 	display: block;
 	width: 40px;
 	padding: 0px;
-	margin-left: 59px;
+	margin-left: 55px;
 }
 
 .protection_kk_cont {
 	text-align: center;
 	padding: 0;
 	float: right;
+	padding-top: 4px;
 }
 
 .protection_kk_cont h1 {
