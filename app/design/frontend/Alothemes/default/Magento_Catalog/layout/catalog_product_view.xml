@@ -46,7 +46,7 @@
 					</container>
 
 					<container name="product.info.main" htmlTag="div" htmlClass="product-info-main product-shop" after="product.info.media">
-                        <block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/>
+                        <block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="Kikinben_cartPopup::product/view/title.phtml"/>
 
 						<block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" before="-" />
 						<referenceBlock name="product.info.sku" remove="true" />
