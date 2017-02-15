@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+	<system>
+		<!-- for add new tab in Magento2 system configuration section -->
+		<tab id="registration" translate="label" sortOrder="10">
+			<label>Twilio Setting</label>
+		</tab>
+		<section id="twiliosetting" translate="label" type="text"
+			sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Twilio Setting</label>
+			<tab>registration</tab>
+			<!-- resource tag name which we have to defined in the acl.xml -->
+			<resource>Ipragmatech_Registration::config_twiliosetting</resource>
+
+			<group id="frontend_display" translate="label" type="text"
+				delault="1" sortOrder="2" showInDefault="1" showInWebsite="1"
+				showInStore="1">
+				<label>Twilio Setting</label>
+				<!-- create text type field -->
+				<field id="account_sid" translate="label comment" sortOrder="1"
+					type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Account Sid</label>
+					<validate>required-entry</validate>
+				</field>
+				<field id="auth_token" translate="label comment" sortOrder="2"
+					type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Auth Token</label>
+					<validate>required-entry</validate>
+				</field>
+				<field id="twilio_number" translate="label comment" sortOrder="3"
+					type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Twilio Number</label>
+					<validate>required-entry</validate>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
