@@ -98,7 +98,8 @@ class Menu extends \Magento\Catalog\Block\Navigation
         \Magento\Catalog\Helper\Category $catalogCategory,
         \Magento\Framework\Registry $registry,
         \Magento\Catalog\Model\Indexer\Category\Flat\State $flatState,
-	\Magento\Catalog\Model\ProductFactory $gridFactory,
+	    \Magento\Catalog\Model\ProductFactory $gridFactory,
+        \Magento\Customer\Model\Session $customer,
 
         // +++++++++add new +++++++++
         // \Magiccart\Magicmenu\Model\CategoryFactory $categoryFactory,
@@ -114,6 +115,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
         $this->_registry = $registry;
         $this->flatState = $flatState;
         $this->_categoryInstance = $categoryFactory->create();
+        $this->_customer          = $customer;
 
         // +++++++++add new +++++++++
         $this->_magicmenuCollectionFactory = $magicmenuCollectionFactory;
@@ -494,12 +496,39 @@ class Menu extends \Magento\Catalog\Block\Navigation
 
     public function getExtraMenu()
     {
+        
+        //code by contus starts
+        
+
+        if($this->_customer->isLoggedIn()){
+         $store = $this->_storeManager->getStore()->getStoreId();
+         $collection = $this->_magicmenuCollectionFactory->create();
+
+            
+                       $collection ->addFieldToSelect(array('link','name','magic_label','ext_content','order'))
+                        
+                        ->addFieldToFilter('extra', 1) 
+                        ->addFieldToFilter('status', 1);
+
+    }else{
         $store = $this->_storeManager->getStore()->getStoreId();
+        $collection = $this->_magicmenuCollectionFactory->create();
+
+                        $collection->addFieldToSelect(array('link','name','magic_label','ext_content','order'))
+                        ->addFieldToFilter('name',array('nin'=>array('Your Account')))    
+                        ->addFieldToFilter('extra', 1)
+                        ->addFieldToFilter('status', 1);
+
+        }
+        //code by contus ends
+
+       /*$store = $this->_storeManager->getStore()->getStoreId();
+
         $collection = $this->_magicmenuCollectionFactory->create()
                         ->addFieldToSelect(array('link','name','magic_label','ext_content','order'))
                         ->addFieldToFilter('extra', 1)
                         ->addFieldToFilter('status', 1);
-        $collection->getSelect()->where('find_in_set(0, stores) OR find_in_set(?, stores)', $store)->order('order');
+        $collection->getSelect()->where('find_in_set(0, stores) OR find_in_set(?, stores)', $store)->order('order');*/
         return $collection;        
     }
 
