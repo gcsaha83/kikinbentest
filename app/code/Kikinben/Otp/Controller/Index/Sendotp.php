@@ -40,8 +40,9 @@ class Sendotp extends \Magento\Framework\App\Action\Action
 
         //contus code start
 
-        $first_name = str_replace(' ','', $params['fname']);
-        $last_name  = str_replace(' ','',$params['lname']);
+        //$first_name = str_replace(' ','', $params['fname']);
+        //$last_name  = str_replace(' ','',$params['lname']);
+
 
         //contus code end
 
@@ -91,8 +92,8 @@ if (count($modelOtp)) {
                         $modelOtp->setStatus(0);
                         //contus code start
 
-                        $modelOtp->setFname($first_name);
-                        $modelOtp->setLname($last_name);
+                        //$modelOtp->setFname($first_name);
+                        //$modelOtp->setLname($last_name);
 
                         //contus code end
                         $modelOtp->save();
