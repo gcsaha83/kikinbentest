@@ -98,7 +98,8 @@ class Menu extends \Magento\Catalog\Block\Navigation
         \Magento\Catalog\Helper\Category $catalogCategory,
         \Magento\Framework\Registry $registry,
         \Magento\Catalog\Model\Indexer\Category\Flat\State $flatState,
-	\Magento\Catalog\Model\ProductFactory $gridFactory,
+	    \Magento\Catalog\Model\ProductFactory $gridFactory,
+        \Magento\Customer\Model\Session $customer,
 
         // +++++++++add new +++++++++
         // \Magiccart\Magicmenu\Model\CategoryFactory $categoryFactory,
@@ -114,6 +115,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
         $this->_registry = $registry;
         $this->flatState = $flatState;
         $this->_categoryInstance = $categoryFactory->create();
+        $this->_customer          = $customer;
 
         // +++++++++add new +++++++++
         $this->_magicmenuCollectionFactory = $magicmenuCollectionFactory;
@@ -343,7 +345,9 @@ class Menu extends \Magento\Catalog\Block\Navigation
         return $menu;
     }
     //custom code added by Apptha called in app/design/frontend/Alothemes/default/Magiccart_Magicmenu/templates/aio-topmenu.phtml
-    
+
+   
+
     public function appthaDrawMainMenu()
     {
     	if($this->hasData('mainMenu')) return $this->getData('mainMenu');
@@ -439,6 +443,56 @@ class Menu extends \Magento\Catalog\Block\Navigation
     }
     //custom code ends
 
+    //apptha seller profile category list
+
+    public function appthaSellerCategoryList($customerId){
+        if($this->hasData('mainMenu')) 
+	        return $this->getData('mainMenu');
+        $desktopHtml = array();
+        $mobileHtml  = array();
+        $rootCatId = $this->_storeManager->getStore()->getRootCategoryId();
+        $collections = $this->_gridFactory->create ()->getCollection ();        
+        $collections->addAttributeToFilter ( 'seller_id', $customerId );
+        foreach($collections as $collectionV){
+        	$products = $this->_gridFactory->create ()->load($collectionV->getEntityId());		
+            $cats = $products->getCategoryIds();			
+            foreach($cats as $k => $v){
+        	    $sellerCategory[] = $v;
+            }                    
+        }
+        $catgArrayUnique = array_unique($sellerCategory);
+        $withoutParent = array_diff($catgArrayUnique,array(2,253,11));
+        $catListTop = $this->_categoryInstance->getCollection()
+                        ->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','kinkinbin_icon_thumb','image'))
+                        ->addAttributeToFilter('entity_id', $withoutParent)
+                        ->addAttributeToFilter('include_in_menu', 1)
+                        ->addIsActiveFilter()
+                        ->addAttributeToSort('position', 'asc');	
+        $contentCatTop  = $this->getContentCatTop();
+        $extData    = array();
+        foreach ($contentCatTop as $ext) {
+            $extData[$ext->getCatId()] = $ext->getData();
+        }
+        $i = 1; 
+        $last = count($catListTop);
+        $dropdownIds = explode(',', $this->_sysCfg->general['dropdown']);
+        foreach ($catListTop as $catTop) {
+            $idTop    = $catTop->getEntityId();
+            $active   = $this->isCategoryActive($idTop) ? ' active' : '';
+            $isDropdown = in_array($idTop, $dropdownIds) ? ' dropdown' : '';
+            $urlTop      =  '<a class="level-top" href="' .$catTop->getUrl(). '">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
+            $classTop    = ($i == 1) ? 'first' : ($i == $last ? 'last' : '');
+            $classTop   .= $active ;
+            $desktopHtml[$idTop] = '<li class="level0 nav-' .$i. ' cat ' . $classTop . '">' . $urlTop .  '</li>';
+    		$mobileHtml[$idTop]  = '<li class="level0 nav-' .$i. ' '.$classTop.'">' . $urlTop .  '</li>';
+        }
+        $menu['desktop'] = $desktopHtml;
+    	$menu['mobile'] = implode("\n", $mobileHtml);
+    	$this->setData('mainMenu', $menu);
+    	return $menu;
+
+    }
+   
     public function drawExtraMenu()
     {
       
@@ -494,12 +548,39 @@ class Menu extends \Magento\Catalog\Block\Navigation
 
     public function getExtraMenu()
     {
+        
+        //code by contus starts
+        
+
+        if($this->_customer->isLoggedIn()){
+         $store = $this->_storeManager->getStore()->getStoreId();
+         $collection = $this->_magicmenuCollectionFactory->create();
+
+            
+                       $collection ->addFieldToSelect(array('link','name','magic_label','ext_content','order'))
+                        
+                        ->addFieldToFilter('extra', 1) 
+                        ->addFieldToFilter('status', 1);
+
+    }else{
         $store = $this->_storeManager->getStore()->getStoreId();
+        $collection = $this->_magicmenuCollectionFactory->create();
+
+                        $collection->addFieldToSelect(array('link','name','magic_label','ext_content','order'))
+                        ->addFieldToFilter('name',array('nin'=>array('Your Account')))    
+                        ->addFieldToFilter('extra', 1)
+                        ->addFieldToFilter('status', 1);
+
+        }
+        //code by contus ends
+
+       /*$store = $this->_storeManager->getStore()->getStoreId();
+
         $collection = $this->_magicmenuCollectionFactory->create()
                         ->addFieldToSelect(array('link','name','magic_label','ext_content','order'))
                         ->addFieldToFilter('extra', 1)
                         ->addFieldToFilter('status', 1);
-        $collection->getSelect()->where('find_in_set(0, stores) OR find_in_set(?, stores)', $store)->order('order');
+        $collection->getSelect()->where('find_in_set(0, stores) OR find_in_set(?, stores)', $store)->order('order');*/
         return $collection;        
     }
 

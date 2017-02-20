@@ -36,7 +36,38 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $order = $observer->getOrderIds ();
         $orderId = $order [0];
         $orderData = $this->_order->load ( $orderId );
-        print_r($orderData->getData());die;
+        $orderItems = $orderData->getAllItems ();
+        $sellerData = array ();
+        $customOptions = array ();
+        foreach ( $orderItems as $item ) {
+
+            $productId = $item->getProductId ();
+            $itemId = $item->getItemId ();
+            $productPrice = $item->getPrice ();
+            $product = $this->_product->load($productId);
+            $sellerId = $product->getSellerId ();
+            if (! empty ( $sellerId ) && $item->getParentItemId () == '') {
+
+                $sellerData       = $this->_seller->load($sellerId); 
+                $commissionType   = $product->getKikinbenPercentageAmount();
+                $commissionAmount = $product->getkikinbenProductCommission();
+                $fullFill         = $product->getKikinbenFulfilled();
+                echo "product".$productId."price".productPrice."commission".$commissionAmount.'<br/>';
+                if($commissionType == 1){ 
+
+                    $priceAfterCommissionPercent[] =  $productPrice - (($commissionAmount / 100) * $productPrice);
+                    
+                }
+
+            }
+
+        }
+
+
+        echo '<pre>';
+        print_r($priceAfterCommissionPercent);
+        echo '</pre>';
+        die;
 
 
     }
