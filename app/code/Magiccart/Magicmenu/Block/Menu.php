@@ -345,7 +345,9 @@ class Menu extends \Magento\Catalog\Block\Navigation
         return $menu;
     }
     //custom code added by Apptha called in app/design/frontend/Alothemes/default/Magiccart_Magicmenu/templates/aio-topmenu.phtml
-    
+
+   
+
     public function appthaDrawMainMenu()
     {
     	if($this->hasData('mainMenu')) return $this->getData('mainMenu');
@@ -441,6 +443,56 @@ class Menu extends \Magento\Catalog\Block\Navigation
     }
     //custom code ends
 
+    //apptha seller profile category list
+
+    public function appthaSellerCategoryList($customerId){
+        if($this->hasData('mainMenu')) 
+	        return $this->getData('mainMenu');
+        $desktopHtml = array();
+        $mobileHtml  = array();
+        $rootCatId = $this->_storeManager->getStore()->getRootCategoryId();
+        $collections = $this->_gridFactory->create ()->getCollection ();        
+        $collections->addAttributeToFilter ( 'seller_id', $customerId );
+        foreach($collections as $collectionV){
+        	$products = $this->_gridFactory->create ()->load($collectionV->getEntityId());		
+            $cats = $products->getCategoryIds();			
+            foreach($cats as $k => $v){
+        	    $sellerCategory[] = $v;
+            }                    
+        }
+        $catgArrayUnique = array_unique($sellerCategory);
+        $withoutParent = array_diff($catgArrayUnique,array(2,253,11));
+        $catListTop = $this->_categoryInstance->getCollection()
+                        ->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','kinkinbin_icon_thumb','image'))
+                        ->addAttributeToFilter('entity_id', $withoutParent)
+                        ->addAttributeToFilter('include_in_menu', 1)
+                        ->addIsActiveFilter()
+                        ->addAttributeToSort('position', 'asc');	
+        $contentCatTop  = $this->getContentCatTop();
+        $extData    = array();
+        foreach ($contentCatTop as $ext) {
+            $extData[$ext->getCatId()] = $ext->getData();
+        }
+        $i = 1; 
+        $last = count($catListTop);
+        $dropdownIds = explode(',', $this->_sysCfg->general['dropdown']);
+        foreach ($catListTop as $catTop) {
+            $idTop    = $catTop->getEntityId();
+            $active   = $this->isCategoryActive($idTop) ? ' active' : '';
+            $isDropdown = in_array($idTop, $dropdownIds) ? ' dropdown' : '';
+            $urlTop      =  '<a class="level-top" href="' .$catTop->getUrl(). '">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
+            $classTop    = ($i == 1) ? 'first' : ($i == $last ? 'last' : '');
+            $classTop   .= $active ;
+            $desktopHtml[$idTop] = '<li class="level0 nav-' .$i. ' cat ' . $classTop . '">' . $urlTop .  '</li>';
+    		$mobileHtml[$idTop]  = '<li class="level0 nav-' .$i. ' '.$classTop.'">' . $urlTop .  '</li>';
+        }
+        $menu['desktop'] = $desktopHtml;
+    	$menu['mobile'] = implode("\n", $mobileHtml);
+    	$this->setData('mainMenu', $menu);
+    	return $menu;
+
+    }
+   
     public function drawExtraMenu()
     {
       
