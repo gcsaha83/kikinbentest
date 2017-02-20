@@ -1,7 +1,23 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
 	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Input your Otp</title>
+    </head>
 	<body>
+
+        <referenceBlock name="customer_form_register" remove="true" />
+        <referenceBlock name="alo.footer" remove="true" />
+        <referenceBlock name="alothemes_header" remove="true" />
+        <referenceBlock name="customer_newsletter" remove="true" />
+        <referenceBlock name="newsletter_head_components" remove="true" />
+        <referenceBlock name="footer.newsletter" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="main-footer" remove="true" />
+         <referenceBlock name="page.bottom" remove="true" />
+
+
+
 		<referenceContainer name="content">
 			<block class="Ipragmatech\Registration\Block\Index\Index" name="otp_index"
 				template="index/otp.phtml">
