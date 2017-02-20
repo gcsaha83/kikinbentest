@@ -22,5 +22,11 @@ http://magento.stackexchange.com/questions/143947/updating-customer-group-from-o
 namespace Kikinben\MobileRegister\Model;
 class Observer implements \Magento\Framework\Event\ObserverInterface
 {
-    public function execute(\Magento\Framework\Event\Observer $observer){exit(__FILE__);}
+    public function execute(\Magento\Framework\Event\Observer $observer){
+         $customer = $observer->getEvent()->getCustomer();
+         
+        print_r($customer->getId());
+        exit(__FILE__);
+        
+    }
 }
