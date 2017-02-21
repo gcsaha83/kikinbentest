@@ -13,6 +13,16 @@
 	 	<referenceBlock name="catalog.compare.link" remove="false"/>
 	  	<referenceBlock name="catalog.topnav" remove="false"/>
 	 	<referenceContainer name="footer-container" remove="false"/>
+        /*contus added */
+        <referenceBlock name="alo.footer" remove="true" />
+        <referenceBlock name="alothemes_header" remove="true" />
+        <referenceBlock name="customer_newsletter" remove="true" />
+        <referenceBlock name="newsletter_head_components" remove="true" />
+        <referenceBlock name="footer.newsletter" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="main-footer" remove="true" />
+         <referenceBlock name="page.bottom" remove="true" />
+
  
            <move element="header-wrapper" destination="checkout.header.wrapper" before="logo"/> 
  
