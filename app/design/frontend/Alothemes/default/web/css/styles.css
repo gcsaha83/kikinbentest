@@ -7138,7 +7138,7 @@ margin: 0px !important;
 .recommend-box .slick-next {
     padding: 0 !important;
     border: 0 !important;
-    width: 44px !important;
+    width: 36px !important;
     height: 46px !important;
     line-height: 20px !important;
     overflow: hidden !important;
@@ -7224,4 +7224,13 @@ display: none !important;
 	padding: 5px;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
+}
+
+
+/*.................New Logo Css...........*/
+.logo_tm_l{
+	padding: 128px;
+	width: 175px;
+	height: 41px;
+	
 }
