@@ -456,3 +456,11 @@ a.meanmenu-reveal,.meanmenu-accordion{display:none}
 .mean-container .mean-nav ul li a span.cat_label.HOT{color: #ff3d49;}
 /* Update */
 .magicmenu .nav-desktop .level0 .level-top-mega .children a .cat_label, .magicmenu .nav-desktop .level0 .level0 .cat_label, .vmagicmenu .level0 .cat_label, .vmagicmenu .level0 .level-top-mega .children .cat_label, .nav-sections .mean-container .mean-nav ul li a span.cat_label{margin-left: 10px;}
+
+.header-container-fixed .vmagicmenu .block-title .all_see_cats {
+    display: none !important;
+}
+
+.all_see_cats a {
+	color:#fff !important;
+}
