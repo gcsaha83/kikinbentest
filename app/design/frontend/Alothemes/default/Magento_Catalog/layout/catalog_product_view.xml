@@ -46,17 +46,31 @@
 					</container>
 
 					<container name="product.info.main" htmlTag="div" htmlClass="product-info-main product-shop" after="product.info.media">
-                        <block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/>
+                        <block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="Kikinben_cartPopup::product/view/title.phtml"/>
+
 						<block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" before="-" />
 						<referenceBlock name="product.info.sku" remove="true" />
-						<container name="product.info.extrahint" as="extrahint" label="Product View Extra Hint">
+			          <container name="product.info.extrahint" as="extrahint" label="Product View Extra Hint">
 		                    <container name="product.info.social" label="Product social links container" htmlTag="div" htmlClass="product-social-links" before="product.info.overview">
 		                        <block class="Magento\Catalog\Block\Product\View" name="product.info.addto" as="addto" template="product/view/addto.phtml"/>
                                 <referenceBlock name="product.info.mailto" remove="true" />
 		                    </container>
 		                </container>
+                       <block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" after="product.info.stock.sku" />         
+                       <container name="product.info.stock.sku" label="Product auxiliary info" htmlTag="div" htmlClass="product-info-stock-sku">
+                        <container name="product.info.type" before="-"/>
+                        <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+                            <arguments>
+                                <argument name="at_call" xsi:type="string">getSku</argument>
+                                <argument name="at_code" xsi:type="string">sku</argument>
+                                <argument name="css_class" xsi:type="string">sku</argument>
+                                <argument name="at_label" xsi:type="string">default</argument>
+                                <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                            </arguments>
+                        </block>
+                    </container>
 
-						<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.overview" template="product/view/attribute.phtml" group="detailed_info" before="product.price.final" after="product.info.stock.sku">
+                                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.overview" template="product/view/attribute.phtml" group="detailed_info" before="product.price.final" after="product.info.stock.sku">
 		                    <arguments>
 		                        <argument name="at_call" xsi:type="string">getShortDescription</argument>
 		                        <argument name="at_code" xsi:type="string">short_description</argument>
@@ -94,12 +108,17 @@
 		                        </block>
 		                    </block>
 		                </block>
-
-					</container>
+					</container>                                        
 					<!-- end product main info -->
 				</container>
+                                <block class="Magento\Cms\Block\Block" name="product_display_images_block">
+                                            <arguments>
+                                                 <argument name="block_id" xsi:type="string">product_display_images_block</argument>
+                                            </arguments>
+                                        </block>
 			</container> 
 			<!-- end detail box -->
+                        
             <move element="product.info.overview" destination="product.info.main"/>
         </referenceContainer>
     </body>

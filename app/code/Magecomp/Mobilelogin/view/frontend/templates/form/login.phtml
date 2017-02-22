@@ -18,8 +18,16 @@
 ?>
 <div class="">
 
-<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 block block-customer-login login_custom">
-<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form_cont">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sign_block_l block block-customer-login login_custom">
+
+<a href="<?php echo $block->getBaseUrl(); ?>">
+        <span>
+            <img class="img-responsive logo_tm_l" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/logo_tm.png')?>">
+        </span>
+      </a>
+
+
+<div class="form_cont sign_form_l">
     <div class="block-title">
         <h3 id="block-customer-login-heading" role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo __('Sign in') ?></h3>
     </div>
@@ -31,7 +39,6 @@
               data-mage-init='{"validation":{}}'>
             <?php echo $block->getBlockHtml('formkey'); ?>
             <fieldset class="fieldset login">
-                <div class="field note"><?php /* @escapeNotVerified */ echo __('If you have an account, sign in with your mobile/email address.') ?></div>
                 <div class="field email required">
                     <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Mobile/Email') ?></span></label>
                     <div class="control">
@@ -90,12 +97,10 @@
                           </div>
 
                     </div>
-                </div>
-
 
                 
-                <div class="block_tit">
-                    <div class="block_new_tit">
+                <div class="block_tit_sign">
+                    <div class="block_sign_tit">
                     <h5 id="block-new-customer-heading" aria-level="2"><?php /* @escapeNotVerified */ echo __('New to KiKinben?') ?></h5>
                     </div>
 
@@ -103,7 +108,7 @@
                         <div class="actions-toolbar">
                             <div class="primary btn btn-custom2">
                                <!-- <a href="<?php /* @escapeNotVerified */ echo $block->getCreateAccountUrl() ?>" class="action create primary">-->
- <a href="<?php echo $this->getUrl('customer/account/create'); ?>" class="action create primary">
+                                <a href="<?php echo $this->getUrl('customer/account/create'); ?>" class="action create primary">
 
                                 <span><?php /* @escapeNotVerified */ echo __('Create your KiKinben account') ?></span></a>
                             </div>
@@ -111,17 +116,39 @@
                     </div>
                 </div>
 
+
+                </div>
+
+
+
             </fieldset>
         </form>
     </div>
-</div>
-</div>
-
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sign_image">
-    <img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/sign_in.png')?>">
-</div>
 
 </div>
+
+
+
+<div class="container-fluid">
+    <div class="signIn_footer">
+      <div class="signIn_footer_nav">
+        <ul>
+          <li><a href="#">Conditions of Use</a></li>
+          <li><a href="#">Privacy Notice</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright_blk_new">
+        <p>© 2017, kikinben.com | All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
 <!-- magecomp start -->
 <script type="text/javascript">
 jQuery(document).ready(function(e) {

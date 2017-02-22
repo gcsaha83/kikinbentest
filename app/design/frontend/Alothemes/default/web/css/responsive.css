@@ -1534,6 +1534,142 @@
 	
 }
 
+/*....... Super deals responsive css.........*/
+@media (min-width:1200px) {
+        
+
+        
+    }
+
+    @media (max-width:1199px) and (min-width: 992px) {
+        .blk_sd_1st {
+            margin-top: 3px;
+        }
+
+        .blk_sd_1st {
+            padding: 17px;
+        }
+
+        .blk_sd_last {
+            height: 252px;
+        }
+
+        .cd_cust_lastchild {
+            height: 251px !important;
+            padding-top: 80px !important;
+        }
+
+        .sup_del_in_1 {
+            padding-top: 23px !important;
+        }
+
+        .sup_del_inside {
+            padding-top: 20px !important;
+        }
+
+        .cust_best_tit {
+            bottom: 65% !important;
+        }
+    }
+
+    @media (max-width:991px) and (min-width: 768px){
+        .blk_sd_1st {
+            margin-top: 0px;
+        }
+
+        .blk_sd_1st {
+            height: 240px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .blk_sd_prod {
+            border-bottom: 1px solid #eee;
+        }
+
+        .blk_sd_md {
+            border-left: 1px solid #fff;
+        }
+
+        .cust_best_tit {
+            bottom: 74% !important;
+        }
+
+        .sup_del_in_1 {
+            padding-top: 0px !important;
+        }
+
+        .sup_del_inside {
+            padding-top: 0px !important;
+        }
+
+        .sup_del_last {
+            padding: 6px 0 0 0 !important;
+        }
+
+        .cd_cust_lastchild {
+            padding: 120px 50px !important;
+            height: 338px !important;
+        }
+    }
+
+    @media (max-width:767px) {
+        .blk_sd_1st {
+            margin-top: 0px;
+        }
+
+        .blk_sd_1st {
+            border-bottom: 1px solid #eee;
+        }
+
+        .blk_sd_prod {
+            border-bottom: 1px solid #eee;
+        }
+    }
+
+    /*...........End of Super Deals Responsive css.........*/
+
+
+    /*......... Shop by Brand.........*/
+    @media (min-width:1200px) {
+        
+
+        
+    }
+
+    @media (max-width:1199px) and (min-width: 992px) {
+        .blk_brand_sction .blk_brand_tit {
+            height: 233px;
+        }
+    }
+
+    @media (max-width:991px) and (min-width: 768px){
+        .blk_brand_sction .blk_brand_tit a {
+            height: 150px;
+        }
+
+        .blk_brand_sction .blk_brand_tit a {
+            padding: 36px 0 0px 0;
+        }
+
+    }
+
+    @media (max-width:767px) {
+        .blk_brand_sction .blk_brand_tit a {
+            height: 150px;
+        }
+
+        .brand_row_prod {
+            border-bottom: 1px solid #eee;
+        }
+
+        .brand_row {
+            border-bottom: none;
+        }
+    }
+
+    /*............End shop by brand...........*/
+
+    /*............End shop by brand...........*/
 
 /*............Start css for All categories...........*/
 
@@ -1754,4 +1890,5 @@ height: 152px;
 }
 
 /*....... Three blocks resposives END CSS........*/
+
 
