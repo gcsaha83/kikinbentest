@@ -25,6 +25,19 @@
 					<div class="block-title block_title_custom">
 				        <h3 id="block-customer-login-heading" role="heading" aria-level="2">Create account</h3>
 				    </div>
+					<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 register_name">
+					<div class="row">
+						<div class="col-lg-6 col-lg-6 col-md-6 col-xs-6">
+							<label for="password" class="label"></label>
+							<input class="input_first" type="text" name="fname" placeholder="First Name" title="First Name" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName())?>">
+						</div>
+
+						<div class="col-lg-6 col-lg-6 col-md-6 col-xs-6">
+							<label for="password" class="label"></label>
+							<input class="input_second" type="text" name="lname" placeholder="Last Name" <?php echo $block->escapeHtml($block->getName()) ?>>
+						</div>
+					</div>
+					</div>-->
 					
 					<!-- 
 					<label for="mobilenumber" class="label"><span><?php echo __('Mobile Number (Ex:+880 1977 XXXXXX)') ?></span></label> -->
@@ -124,6 +137,11 @@
 		</form>
 	</div>
 </div>
+		
+<!--<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 register_img">
+	<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/registration.png')?>">
+</div>-->
+
 </div>
 
 <div class="container-fluid">
