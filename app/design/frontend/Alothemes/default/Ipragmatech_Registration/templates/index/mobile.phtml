@@ -1,6 +1,7 @@
 <?php $formurl = $block->getUrl('registration/index/sendotp'); ?>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob_log">
+
 <div class="create_account_float">
 	<div class="mob_form">
 
@@ -25,19 +26,6 @@
 					<div class="block-title block_title_custom">
 				        <h3 id="block-customer-login-heading" role="heading" aria-level="2">Create account</h3>
 				    </div>
-					<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 register_name">
-					<div class="row">
-						<div class="col-lg-6 col-lg-6 col-md-6 col-xs-6">
-							<label for="password" class="label"></label>
-							<input class="input_first" type="text" name="fname" placeholder="First Name" title="First Name" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName())?>">
-						</div>
-
-						<div class="col-lg-6 col-lg-6 col-md-6 col-xs-6">
-							<label for="password" class="label"></label>
-							<input class="input_second" type="text" name="lname" placeholder="Last Name" <?php echo $block->escapeHtml($block->getName()) ?>>
-						</div>
-					</div>
-					</div>-->
 					
 					<!-- 
 					<label for="mobilenumber" class="label"><span><?php echo __('Mobile Number (Ex:+880 1977 XXXXXX)') ?></span></label> -->
@@ -99,16 +87,18 @@
 						<option data-icon="US" value="+1">USA(+1)</option>
     </select>
 
-	<input class="data-list-input-code" required="required" data-validate="{required:true, required 'validate-number':true}" type="text"
-	name="mobilenumber" id="mobilenumber" placeholder="+8801970112211" value="+880" pattern="^[+]\d{3}\d{4}\d{3}\d{3}$" />
+	<input class="data-list-input-code" required="required"
+							data-validate="{required:true, required 'validate-number':true}" type="text"
+							name="mobilenumber" id="mobilenumber" placeholder="+8801970112211" value="+880" pattern="^[+]\d{3}\d{4}\d{3}\d{3}$" />
 
 						</div>
+
 					</div>
 				</div>
 				</div>
 				</div>
 			</fieldset>
-			<div class="actions-toolbar col-lg-12 col-md-12 col-sm-12 col-xs-12 reg">
+			<div class="actions-toolbar col-lg-12 col-md-12 col-sm-12 col-xs-12 reg_para">
 			<p>By <b>Registering</b>, you agree that you've read and accepted our 
 			<a href="#" style="color:#356ae7"><span>User Agreement</span></a>, you're at least 18 years old, and you consent to our 
 			<a href="#" style="color:#356ae7"><span>Privacy Notice</span></a> and receiving marketing communications from us.</p>
@@ -133,11 +123,14 @@
                         </div>
                     </div>
                 </div>
-		</div>
+			</div>
+
 		</form>
 	</div>
 </div>
-		
+
+
+
 <!--<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 register_img">
 	<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/registration.png')?>">
 </div>-->
