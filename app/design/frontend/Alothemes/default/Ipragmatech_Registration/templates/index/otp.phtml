@@ -3,12 +3,18 @@ $formurl = $block->getUrl('registration/index/verifyotp');
 ?>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob_log">
 
-	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 register_img">
-		<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/registration.png')?>">
-	</div>
+	<a href="<?php echo $block->getBaseUrl(); ?>">
+	  	<span>
+	  		<img class="img-responsive logo_tm_l" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/logo_tm.png')?>">
+	  	</span>
+	  </a>
 
-	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-		<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 block mob_form">
+	<!--<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 register_img">
+		<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/registration.png')?>">
+	</div>-->
+
+	<div class="">
+		<div class="block mob_form">
 
 
 			<form class="form1" action="<?php echo $formurl?>" method="post"
@@ -42,3 +48,18 @@ $formurl = $block->getUrl('registration/index/verifyotp');
 		</div>
 	</div>
 </div>
+<div class="container-fluid">
+    <div class="signIn_footer">
+      <div class="signIn_footer_nav">
+        <ul>
+          <li><a href="#">Conditions of Use</a></li>
+          <li><a href="#">Privacy Notice</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright_blk_new">
+        <p>© 2017, kikinben.com | All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
