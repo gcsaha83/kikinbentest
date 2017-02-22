@@ -3787,7 +3787,7 @@ font-size: 12px;
 }
 
 .block_tit {
-	margin-top: 70px;
+	margin-top: 100px;
 	text-align: center;
 	margin-bottom: -35px;
 }
@@ -3805,13 +3805,13 @@ font-size: 12px;
 
 .block_new_tit::after {
     content: "";
-    width: 86%;
+    width: 100%;
     background-color: transparent;
     display: block;
     height: 1px;
     border-top: 1px solid #e7e7e7;
     position: absolute;
-    top: 78%;
+    top: 74%;
     margin-top: 0px;
     z-index: 1;
 }
@@ -3848,7 +3848,7 @@ font-size: 12px;
 }
 
 .create_account_float {
-	float: right !important;
+/* 	float: right !important; */
 }
 
 .set_pass_secure {
@@ -7232,5 +7232,88 @@ display: none !important;
 	padding: 128px;
 	width: 175px;
 	height: 41px;
+	
+}
+
+/*.........New Css Added for style change..........*/
+
+.mob_form{
+
+	width: 435px;
+	margin: 0 auto;
+}
+
+.logo_tm_l{
+	width: 195px;
+	margin: 0 auto;
+}
+
+.create_custom_l{
+	margin-top: 20px !important;
+
+}
+
+.action_custom_tools{
+	margin-top: 20px !important;
+}
+
+.signIn_footer{
+
+	margin-top: 10px;
+	border-top: 1px solid #eee;
+	text-align: center;
+}
+
+.signIn_footer_nav ul {
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+}
+
+.signIn_footer_nav ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+.signIn_footer_nav ul li a {
+	padding: 0 20px;
+	font-size: 11px;
+	float: left;
+	text-decoration: none;
+	color: #0066c0;
+}
+
+.copyright_blk_new {
+	font-size: 11px;
+}
+
+.tooltip_cust {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #adadad;
+	padding: 0 7px;
+	border-radius: 10px;
+	width: 20px;
+	text-align: center;
+}
+
+.tooltip_cust .tooltiptext {
+	visibility: hidden;
+	width: 140px;
+	background-color: #daeefa;
+	color: #333;
+	text-align: left;
+	/* border-radius: 6px; */
+	padding: 10px;
+	position: absolute;
+	z-index: 1;
+}
+
+.tooltip_cust:hover .tooltiptext {
+   visibility: visible;
+}
+
+.reg_para p {
+	margin-top: 10px !important;
 	
 }
