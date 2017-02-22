@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+	<css src="Kikinben_SellerCategory::css/style.css" />
+    </head>
+    <body>
+        
+        <referenceBlock name="seller_account" remove="true" />
+	<referenceBlock name="customer_account_navigation" remove="true" />
+    <referenceBlock name="content">
+        <block class="Apptha\Marketplace\Block\Seller\Displayseller" name="seller_content" template="seller/displayseller.phtml" />
+        <block template="sellerproducts.phtml" class="Kikinben\SellerCategory\Block\Menu" name="kikinben_sellercategory_block_menu"/>
+    </referenceBlock>
+    
+    
+<referenceContainer name="div.sidebar.main">
+    <block class="Kikinben\SellerCategory\Block\Menu" name="accordion.sidebar" before="-" template="Kikinben_SellerCategory::accordion.phtml" />
+</referenceContainer>
+   
+   <referenceContainer name="sidebar.main">
+			<!-- <block class="Apptha\Marketplace\Block\Seller\Displayseller"
+				name="seller_location" template="seller/map.phtml" /> -->
+			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
+				name="seller_ratings" template="seller/feedback.phtml" />
+			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
+				name="seller_contact" template="seller/contact.phtml" />
+		</referenceContainer>
+</body>
+</page>
