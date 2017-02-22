@@ -6658,6 +6658,84 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     color: #f89a22;
 }
 
+
+/*............ Style Css for Signin Page............*/
+
+.sign_block_l{
+	width: 100% !important;
+}
+
+
+/*------- Registration Form -------*/
+.checkbox_cust_l {
+	float: left;
+	margin-top: 6px;
+	margin-right: 10px;
+}
+
+.news_reg_l {
+
+}
+
+
+/*------- Sign in page ---------*/
+.block_tit_sign {
+	margin-top: 50px;
+	text-align: center;
+	margin-bottom: -35px;
+}
+
+
+.block_sign_tit h5 {
+    line-height: 1;
+	color: #767676;
+	font-weight: 400 !important;
+	z-index: 2;
+	position: relative;
+	background-color: #fff;
+	display: inline-block;
+	padding: 0 8px 0 7px;
+}
+
+.block_sign_tit::after {
+    content: "";
+    width: 32%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #e7e7e7;
+    position: absolute;
+    top: 72%;
+    margin-top: 0px;
+    z-index: 1;
+}
+
+.sign_form_l {
+	margin-bottom: 40px !important;
+	margin-top: 25px !important;
+}
+
+/*------ Password assistance --------*/
+.forgot_pass1 {
+	width: 100% !important;
+}
+
+.form_sign_pass {
+	border: none !important;
+}
+
+.login-container .fieldset::after {
+    margin-top: 5px !important;
+}
+
+.pass_form_bot {
+	margin-bottom: 0px;
+}
+
+.pass_forg_marg {
+	margin-top: 25px;
+}
+=======
 .cat_details {
     padding: 0;
 }
@@ -7317,3 +7395,4 @@ display: none !important;
 	margin-top: 10px !important;
 	
 }
+
