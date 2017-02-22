@@ -1667,3 +1667,223 @@
         }
     }
     /*............End shop by brand...........*/
+
+/*............Start css for All categories...........*/
+
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
+    .cat_sec_cus {
+        padding: 10px;
+    }
+
+    .cat_each_img img {
+            width: 283px;
+        }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .cat_sec_cus {
+        padding: 10px;
+    }
+
+    .cat_each_img img {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .cat_sec_cus {
+        padding: 0px;
+    }
+
+    .cat_each_img img {
+        width: 707px;
+    }
+
+    .cat_sec_tit h1 {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+.cust_blk_prod_right .blk_pic_custom img {
+   height: 250px;
+   width: 194px;
+}
+
+.cust_blk_prod li .blk_pic_big img {
+   height: 229px;
+   width: 368px;
+}
+
+.cust_blk_prod li .blk_pic img {
+   height: 191px;
+   width: 173px;
+}
+
+.cust_blk_prod_right .bulk_pic img {
+width: 174px;
+height: 192px;
+}
+
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px) {
+.cust_blk_prod_right .blk_pic_custom img {
+   height: 196px;
+   width: 156px;
+}
+
+.cust_blk_prod li .blk_pic_big img {
+   height: 229px;
+   width: 368px;
+}
+
+.slick-slide img {
+   height: 478px;
+}
+
+.cust_bottom_prod1 .bulk_pic {
+height: 152px;
+   	width: 135px;
+}
+
+.cust_blk_prod_right .bulk_pic img {
+width: 136px;
+height: 152px;
+}
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+.home-slider.slick-slider {
+   margin-bottom: 0px;
+}
+
+.cust_blk_prod_right .blk_pic_custom img {
+   height: 196px;
+   width: 162px;
+}
+
+.cust_blk_prod li .blk_pic_big img {
+height: 175px;
+   width: 291px;
+}
+
+.slick-slide img {
+   height: 535px;
+}
+
+.cust_bottom_prod1 .bulk_pic {
+height: 152px;
+   	width: 139px;
+}
+
+.cust_blk_prod_right .bulk_pic img {
+width: 136px;
+height: 152px;
+}
+
+}
+
+@media only screen and (max-width:767px) {
+.home-slider.slick-slider {
+   margin-bottom: 0px;
+}
+
+.cust_blk_prod_right .blk_pic_custom img {
+   height: 196px;
+   width: 162px;
+}
+
+.cust_blk_prod li .blk_pic_big img {
+height: 175px;
+   width: 291px;
+}
+
+.slick-slide img {
+   height: 535px;
+}
+
+.cust_bottom_prod1 .bulk_pic {
+height: 152px;
+   	width: 139px;
+}
+
+.cust_blk_prod_right .bulk_pic img {
+width: 136px;
+height: 152px;
+}
+
+}
+
+    /*............End css of All categories...........*/
+
+/*....... Three blocks resposives start CSS........*/
+
+@media (min-width: 767px) and (max-width: 991px) {
+
+  .prod_blk_cont1:nth-child(even) {
+    border-right: none;
+  }
+
+  .prod_blk_cont_big {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_contL {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_cont1 {
+    border-bottom: 1px solid #eee;
+  }
+
+.banner_area img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .prod_blk_cont1 {
+    border-right: none;
+  }
+
+  .banner_area {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .prod_blk_cont_big {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_contL {
+    border-left: 1px solid #fff;
+  }
+
+  .prod_blk_cont1 {
+    border-bottom: 1px solid #eee;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+
+  .fashion_blk1:nth-child(even) {
+    border-right: none;
+  }
+
+  .fashion_blk1 {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .fashion_blk1 {
+    border-right: none;
+  }
+}
+
+/*....... Three blocks resposives END CSS........*/

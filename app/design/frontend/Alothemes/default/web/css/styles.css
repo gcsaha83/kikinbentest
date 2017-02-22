@@ -675,7 +675,12 @@ tr.summary-details-excluded{font-style:italic}
 	}
 }
 .header-top .top-left {float: left;padding-left: 15px;}
-.header-top .top-right {float: right;padding-right: 0px;}
+.header-top .top-right {
+	float: right;
+	padding-right: 0px;
+	padding-top: 3px;
+        padding-bottom: 3px;
+}
 .header-top{border-width: 0 0 1px; border-style: solid; border-color: #efefef;}
 .header-content{padding: 20px 0; border-bottom: 1px solid #eee !important; padding-bottom: 8px !important;}
 /*Top support/hot support*/
@@ -1889,15 +1894,35 @@ font-size: 12px;
 /*detail product / view product*/
 .box-tocart .fieldset .actions .tocart span{display: inline-block; font-size: 14px;}
 .product-info-main .page-title-wrapper .page-title{margin: 0}
-.product-info-main .page-title-wrapper .page-title span{font-size: 25px; color: #333e48; font-weight: normal; display: block; line-height: 30px; text-align: left;margin-bottom: 15px;}
+
+.product-info-main .page-title-wrapper .page-title span {
+    font-size: 20px;
+    color: #333;
+    font-weight: normal;
+    display: block;
+    line-height: 30px;
+    text-align: left;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #eee;
+}
+
 .product-essential .product-media, .product-essential .product-info-main{float: left; padding: 0 15px}
 .product-essential .product-media{width: 45%}
 
 .product-essential .product-info-main{width: 55%}
 .product-reviews-summary .rating-summary, .product-reviews-summary .reviews-actions{display: inline-block;position: relative;text-align: left;vertical-align: middle;}
 .product-info-main .product-reviews-summary{margin-top: 7px}
-.product-info-main .product-info-stock-sku{margin-top: 13px; margin-bottom: 18px}
-.product-essential .product-info-main .price-box{padding-top: 12px}
+
+.product-info-main .product-info-stock-sku {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.product-essential .product-info-main .price-box {
+    padding-top: 0px;
+}
 
 .product-essential .stock label{font-size: 13px; color: #8f8e94; text-transform: capitalize;}
 .product-essential .stock span{font-size: 13px; color: #5bb300; text-transform: capitalize;}
@@ -1910,7 +1935,12 @@ font-size: 12px;
 
 .product-info-main .attibute ul li{font-size: 12px; color: #7d7d7d; font-weight: normal; margin: 5px 0; line-height: 15px; position: relative; padding-left: 12px}
 .product-info-main .attibute ul li:before{content: ""; width: 4px; height: 4px; position: absolute; left: 0; bottom: 3px; background-color: #7d7d7d; border-radius: 50%;}
-.product-info-main .price-box .price-wrapper .price{font-size: 35px; color: #333e48; font-weight: normal;}
+
+.product-info-main .price-box .price-wrapper .price {
+    font-size: 22px;
+    color: #333e48;
+    font-weight: normal;
+}
 
 .product-info-main .price-box .old-price .price-wrapper .price{font-size: 14px; color: #848484}
 .product-info-main .price-box .special-price, .product-info-main .price-box .old-price{display: inline-block; vertical-align: middle; margin: 0}
@@ -1975,7 +2005,11 @@ font-size: 12px;
 /*grouped product*/
 .product-info-main .table.grouped .product-item-name{display: block;font-weight: normal; text-align: left;margin: 0; }
 .product-info-main .table.grouped .price-box .price-wrapper .price{font-size: 15px; line-height: 20px}
-.product-essential .product-info-main .price-box{line-height: normal;}
+.product-essential .product-info-main .price-box {
+    line-height: normal;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
 
 /* Rating */
 .ratings-table th,.ratings-table td{font-size:11px;line-height:1.15;padding:3px 0}
@@ -2089,9 +2123,16 @@ font-size: 12px;
 .add-to-box .add-to-links{float:left;font-size:12px!important;line-height:1.25!important;text-align:left!important}
 .add-to-box .add-to-links li .separator{display:none!important}
 /* Tab detail */
-.product.info.detailed .data.item{border: 1px solid #dddddd; border-radius: 15px;-moz-border-radius: 15px;-webkit-border-radius: 15px;-ms-border-radius: 15px;-o-border-radius: 15px;}
+.product.info.detailed .data.item{
+	border: 1px solid #dddddd; 
+/* 	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px; */
+}
 .product.data.items > .item.title{display: inline-block;  cursor:pointer; position: relative; border: 0; padding: 0 25px;}
-.product.info.detailed{margin: 60px 0 50px;}
+.product.info.detailed{margin: 30px 0 40px;}
 .product.info.detailed .product.data.items > .item.title .switch{position: relative; font-size: 18px; color: #333e48; display: inline-block; line-height: 25px; padding-bottom: 15px}
 .product.info.detailed .product.data.items > .item.title.active .switch{font-weight: bold;}
 .product.info.detailed .product.data.items > .item.title .switch:before{content: ""; position: absolute; width: 100%; height: 2px; background-color: #fed700; left: 0; bottom: 15px; opacity: 0; visibility: hidden; transition: all 0.3s;-moz-transition: all 0.3s;-webkit-transition: all 0.3s;-o-transition: all 0.3s;}
@@ -3746,7 +3787,7 @@ font-size: 12px;
 }
 
 .block_tit {
-	margin-top: 70px;
+	margin-top: 100px;
 	text-align: center;
 	margin-bottom: -35px;
 }
@@ -3764,13 +3805,13 @@ font-size: 12px;
 
 .block_new_tit::after {
     content: "";
-    width: 86%;
+    width: 100%;
     background-color: transparent;
     display: block;
     height: 1px;
     border-top: 1px solid #e7e7e7;
     position: absolute;
-    top: 78%;
+    top: 74%;
     margin-top: 0px;
     z-index: 1;
 }
@@ -3807,7 +3848,7 @@ font-size: 12px;
 }
 
 .create_account_float {
-	float: right !important;
+/* 	float: right !important; */
 }
 
 .set_pass_secure {
@@ -6111,6 +6152,16 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     padding: 50px;
     background: #fcfcfc;
     margin-top: 20px;
+    height: 600px;
+}
+
+
+.team_section {
+    text-align: center;
+    padding: 50px;
+    background: #fcfcfc;
+    margin-top: 20px;
+    height: 970px;
 }
 
 .leadership_section_tit h1 {
@@ -6134,6 +6185,8 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 .leader_sec h3 {
     font-size: 20px;
     margin-bottom: 0px;
+    padding: 10px;
+    color: #333;
 }
 
 .steps_area {
@@ -6152,6 +6205,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     padding: 50px;
     background: #fcfcfc;
     margin-top: 20px;
+    height: 610px;
 }
 
 .location_section_tit h1 {
@@ -6179,6 +6233,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
  /*......... Super deals Css Started from here.........*/
      .blk_sd_sction {
         float: left;
+        border-top: 3px solid #f89a22;
     }
 
     .blk_sd_sction .blk_sd_tit a {
@@ -6260,11 +6315,12 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     .blk_sd_prod {
         position: relative;
         z-index: 6;
-        padding: 10px;
-        border-left: 1px solid #eee;
-        border-top: 1px solid #fff;
-        border-right: 1px solid #fff;
-        border-bottom: 1px solid #fff;
+		padding: 10px;
+		border-left: 1px solid #eee;
+		border-top: 1px solid #fff;
+		border-right: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+		border-top: 3px solid #f89a22;
     }
 
     .blk_sd_prod a {
@@ -6380,7 +6436,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     }
 
     .sup_del_last {
-        padding: 8px 0 0 0;
+        padding: 71px 0 0 0;
         text-align: center;    }
 
     .sup_del_last p {
@@ -6419,7 +6475,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
         color: #fff;
         font-size: 33px;
         cursor: pointer;
-        height: 268px;
+        height: 272px;
     }
 
 
@@ -6587,80 +6643,677 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     }
 
     /*....... End of shop by brand css..........*/
+/*....... Start css for All Categories..........*/
 
-/*............ Style Css for Signin Page............*/
+    .cat_sec_cus {
+    padding: 20px;
+}
 
-.sign_block_l{
-	width: 100% !important;
+.cat_sec_tit {
+    text-align: center;
+}
+
+.cat_sec_tit h1 {
+    font-size: 33px;
+    color: #f89a22;
+}
+
+.cat_details {
+    padding: 0;
+}
+
+.cat_details_each {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.cat_each_img {
+    padding:0;
+    margin-bottom: 15px;
+}
+
+.cat_details_each h3 {
+    font-size: 14px;
+    color: #333;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-weight: bold;
+}
+
+.cat_details_each h3 a {
+    color: #333;
+}
+
+.cat_details_each h3 a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.cat_details_each ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.cat_details_each ul li {
+    padding: 5px 13px;
+}
+
+.cat_details_each ul li a {
+    color: #333;
+}
+
+.cat_details_each ul li a:hover {
+    color: #f89a22;
+    text-decoration: none;
+}
+
+/*....... End css of All Categories..........*/
+
+
+/*....... See All CATs CSS.......*/
+.all_see_cats{
+	margin-left: 5px;
+}
+
+.all_see_cats a {
+	color: #fff !important;
+}
+
+.all_see_cats a:hover {
+	text-decoration: underline;
+}
+
+.header-container-fixed .vmagicmenu .block-title .all_see_cats {
+    display: none;
 }
 
 
-/*------- Registration Form -------*/
-.checkbox_cust_l {
+/*....... Start css for All Categories..........*/
+
+    .cat_sec_cus {
+    padding: 20px;
+}
+
+.cat_sec_tit {
+    text-align: center;
+}
+
+.cat_sec_tit h1 {
+    font-size: 33px;
+    color: #f89a22;
+}
+
+.cat_details {
+    padding: 0;
+}
+
+.cat_details_each {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.cat_each_img {
+    padding:0;
+}
+
+.cat_details_each h3 {
+    font-size: 14px;
+    color: #333;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-weight: bold;
+}
+
+.cat_details_each h3 a {
+    color: #333;
+}
+
+.cat_details_each h3 a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.cat_details_each ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.cat_details_each ul li {
+    padding: 5px 13px;
+}
+
+.cat_details_each ul li a {
+    color: #333;
+}
+
+.cat_details_each ul li a:hover {
+    color: #f89a22;
+    text-decoration: none;
+}
+
+/*....... End css of All Categories..........*/
+
+
+/*....... See All CATs CSS.......*/
+.all_see_cats{
+	margin-left: 5px;
+}
+
+.all_see_cats a {
+	color: #fff !important;
+}
+
+.all_see_cats a:hover {
+	text-decoration: underline;
+}
+
+.header-container-fixed .vmagicmenu .block-title .all_see_cats {
+    display: none;
+}
+
+
+/*...... Three blocks CSS Start from here.........*/
+.zero_padd {
+  padding: 0;
+}
+
+.new_blk_tit {
+    font-size: 25px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+}
+
+.new_blk_tit h3 {
+    float: left;
+}
+
+.new_blk_tit .blk_tit a {
+    color: #f03f68;
+}
+
+.new_blk_tit h3 a {
+    color: #333;
+}
+
+.new_blk_tit h3 a:hover {
+    text-decoration: none;
+}
+
+.new_blk_tit .see_all_right {
+    float: right;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.prod_blk_cont {
+  padding: 0;
+  padding-top: 15px;
+}
+
+.prod_blk_cont1 {
+  padding: 0;
+  border-left: 1px solid #eee;/*
+  border-bottom: 1px solid #eee;*/
+  padding: 10px;
+}
+
+.prod_blk_cont1:last-child {
+  border-right: none;
+}
+
+.prod_blk_cont1:hover {
+  box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+  cursor: pointer;
+}
+
+.prod_blk_cont_big {
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-right: none;
+}
+
+.prod_blk_img {
+  padding: 0;
+}
+
+.prod_blk_cont_tit {
+  text-align: center;
+}
+
+.prod_blk_cont_tit h1 {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.banner_area img {
+    margin: 0 auto;
+  }
+/*...... Three blocks CSS Start from here.........*/
+.zero_padd {
+  padding: 0;
+}
+
+.new_blk_tit {
+    font-size: 25px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    height: 43px;
+}
+
+.new_blk_tit h3 {
+    float: left;
+}
+
+.new_blk_tit .blk_tit a {
+    color: #f03f68;
+    font-size: 24px;
+	font-weight: normal;
+}
+
+.new_blk_tit h3 a:hover {
+    text-decoration: none;
+}
+
+.new_blk_tit .see_all_right {
+    float: right;
+    font-size: 15px;
+    padding-top: 15px;
+    font-weight: normal;
+}
+
+.new_blk_tit .see_all_right a {
+    color: #333;
+    font-size: 15px;
+}
+
+.prod_blk_cont {
+  padding: 0;
+  padding-top: 15px;
+}
+
+.prod_blk_cont1 {
+  padding: 0;
+  border-left: 1px solid #eee;/*
+  border-bottom: 1px solid #eee;*/
+  padding: 10px;
+}
+
+.prod_blk_cont1:last-child {
+  border-right: none;
+}
+
+.prod_blk_cont1:hover {
+  box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+  cursor: pointer;
+}
+
+.prod_blk_cont_big {
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-right: none;
+}
+
+.prod_blk_img {
+  padding: 0;
+}
+
+.prod_blk_cont_tit {
+  text-align: center;
+}
+
+.prod_blk_cont_tit h1 {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+}
+
+.prod_blk_cont_tit p {
+  margin-bottom: 10px !important;
+}
+
+.banner_area img {
+    margin: 0 auto;
+  }
+
+  .prod_blk_img img {
+    margin: 0 auto;
+  }
+
+
+
+
+/*----------- Fashion ------------*/
+.prod_blk_tit {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    height: 43px;
+}
+
+.prod_blk_tit .prod_blk_tit_bor a {
+    float: left;
+    font-size: 24px;
+	font-weight: normal;
+}
+
+.prod_blk_tit h3 a:hover {
+    text-decoration: none;
+}
+
+.prod_blk_tit .see_all_right {
+    float: right;
+    font-size: 15px;
+	padding-top: 15px;
+	font-weight: normal;
+}
+
+.prod_blk_tit .see_all_right a {
+    color: #333;
+    font-size: 15px;
+	font-weight: normal;
+}
+
+.fashion_blk {
+  padding: 0;
+  padding-top: 15px;
+}
+
+.fashion_blk1 {
+  padding: 0;
+  border-right: 1px solid #eee;/*
+  border-bottom: 1px solid #eee;*/
+  padding: 10px;
+}
+
+.fashion_blk1:last-child {
+  border-right: none;
+}
+
+.fashion_blk1:hover {
+  box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+  cursor: pointer;
+}
+
+.prod_blk_img {
+  padding: 0;
+}
+
+.fashion_blk_tit {
+  text-align: center;
+}
+
+.fashion_blk_tit h1 {
+  text-align: center;
+font-size: 15px;
+margin-bottom: 0;
+font-weight: bold;
+color: #333;
+margin-top: 15px;
+}
+
+/*...... Three blocks CSS Here here.........*/
+
+
+/*.........Minicart remove button...........*/
+.minicart_remov_l{
+margin: 0px !important;
+}
+
+/*------- Protection Shield -------*/
+.protection_kk {
+	padding: 7px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.protection_kk_img {
+	margin: 0 auto;
+	display: block;
+	width: 40px;
+	padding: 0px;
 	float: left;
-	margin-top: 6px;
-	margin-right: 10px;
 }
 
-.news_reg_l {
-
-}
-
-
-/*------- Sign in page ---------*/
-.block_tit_sign {
-	margin-top: 50px;
+.protection_kk_cont {
 	text-align: center;
-	margin-bottom: -35px;
+	padding: 0;
+	float: left;
+}
+
+.protection_kk_cont h1 {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 0;
+}
+
+.protection_kk_cont p {
+	font-size: 10px;
+	color: #f89a22;
+	margin-bottom: 0;
+}
+
+/*---------- Makeup block slider --------*/
+.recommend-box .slick-prev {
+    padding: 0 !important;
+    border: 0 !important;
+    width: 44px !important;
+    height: 46px !important;
+    line-height: 20px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: 9 !important;
+    background-color: transparent !important;
+    left: 0 !important;
+    display: block !important;
+    top: 45% !important;
+    cursor: pointer !important;
+    text-indent: -999999 !important;
+}
+
+.recommend-box .slick-prev::before {
+    font-family: FontAwesome !important;
+    color: #fff !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
+    width: 36px !important;
+    height: 46px !important;
+    line-height: 42px !important;
+    display: block !important;
+    text-align: center !important;
+    background: rgba(51, 51, 51, 0.45) !important;
+}
+
+.recommend-box .slick-next {
+    padding: 0 !important;
+    border: 0 !important;
+    width: 36px !important;
+    height: 46px !important;
+    line-height: 20px !important;
+    overflow: hidden !important;
+    z-index: 9 !important;
+    background-color: transparent !important;
+    right: 0 !important;
+    display: block !important;
+    position: absolute !important;
+    top: 45% !important;
+    cursor: pointer !important;
+    text-indent: -999999 !important;
+}
+
+.recommend-box .slick-next::before {
+    font-family: FontAwesome !important;
+    color: #fff !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
+    width: 36px !important;
+    height: 46px !important;
+    line-height: 42px !important;
+    display: block !important;
+    text-align: center !important;
+    background: rgba(51, 51, 51, 0.45) !important;
+}
+
+/*............End CSS for Makeup & Glam Slider............*/ 
+
+/*------- Protection Shield -------*/
+.protection_kk {
+	padding: 7px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.protection_kk_img {
+	margin: 0 auto;
+	display: block;
+	width: 40px;
+	padding: 0px;
+	margin-left: 55px;
+}
+
+.protection_kk_cont {
+	text-align: center;
+	padding: 0;
+	float: right;
+	padding-top: 4px;
+}
+
+.protection_kk_cont h1 {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 0;
+}
+
+.protection_kk_cont p {
+	font-size: 10px;
+	color: #333;
+	margin-bottom: 0;
+	line-height: 11px;
+}
+
+/*.........END CSS for Shield............*/
+
+.checkout-index-index .nav-toggle {
+display: none !important;
+}
+
+/*............END CSS for Shield............*/
+
+/*............Start CSS for Verify...........*/
+.verify_otp_l{
+	margin-bottom: 20px !important;
+}
+/*............END CSS for Verify...........*/
+/*............. Details Page CSS...........*/
+.three_sticker_l {
+	padding: 40px 0;
+}
+
+.three_sticker_each {
+	padding: 5px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 
 
-.block_sign_tit h5 {
-    line-height: 1;
-	color: #767676;
-	font-weight: 400 !important;
-	z-index: 2;
-	position: relative;
-	background-color: #fff;
+/*.................New Logo Css...........*/
+.logo_tm_l{
+	padding: 128px;
+	width: 175px;
+	height: 41px;
+	
+}
+
+/*.........New Css Added for style change..........*/
+
+.mob_form{
+
+	width: 435px;
+	margin: 0 auto;
+}
+
+.logo_tm_l{
+	width: 195px;
+	margin: 0 auto;
+}
+
+.create_custom_l{
+	margin-top: 20px !important;
+
+}
+
+.action_custom_tools{
+	margin-top: 20px !important;
+}
+
+.signIn_footer{
+
+	margin-top: 10px;
+	border-top: 1px solid #eee;
+	text-align: center;
+}
+
+.signIn_footer_nav ul {
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+}
+
+.signIn_footer_nav ul li {
+	list-style: none;
 	display: inline-block;
-	padding: 0 8px 0 7px;
 }
 
-.block_sign_tit::after {
-    content: "";
-    width: 32%;
-    background-color: transparent;
-    display: block;
-    height: 1px;
-    border-top: 1px solid #e7e7e7;
-    position: absolute;
-    top: 72%;
-    margin-top: 0px;
-    z-index: 1;
+.signIn_footer_nav ul li a {
+	padding: 0 20px;
+	font-size: 11px;
+	float: left;
+	text-decoration: none;
+	color: #0066c0;
 }
 
-.sign_form_l {
-	margin-bottom: 40px !important;
-	margin-top: 25px !important;
+.copyright_blk_new {
+	font-size: 11px;
 }
 
-/*------ Password assistance --------*/
-.forgot_pass1 {
-	width: 100% !important;
+.tooltip_cust {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #adadad;
+	padding: 0 7px;
+	border-radius: 10px;
+	width: 20px;
+	text-align: center;
 }
 
-.form_sign_pass {
-	border: none !important;
+.tooltip_cust .tooltiptext {
+	visibility: hidden;
+	width: 140px;
+	background-color: #daeefa;
+	color: #333;
+	text-align: left;
+	/* border-radius: 6px; */
+	padding: 10px;
+	position: absolute;
+	z-index: 1;
 }
 
-.login-container .fieldset::after {
-    margin-top: 5px !important;
+.tooltip_cust:hover .tooltiptext {
+   visibility: visible;
 }
 
-.pass_form_bot {
-	margin-bottom: 0px;
-}
-
-.pass_forg_marg {
-	margin-top: 25px;
+.reg_para p {
+	margin-top: 10px !important;
+	
 }
