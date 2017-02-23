@@ -1774,7 +1774,7 @@ height: 175px;
 }
 
 .slick-slide img {
-   height: 535px;
+   height: auto;
 }
 
 .cust_bottom_prod1 .bulk_pic {
@@ -1805,7 +1805,7 @@ height: 175px;
 }
 
 .slick-slide img {
-   height: 535px;
+   height: auto;
 }
 
 .cust_bottom_prod1 .bulk_pic {
