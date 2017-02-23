@@ -7307,9 +7307,9 @@ display: none !important;
 
 /*.................New Logo Css...........*/
 .logo_tm_l{
-	padding: 128px;
-	width: 175px;
-	height: 41px;
+	
+	/*width: 175px;
+	height: 41px;*/
 	
 }
 
@@ -7396,3 +7396,54 @@ display: none !important;
 	
 }
 
+
+.faq_kikinben {
+    margin-top: 50px;
+    color: #333;
+}
+
+.faq_kikinben h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.faq_kikinben p {
+    color: #333;
+}
+
+.con_use_kikinben h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.con_use_kikinben p {
+    text-align: justify;
+    color: #333;
+}
+
+.con_use_kikinben .update_last {
+    color: #888;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.inform_help_blk {
+    border: 1px solid #eee;
+    padding: 20px;
+    width: 45%;
+}
+
+.help_btn {
+    outline: none;
+}
+
+.privacy_kikinben p {
+    text-align: justify;
+    color: #333;
+}
+
+.privacy_kikinben h2 {
+    font-size: 24px;
+    color: #333;
+}
