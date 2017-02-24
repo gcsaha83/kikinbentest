@@ -7446,3 +7446,45 @@ display: none !important;
     font-size: 24px;
     color: #333;
 }
+
+/*------ redeem gift card........*/
+
+.redeem_gift_cust_l button {
+    border: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #E76C33 !important;
+    padding: 16px !important;
+    margin-top: 15px !important;
+}
+
+.redeem_gift_cust_l button:hover,.redeem_gift_cust_l button:visited, .redeem_gift_cust_l button:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.redeem_gift_cust_l button:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.input_cust_redeem input{
+    width: 36% !important;
+}
+
+.billing_agree_l select{
+	width: 36% !important;
+}
+
+.manage_news_l{
+	padding: 30px !important;
+}
+
+.check_cust_news_l {
+	float: left !important;
+	margin-top: 6px !important;
+}
+
