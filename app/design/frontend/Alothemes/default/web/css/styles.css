@@ -186,7 +186,7 @@ input[type="search"],input[type="number"],input[type="datetime"],
 input[type="email"]{background: #fff;background-clip: padding-box;
 	border-radius: 0px;
 	font-size: 14px;height: 35px;line-height: 35px;padding: 0 10px;vertical-align: baseline;
-	width: 100%;box-sizing: border-box; margin-top:5px;}
+	width: 100%;box-sizing: border-box;}
 
 input[type="password"]::-moz-placeholder,
 input[type="url"]::-moz-placeholder,input[type="tel"]::-moz-placeholder,input[type="number"]::-moz-placeholder,
