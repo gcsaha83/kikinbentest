@@ -32,7 +32,7 @@
                             <?php echo __('My credit balance: ') ?><span class="regular-price"><span><?php echo $block->getBalanceAccount() ?></span></span>
                         </div>
                     <?php endif; ?>
-                    <div class="col-xs-12 col-sm-6 text-right" style="overflow: hidden">
+                    <div class="col-xs-12 col-sm-6 text-right redeem_gift_l" style="overflow: hidden">
                         <button type="button" class="action primary addredeem" onclick="window.location.href = '<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>'">
                             <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
                                 <span><?php echo __('Add / Redeem a Gift Card') ?></span>
