@@ -1338,9 +1338,9 @@ font-size: 12px;
 .block-subscribe .form-subscribe-header p{margin: 0; font-size: 15px; color: #333e48; font-weight: normal; padding-right: 70px}
 .block-subscribe .form-subscribe-header p span{font-weight: bold;}
 .block-subscribe .field{position: relative;}
-.block-subscribe .actions{position: absolute; right: 0; top: 0;}
+.block-subscribe .actions{position: absolute; right: 0; top: 0; padding:0px;}
 .block-subscribe .field input.input-text{width: 465px; height: 38px; line-height: 50px; background-color: #fff; border: 1px solid #f89922; border-radius: 0; padding: 0 10px; color: #333;}
-.block-subscribe .actions .button{border: 0; padding: 0; border-radius: 0 0 0 0; height: 36px;}
+.block-subscribe .actions .button{border: 0; padding: 0; border-radius: 0 0 0 0; height: 38px;}
 .block-subscribe .actions .button span{font-size: 14px; color: #fff; padding: 0 20px; display: block; line-height: 0; text-transform: capitalize;}
 
 /* Block:popup-newsletter */
@@ -7251,12 +7251,12 @@ margin: 0px !important;
 	border-bottom: 1px solid #eee;
 }
 
-.protection_kk_img {
+.protection_kk_img img{
 	margin: 0 auto;
 	display: block;
 	width: 40px;
 	padding: 0px;
-	margin-left: 55px;
+	margin-left: 30px;
 }
 
 .protection_kk_cont {
@@ -7446,3 +7446,45 @@ display: none !important;
     font-size: 24px;
     color: #333;
 }
+
+/*------ redeem gift card........*/
+
+.redeem_gift_cust_l button {
+    border: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #E76C33 !important;
+    padding: 16px !important;
+    margin-top: 15px !important;
+}
+
+.redeem_gift_cust_l button:hover,.redeem_gift_cust_l button:visited, .redeem_gift_cust_l button:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.redeem_gift_cust_l button:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.input_cust_redeem input{
+    width: 36% !important;
+}
+
+.billing_agree_l select{
+	width: 36% !important;
+}
+
+.manage_news_l{
+	padding: 30px !important;
+}
+
+.check_cust_news_l {
+	float: left !important;
+	margin-top: 6px !important;
+}
+

@@ -1017,3 +1017,32 @@ _:-ms-fullscreen.input-lg,
     letter-spacing: normal;
     word-spacing: normal;
 }
+
+/*------ redeem gift card........*/
+
+.redeem_gift_l button {
+    border: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #E76C33 !important;
+    padding: 16px !important;
+}
+
+.redeem_gift_l button:hover,.redeem_gift_l button:visited, .redeem_gift_l button:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.redeem_gift_l button:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.ui-datepicker-trigger span{
+    padding: 7px !important;
+    font-weight: normal !important;
+    font-size: 12px !important;
+}
