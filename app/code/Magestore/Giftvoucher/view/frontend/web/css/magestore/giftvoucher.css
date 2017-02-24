@@ -739,7 +739,12 @@ div.egcSwatch-arrow {
 }
 #giftcard-preview-template-content{float:left;width: 100%;overflow: hidden;}
 /****************************Template 01 _ left*************************************/
-.giftvoucher-product-info{overflow: hidden}
+.giftvoucher-product-info{
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
 #giftcard-template-left{
     overflow:hidden;
     width: 655px;
@@ -1181,4 +1186,56 @@ li.giftvoucher-discount-code strong{float:none;}
 
 #giftvoucher_container #payment_form_giftvoucher #giftvoucher_message ul{
     padding-left: 0px;
+}
+/*................GIFT............*/
+
+.ajax-upload-dragdrop{
+    border: none !important;
+    padding: 10px 10px 0 0px !important;
+    margin-bottom: 7px;
+}
+
+.ajax-file-upload{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    padding: 15px !important;
+    line-height: 2px !important;
+    height: 27px !important;
+    margin: 0 10px 0px 0 !important;
+    background: #f89a22 !important;
+    -moz-box-shadow: 0 2px 0 0 #e76c33 !important;
+    -webkit-box-shadow: 0 2px 0 0 #e76c33 !important;
+    box-shadow: 0 2px 0 0 #e76c33 !important;
+}
+
+#giftcard-template-upload-images {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-group .checkbox {
+    padding-left: 0 !important;
+}
+
+.pre_gift_l {
+    border: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #E76C33 !important;
+    padding: 16px !important;
+}
+
+.pre_gift_l:hover,.pre_gift_l:visited, .pre_gift_l:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.pre_gift_l:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
 }
