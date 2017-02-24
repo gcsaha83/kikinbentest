@@ -1338,9 +1338,9 @@ font-size: 12px;
 .block-subscribe .form-subscribe-header p{margin: 0; font-size: 15px; color: #333e48; font-weight: normal; padding-right: 70px}
 .block-subscribe .form-subscribe-header p span{font-weight: bold;}
 .block-subscribe .field{position: relative;}
-.block-subscribe .actions{position: absolute; right: 0; top: 0; padding: 0}
+.block-subscribe .actions{position: absolute; right: 0; top: 0;}
 .block-subscribe .field input.input-text{width: 465px; height: 38px; line-height: 50px; background-color: #fff; border: 1px solid #f89922; border-radius: 0; padding: 0 10px; color: #333;}
-.block-subscribe .actions .button{border: 0; background-color: #333e48; padding: 0; border-radius: 0 0 0 0; height: 38px}
+.block-subscribe .actions .button{border: 0; padding: 0; border-radius: 0 0 0 0; height: 36px;}
 .block-subscribe .actions .button span{font-size: 14px; color: #fff; padding: 0 20px; display: block; line-height: 0; text-transform: capitalize;}
 
 /* Block:popup-newsletter */
