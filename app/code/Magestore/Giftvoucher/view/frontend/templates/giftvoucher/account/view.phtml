@@ -25,24 +25,28 @@
     <div class="gift-card">
         <div class="form-group">
 
-            <div class="form-group">
-                <div class="row">
+            <div class="form-group redeem_cust_page">
+                <div class="">
                     <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
-                        <div class="col-xs-12 col-sm-6">
-                            <?php echo __('My credit balance: ') ?><span class="regular-price"><span><?php echo $block->getBalanceAccount() ?></span></span>
+                        <div class="redeem_cust_tit">
+                            <?php echo __('Current Balance: ') ?>
+
+                            <span class="regular-price"><span><?php echo $block->getBalanceAccount() ?></span></span>
                         </div>
                     <?php endif; ?>
-                    <div class="col-xs-12 col-sm-6 text-right redeem_gift_cust_l" style="overflow: hidden">
-                        <button type="button" class="action primary addredeem" onclick="window.location.href = '<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>'">
-                            <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
-                                <span><?php echo __('Add / Redeem a Gift Card') ?></span>
-                            <?php else: ?>
-                                <span><?php echo __('Add a Gift Card') ?></span>
-                            <?php endif; ?>
-                        </button>
-                    </div>
+                </div>
+
+                <div class="redeem_gift_l redeem_btn_page">
+                    <button type="button" class="action primary addredeem" onclick="window.location.href = '<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>'">
+                        <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
+                            <span><?php echo __('Add / Redeem a Gift Card') ?></span>
+                        <?php else: ?>
+                            <span><?php echo __('Add a Gift Card') ?></span>
+                        <?php endif; ?>
+                    </button>
                 </div>
             </div>
+
             <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
                 <div class="form-group">
                     <a class="left" style="text-decoration: underline;" href="<?php echo $this->getUrl('giftvoucher/index/history') ?>"><?php echo __('View detail') ?></a>
