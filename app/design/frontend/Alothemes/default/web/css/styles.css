@@ -2007,8 +2007,12 @@ font-size: 12px;
 .product-info-main .table.grouped .price-box .price-wrapper .price{font-size: 15px; line-height: 20px}
 .product-essential .product-info-main .price-box {
     line-height: normal;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+}
+
+.price-final_price {
+	border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important;
+
 }
 
 /* Rating */
@@ -7488,4 +7492,5 @@ display: none !important;
 	float: left !important;
 	margin-top: 6px !important;
 }
+
 
