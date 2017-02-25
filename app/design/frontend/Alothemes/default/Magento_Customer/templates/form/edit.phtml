@@ -3,9 +3,7 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 // @codingStandardsIgnoreFile
-
 /** @var \Magento\Customer\Block\Form\Edit $block */
 ?>
 <form class="form form-edit-account" action="<?php /* @escapeNotVerified */ echo $block->getUrl('customer/account/editPost') ?>" method="post" id="form-validate" enctype="multipart/form-data" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" autocomplete="off">
@@ -115,7 +113,6 @@
             ignore: ignore ? ':hidden:not(' + ignore + ')' : ':hidden'
         <?php endif ?>
         });
-
     });
 </script>
 <script type="text/x-magento-init">

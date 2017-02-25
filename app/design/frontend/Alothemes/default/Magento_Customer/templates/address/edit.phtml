@@ -3,9 +3,7 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 // @codingStandardsIgnoreFile
-
 ?>
 <?php
 /**
@@ -18,7 +16,6 @@
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 $customerId = $customerSession->getId();
-
 $customerDetails = $objectManager->get('Magento\Customer\Model\Customer')->load($customerId);
 $mobileValue = $customerDetails->getMobilenumber();
 ?>

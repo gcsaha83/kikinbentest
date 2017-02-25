@@ -7549,3 +7549,82 @@ display: none !important;
 .act_rcnt_history a span{
 	color:#1979c3 !important;
 }
+.edit_customer_info_ki {
+	padding: 0 15px 20px !important;
+}
+
+.change_email_ki {
+	margin-top: 10px !important;
+}
+
+.change_email_ki input{
+	margin-top: 6px !important;
+	float: left !important;
+}
+
+.go_back_ki a span{
+	color:#1979c3 !important;
+}
+
+.go_back_ki a {
+	margin-top: 17px !important;
+}
+
+.pass_change_ki {
+	margin-top: 0 !important;
+}
+
+.eidt_acc_cust_l button {
+    border: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #E76C33 !important;
+    padding: 16px !important;
+    margin-top: 15px !important;
+    margin-left: 10px !important;
+}
+
+.eidt_acc_cust_l button:hover,.eidt_acc_cust_l button:visited, .eidt_acc_cust_l button:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.eidt_acc_cust_l button:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.add_blk_cust::before {
+    left: 0% !important;
+}
+.redeem_cust_page {
+	border: 1px solid #ddd;
+	padding: 15px;
+	width: 50% !important;
+	margin: 0 auto !important;
+	float: none !important;
+	text-align: center !important;
+	margin-bottom: 30px !important;
+}
+
+.redeem_cust_tit {
+	font-size: 17px;
+	color: #333 !important;
+}
+
+.redeem_cust_tit span {
+	font-size: 17px;
+}
+
+.redeem_btn_page span {
+	font-size: 14px;
+	
+}
+
+.redeem_btn_page {
+	margin-top: 10px;
+
+}

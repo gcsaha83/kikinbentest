@@ -123,8 +123,8 @@ if ($productType === 'simple') {
 <div class="box-tocart">
     <div class="fieldset">
         <?php if ($block->shouldRenderQuantity()): ?>
-        <div class="field qty">
-            <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Quanity: ') ?></span></label>
+        <div class="field qty details_qty_l">
+            <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Quantity: ') ?></span></label>
             <div class="control">
             	<button type="button" class="reduced items" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--;return false;">
 					<i class="fa fa-minus"></i>
