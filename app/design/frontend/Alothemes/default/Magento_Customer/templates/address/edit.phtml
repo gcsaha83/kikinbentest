@@ -3,7 +3,9 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 // @codingStandardsIgnoreFile
+
 ?>
 <?php
 /**
@@ -12,14 +14,7 @@
  * @var $block \Magento\Customer\Block\Address\Edit
  */
 ?>
-<?php
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$customerSession = $objectManager->get('Magento\Customer\Model\Session');
-$customerId = $customerSession->getId();
-$customerDetails = $objectManager->get('Magento\Customer\Model\Customer')->load($customerId);
-$mobileValue = $customerDetails->getMobilenumber();
-?>
-<form class="form-address-edit" action="<?php /* @escapeNotVerified */ echo $block->getSaveUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+<form class="form-address-edit edit_customer_info_ki" action="<?php /* @escapeNotVerified */ echo $block->getSaveUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
     <fieldset class="fieldset">
         <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Contact Information') ?></span></legend><br>
         <?php echo $block->getBlockHtml('formkey')?>
@@ -35,9 +30,8 @@ $mobileValue = $customerDetails->getMobilenumber();
         <div class="field telephone required">
             <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __('Phone Number') ?></span></label>
             <div class="control">
-                <input type="text" name="telephone" value="<?php echo $mobileValue; ?>" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" class="input-text <?php /* @escapeNotVerified */ echo $this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('telephone') ?>" id="telephone" readonly="true">
-            </div>                        
-            
+                <input type="text" name="telephone" value="<?php echo $block->escapeHtml($block->getAddress()->getTelephone()) ?>" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" class="input-text <?php /* @escapeNotVerified */ echo $this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('telephone') ?>" id="telephone">
+            </div>
         </div>
         <div class="field fax">
             <label class="label" for="fax"><span><?php /* @escapeNotVerified */ echo __('Fax') ?></span></label>
@@ -128,13 +122,13 @@ $mobileValue = $customerDetails->getMobilenumber();
         <?php endif; ?>
     </fieldset>
     <div class="actions-toolbar">
-        <div class="primary">
+        <div class="primary eidt_acc_cust_l ">
             <button type="submit" class="action save primary" data-action="save-address" title="<?php /* @escapeNotVerified */ echo __('Save Address') ?>">
                 <span><?php /* @escapeNotVerified */ echo __('Save Address') ?></span>
             </button>
         </div>
-        <div class="secondary">
-            <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('Go back') ?></span></a>
+        <div class="secondary go_back_ki">
+            <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('<< Go back') ?></span></a>
         </div>
     </div>
 </form>
