@@ -142,7 +142,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 												<a id="quick_sigup_link" style="position:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
                                                 <span>Hello, <?php echo $msg; ?> </span>
 
-													<span class="youraccount" style="margin-top:-25px;">My Account</span>
+													<span class="youraccount" style="margin-top:-25px;">Your Account</span>
 												</a>
 											</li>
 
@@ -153,10 +153,10 @@ $isLoggedIn = $customerSession->isLoggedIn();
 													  		<a href="<?php echo $this->getUrl('customer/account/'); ?>">My Account</a>
 													  	</li>
 													  	<li class="signed_drop">
-													  		<a href="#">My Order</a>
+													  		<a href="<?php echo $this->getUrl('sales/order/history/'); ?>">Your Order</a>
 													  	</li>
 													  	<li class="signed_drop">
-													  		<a href="<?php echo $this->getUrl('wishlist') ?>">My Wishlists</a>
+													  		<a href="<?php echo $this->getUrl('wishlist') ?>">Your Wishlists</a>
 													  	</li>
 													</ul>
 
@@ -181,7 +181,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 											</a><br>
 								    
 								    		<p><span style="float: left;">New Customer? </span>&nbsp;
-								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" style="float: left;margin-left:5px;"> Join Free</a></p>
+								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" style="float: left;margin-left:5px; color:#1979c3;"> Join Free</a></p>
 								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" title="Register" style="padding:0">
 								    		<input type="button" class="btn btn-sm btn-register register_cust_l btn-block" value="Register Here" >
 								    		</a>
@@ -190,7 +190,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 										  	<div class="account_details">
 												<ul>
 												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('customer/account/'); ?>">Your Account</a></li>
-												  	<li class="signed_drop"><a href="#">Your Order</a></li>
+												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('sales/order/history/'); ?>">Your Order</a></li>
 
 												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('wishlist') ?>">Your Wishlists</a>
 												  	</li>
