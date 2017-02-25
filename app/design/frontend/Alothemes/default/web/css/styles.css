@@ -7600,3 +7600,31 @@ display: none !important;
 .add_blk_cust::before {
     left: 0% !important;
 }
+.redeem_cust_page {
+	border: 1px solid #ddd;
+	padding: 15px;
+	width: 50% !important;
+	margin: 0 auto !important;
+	float: none !important;
+	text-align: center !important;
+	margin-bottom: 30px !important;
+}
+
+.redeem_cust_tit {
+	font-size: 17px;
+	color: #333 !important;
+}
+
+.redeem_cust_tit span {
+	font-size: 17px;
+}
+
+.redeem_btn_page span {
+	font-size: 14px;
+	
+}
+
+.redeem_btn_page {
+	margin-top: 10px;
+
+}
