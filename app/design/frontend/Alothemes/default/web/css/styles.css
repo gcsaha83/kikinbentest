@@ -7493,4 +7493,59 @@ display: none !important;
 	margin-top: 6px !important;
 }
 
+/*.............Products Details page CSS..........*/
+.details_qty_l {
+	margin-left: 0px !important;
+}
 
+
+.price_box_mama {
+	border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important;
+
+}
+
+.order_list_view {
+	float: right !important;
+	color:#1979c3 !important;
+	margin-top: 6px !important;
+}
+
+.act_rcnt_vw a{
+	color:#1979c3 !important;
+}
+
+.customer_info_account {
+	float: none !important;
+	padding: 10px 0 !important;
+}
+
+.customer_info_news {
+	float: none !important;
+}
+
+.customer_account_name_l {
+	font-size: 14px !important;
+	color: #333 !important;
+	margin-bottom: 0px !important;
+}
+
+.eidt_cust_info a span {
+	color:#1979c3 !important;
+	padding: 0 10px 0 0 !important;
+}
+
+.eidt_cust_pass {
+	color:#1979c3 !important;
+	
+}
+
+.manage_cust_add span{
+	float: right !important;
+	color:#1979c3 !important;
+	margin-top: 6px !important;
+}
+
+.act_rcnt_history a span{
+	color:#1979c3 !important;
+}
