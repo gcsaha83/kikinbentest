@@ -3,9 +3,7 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 // @codingStandardsIgnoreFile
-
 ?>
 <?php
 /**
@@ -14,10 +12,10 @@
  */
 ?>
 <div class="block block-addresses-default">
-    <div class="block-title add_blk_cust"><strong><?php /* @escapeNotVerified */ echo __('Default Addresses') ?></strong></div>
+    <div class="block-title"><strong><?php /* @escapeNotVerified */ echo __('Default Addresses') ?></strong></div>
     <div class="block-content">
         <?php if ($_pAddsses = $block->getDefaultBilling()): ?>
-            <div class="box box-address-billing customer_info_account">
+            <div class="box box-address-billing">
                 <strong class="box-title">
                     <span><?php /* @escapeNotVerified */ echo __('Default Billing Address') ?></span>
                 </strong>
@@ -26,7 +24,7 @@
                         <?php echo $block->getAddressHtml($block->getAddressById($_pAddsses)) ?>
                     </address>
                 </div>
-                <div class="box-actions eidt_cust_info">
+                <div class="box-actions">
                     <a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getAddressEditUrl($_pAddsses) ?>">
                         <span><?php /* @escapeNotVerified */ echo __('Change Billing Address') ?></span>
                     </a>
@@ -42,7 +40,7 @@
         <?php endif ?>
 
         <?php if ($_pAddsses = $block->getDefaultShipping()): ?>
-            <div class="box box-address-shipping customer_info_news">
+            <div class="box box-address-shipping">
                 <strong class="box-title">
                     <span><?php /* @escapeNotVerified */ echo __('Default Shipping Address') ?></span>
                 </strong>
@@ -51,7 +49,7 @@
                         <?php echo $block->getAddressHtml($block->getAddressById($_pAddsses)) ?>
                     </address>
                 </div>
-                <div class="box-actions eidt_cust_info">
+                <div class="box-actions">
                     <a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getAddressEditUrl($_pAddsses) ?>">
                         <span><?php /* @escapeNotVerified */ echo __('Change Shipping Address') ?></span>
                     </a>
@@ -69,7 +67,7 @@
 </div>
 
 <div class="block block-addresses-list">
-    <div class="block-title add_blk_cust"><strong><?php /* @escapeNotVerified */ echo __('Additional Address Entries') ?></strong></div>
+    <div class="block-title"><strong><?php /* @escapeNotVerified */ echo __('Additional Address Entries') ?></strong></div>
     <div class="block-content">
         <?php if ($_pAddsses = $block->getAdditionalAddresses()): ?>
             <ol class="items addresses">
@@ -92,11 +90,11 @@
 </div>
 
 <div class="actions-toolbar">
-    <div class="primary redeem_gift_cust_l">
+    <div class="primary">
         <button type="button" role="add-address" title="<?php /* @escapeNotVerified */ echo __('Add New Address') ?>" class="action primary add"><span><?php /* @escapeNotVerified */ echo __('Add New Address') ?></span></button>
     </div>
-    <div class="secondary go_back_ki">
-        <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('<< Back') ?></span></a>
+    <div class="secondary">
+        <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('Back') ?></span></a>
     </div>
 </div>
 <script type="text/x-magento-init">
