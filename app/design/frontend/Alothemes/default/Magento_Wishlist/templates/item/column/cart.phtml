@@ -15,19 +15,19 @@ $product = $item->getProduct();
     <?php /* @escapeNotVerified */ echo $block->getLayout()->renderElement($childName, false); ?>
 <?php endforeach;?>
 <div class="box-tocart">
-    <fieldset class="fieldset">
+    <fieldset class="">
     <?php if ($item->canHaveQty() && $product->isVisibleInSiteVisibility()): ?>
-        <div class="field qty">
+        <!-- <div class="field qty">
             <label class="label" for="qty[<?php /* @escapeNotVerified */ echo $item->getId() ?>]"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
             <div class="control">
                 <input type="number" data-role="qty" id="qty[<?php /* @escapeNotVerified */ echo $item->getId() ?>]" class="input-text qty" data-validate="{'required-number':true,'validate-greater-than-zero':true}"
                name="qty[<?php /* @escapeNotVerified */ echo $item->getId() ?>]" value="<?php /* @escapeNotVerified */ echo $block->getAddToCartQty($item) * 1 ?>">
             </div>
-        </div>
+        </div> -->
     <?php endif; ?>
     <?php if ($product->isSaleable()): ?>
     <div class="product-item-actions">
-        <div class="actions-primary">
+        <div class="actions-primary btn_custom_wish">
             <button type="button" data-role="tocart" data-post='<?php /* @escapeNotVerified */ echo $block->getItemAddToCartParams($item)?>' title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>" data-item-id="<?php /* @escapeNotVerified */ echo $item->getId()?>" class="action tocart primary">
                 <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
             </button>
