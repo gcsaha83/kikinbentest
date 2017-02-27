@@ -12,7 +12,8 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         \Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
         \Magento\Sales\Model\Order $order,
         \Magento\Catalog\Model\Product $product,
-        \Apptha\Marketplace\Model\Seller $seller
+        \Apptha\Marketplace\Model\Seller $seller,
+        \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission
     
     
     ){
@@ -20,6 +21,7 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $this->_order          = $order;
         $this->_product        = $product;
         $this->_seller         = $seller;
+        $this->_SellerProductCommission = $SellerProductCommission;
     }
 
    /* Order of execution
@@ -46,25 +48,28 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
             $productPrice = $item->getPrice ();
             $product = $this->_product->load($productId);
             $sellerId = $product->getSellerId ();
-            if (! empty ( $sellerId ) && $item->getParentItemId () == '') {
+            $sellerProductCollection = $this->_SellerProductCommission->create()->getCollection();
 
-                $sellerData       = $this->_seller->load($sellerId); 
-                $commissionType   = $product->getKikinbenPercentageAmount();
-                $commissionAmount = $product->getkikinbenProductCommission();
-                $fullFill         = $product->getKikinbenFulfilled();
-                echo "product".$productId."price".productPrice."commission".$commissionAmount.'<br/>';
-                if($commissionType == 1){ 
+            $sellerData       = $this->_seller->load($sellerId);
 
-                    $priceAfterCommissionPercent[] =  $productPrice - (($commissionAmount / 100) * $productPrice);
-                    
-                }
+            $sellerProducts = $sellerProductCollection->addFieldToFilter('seller_id',['eq'=>$sellerData->getId()])
+                ->addFieldToFilter('product_id',['eq'=>$productId])->getData();
+
+            for($i=0;$i< count($sellerProducts);$i++){
+
+                $commissionAmount = $sellerProducts[$i]['amount'];
+                $priceAfterCommissionPercent[] =  $productPrice - (($commissionAmount / 100) * $productPrice);
+
 
             }
-
+               
+            
         }
 
 
         echo '<pre>';
+        //echo $sellerProducts->getSelect();
+        print_r($sellerProducts);
         print_r($priceAfterCommissionPercent);
         echo '</pre>';
         die;
