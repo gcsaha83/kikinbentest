@@ -676,13 +676,14 @@ tr.summary-details-excluded{font-style:italic}
 }
 .header-top .top-left {float: left;padding-left: 15px;}
 .header-top .top-right {
+	display:none;
 	float: right;
 	padding-right: 0px;
 	padding-top: 3px;
-        padding-bottom: 3px;
+    padding-bottom: 3px;
 }
-.header-top{border-width: 0 0 1px; border-style: solid; border-color: #efefef;}
-.header-content{padding: 20px 0; border-bottom: 1px solid #eee !important; padding-bottom: 8px !important;}
+.header-top{/*border-width: 0 0 1px; border-style: solid; border-color: #efefef;*/}
+.header-content{padding: 20px 0; /*border-bottom: 1px solid #eee !important;*/ padding-bottom: 8px !important;}
 /*Top support/hot support*/
 .hot-support .hotline, .hot-support .email{display: inline-block; }
 .hot-support .hotline{margin-right: 24px}
@@ -702,7 +703,7 @@ tr.summary-details-excluded{font-style:italic}
 .customer .top-links li{float: left; margin: 0}
 .customer .icon{font-size: 24px; color: #334141; line-height: 43px; padding-right: 0px; margin-top: 9px !important;}
 .customer .top-links li a{color: #334141}
-.customer .top-links li a, .customer .top-links li span{display: block; font-size: 12px; text-transform: none; line-height: 43px}
+.customer .top-links li a, .customer .top-links li span{display: block; font-size: 12px; text-transform: none; line-height: 17px;}
 .customer .top-links li a:hover{color: #fed700}
 .customer .top-links li span{padding: 0px; color: #333}
 /*Currency*/
@@ -737,7 +738,7 @@ tr.summary-details-excluded{font-style:italic}
 .header-search .form-search:before, .header-search .form-search:after{content: ""; clear: both; display: table;}
 .header-search .form-search{border-width: 1px;border-style: solid;/*-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;*/position: relative;}
 .header-search .form-search button.button{float: right; width: 55px; text-align: center; padding: 0;border: 0; height: 38px !important; opacity: 1;border-radius: 0 0px 0px 0;cursor: pointer;pointer-events: auto;position: absolute;right: 0px;}
-.header-search .field.search{width: calc(100% - 165px)}
+.header-search .field.search{/*width: calc(100% - 165px)*/}
 .header-search .form-search button.button > span > span{padding:0;border:none; display: block; text-align: center; line-height: 45px}
 .header-search .form-search button.button > span .icon{font-size: 32px; display: inline-block; padding-top: 1px}
 .header-search .form-search input.input-text{background-color:transparent; font-size:12px; margin:0;line-height:53px;height: 38px; border: 0; color: #a0a0a0; padding: 0 15px}
@@ -766,7 +767,7 @@ tr.summary-details-excluded{font-style:italic}
 .header .form-language select.flags option{background-position:4px 50%;background-repeat:no-repeat;padding-left:25px}
 .header .header-setting{float: right;}
 .header .header-setting .settting-switcher{position:relative;}
-.righ-header-content{/*text-align: right; padding-top: 2px*/margin-top: -10px !important;}
+.righ-header-content{/*text-align: right; padding-top: 2px; margin-top: -10px !important;*/}
 .top-link-product li{display: inline-block; vertical-align: middle; margin: 0; padding: 0 4px !important;}
 .top-link-product a.compare, .top-link-product a.wishlist{/*font-size: 22px;*/ color: #333e48; display: inline-block; vertical-align: middle; line-height: 50px; font-weight: bold; width: 50px; height: 50px; line-height: 50px; overflow: hidden; text-align: center; position: relative;}
 .top-link-product, .minicart-wrapper{display: inline-block; vertical-align: middle; margin: 0}
@@ -3040,7 +3041,7 @@ height: 100%;position: fixed;right: 0;top: 0;width: 100%;z-index: 1} */
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	border-left: 1px solid #f3f3f3;
 	z-index: 1000;
-	margin-top: 50px;
+	margin-top: 34px;
 	padding: 20px;
 	left: -62%;
 }
@@ -3061,8 +3062,8 @@ height: 100%;position: fixed;right: 0;top: 0;width: 100%;z-index: 1} */
 }
 
 .dropdown:hover .dropbtn {
-   background-color: #fff;
-   box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);
+   background-color: #fff;/*
+   box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.2);*/
 }
 
 .btn-signIn {
@@ -3415,7 +3416,7 @@ font-size: 12px;
     box-sizing: border-box;
     border-right: none;
     outline: none;
-	margin-top:0px !important;
+    margin-top:0px !important;
 }
 
 .cocode input {
@@ -5397,7 +5398,7 @@ font-size: 12px;
 	    font-family: arial,sans-serif;
 	    line-height: normal;
 	    z-index: 99999;
-		margin-top: 60px;
+		margin-top: 42px;
 	}
 
 	.nav-signin-cus-l .nav-arrow-cus-l {
@@ -7633,3 +7634,717 @@ display: none !important;
 	margin: 0 !important;
 }
 .slick-slide img{margin: 0 auto !important;}
+/*.............Products Details page CSS..........*/
+
+.details_qty_l {
+	margin-left: 0px !important;
+}
+
+
+.price_box_mama {
+	border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important;
+
+}
+
+.order_list_view {
+	float: right !important;
+	color:#1979c3 !important;
+	margin-top: 6px !important;
+}
+
+.act_rcnt_vw a{
+	color:#1979c3 !important;
+}
+
+.customer_info_account {
+	float: none !important;
+	padding: 10px 0 !important;
+}
+
+.customer_info_news {
+	float: none !important;
+}
+
+.customer_account_name_l {
+	font-size: 14px !important;
+	color: #333 !important;
+	margin-bottom: 0px !important;
+}
+
+.eidt_cust_info a span {
+	color:#1979c3 !important;
+	padding: 0 10px 0 0 !important;
+}
+
+.eidt_cust_pass {
+	color:#1979c3 !important;
+	
+}
+
+.manage_cust_add span{
+	float: right !important;
+	color:#1979c3 !important;
+	margin-top: 6px !important;
+}
+
+.act_rcnt_history a span{
+	color:#1979c3 !important;
+}
+.edit_customer_info_ki {
+	padding: 0 15px 20px !important;
+}
+
+.change_email_ki {
+	margin-top: 10px !important;
+}
+
+.change_email_ki input{
+	margin-top: 6px !important;
+	float: left !important;
+}
+
+.go_back_ki a span{
+	color:#1979c3 !important;
+}
+
+.go_back_ki a {
+	margin-top: 17px !important;
+}
+
+.pass_change_ki {
+	margin-top: 0 !important;
+}
+
+.eidt_acc_cust_l button {
+    border: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #E76C33 !important;
+    padding: 16px !important;
+    margin-top: 15px !important;
+    margin-left: 10px !important;
+}
+
+.eidt_acc_cust_l button:hover,.eidt_acc_cust_l button:visited, .eidt_acc_cust_l button:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.eidt_acc_cust_l button:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.add_blk_cust::before {
+    left: 0% !important;
+}
+/*..........Git Uploaded done..........*/
+
+
+/*........... Start CSS 25/2/17 ......*/
+.redeem_cust_page {
+	border: 1px solid #ddd;
+	padding: 15px;
+	width: 50% !important;
+	margin: 0 auto !important;
+	float: none !important;
+	text-align: center !important;
+	margin-bottom: 30px !important;
+}
+
+.redeem_cust_tit {
+	font-size: 17px;
+	color: #333 !important;
+}
+
+.redeem_cust_tit span {
+	font-size: 17px;
+}
+
+.redeem_btn_page span {
+	font-size: 14px;
+	
+}
+
+.redeem_btn_page {
+	margin-top: 10px;
+
+}
+
+/*---------- CSS 26/2/17---------*/
+.remove_minicart_ki {
+	margin: 0 !important;
+}
+
+.jcarousel-skin-tango .jcarousel-container {
+    -moz-border-radius: 10px;
+    background: #fff;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    width: 1155px;
+    padding: 10px 0px 5px;
+    padding-left:37px;
+	padding-right:40px;
+	margin:0 auto;/*
+	margin-top:80px*/
+}
+
+.jcarousel-skin-tango .jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 0px 0px;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width: 1056px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-vertical {
+    width:  240px;
+    height: 245px;
+}
+
+.jcarousel-skin-tango .jcarousel-item {
+    /*width: 240px;
+    height: 154px;*/
+}
+
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+    margin-right: 0px;
+    padding: 1px;
+    text-align: center;
+    margin-bottom: 6px;/*
+    margin-right: 5px;
+    margin-left: 10px;*/
+    border-right: 1px solid #eee;
+}
+
+.jcarousel-skin-tango .jcarousel-item-horizontal:last-child {
+    border-right: none;
+}
+
+.jcarousel-skin-tango .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: 166px;
+    right: 7px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(next.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-next-horizontal:hover {
+    background-position: -32px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 166px;
+    left: 0px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(prev.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:hover {
+    background-position: -32px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(next-vertical.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-next-vertical:hover {
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin-tango .jcarousel-next-vertical:active {
+    background-position: 0 -64px;
+}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical,
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(prev-vertical.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-vertical:hover {
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-vertical:active {
+    background-position: 0 -64px;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+img {border:0px}
+
+
+
+.pro_blk_l h1 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+
+
+/*---------------------*/
+
+.jcarousel-container {
+    position: relative;
+}
+
+.jcarousel-clip {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.jcarousel-list {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list li,
+.jcarousel-item {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    /*width: 75px;
+    height: 75px;*/
+}
+
+/**
+ * The buttons are added dynamically by jCarousel before
+ * the <ul> list (inside the <div> described above) and
+ * have the classnames "jcarousel-next" and "jcarousel-prev".
+ */
+.jcarousel-next {
+    z-index: 3;
+    display: none;
+}
+
+.jcarousel-prev {
+    z-index: 3;
+    display: none;
+}
+
+
+
+
+body {
+    background-color: #fcfcfc !important;
+}
+
+
+/******************************/
+
+/*----------- Fashion ------------*/
+.prod_customized_block {
+    background: #fff;
+    margin-top: 50px;
+}
+
+.prod_customized_blk_tit {
+    padding: 0 !important;
+    background: #fff;
+    border-top: 3px solid #f89a22;
+}
+
+.prod_blk_tit {
+    font-size: 25px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.prod_blk_tit h3 {
+    float: left;
+}
+
+.prod_blk_tit h3 a {
+    color: #333;
+}
+
+.prod_blk_tit h3 a:hover {
+    text-decoration: none;
+}
+
+.prod_blk_tit .see_all_right {
+    float: right;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.pro_blk_l:hover {
+    box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039);
+    cursor: pointer;
+}
+
+.pro_blk_l {
+    padding: 10px;
+}
+
+
+
+
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    .jcarousel-skin-tango .jcarousel-container-horizontal {
+        width: 940px;
+    }
+
+    .jcarousel-skin-tango .jcarousel-clip-horizontal {
+        width: 860px;
+    }
+
+    #prod_carousel li {
+        width: 285px;
+    }
+}
+
+
+@media (max-width: 991px) and (min-width: 768px) {
+
+    .jcarousel-skin-tango .jcarousel-container-horizontal {
+        width: 720px;
+    }
+
+    .jcarousel-skin-tango .jcarousel-clip-horizontal {
+        width: 630px;
+    }
+
+    #prod_carousel li {
+        width: 315px;
+    }
+}
+
+
+@media (max-width: 767px) and (min-width: 320px) {
+
+    .jcarousel-skin-tango .jcarousel-container-horizontal {
+        width: 720px;
+    }
+
+    .jcarousel-skin-tango .jcarousel-clip-horizontal {
+        width: 630px;
+    }
+
+    #prod_carousel li {
+        width: 630px;
+    }
+}
+
+
+.jcarousel-container {
+    position: relative;
+}
+
+.jcarousel-clip {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.jcarousel-list {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list li,
+.jcarousel-item {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 75px;
+    height: 75px;
+}
+
+/**
+ * The buttons are added dynamically by jCarousel before
+ * the <ul> list (inside the <div> described above) and
+ * have the classnames "jcarousel-next" and "jcarousel-prev".
+ */
+.jcarousel-next {
+    z-index: 3;
+    display: none;
+}
+
+.jcarousel-prev {
+    z-index: 3;
+    display: none;
+}
+
+/*******************CSS********************/
+
+.search_bar_l {
+  background: #fff;
+  border: #b7b7b7 solid 1px;
+  border-radius: 3px;
+  /*box-shadow: 0 0 3px #ccc;*/
+  position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
+  /*max-width: 580px;*/
+}
+.search_bar_l input[type=text] {
+  border: none;
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+  padding: .5em;
+  margin: 0;
+  overflow: hidden;
+}
+.search_bar_l input[type=text]:focus {
+  outline: none;
+}
+.search_bar_l button[type=submit] {
+  background: -webkit-linear-gradient(#f89a22, #f89a22);
+  background: linear-gradient(#f89a22, #f89a22);
+  color: rgba(255, 255, 255, 0);
+  border: 1px solid #f89a22;
+  width: 10%;
+  min-width: 56px;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 0 3px 3px 0;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.search_bar_l button[type=submit]:after {
+  content: '';
+  position: absolute;
+  top: 18%;
+  right: 0;
+  bottom: 22%;
+  left: 4%;
+  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+  background-size: contain;
+}
+.search_bar_l button[type=submit]:hover, .search_bar_l button[type=submit]:focus {
+  background: -webkit-linear-gradient(#ea870b, #ea870b);
+  background: linear-gradient(#ea870b, #ea870b);
+  /*box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);*/
+  cursor: pointer;
+  outline: none;
+}
+.search_bar_l .search_dropdown_l {
+  font-weight: 600;
+  min-width: 17px;
+  background: -webkit-linear-gradient(#f4f4f4, #e2e2e2);
+  background: linear-gradient(#f4f4f4, #e2e2e2);
+  border-right: 1px solid #ddd;
+  color: #555;
+  padding: 0 28px 0 13px;
+  border-radius: 2px 0 0 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  box-sizing: content-box;
+}
+.search_bar_l .search_dropdown_l:after {
+  content: "\2193";
+  color: rgba(85, 85, 85, 0);
+  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+  height: 8px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -6px;
+}
+.search_bar_l .search_dropdown_l:hover, .search_bar_l .search_dropdown_l.active {
+  background: -webkit-linear-gradient(#e7e7e7, #d5d5d5);
+  background: linear-gradient(#e7e7e7, #d5d5d5);
+  cursor: pointer;
+  border-right-color: #ccc;
+}
+.search_bar_l .search_dropdown_l > span {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.search_bar_l .search_dropdown_l ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  font-size: 14px;
+  width: 225px;
+  background: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  border-radius: 0 0 3px 3px;
+  padding: 7px 0;
+}
+.search_bar_l .search_dropdown_l li {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 18px;
+  color: #333;
+  line-height: 1.2em;
+  position: relative;
+}
+.search_bar_l .search_dropdown_l li:hover {
+  background: #e7e7e7;
+}
+.search_bar_l .search_dropdown_l li.selected {
+  background: #e7e7e7;
+  color: #333;
+}
+.search_bar_l.small {
+  max-width: 300px;
+}
+.search_bar_l.small input[type=text] {
+  font-size: 13px;
+}
+.search_bar_l .large_cust_l {
+  max-width: 560px;
+}
+.search_bar_l .large_cust_l input[type=text] {
+  font-size: 13px;
+  height: 38px;
+}
+.search_bar_l .large_cust_l {
+  max-width: 700px;
+}
+.search_bar_l .large_cust_l input[type=text] {
+  font-size: 18px;
+}
+.search_bar_l.huge {
+  max-width: 860px;
+}
+.search_bar_l.huge input[type=text] {
+  font-size: 21px;
+}
+.search_bar_l ::-webkit-input-placeholder {
+  font-weight: 400;
+}
+.search_bar_l ::-moz-placeholder {
+  font-weight: 400;
+}
+.search_bar_l :-ms-input-placeholder {
+  font-weight: 400;
+}
+.search_bar_l ::placeholder {
+  font-weight: 400;
+}
+
+
+/*........ 27-2-17.............*/
+.slick-slide img{margin: 0 auto !important;}
+
+.icon_cat_ki {
+	display: none;
+}
+
+.cat_shop_l {
+	font-size: 12px !important;
+}
+
+.acc_arr_l::after {
+	content: "\2";
+	color: #a1a1a1;
+	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	height: 8px;
+	width: 10px;
+	position: absolute;
+	top: 50%;
+	right: -7px;
+	margin-top: 3px;
+}
