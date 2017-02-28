@@ -19,9 +19,9 @@
 .magicmenu .nav-desktop .level0.hasChild .level-top:after {content: "";font-family: "FontAwesome";font-size: 14px;margin-left: 5px;vertical-align: 0;}
 .magicmenu .nav-desktop .level0.over > a,.magicmenu .nav-desktop .level0.active > a,.magicmenu .nav-desktop .level0.active > a span.icon-text,.magicmenu .nav-desktop .level0 > a:hover,.magicmenu .nav-desktop .level0 > a:hover.icon-text{color:#df3737;}
 .magicmenu .nav-desktop .level0 > a:hover .short_desc{color:#888888;}
-.magicmenu .nav-desktop .level0 .level-top{display: block;font-size: 14px;font-weight: 500;line-height: normal;outline: medium none;padding:10px 16px;position: relative;text-align: center;text-decoration: none;}
+.magicmenu .nav-desktop .level0 .level-top{display: block;font-size: 14px;font-weight: 500;line-height: normal;outline: medium none;padding:10px 16px;position: relative;text-align: center;text-decoration: none;margin-top: 4px;}
 .magicmenu .nav-desktop .level0 .level-top span.cat_label{right: -5px;top: -5px;}
-.magicmenu .nav-desktop .level0 .level-top > span{font-size: 14px;/*font-weight: bold;*/ padding: 0;vertical-align: top;white-space: nowrap;}
+.magicmenu .nav-desktop .level0 .level-top > span{font-size: 13px;/*font-weight: bold;*/ padding: 0;vertical-align: top;white-space: nowrap;}
 .magicmenu .nav-desktop .level0.home .level-top .icon-home{display:none}
 .magicmenu .nav-desktop .level0.home .level-top .icon-home{font-size:17px}
 .magicmenu .nav-desktop .level0.active .level-top span{/* font-weight: bold; */}
@@ -146,7 +146,7 @@
 /* Vertical Menu*/
 .nav-sections .vmagicmenu{
 	display: block;
-	width: 26.3%;
+	/*width: 26.3%;*/
 	float: left;
 	position: relative;
 	z-index: 9
@@ -165,7 +165,7 @@
 	text-transform: none !important; 
 	line-height: 0
 }
-.vmagicmenu .block-vmagicmenu-content{width: 100%;z-index: 1;background-color: #fff;border-width: 0;border-style: solid;/*padding: 0px 0 3px;/*min-width: 270px;*/position: absolute;visibility: hidden;opacity: 0;transition: all 300ms ease-in-out 0s;}
+.vmagicmenu .block-vmagicmenu-content{width: 250px;z-index: 1;background-color: #fff;border-width: 0;border-style: solid;/*padding: 0px 0 3px;/*min-width: 270px;*/position: absolute;visibility: hidden;opacity: 0;transition: all 300ms ease-in-out 0s;}
 .vmagicmenu .block-vmagicmenu-content .vmagicmenu-narrow,.vmagicmenu .vmagicmenu-narrow{
 	margin: 0px;
     padding: 0px 0;
@@ -176,7 +176,7 @@
 }
 .vmagicmenu:hover .block-vmagicmenu-content{opacity: 1;visibility: visible;}
 
-.vmagicmenu .block-title{ background-color: #fed700;text-align: left;overflow: hidden;border-width: 0px;border-style: solid;border-radius: 0px 0px 0 0;padding: 9px 20px;cursor:pointer;}
+.vmagicmenu .block-title{ background-color: #fed700;text-align: left;overflow: hidden;border-width: 0px;border-style: solid;border-radius: 0px 0px 0 0;padding: 0px 20px;cursor:pointer;}
 .vmagicmenu .block-title span{ font-size: 14px;font-weight: 600;}
 
 .vmagicmenu .block-title .vmagicmenu-subtitle{padding:0px;}

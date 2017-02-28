@@ -108,25 +108,46 @@ $isLoggedIn = $customerSession->isLoggedIn();
 			
 		
 		<div class="header-content">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-					<div class="content-logo col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="content-logo col-lg-2 col-md-3 col-sm-12 col-xs-12">
 						<div class="header-logo">
 							<?php echo $this->getChildHtml('logo'); ?>
 						</div>
 					</div>
 					
 
-					<div class="content-seach col-lg-6 col-md-5 col-sm-12 col-xs-12">
+					<div class="content-seach col-lg-7 col-md-7 col-sm-12 col-xs-12">
 						<div class="search-area header-search">
 							<a href="javascript:void(0)" class="search-toggle-icon"><i class="search-icon"></i></a>
 							<?php echo $this->getChildHtml('top.search'); ?>
 						</div>
 					</div>
+
+					<div class="col-lg-3 header_right_box">
+						<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/side1.png')?>">
+					</div>
 					
 					
-					<div class="righ-header-content col-lg-3 col-md-4 col-sm-12 col-xs-12">
+					
+					</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom header-sticker" style="border-bottom:1px solid #eee">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+
+						<div class="col-lg-10">
+							<?php echo $this->getChildHtml('navigation.sections'); ?>
+						</div>
+
+						<div class="righ-header-content col-lg-2 col-md-4 col-sm-12 col-xs-12">
 						<ul class="top-link-product">
 							<li>
 							    <div class="customer signInHover dropdown">
@@ -142,7 +163,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 												<a id="quick_sigup_link" style="position:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
                                                 <span>Hello, <?php echo $msg; ?> </span>
 
-													<span class="youraccount" style="margin-top:-25px;">Your Account</span>
+													<span class="youraccount acc_arr_l">Your Account</span>
 												</a>
 											</li>
 
@@ -169,10 +190,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 										<?php } else { ?>
 
 										<li onmouseover="popsup(this);" class="first">
-											<a  id="quick" style="positon:relative;" ><span>Hello. Sign In</span><span class="youraccount" style="
-												   margin-top: -25px;
-												   /* float: left; */
-												">Your Account</span></a>
+											<a  id="quick" style="positon:relative;" ><span>Hello. Sign In</span><span class="youraccount acc_arr_l" style="">Your Account</span></a>
 										</li>
 
 										<div class="dropdown-content">
@@ -249,16 +267,8 @@ $isLoggedIn = $customerSession->isLoggedIn();
 
 
 					</div>
-					</div>
 
-				</div>
-			</div>
-		</div>
-		<div class="header-bottom header-sticker" style="border-bottom:1px solid #eee">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12">
-						<?php echo $this->getChildHtml('navigation.sections'); ?>
+
 					</div>
 				</div>
 			</div>
