@@ -12,7 +12,7 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         \Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
         \Magento\Sales\Model\Order $order,
         \Magento\Catalog\Model\Product $product,
-        \Apptha\Marketplace\Model\Seller $seller,
+        \Apptha\Marketplace\Model\SellerFactory $seller,
         \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission
     
     
@@ -35,104 +35,90 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
 
     public function execute(Observer $observer){
 
-        $order = $observer->getOrderIds ();
-        $orderId = $order [0];
+        $orderObserver = $observer->getOrderIds ();
+        $orderId = $orderObserver [0];
         $orderData = $this->_order->load ( $orderId );
-        $orderItems = $orderData->getAllItems ();
-        $sellerData = array ();
-        $customOptions = array ();
-        foreach ( $orderItems as $item ) {
+        
+        $items=array();
+        $commission = array();
+        
+        
 
-            $productId = $item->getProductId ();
-            $itemId = $item->getItemId ();
-            $productPrice = $item->getPrice ();
-            $product = $this->_product->load($productId);
-            $sellerId = $product->getSellerId ();
-            $sellerProductCollection = $this->_SellerProductCommission->create()->getCollection();
+        foreach ($orderData->getAllItems() as $item) {
+            $productId[] = $item->getProductId ();
+            $product = $this->_product->load($item->getProductId());
+            //$sellerId[] = $product->getSellerId ();
+            $items[$item->getProductId ()] = [
 
-            $sellerData       = $this->_seller->load($sellerId);
-
-            $sellerProducts = $sellerProductCollection->addFieldToFilter('seller_id',['eq'=>$sellerData->getId()])
-                ->addFieldToFilter('product_id',['eq'=>$productId])->getData();
-
-            for($i=0;$i< count($sellerProducts);$i++){
-
-                $commissionAmount = $sellerProducts[$i]['amount'];
-                $priceAfterCommissionPercent[] =  $productPrice - (($commissionAmount / 100) * $productPrice);
-
-
-            }
-               
+                'order_id'      => $orderData->getIncrementId(),
+                'name'          => $item->getName(),
+                'sku'           => $item->getSku(),
+                'product_price' => $item->getPrice(),
+                'Qty'           => $item->getQtyOrdered(),
+                'buyer_id'      => $orderData->getCustomerId(),
+                'product_id'    => $item->getProductId ()
             
+            ];
+
         }
+        $sellerProductCollection = $this->_SellerProductCommission->create()->getCollection();
+        $sellerProducts = $sellerProductCollection->addFieldToFilter('product_id',['in'=>$productId])->getData();
+        for($i=0;$i< count($sellerProducts);$i++){
+            $productIdRecord  = $sellerProducts[$i]['product_id'];
+            $sellerId         = $sellerProducts[$i]['seller_id'];
+            //$commissionFk     = $sellerProducts[$i]['id'];
+            if(in_array($productIdRecord,$productId)){
 
+                $product = $this->_product->load($productIdRecord);
+                $productPrice  = $product->getPrice();
+                $commissionAmount = $sellerProducts[$i]['amount'];
+                $commissionType   = $sellerProducts[$i]['percentage'];
+                $items[$productIdRecord]['seller_id'] = $sellerId;
+                $items[$productIdRecord]['product_commission_global_level_id'] = $commissionFk;
+                $items[$productIdRecord]['commission_amount'] = $commissionAmount;
 
-        echo '<pre>';
-        //echo $sellerProducts->getSelect();
-        print_r($sellerProducts);
-        print_r($priceAfterCommissionPercent);
-        echo '</pre>';
-        die;
+                if($commissionType == 2){ // if percentage
+
+                    $priceAfterCommissionPercent =  $productPrice - (($commissionAmount / 100) * $productPrice);
+                    $chargeToSeller              =  $productPrice - $priceAfterCommissionPercent;
+
+                    $items[$productIdRecord]['commission'] =  [
+                        'PriceAfterCommission'=> $priceAfterCommissionPercent,
+                        'commissionAmount'    => $chargeToSeller,
+
+                    ];
+
+                }
+                else if($commissionType == 1){ // fixed amount
+
+                    $chargeFixedAmount = $productPrice - $commissionAmount;
+                    $priceAfterCommission = $productPrice - $chargeFixedAmount;
+
+                    $items[$productIdRecord]['commission'] =  [
+                        'PriceAfterCommission'=> $chargeFixedAmount,
+                        'commissionAmount'    => $priceAfterCommission,
+
+                    ];
+
+                }
+                
+            }
+            
+        }        
+        
+
+        
+        foreach($items as $itemKey => $itemValue){            
+            $amount   = $itemValue['commission']['commissionAmount'] * (int)$itemValue['Qty'];
+            $items[$itemKey]['finalCommission'] = $amount;
+           
+        } 
+
+        return $this;
 
 
     }
 
-	/*public function execute(Observer $observer)
-    {
-        $order = $observer->getOrderIds ();
-        $orderId = $order [0];
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance ();
-        $orderDetails = $objectManager->get ( 'Magento\Sales\Model\Order' );
-        $orderData = $orderDetails->load ( $orderId );
-        $customerId = $orderDetails->getCustomerId ();
-        $orderItems = $orderData->getAllItems ();
-        $sellerData = array ();
-        $customOptions = array ();
-         
-        foreach ( $orderItems as $item ) {
-            $productId = $item->getProductId ();
-            $itemId = $item->getItemId ();
-            $productPrice = $item->getPrice ();
-            $product = $objectManager->get ( 'Magento\Catalog\Model\Product' )->load ( $productId );
-            $sellerId = $product->getSellerId ();
-            if (! empty ( $sellerId ) && $item->getParentItemId () == '') {
-                $sellerDatas = $objectManager->get ( 'Apptha\Marketplace\Model\Seller' )->load ( $sellerId, 'customer_id' );
-                $commissionType = $product->getKikinbenPercentageAmount();
-                $commissionAmount =$product->getkikinbenProductCommission();
-                $fullFill         =$product->getKikinbenFulfilled();
-                
-
-                if($commissionType == 1){ // percentage commission set
-                    $priceAfterCommissionPercent =  $productPrice - (($commissionAmount / 100) * $productPrice);
-                    $sellerCommissionPercent =  ($commissionAmount / 100) * $productPrice;
-
-                    $this->_commissionSave->setOrderId($orderId)
-                    ->setProductId($productId)
-                    ->setSellerId($sellerId)
-                    ->setBuyerId($customerId)
-                    ->setCommissionAmount($commissionAmount)
-                    ->setKikinbenFullfiled($fullFill)
-                    ->setCommissionType($commissionType);
+    }
 
 
-                    $this->_commissionSave->setSellerAmount($sellerCommissionPercent)
-                    ->setProductPrice($priceAfterCommissionPercent)->save();
-
-
-                } 
-                else{
-                    $sellerCommission[] =  $commissionAmount;
-                    $priceAfterCommission[] = $productPrice - $commissionAmount; 
-
-                  //  $this->_commissionSave->setSellerAmount($sellerCommission)
-                   //     ->setProductPrice($priceAfterCommission)->save();
-
-                }
-                                 
-            }
-            
-        }
-        
-		return $this;
-    }*/
-}
