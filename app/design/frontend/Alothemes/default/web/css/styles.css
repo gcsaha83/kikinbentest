@@ -8350,3 +8350,49 @@ height: 35px;
 	right: -7px;
 	margin-top: 3px;
 }
+
+/*--------New Products Block----------*/
+.new_products_l {
+	background: #ffffff !important;
+	box-shadow: 0px 0px 5px rgba(1, 1, 1, 0.3) !important;
+	padding-top: 10px !important;
+}
+
+.new_products_l .slick-prev {
+    left: -16px !important;
+}
+
+.new_products_l .slick-next {
+    right: -16px !important;
+}
+
+.new_products_l .slick-arrow {
+    top: 35% !important;
+}
+
+.new_products_l .slick-prev, .new_products_l .slick-next {
+    background: rgba(51, 62, 72, 0.4) !important;
+    height: 40px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    width: 25px !important;
+    /* height: 20px; */
+    line-height: 20px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: 9 !important;
+    color: transparent !important;
+}
+
+.new_products_l .slick-prev:before, .new_products_l .slick-next:before {
+    font-family: FontAwesome !important;
+    color: #fff !important;
+    font-size: 30px !important;
+    font-weight: normal !important;
+    width: 27px !important;
+    height: 39px !important;
+    line-height: 37px !important;
+    display: block !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
