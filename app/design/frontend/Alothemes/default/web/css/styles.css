@@ -179,7 +179,7 @@ a:hover, a:focus{outline:none !important;text-decoration: none;}
 input[type="text"]:disabled,input[type="password"]:disabled,
 input[type="url"]:disabled,input[type="tel"]:disabled,input[type="search"]:disabled,
 input[type="number"]:disabled,input[type="datetime"]:disabled,input[type="email"]:disabled{opacity: .5}
-button.disabled,button[disabled],fieldset[disabled] button{opacity: .5;cursor: default;pointer-events: none}
+button.disabled,button[disabled],fieldset[disabled] button{opacity: 1;cursor: default;pointer-events: none}
 button::-moz-focus-inner{border: 0;padding: 0}input[type="text"],
 input[type="password"],input[type="url"],input[type="tel"],
 input[type="search"],input[type="number"],input[type="datetime"],
@@ -738,7 +738,7 @@ tr.summary-details-excluded{font-style:italic}
 .header-search .form-search:before, .header-search .form-search:after{content: ""; clear: both; display: table;}
 .header-search .form-search{border-width: 1px;border-style: solid;/*-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;*/position: relative;}
 .header-search .form-search button.button{float: right; width: 55px; text-align: center; padding: 0;border: 0; height: 38px !important; opacity: 1;border-radius: 0 0px 0px 0;cursor: pointer;pointer-events: auto;position: absolute;right: 0px;}
-.header-search .field.search{/*width: calc(100% - 165px)*/}
+.header-search .field.search{width: calc(100% - 165px)}
 .header-search .form-search button.button > span > span{padding:0;border:none; display: block; text-align: center; line-height: 45px}
 .header-search .form-search button.button > span .icon{font-size: 32px; display: inline-block; padding-top: 1px}
 .header-search .form-search input.input-text{background-color:transparent; font-size:12px; margin:0;line-height:53px;height: 38px; border: 0; color: #a0a0a0; padding: 0 15px}
@@ -8185,8 +8185,7 @@ body {
   background: linear-gradient(#f89a22, #f89a22);
   color: rgba(255, 255, 255, 0);
   border: 1px solid #f89a22;
-  width: 10%;
-  min-width: 56px;
+  width: 8%;
   position: absolute;
   top: -1px;
   right: -1px;
@@ -8199,14 +8198,17 @@ body {
           user-select: none;
 }
 .search_bar_l button[type=submit]:after {
-  content: '';
-  position: absolute;
-  top: 18%;
-  right: 0;
-  bottom: 22%;
-  left: 4%;
-  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
-  background-size: contain;
+content: '';
+position: absolute;
+top: 2%;
+right: 0;
+bottom: 22%;
+left: 4%;
+background: url(http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg) no-repeat center center;
+background-size: contain;
+/* font-size: 32px; */
+/* width: 47px; */
+height: 35px;
 }
 .search_bar_l button[type=submit]:hover, .search_bar_l button[type=submit]:focus {
   background: -webkit-linear-gradient(#ea870b, #ea870b);

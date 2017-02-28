@@ -176,7 +176,7 @@
 }
 .vmagicmenu:hover .block-vmagicmenu-content{opacity: 1;visibility: visible;}
 
-.vmagicmenu .block-title{ background-color: #fed700;text-align: left;overflow: hidden;border-width: 0px;border-style: solid;border-radius: 0px 0px 0 0;padding: 0px 20px;cursor:pointer;}
+.vmagicmenu .block-title{ background-color: #fed700;text-align: left;overflow: hidden;border-width: 0px;border-style: solid;border-radius: 0px 0px 0 0;padding: 11px 20px;cursor:pointer;}
 .vmagicmenu .block-title span{ font-size: 14px;font-weight: 600;}
 
 .vmagicmenu .block-title .vmagicmenu-subtitle{padding:0px;}
