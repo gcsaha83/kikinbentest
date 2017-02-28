@@ -3936,9 +3936,9 @@ font-size: 12px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /*padding: 2px 30px 2px 2px;*/
+    padding: 0px 17px 0px 3px;
     border: none;
-    background: transparent url('../images/wysiwyg/arrow1.png') no-repeat 95px center;
+    background: transparent url(http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg) no-repeat 95px center;
   }
 
   /*... flag of all countries....*/
