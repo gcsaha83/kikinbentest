@@ -6,10 +6,6 @@
 
 // @codingStandardsIgnoreFile
 ?>
-
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-
 <?php
 /** @var $block \Magento\Framework\View\Element\Template */
 /** @var $helper \Magento\Search\Helper\Data */
@@ -17,24 +13,15 @@ $helper = $this->helper('Magento\Search\Helper\Data');
 ?>
 <div class="block-search">
     <div class="block block-content">
-<!-- 
-        <form class="form minisearch form-search" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get"> -->
-<!-- 
-        <div class="block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong>
-        </div> -->
-            <!-- 
+        <form class="form minisearch form-search" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
+		    <div class="block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong></div>
             <button type="submit"
                     title="<?php echo $block->escapeHtml(__('Search')) ?>"
                     class="action search button">
                 <span><span class="icon icon-search"><?php /* @escapeNotVerified */ //echo __('Search'); ?></span></span>
-            </button> -->
-
-
-        <form class="search_bar_l large_cust_l form minisearch form-search" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
-<!-- 
-        <div class="search_bar_l large_cust_l" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get"> -->
-
-                <!-- <select class="selecttext" id="dropdown" name="select">
+            </button>
+            <div class="search_dropdown">
+                <select class="selecttext" id="dropdown" name="select">
                 <option value="all">All Categories</option>
                  <option value="whatsnew">Kikinben Launching Offer</option>
                  <option value="makeup">Make Up</option>
@@ -46,32 +33,8 @@ $helper = $this->helper('Magento\Search\Helper\Data');
                  <option value="homecooking">Home and Cooking</option>
                  <option value="sportsoutdoorscycling">Sports, Outdoors and Cycling</option>
                  <option value="laptopdesktops">Laptops and Desktops</option>
-                </select> -->
-
-                <div class="search_dropdown_l" style="width: 16px;">
-                  <span>All</span>
-                  <ul>
-                    <li class="selected">All</li>
-                    <li>Kikinben Launching Offer</li>
-                    <li>Phones, Tablets &amp; Accessories</li>
-                    <li>Computers &amp; Electronics</li>
-                    <li>TV, Audio &amp; Gaming</li>
-                    <li>Makeup &amp; Glam</li>
-                    <li>Men's Fashion</li>
-                    <li>Women's Fashion</li>
-                    <li>Toys, Kids &amp; Babies</li>
-                    <li>Kitchen &amp; Home Appliances</li>
-                    <li>Home &amp; Decor</li>
-                    <li>Bags &amp; Luggages</li>
-                    <li>Building &amp; Constructions</li>
-                    <li>Health, Beauty &amp; Fragrances</li>
-                    <li>Groceries</li>
-                    <li>Car &amp; Motorbike</li>
-                  </ul>
-                </div>
-
-
-
+                </select>
+            </div>
             <div class="field search">
                 <div class="control">
                     <input id="search"
@@ -83,7 +46,7 @@ $helper = $this->helper('Magento\Search\Helper\Data');
                            type="text"
                            name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
                            value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
-                           placeholder="<?php /* @escapeNotVerified */ echo __('I am searching for...'); ?>"
+                           placeholder="<?php /* @escapeNotVerified */ echo __('Search for product'); ?>"
                            class="input-text"
                            maxlength="<?php /* @escapeNotVerified */ echo $helper->getMaxQueryLength();?>"
                            role="combobox"
@@ -96,112 +59,6 @@ $helper = $this->helper('Magento\Search\Helper\Data');
                 </div>
 
             </div>
-
-            <button type="submit" title="<?php echo $block->escapeHtml('Search') ?>" value="Search">Search</button>
-
-<!-- 
-            </div> -->
-
-
         </form>
-
     </div>
 </div>
-
-
-
-<script type="text/javascript">
-/* Search bar */
-
-var resizeElements;
-
-$(document).ready(function() {
-
-  // Set up common variables
-  // --------------------------------------------------
-
-  var bar = ".search_bar_l";
-  var input = bar + " input[type='text']";
-  var button = bar + " button[type='submit']";
-  var dropdown = bar + " .search_dropdown_l";
-  var dropdownLabel = dropdown + " > span";
-  var dropdownList = dropdown + " ul";
-  var dropdownListItems = dropdownList + " li";
-
-
-  // Set up common functions
-  // --------------------------------------------------
-
-  resizeElements = function() {
-    var barWidth = $(bar).outerWidth();
-
-    var labelWidth = $(dropdownLabel).outerWidth();
-    $(dropdown).width(labelWidth);
-
-    var dropdownWidth = $(dropdown).outerWidth();
-    var buttonWidth = $(button).outerWidth();
-    var inputWidth = barWidth - dropdownWidth - buttonWidth;
-    var inputWidthPercent = inputWidth / barWidth * 100 + "%";
-
-    $(input).css({ 'margin-left': dropdownWidth, 'width': inputWidthPercent });
-  }
-
-  function dropdownOn() {
-    $(dropdownList).fadeIn(25);
-    $(dropdown).addClass("active");
-  }
-
-  function dropdownOff() {
-    $(dropdownList).fadeOut(25);
-    $(dropdown).removeClass("active");
-  }
-
-
-  // Initialize initial resize of initial elements 
-  // --------------------------------------------------
-  resizeElements();
-
-
-  // Toggle new dropdown menu on click
-  // --------------------------------------------------
-
-  $(dropdown).click(function(event) {
-    if ($(dropdown).hasClass("active")) {
-      dropdownOff();
-    } else {
-      dropdownOn();
-    }
-
-    event.stopPropagation();
-    return false;
-  });
-
-  $("html").click(dropdownOff);
-
-
-  // Activate new dropdown option and show tray if applicable
-  // --------------------------------------------------
-
-  $(dropdownListItems).click(function() {
-    $(this).siblings("li.selected").removeClass("selected");
-    $(this).addClass("selected");
-
-    // Focus the input
-    $(this).parents("form.search_bar_l:first").find("input[type=text]").focus();
-
-    var labelText = $(this).text();
-    $(dropdownLabel).text(labelText);
-
-    resizeElements();
-
-  });
-
-
-  // Resize all elements when the window resizes
-  // --------------------------------------------------
-
-  $(window).resize(function() {
-    resizeElements();
-  });
-});
-</script>
