@@ -179,7 +179,7 @@ a:hover, a:focus{outline:none !important;text-decoration: none;}
 input[type="text"]:disabled,input[type="password"]:disabled,
 input[type="url"]:disabled,input[type="tel"]:disabled,input[type="search"]:disabled,
 input[type="number"]:disabled,input[type="datetime"]:disabled,input[type="email"]:disabled{opacity: .5}
-button.disabled,button[disabled],fieldset[disabled] button{opacity: .5;cursor: default;pointer-events: none}
+button.disabled,button[disabled],fieldset[disabled] button{opacity: 1;cursor: default;pointer-events: none}
 button::-moz-focus-inner{border: 0;padding: 0}input[type="text"],
 input[type="password"],input[type="url"],input[type="tel"],
 input[type="search"],input[type="number"],input[type="datetime"],
@@ -8185,8 +8185,7 @@ body {
   background: linear-gradient(#f89a22, #f89a22);
   color: rgba(255, 255, 255, 0);
   border: 1px solid #f89a22;
-  width: 10%;
-  min-width: 56px;
+  width: 8%;
   position: absolute;
   top: -1px;
   right: -1px;
@@ -8199,14 +8198,17 @@ body {
           user-select: none;
 }
 .search_bar_l button[type=submit]:after {
-  content: '';
-  position: absolute;
-  top: 18%;
-  right: 0;
-  bottom: 22%;
-  left: 4%;
-  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
-  background-size: contain;
+content: '';
+position: absolute;
+top: 2%;
+right: 0;
+bottom: 22%;
+left: 4%;
+background: url(http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg) no-repeat center center;
+background-size: contain;
+/* font-size: 32px; */
+/* width: 47px; */
+height: 35px;
 }
 .search_bar_l button[type=submit]:hover, .search_bar_l button[type=submit]:focus {
   background: -webkit-linear-gradient(#ea870b, #ea870b);
