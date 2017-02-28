@@ -663,7 +663,7 @@ tr.summary-details-excluded{font-style:italic}
 /* ======================================================================================= */
 /* Header ================================================================================ */
 .page-header{padding: 0; margin: 0; border: 0}
-.header-container-fixed {animation-duration: 450ms; animation-fill-mode: both; animation-name: fadeInDown; box-shadow: 0 0 3px #666666;-moz-box-shadow: 0 0 3px #666666; -webkit-box-shadow: 0 0 3px #666666; -o-box-shadow: 0 0 3px #666666;-ms-box-shadow: 0 0 3px #666666;position: fixed; width: 100%; z-index: 10000;top:0; border-bottom: none !important;}
+.header-container-fixed {display:none !important; animation-duration: 450ms; animation-fill-mode: both; animation-name: fadeInDown; box-shadow: 0 0 3px #666666;-moz-box-shadow: 0 0 3px #666666; -webkit-box-shadow: 0 0 3px #666666; -o-box-shadow: 0 0 3px #666666;-ms-box-shadow: 0 0 3px #666666;position: fixed; width: 100%; z-index: 10000;top:0; border-bottom: none !important;}
 @keyframes fadeInDown {
 	0% {
 	    opacity: 0;
