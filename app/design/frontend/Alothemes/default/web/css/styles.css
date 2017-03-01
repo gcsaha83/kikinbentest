@@ -933,7 +933,7 @@ font-size: 12px;
 .slide-showcase .home-slider .slick-prev:hover{background-position: 0 -104px;}
 .slide-showcase .home-slider .slick-next{right: 0px;background-position: 100% 0;}
 .slide-showcase .home-slider .slick-next:hover{background-position: 100% 100%;}
-.slide-showcase .home-slider .slick-arrow {font-size: 0;width: 73px;height: 104px;line-height: 104px;-moz-transition: all 0.45s ease;-webkit-transition: all 0.45s ease;-o-transition: all 0.45s ease;-ms-transition: all 0.45s ease;transition: all 0.45s ease;/*opacity: 0.2;*/top: 35%;background-image: url("../images/alothemes/bx-controls.png");background-repeat: no-repeat;/*display: none !important;*/z-index: 1;}
+.slide-showcase .home-slider .slick-arrow {font-size: 0;width: 73px;height: 104px;line-height: 104px;-moz-transition: all 0.45s ease;-webkit-transition: all 0.45s ease;-o-transition: all 0.45s ease;-ms-transition: all 0.45s ease;transition: all 0.45s ease;/*opacity: 0.2;*/top: 31%;background-image: url("../images/alothemes/bx-controls.png");background-repeat: no-repeat;/*display: none !important;*/z-index: 1;}
 .slide-showcase .home-slider .slick-arrow:hover{opacity: 2;}
 .slide-showcase:hover .home-slider .slick-arrow{display: block !important;}
 .slide-showcase .home-slider .slick-prev:before, .slide-showcase .home-slider .slick-next:before{font-size: 24px;line-height: 86px;display: none;}
@@ -8400,4 +8400,16 @@ height: 35px;
 
 .top_user_block_ki {
 	float: right !important;
+}
+
+.acc_arr_s::after {
+	content: "\2";
+	color: #a1a1a1;
+	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	height: 8px;
+	width: 10px;
+	position: absolute;
+	top: 50%;
+	right: -13px;
+	margin-top: 3px;
 }
