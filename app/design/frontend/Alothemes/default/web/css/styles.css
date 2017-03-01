@@ -8404,7 +8404,7 @@ height: 35px;
 
 .acc_arr_s::after {
 	content: "\2";
-	color: #a1a1a1;
+	color: transparent !important;
 	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
