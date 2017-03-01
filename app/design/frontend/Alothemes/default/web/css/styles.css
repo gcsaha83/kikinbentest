@@ -8483,7 +8483,7 @@ height: 35px;
 }
 
 .lets_create_blk {
-	padding: 0 30px;
+	padding: 0 15px;
 }
 
 .blk_cust_new_l {
@@ -8541,4 +8541,19 @@ height: 35px;
   background-color: #f89a22 !important;
   box-shadow: 0 1px #E76C33 !important;
   transform: translateY(1px) !important;
+}
+
+.make_block_ki {
+	background: #ffffff !important;
+	box-shadow: 0px 0px 5px rgba(1, 1, 1, 0.3) !important;
+}
+
+.fash_block_ki {
+	background: #ffffff !important;
+	box-shadow: 0px 0px 5px rgba(1, 1, 1, 0.3) !important;
+}
+
+.gadg_block_ki {
+	background: #ffffff !important;
+	box-shadow: 0px 0px 5px rgba(1, 1, 1, 0.3) !important;
 }
