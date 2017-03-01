@@ -141,14 +141,14 @@ $isLoggedIn = $customerSession->isLoggedIn();
 		<div class="header-bottom header-sticker" style="border-bottom:1px solid #eee">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12 col-md-12">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-						<div class="col-lg-10">
+						<div class="col-lg-9 col-md-9 hidden-sm hidden-xs">
 							<?php echo $this->getChildHtml('navigation.sections'); ?>
 						</div>
 
-						<div class="righ-header-content col-lg-2 col-md-4 col-sm-12 col-xs-12">
-						<ul class="top-link-product">
+						<div class="righ-header-content col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						<ul class="top-link-product top_user_block_ki">
 							<li>
 							    <div class="customer signInHover dropdown">
 								  	<ul class="top-links dropbtn signInHover">
@@ -163,7 +163,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 												<a id="quick_sigup_link" style="position:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
                                                 <span>Hello, <?php echo $msg; ?> </span>
 
-													<span class="youraccount acc_arr_l">Your Account</span>
+													<span class="youraccount acc_arr_s">Your Account</span>
 												</a>
 											</li>
 
@@ -190,7 +190,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 										<?php } else { ?>
 
 										<li onmouseover="popsup(this);" class="first">
-											<a  id="quick" style="positon:relative;" ><span>Hello, Sign In</span><span class="youraccount acc_arr_l" style="">Your Account</span></a>
+											<a  id="quick" style="positon:relative;" ><span>Hello. Sign In</span><span class="youraccount acc_arr_l" style="">Your Account</span></a>
 										</li>
 
 										<div class="dropdown-content">
