@@ -435,6 +435,8 @@
 		float: right;
 
 	}
+
+	.home-slider .slick-slide.slick-active .figcaption .caption4 a,.slide-showcase .home-slider .slick-arrow,.slide-showcase:hover .home-slider .slick-arrow{display: none !important;}
 	.header-bottom{padding: 5px 0;}
 	.currency_top, .top-form-language,.customer,.page-header .switcher, .page-footer .switcher{display: inline-block;vertical-align: top;}
 	.content-seach { padding-left: 15px;padding-right: 15px;}
@@ -742,6 +744,8 @@
 	.cms-page-banner .banner-box .banner-box-content img{margin: 0 auto;}
 	.cms-page-banner .banner-box-content .btn-shop{right: 27%;}
 
+	.home-slider .slick-slide.slick-active .figcaption .caption4 a,.slide-showcase .home-slider .slick-arrow,.slide-showcase:hover .home-slider .slick-arrow{display: none !important;}
+
 	/*product tab*/
 	.magicproduct .magictabs .item .title{ font-size: 18px;}
 	/*main category tab*/
@@ -916,6 +920,7 @@
 	    font-size: 15px;
 	}
 	/*-------- Featured Products Ends ------------*/
+	.home-slider .slick-slide.slick-active .figcaption .caption4 a,.slide-showcase .home-slider .slick-arrow,.slide-showcase:hover .home-slider .slick-arrow{display: none !important;}
 
 	/*------ Product Page Categories Starts --------*/
 
@@ -1900,11 +1905,16 @@ height: 152px;
   }
 
   .header .logo{
-  	margin-left: 25px !important;
+  	float: left !important;
   }
 
   .header_right_box img {
   	width: 275px !important;
   	margin: auto !important;
+  }
+
+  .new_products_l {
+  	width: 1500px !important;
+  	margin:auto !important;
   }
 }

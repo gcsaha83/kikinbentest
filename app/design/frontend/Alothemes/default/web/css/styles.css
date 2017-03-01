@@ -8420,3 +8420,76 @@ height: 35px;
 .top_right_ki {
 	    margin-top: 7px !important;
 }
+/*-------- Block 1 ---------*/
+.blk_new_big_l {
+	background: #ffffff !important;
+	box-shadow: 0px 0px 5px rgba(1, 1, 1, 0.3) !important;
+	padding: 10px !important;
+}
+
+
+.blk_new_big_l .slick-prev {
+    left: -16px !important;
+}
+
+.blk_new_big_l .slick-prev::before:hover {
+    color: #fff !important;
+}
+
+.blk_new_big_l .slick-next {
+    right: -16px !important;
+}
+
+.blk_new_big_l .slick-next::before:hover {
+    color: #fff !important;
+}
+
+.blk_new_big_l .slick-arrow {
+    top: 40% !important;
+}
+
+.blk_new_big_l .slick-prev, .blk_new_big_l .slick-next {
+    background: rgba(51, 62, 72, 0.4) !important;
+    height: 40px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    width: 25px !important;
+    height: 40px;
+    line-height: 40px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: 9 !important;
+    color: transparent !important;
+}
+
+.blk_new_big_l .slick-prev {
+    margin-left: 6px !important;
+}
+
+.blk_new_big_l .slick-next {
+    margin-right: 6px !important;
+}
+
+.blk_new_big_l .slick-prev::before, .blk_new_big_l .slick-next::before {
+    color: #fff !important;
+    font-family: FontAwesome !important;
+	font-size: 32px !important;
+	font-weight: normal !important;
+	width: 25px !important;
+	height: 40px !important;
+	line-height: 40px !important;
+	display: block !important;
+	text-align: center !important;
+}
+
+.lets_create_blk {
+	padding: 0 30px;
+}
+
+.blk_cust_new_l {
+	margin-bottom: 15px !important;
+}
+
+.new_product_ki {
+	padding: 0 30px;
+}
