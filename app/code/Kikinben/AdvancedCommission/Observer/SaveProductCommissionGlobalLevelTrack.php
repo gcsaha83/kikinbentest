@@ -12,8 +12,9 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         \Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
         \Magento\Sales\Model\Order $order,
         \Magento\Catalog\Model\Product $product,
-        \Apptha\Marketplace\Model\SellerFactory $seller,
-        \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission
+        \Apptha\Marketplace\Model\Seller $seller,
+        \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission,
+    	\Kikinben\AdvancedCommission\Model\CommissionFactory $sellerCommission
     
     
     ){
@@ -22,6 +23,7 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $this->_product        = $product;
         $this->_seller         = $seller;
         $this->_SellerProductCommission = $SellerProductCommission;
+        $this->_sellerCommission = $sellerCommission;
     }
 
    /* Order of execution
@@ -47,7 +49,7 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         foreach ($orderData->getAllItems() as $item) {
             $productId[] = $item->getProductId ();
             $product = $this->_product->load($item->getProductId());
-            //$sellerId[] = $product->getSellerId ();
+            $sellerIdGlobal[] = $product->getSellerId ();
             $items[$item->getProductId ()] = [
 
                 'order_id'      => $orderData->getIncrementId(),
@@ -56,13 +58,16 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
                 'product_price' => $item->getPrice(),
                 'Qty'           => $item->getQtyOrdered(),
                 'buyer_id'      => $orderData->getCustomerId(),
-                'product_id'    => $item->getProductId ()
+                'product_id'    => $item->getProductId (),
+            	'seller_index'  => $product->getSellerId ()	
             
             ];
 
         }
         $sellerProductCollection = $this->_SellerProductCommission->create()->getCollection();
         $sellerProducts = $sellerProductCollection->addFieldToFilter('product_id',['in'=>$productId])->getData();
+        
+        if(count($sellerProducts)){
         for($i=0;$i< count($sellerProducts);$i++){
             $productIdRecord  = $sellerProducts[$i]['product_id'];
             $sellerId         = $sellerProducts[$i]['seller_id'];
@@ -104,17 +109,110 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
                 
             }
             
-        }        
+        }
+        foreach($items as $itemKey => $itemValue){
+        	//echo '<pre>';
+        	//print_r($itemValue);
+        	//echo '</pre>';
+        	//$amount   = $itemValue['commission']['commissionAmount'] * (int)$itemValue['Qty'];
+        	//$items[$itemKey]['finalCommission'] = $amount;
+        	 
+        }
+        }
+        else{
+        	$sellerCommissionCollection = $this->_sellerCommission->create()->getCollection();
+        	$sellerCommission = $sellerCommissionCollection->addFieldToFilter('seller_id',['in'=>$sellerIdGlobal])->getData();
+        	
+        	
+        		for($i=0;$i<count($sellerCommission);$i++){        			
+        			$seller_id = $sellerCommission[$i]['seller_id'];
+        			$sellerDetails = $this->_seller->load($seller_id);
+        			
+        			foreach($items as $itemsKey => $itemsVal){
+        				
+        				if($itemsVal['seller_index'] == $seller_id ){
+        					$product_id = $itemsVal['product_id'];
+        					$qunatity   = $itemsVal['Qty'];
+        					$price      = $itemsVal['product_price'];
+        					$commissionType = $sellerCommission[$i]['commission_type'];
+        					$amount  = $sellerCommission[$i]['amount'];
+        					$range_start = $sellerCommission[$i]['uprice_range_from'];
+        					$range_end   = $sellerCommission[$i]['uprice_range_to'];
+        					$globalSet 	 = $sellerCommission[$i]['product_id'];
+        					$orderTotal = $price * (int)$qunatity;
+        					$appathaCommission = $sellerDetails->getCommission();
+        					if(!$globalSet){
+        						echo "first";
+        						$priceAfterCommissionPercent =  $price - (($appathaCommission / 100) * $price);
+        						$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
+        						$commission[$product_id] = [
+        								'PriceAfterCommission'=>$priceAfterCommissionPercent,
+        								'commissionAmount' =>$chargeToSeller
+        						
+        						];
+        					}
+        					else if($globalSet){
+        						echo "second";
+        						echo "type".gettype($orderTotal)."==".gettype($range_start)."==".gettype($range_end);
+        						if(($orderTotal <= floatval($range_start)) && ($orderTotal >=floatval($range_end))){
+        							echo "second and half";
+        							if($commissionType == 2){ // percentage
+        								echo "third";
+        								$priceAfterCommissionPercent =  $price - (($amount / 100) * $price);
+        								$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
+        								$commission[$product_id] = [
+        										'PriceAfterCommission'=>$priceAfterCommissionPercent,
+        										'commissionAmount' =>$chargeToSeller
+        										
+        								];
+        								 
+        							}
+        							else if($commissionType == 1){// fixed
+        								echo "fourth";
+        								$chargeFixedAmount = $price - $amount;
+        								$priceAfterCommission = ($price - $chargeFixedAmount)*$qunatity;
+        								$commission[$product_id] = [
+        										'PriceAfterCommission'=>$priceAfterCommissionPercent,
+        										'commissionAmount' =>$chargeToSeller
+        								
+        								];
+        							}
+        							
+        						}
+        						
+        					}
+        					else if(!$globalSet && !$appathaCommission){
+        						echo "fifth";
+        						 // Do nothing and return as no commission set
+        					}
+        					echo $seller_id.'-'.$product_id.'-'.$qunatity.'-'.$price.'-'.$amount;
+        					echo '<br>';
+        				}
+        				
+        			}
+        		}
+        	
+        	
+        	 echo '<pre>';
+        	print_r( $sellerCommission );
+        	echo "==";
+        	print_r( $items );  
+        	echo "==";
+        	print_r($commission);
+        	echo '</pre>'; 
+        	
+        }
         
 
         
-        foreach($items as $itemKey => $itemValue){            
-            $amount   = $itemValue['commission']['commissionAmount'] * (int)$itemValue['Qty'];
-            $items[$itemKey]['finalCommission'] = $amount;
-           
-        } 
+         
+        
+        //echo '<pre>';
+        //print_r($items);
+        //echo '</pre>';
+        die;
 
-        return $this;
+        //return $this;
 
 
     }

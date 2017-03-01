@@ -74,6 +74,17 @@ class Tabs extends WidgetTabs {
                     ])->toHtml(),*/
 				
         ] );
+        
+        /*$this->addTab ( 'priority', [
+        		'label' => __ ( 'Set Priority' ),
+        		'title' => __ ( 'Set Priority' ),
+        		'content' => $this->getLayout()->createBlock(
+        		 'Kikinben\AdvancedCommission\Block\Adminhtml\Sellerproduct\Priority\Form',
+        				"seller_categories",
+        				['data' => ['customer_id' => $customer_id]
+        				])->toHtml(),
+        
+        ] );*/
 
 
 	
