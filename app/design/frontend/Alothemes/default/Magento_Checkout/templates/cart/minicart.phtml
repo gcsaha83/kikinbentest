@@ -22,10 +22,10 @@ $mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_
     <a class="action showcart" href="<?php /* @escapeNotVerified */ echo $block->getShoppingCartUrl(); ?>"
        data-bind="scope: 'minicart_content'">
         <!--<span class="text"><?php /* @escapeNotVerified */ //echo __('My Cart'); ?></span>-->
-        <span><!-- <i class="fa fa-shopping-cart"></i> -->
+        <span class="cart_icon_qty_ki"><!-- <i class="fa fa-shopping-cart"></i> -->
             <img src="<?php echo $mediaUrl;  ?>cart.png"  style="width:27px">
         </span>
-        <span class="counter qty empty" 
+        <span class="counter qty empty item_qty_ki" 
               data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
             <span class="counter-number" value=""><!-- ko text: getCartParam('summary_count') -->0<!-- /ko --></span>
             <span class="counter-label">

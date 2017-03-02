@@ -8557,3 +8557,20 @@ height: 35px;
 	background: #ffffff !important;
 	box-shadow: 0px 0px 5px rgba(1, 1, 1, 0.3) !important;
 }
+
+/*----------2/2/17----------*/
+.cart_icon_qty_ki {
+	float: left !important;
+}
+
+.item_qty_ki {
+	left: 6px !important;
+	bottom: 3px !important;
+}
+.cart_custom {
+	margin-right: 5px !important;
+}
+
+.dropdown_block_ki {
+	margin-right: 10px !important;
+}
