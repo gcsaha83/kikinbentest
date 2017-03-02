@@ -8585,3 +8585,6 @@ height: 35px;
 .mini_cart_qty_l {
 	white-space: normal !important;
 }
+.new_pro_tit_ki .item .title::after {
+	display: none !important;
+}
