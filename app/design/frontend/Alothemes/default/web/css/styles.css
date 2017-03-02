@@ -8569,7 +8569,7 @@ height: 35px;
 
 .item_qty_ki {
 	left: 6px !important;
-	bottom: 6px !important;
+
 }
 .cart_custom {
 	margin-right: 5px !important;
@@ -8581,4 +8581,7 @@ height: 35px;
 .product-info-main .price-box {
 	border-top: 1px solid #eee !important;
 	border-bottom: 1px solid #eee !important;
+}
+.mini_cart_qty_l {
+	white-space: nowrap !important;
 }
