@@ -2011,8 +2011,8 @@ font-size: 12px;
 }
 
 .price-final_price {
-	border-top: 1px solid #eee !important;
-    border-bottom: 1px solid #eee !important;
+/* 	border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important; */
 
 }
 
@@ -8577,4 +8577,8 @@ height: 35px;
 
 .dropdown_block_ki {
 	margin-right: 10px !important;
+}
+.product-info-main .price-box {
+	border-top: 1px solid #eee !important;
+	border-bottom: 1px solid #eee !important;
 }
