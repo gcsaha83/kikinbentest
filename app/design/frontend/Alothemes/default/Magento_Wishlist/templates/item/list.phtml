@@ -18,7 +18,7 @@ $columns = $block->getColumns();
     <ol class="product-items">
         <?php foreach ($block->getItems() as $item): ?>
         <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li data-row="product-item" class="product-item" id="item_' . $item->getId() . '">' : '</li><li class="product-item" id="item_' . $item->getId() . '">' ?>
-            <div class="product-item-info">
+            <div class="product-item-info wish_item_cust_l">
                 <?php foreach ($columns as $column): ?>
                     <?php $column->setItem($item); echo $column->toHtml($item);?>
                 <?php endforeach; ?>
