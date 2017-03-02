@@ -2011,8 +2011,8 @@ font-size: 12px;
 }
 
 .price-final_price {
-	border-top: 1px solid #eee !important;
-    border-bottom: 1px solid #eee !important;
+/* 	border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important; */
 
 }
 
@@ -3791,6 +3791,8 @@ font-size: 12px;
 	border-radius: 5px;
 	width: 435px;
 	margin: 0 auto;
+	background: #fff !important;
+	box-shadow: 0 0px 5px rgba(0,0,0,0.2) !important;
 }
 
 .block_tit {
@@ -3847,6 +3849,8 @@ font-size: 12px;
 	padding: 30px !important;
 	display: block;
 	margin-top: 35px;
+	background: #fff !important;
+	box-shadow: 0 0px 5px rgba(0,0,0,0.2) !important;
 }
 
 .pass_form form {
@@ -5550,7 +5554,7 @@ font-size: 12px;
 
 	/*------ Forget Pass Sign In -------*/
 	.forgot_pass_l span {
-		color: #356ae7 !important;
+		color: #1979c3 !important;
 		float: right;
 	}
 
@@ -8565,7 +8569,7 @@ height: 35px;
 
 .item_qty_ki {
 	left: 6px !important;
-	bottom: 3px !important;
+
 }
 .cart_custom {
 	margin-right: 5px !important;
@@ -8573,4 +8577,11 @@ height: 35px;
 
 .dropdown_block_ki {
 	margin-right: 10px !important;
+}
+.product-info-main .price-box {
+	border-top: 1px solid #eee !important;
+	border-bottom: 1px solid #eee !important;
+}
+.mini_cart_qty_l {
+	white-space: nowrap !important;
 }
