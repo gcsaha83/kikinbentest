@@ -14,7 +14,8 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         \Magento\Catalog\Model\Product $product,
         \Apptha\Marketplace\Model\Seller $seller,
         \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission,
-    	\Kikinben\AdvancedCommission\Model\CommissionFactory $sellerCommission
+    	\Kikinben\AdvancedCommission\Model\CommissionFactory $sellerCommission,
+    	\Magento\Catalog\Model\CategoryFactory $categoryFactory
     
     
     ){
@@ -24,6 +25,7 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $this->_seller         = $seller;
         $this->_SellerProductCommission = $SellerProductCommission;
         $this->_sellerCommission = $sellerCommission;
+        $this->_categoryInstance = $categoryFactory->create();
     }
 
    /* Order of execution
@@ -123,7 +125,8 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         	$sellerCommissionCollection = $this->_sellerCommission->create()->getCollection();
         	$sellerCommission = $sellerCommissionCollection->addFieldToFilter('seller_id',['in'=>$sellerIdGlobal])->getData();
         	
-        	
+        	   if(!empty($sellerCommission)){
+        	   	
         		for($i=0;$i<count($sellerCommission);$i++){        			
         			$seller_id = $sellerCommission[$i]['seller_id'];
         			$sellerDetails = $this->_seller->load($seller_id);
@@ -141,39 +144,55 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         					$globalSet 	 = $sellerCommission[$i]['product_id'];
         					$orderTotal = $price * (int)$qunatity;
         					$appathaCommission = $sellerDetails->getCommission();
-        					if(!$globalSet){
-        						echo "first";
-        						$priceAfterCommissionPercent =  $price - (($appathaCommission / 100) * $price);
-        						$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
-        						$commission[$product_id] = [
-        								'PriceAfterCommission'=>$priceAfterCommissionPercent,
-        								'commissionAmount' =>$chargeToSeller
+        					if($globalSet == 2 ){ // price range not set
         						
-        						];
+        						if($commissionType == 2){ // fixed
+        							
+        							$priceAfterCommissionPercent =  $price - (($amount / 100) * $price);
+        							$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
+        							$commission[$product_id] = [
+        									
+        									'PriceAfterCommission'=>$priceAfterCommissionPercent,
+        									'commissionAmount' =>$chargeToSeller
+        							
+        							];
+        						}
+        						else if($commissionType == 1){
+        							
+        							$chargeFixedAmount = $price - $amount;
+        							$priceAfterCommission = ($price - $chargeFixedAmount)*$qunatity;
+        							$commission[$product_id] = [
+        									
+        									'PriceAfterCommission'=>$chargeFixedAmount,
+        									'commissionAmount' =>$priceAfterCommission
+        							
+        							];
+        							
+        						}
+        						
         					}
-        					else if($globalSet){
-        						echo "second";
-        						echo "type".gettype($orderTotal)."==".gettype($range_start)."==".gettype($range_end);
-        						if(($orderTotal <= floatval($range_start)) && ($orderTotal >=floatval($range_end))){
-        							echo "second and half";
+        					else if($globalSet == 1){ // price range set
+        						
+        						if((floatval($range_start) <= floatval($orderTotal)) && (floatval($orderTotal) >= floatval($range_end))){
+        							
         							if($commissionType == 2){ // percentage
-        								echo "third";
-        								$priceAfterCommissionPercent =  $price - (($amount / 100) * $price);
-        								$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
+        								
+        								$priceAfterCommissionPercentRange =  $price - (($amount / 100) * $price);
+        								$chargeToSellerRange              =  ($price - $priceAfterCommissionPercentRange)*$qunatity;
         								$commission[$product_id] = [
-        										'PriceAfterCommission'=>$priceAfterCommissionPercent,
-        										'commissionAmount' =>$chargeToSeller
+        										'PriceAfterCommission'=>$priceAfterCommissionPercentRange,
+        										'commissionAmount' =>$chargeToSellerRange
         										
         								];
         								 
         							}
         							else if($commissionType == 1){// fixed
-        								echo "fourth";
-        								$chargeFixedAmount = $price - $amount;
-        								$priceAfterCommission = ($price - $chargeFixedAmount)*$qunatity;
+        								
+        								$chargeFixedAmountRange = $price - $amount;
+        								$priceAfterCommissionRange = ($price - $chargeFixedAmountRange)*$qunatity;
         								$commission[$product_id] = [
-        										'PriceAfterCommission'=>$priceAfterCommissionPercent,
-        										'commissionAmount' =>$chargeToSeller
+        										'PriceAfterCommission'=>$chargeFixedAmountRange,
+        										'commissionAmount' =>$priceAfterCommissionRange
         								
         								];
         							}
@@ -181,19 +200,30 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         						}
         						
         					}
-        					else if(!$globalSet && !$appathaCommission){
-        						echo "fifth";
-        						 // Do nothing and return as no commission set
-        					}
-        					echo $seller_id.'-'.$product_id.'-'.$qunatity.'-'.$price.'-'.$amount;
-        					echo '<br>';
+        					
+        					//echo $seller_id.'-'.$product_id.'-'.$qunatity.'-'.$price.'-'.$amount;
+        					//echo '<br>';
         				}
         				
         			}
         		}
+        	   }
+        	   else{ // global category
+        	   	
+        	   	foreach($items as $product_id => $v){
+        	   		
+        	   		/*$catListTop = $this->_categoryInstance->getCollection()
+        	   		->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','kinkinbin_icon_thumb','image'))
+        	   		->addAttributeToFilter('entity_id', $withoutParent)
+        	   		->addAttributeToFilter('include_in_menu', 1)
+        	   		->addIsActiveFilter()
+        	   		->addAttributeToSort('position', 'asc');*/
+        	   	}
+        	   	
+        	   }
         	
         	
-        	 echo '<pre>';
+        	echo '<pre>';
         	print_r( $sellerCommission );
         	echo "==";
         	print_r( $items );  
