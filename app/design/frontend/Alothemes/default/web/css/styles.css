@@ -8604,3 +8604,49 @@ height: 35px;
 	box-shadow: 0 3px 6px 0 rgba(51,51,51,.298039) !important;
   	cursor: pointer !important;
 }
+
+/*............New for today...........*/
+.products-grid.wishlist {
+	height: 0px !important;
+}
+
+.wishlist_cust_pro_ki{
+   padding: 10px !important;
+   margin-bottom: none !important;
+	height: auto !important;
+	width: 200px !important;
+}
+
+.wish_item_cust_l {
+	padding: 10px !important;
+}
+
+.wish_pho_cust_l img {
+	width: 200px !important;
+}
+
+.wishlist-index-index .product-item-info {
+    width: 100% !important;
+    padding: 25px !important;
+}
+
+.btn_custom_wish {
+	margin-top: 15px !important;
+}
+
+.btn_custom_wish button:active,.btn_custom_wish button:visited, .btn_custom_wish button:focus {
+    outline: none !important;
+    text-decoration: none !important;
+    background: #f89a22 !important;
+    color: #fff !important;
+}
+
+.wishlist-index-index .products-grid .product-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    height: 420px;
+}
+
+.wishlist-index-index .products-grid .product-item {
+    background: #fff !important;
+}
