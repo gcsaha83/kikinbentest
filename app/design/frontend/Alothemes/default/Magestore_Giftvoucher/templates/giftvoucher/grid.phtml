@@ -34,14 +34,14 @@
     <?php echo __('"Date is set in timezone ' . $timezone . '"') ?>
                 </span>
             </div>
-            <div class="col-sm-6 col-xs-12 text-right">
+<!--             <div class="col-sm-6 col-xs-12 text-right redeem_gift_cust_l">
                 <button class="action primary form-button button" type="button" onclick="setLocation('<?php echo $this->getFilterUrl() ?>');">
                     <span><?php echo __('Reset Filter') ?></span>
                 </button>
                 <button class="action primary form-button button" type="button" onclick="searchGrid<?php echo $this->getNameInLayout() ?>();">
                     <span><?php echo __('Search') ?></span>
-                </button>
-            </div>
+                </button> 
+            </div> -->
         </div>
     </div>
     <script type="text/javascript">
@@ -146,93 +146,7 @@
             <?php endforeach ?>
             </tr>
                 <?php if ($this->getData('add_searchable_row')): ?>
-                <tr class="giftvoucher-grid-search">
-    <?php foreach ($columns as $id => $column): ?>
-                        <th>
-                            <!---add by Sally-->
-
-                            <span class="giftvoucher-grid-detail">
-                                <!--end by Sally--->
-                                    <?php if (isset($column['searchable'])): ?>
-                                    <div class="giftvoucher-grid-search-item">
-                                        <?php $type = isset($column['type']) ? $column['type'] : '' ?>
-            <?php if ($type == 'date' || $type == 'datetime'): ?>
-                                            <div class="range-container">
-                                                <div class="data-range from-date">
-                                                    <div class="row">
-                                                        <div class="col-xs-12">
-                                                            <span class="label"><?php echo __('From') ?>:</span>
-
-                                                        </div>
-                                                        <div class="col-xs-12" style="padding-right: 25px;">
-                                                            <!--input type="text" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" class="search-item input-text range-text form-control" value="<?php echo $this->getFilterValue($id, '-from') ?>" /-->
-                                                            <input data-mage-init='<?php echo $mageinit ?>' type="text" class="input-text required-entry validate-date validate-date-giftcard form-control" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" value="<?php echo $this->getFilterValue($id, '-from') ?>" />
-                                                            <!--img style="position: absolute;top:5px;right:5px;" src="<?php echo $this->getViewFileUrl('Magestore_Giftvoucher::images/grid-cal.gif') ?>" alt="<?php echo __('dateinput') ?>" class="v-middle" id="calendar-<?php echo $id ?>-from" /-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="data-range to-date">
-                                                    <div class="row">
-                                                        <div class="col-xs-12">
-                                                            <span class="label"><?php echo __('To') ?>:</span>
-
-                                                        </div>
-                                                        <div class="col-xs-12" style="padding-right: 25px;">
-                                                            <input data-mage-init='<?php echo $mageinit ?>' type="text" class="input-text required-entry validate-date validate-date-giftcard form-control" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" value="<?php echo $this->getFilterValue($id, '-to') ?>" />
-                                                            <!--input type="text" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" class="search-item input-text range-text form-control" value="<?php echo $this->getFilterValue($id, '-to') ?>" /-->
-                                                            <!--img style="position: absolute;top:5px;right:5px;" src="<?php echo $this->getViewFileUrl('Magestore_Giftvoucher::images/grid-cal.gif'); ?>" alt="<?php echo __('dateinput') ?>" class="v-middle" id="calendar-<?php echo $id ?>-to" /-->
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-                                                <!--script type="text/javascript">
-                                                    Calendar.setup({
-                                                        inputField: "<?php echo $this->getNameInLayout() . '-' . $id ?>-from",
-                                                        ifFormat: "%m/%e/%y",
-                                                        showsTime: false,
-                                                        button: "calendar-<?php echo $id ?>-from",
-                                                        align: "Bl",
-                                                        singleClick: true
-                                                    });
-                                                    Calendar.setup({
-                                                        inputField: "<?php echo $this->getNameInLayout() . '-' . $id ?>-to",
-                                                        ifFormat: "%m/%e/%y",
-                                                        showsTime: false,
-                                                        button: "calendar-<?php echo $id ?>-to",
-                                                        align: "Bl",
-                                                        singleClick: true
-                                                    });
-                                                </script-->
-                                            </div>
-            <?php elseif ($type == 'options'): ?>
-                                            <select name="<?php echo $id ?>" id="<?php echo $this->getNameInLayout() . '-' . $id ?>" class="search-item input-select form-control">
-                                                <option value=""></option>
-                                                <?php foreach ($column['options'] as $value => $label): ?>
-                                                    <option value="<?php echo $value ?>"<?php if ($value == $this->getFilterValue($id)): ?> selected="selected"<?php endif ?>><?php echo $label ?></option>
-                                            <?php endforeach ?>
-                                            </select>
-            <?php elseif ($type == 'price' || $type == 'baseprice'): ?>
-                                            <div class="range-container">
-                                                <div class="data-range from-price">
-                                                    <span class="label"><?php echo __('From') ?>:</span>
-                                                    <input type="text" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" class="search-item input-text range-text form-control" value="<?php echo $this->getFilterValue($id, '-from') ?>" />
-                                                </div>
-                                                <div class="data-range to-price">
-                                                    <span class="label"><?php echo __('To') ?>:</span>
-                                                    <input type="text" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" class="search-item input-text range-text form-control" value="<?php echo $this->getFilterValue($id, '-to') ?>" />
-                                                </div>
-                                            </div>
-                                        <?php else: ?>
-                                            <input type="text" name="<?php echo $id ?>" id="<?php echo $this->getNameInLayout() . '-' . $id ?>" class="search-item input-text search-text form-control" value="<?php echo $this->getFilterValue($id) ?>" />
-                                    <?php endif ?>
-                                    </div>
-        <?php endif ?>
-                            </span>
-                        </th>
-                <?php endforeach ?>
-                </tr>
+               <!-- Deleted filter option from gift card page's code-->
 <?php endif ?>
         </thead>
         <tbody>

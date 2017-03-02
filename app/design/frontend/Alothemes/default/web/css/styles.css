@@ -471,8 +471,8 @@ p.required{font-size:11px;text-align:right;color:#EB340A}
 .pages .item .page, .pages .item .next, .pages .item .previous{
     width: 28px;
     /* border: 1px solid #e4e4e4; */
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 20px;
+    line-height: 24px;
     border-radius: 0px;
     font-weight: 500;
     padding: 0px !important;
@@ -7491,6 +7491,7 @@ display: none !important;
 
 .manage_news_l{
 	padding: 30px !important;
+	background: #fff !important;
 }
 
 .check_cust_news_l {
@@ -7554,8 +7555,10 @@ display: none !important;
 .act_rcnt_history a span{
 	color:#1979c3 !important;
 }
+
 .edit_customer_info_ki {
 	padding: 0 15px 20px !important;
+	background: #fff !important;
 }
 
 .change_email_ki {
