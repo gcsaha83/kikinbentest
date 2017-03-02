@@ -38,11 +38,11 @@
               data-mage-init='{"validation":{}}'>
             <?php echo $block->getBlockHtml('formkey'); ?>
             <fieldset class="fieldset login">
-                <div class="field note"><?php /* @escapeNotVerified */ echo __('If you have an account, sign in with your mobile/email address.') ?></div>
+                <div class="field note"><?php /* @escapeNotVerified */ echo __('If you have an account, sign in with your mobile number.') ?></div>
                 <div class="field email required">
-                    <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Mobile/Email') ?></span></label>
+                    <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Mobile Number') ?></span></label>
                     <div class="control">
-                        <input name="login[username]" value="<?php echo $block->escapeHtml($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()) :?> autocomplete="off"<?php endif; ?> id="email" type="text" class="input-text emailandmob" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" data-validate="{required:true}" placeholder="Enter Mobile/Email">
+                        <input name="login[username]" value="<?php echo $block->escapeHtml($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()) :?> autocomplete="off"<?php endif; ?> id="email" type="text" class="input-text emailandmob" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" data-validate="{required:true}" placeholder="Enter Mobile Number">
                         <!-- magecomp start -->
                         <div for="email" style="color:#e02b27;display:none; font-size: 1.2rem;" id="custom-email-error" >Please enter valid number/email.</div>
                         <!-- magecomp end -->
