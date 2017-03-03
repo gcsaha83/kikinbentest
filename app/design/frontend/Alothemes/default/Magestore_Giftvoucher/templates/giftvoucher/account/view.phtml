@@ -32,7 +32,7 @@
                             <?php echo __('Current Balance: ') ?><span class="regular-price"><span><?php echo $block->getBalanceAccount() ?></span></span>
                         </div>
                     <?php endif; ?>
-                    <div class="redeem_gift_l redeem_btn_page" style="overflow: hidden">
+                    <div class="redeem_gift_l redeem_btn_page">
                         <button type="button" class="action primary addredeem" onclick="window.location.href = '<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>'">
                             <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
                                 <span><?php echo __('Add / Redeem a Gift Card') ?></span>
