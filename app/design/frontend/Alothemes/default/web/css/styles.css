@@ -8653,3 +8653,36 @@ height: 35px;
 .wishlist-index-index .products-grid .product-item {
     background: #fff !important;
 }
+/*.............. Css for remove the products from minicart..............*/
+.action-dismiss {
+	border-color: #f89a22 !important;
+	height: 25px !important;
+	border-radius: 3px !important;
+	background-color: #f89a22 !important;
+	color: #ffffff !important;
+}
+.action-dismiss hover{
+	border-color: #f89a22 !important;
+	height: 25px !important;
+	border-radius: 3px !important;
+	background-color: #f89a22 !important;
+	color: #ffffff !important;
+}
+.action-accept {
+	border-color: #f89a22 !important;
+	height: 25px !important;
+	border-radius: 3px !important;
+	background-color: #f89a22 !important;
+	color: #ffffff !important;
+}
+.action-accept hover{
+	border-color: #f89a22 !important;
+	height: 25px !important;
+	border-radius: 3px !important;
+	background-color: #f89a22 !important;
+	color: #ffffff !important;
+}
+
+.modal-inner-wrap {
+	width: 40% !important;
+}
