@@ -8686,3 +8686,7 @@ height: 35px;
 .modal-inner-wrap {
 	width: 40% !important;
 }
+.custom_sku_ki{
+	border-top: 1px solid #eee !important;
+	margin-top: 5px !important;
+}
