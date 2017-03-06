@@ -1911,6 +1911,7 @@ height: 152px;
   .header_right_box img {
   	width: 275px !important;
   	margin: auto !important;
+	float:right !important;
   }
 
   .new_products_l {
