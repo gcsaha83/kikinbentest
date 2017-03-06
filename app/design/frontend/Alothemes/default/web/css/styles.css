@@ -767,7 +767,7 @@ tr.summary-details-excluded{font-style:italic}
 .header .form-language select.flags option{background-position:4px 50%;background-repeat:no-repeat;padding-left:25px}
 .header .header-setting{float: right;}
 .header .header-setting .settting-switcher{position:relative;}
-.righ-header-content{/*text-align: right; padding-top: 2px; margin-top: -10px !important;*/margin-top:7px;}
+.righ-header-content{/*text-align: right; padding-top: 2px; margin-top: -10px !important;margin-top:7px;*/}
 .top-link-product li{display: inline-block; vertical-align: middle; margin: 0; padding: 0 4px !important;}
 .top-link-product a.compare, .top-link-product a.wishlist{/*font-size: 22px;*/ color: #333e48; display: inline-block; vertical-align: middle; line-height: 50px; font-weight: bold; width: 50px; height: 50px; line-height: 50px; overflow: hidden; text-align: center; position: relative;}
 .top-link-product, .minicart-wrapper{display: inline-block; vertical-align: middle; margin: 0}
@@ -8348,7 +8348,6 @@ height: 35px;
 
 .acc_arr_l::after {
 	content: "\2";
-	color: #a1a1a1;
 	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
@@ -8501,30 +8500,30 @@ height: 35px;
 	padding: 0 30px;
 }
 /*----------- view cart -----------*/
-
-.view_add_cust_l span {
+.view_add_cust_l {
     border: none !important;
-	background: #e9e9e9 !important;
-	color: #333 !important;
-	border-radius: 5px !important;
-	box-shadow: 0 2px #B9B9B9 !important;
-	padding: 8px 31px !important;
-	margin-top: 15px !important;
-	font-size: 13px !important;
+    background: #e9e9e9 !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px #B9B9B9 !important;
+    padding: 5px !important;
+    margin-top: 15px !important;
 }
 
-.view_add_cust_l span:hover,.view_add_cust_l span:visited, .view_add_cust_l span:focus {
-    background: #f2f2f2 !important;
+.view_add_cust_l:hover,.view_add_cust_l:visited, .view_add_cust_l:focus {
     color: #333 !important;
     border: none !important;
 }
 
-.view_add_cust_l span:active {
+.view_add_cust_l:active {
   background-color: #e9e9e9 !important;
   box-shadow: 0 1px #B9B9B9 !important;
   transform: translateY(1px) !important;
 }
 
+.view_add_cust_l span {
+    color: #333 !important;
+    font-size: 13px !important;
+}
 
 .gift_btn_btn_l {
     border: none !important;
@@ -8685,4 +8684,15 @@ height: 35px;
 
 .modal-inner-wrap {
 	width: 40% !important;
+}
+.custom_sku_ki{
+	border-top: 1px solid #eee !important;
+	margin-top: 5px !important;
+}
+
+.header-bottom {
+    padding: 5px 0 3px 0 !important;
+}
+.header_right_ki {
+	padding-right: 25px !important;
 }
