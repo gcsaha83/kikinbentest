@@ -8451,39 +8451,41 @@ height: 35px;
 }
 
 .blk_new_big_l .slick-arrow {
-    top: 40% !important;
+    top: 35% !important;
 }
 
 .blk_new_big_l .slick-prev, .blk_new_big_l .slick-next {
-    background: rgba(51, 62, 72, 0.4) !important;
-    height: 40px !important;
+    background: #fff !important;
+    height: 90px !important;
     padding: 0 !important;
     border: 0 !important;
-    width: 25px !important;
-    height: 40px;
-    line-height: 40px !important;
+    width: 45px !important;
+    line-height: 90px !important;
     overflow: hidden !important;
     position: absolute !important;
     z-index: 9 !important;
     color: transparent !important;
+    box-shadow: 0 1px 3px #888 !important;
 }
 
 .blk_new_big_l .slick-prev {
     margin-left: 6px !important;
+    border-radius: 0 3px 3px 0 !important;
 }
 
 .blk_new_big_l .slick-next {
     margin-right: 6px !important;
+    border-radius: 3px 0 0 3px !important;
 }
 
 .blk_new_big_l .slick-prev::before, .blk_new_big_l .slick-next::before {
-    color: #fff !important;
+    color: #333 !important;
     font-family: FontAwesome !important;
-	font-size: 32px !important;
+	font-size: 40px !important;
 	font-weight: normal !important;
-	width: 25px !important;
-	height: 40px !important;
-	line-height: 40px !important;
+	width: 45px !important;
+	height: 90px !important;
+	line-height: 90px !important;
 	display: block !important;
 	text-align: center !important;
 }
@@ -8695,4 +8697,94 @@ height: 35px;
 }
 .header_right_ki {
 	padding-right: 25px !important;
+}
+.top_nav_cust {}
+.top_nav_cust ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.top_nav_cust ul li {
+	float: left;
+	margin: 0;
+}
+
+.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
+	display: inline-block;
+	color: #333;
+	text-align: center;
+	padding: 0px 16px;
+	text-decoration: none;
+	margin-top: 16px;
+}
+
+.top_nav_cust ul li a:hover, .top_nav_cust .dropdown_top_nav:hover .dropbtn_top_nav {
+	/*background: #f89a22;*/
+}
+
+.top_nav_cust ul li .dropdown_top_nav {
+	display: inline-block;
+}
+
+.top_nav_cust .dropdown_top_nav-content {
+	display: none;
+	position: absolute;
+	background: #ffffff;
+	min-width: 500px;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+	z-index: 999999;
+	border-radius: 5px;
+}
+
+.top_nav_cust .dropdown_top_nav-content a {
+	color: #333;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.top_nav_cust .dropdown_top_nav-content a:hover {
+	background: #fcfcfc;
+}
+
+.top_nav_cust .dropdown_top_nav:hover .dropdown_top_nav-content {
+	display: block;
+	z-index: 99999999;
+}
+
+.top_nav_arrow::after {
+    content: "\2";
+	color: transparent;
+	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	height: 8px;
+	width: 10px;
+	position: absolute;
+	top: 50%;
+	margin-top: 3px;
+	margin-left: 3px;
+}
+
+.veggie_drop_cont {
+	padding: 15px;
+}
+
+.veggie_drop_cont h1 {
+	color: #333;
+}
+
+.veggie_drop_img {
+	padding: 0;
+}
+
+.veggie_drop_img img {
+	border-radius: 5px;
+}
+
+.blk_img_size_l img {
+	width: 140px !important;
+	height: 140px !important;
+
 }
