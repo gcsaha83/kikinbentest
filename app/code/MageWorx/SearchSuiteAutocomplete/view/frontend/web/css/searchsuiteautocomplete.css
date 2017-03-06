@@ -39,7 +39,7 @@
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
     left: -1px;
     margin-top: 0px;
-    width: 690px;
+    width: calc(100% - 162px);
     position: absolute;
     z-index: 9999999;
 }
