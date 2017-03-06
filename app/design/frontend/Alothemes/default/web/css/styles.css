@@ -767,7 +767,7 @@ tr.summary-details-excluded{font-style:italic}
 .header .form-language select.flags option{background-position:4px 50%;background-repeat:no-repeat;padding-left:25px}
 .header .header-setting{float: right;}
 .header .header-setting .settting-switcher{position:relative;}
-.righ-header-content{/*text-align: right; padding-top: 2px; margin-top: -10px !important;*/margin-top:7px;}
+.righ-header-content{/*text-align: right; padding-top: 2px; margin-top: -10px !important;margin-top:7px;*/}
 .top-link-product li{display: inline-block; vertical-align: middle; margin: 0; padding: 0 4px !important;}
 .top-link-product a.compare, .top-link-product a.wishlist{/*font-size: 22px;*/ color: #333e48; display: inline-block; vertical-align: middle; line-height: 50px; font-weight: bold; width: 50px; height: 50px; line-height: 50px; overflow: hidden; text-align: center; position: relative;}
 .top-link-product, .minicart-wrapper{display: inline-block; vertical-align: middle; margin: 0}
