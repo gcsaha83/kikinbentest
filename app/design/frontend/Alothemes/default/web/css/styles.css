@@ -8756,8 +8756,8 @@ height: 35px;
 }
 
 .blk_img_size_l img {
-	width: 172px !important;
-	height: 172px !important;
+	width: 200px !important;
+	height: 200px !important;
 
 }
 
@@ -8809,7 +8809,7 @@ height: 35px;
     line-height: 0;
     position: absolute;
     top: -7px;
-	margin-left: 136px;
+    margin-left: 136px;
 }
 
 .promo_img_size_l img {
@@ -8889,4 +8889,17 @@ height: 35px;
 
 .new_products_l .slick-arrow {
     top: 35% !important;
+}
+/*........7-3-17.......*/
+.promo_banner_ki {
+	margin-bottom: 0px !important;
+}
+
+.promo_blk_ki_l {
+	padding-top: 0px !important;
+}
+
+.fashion_gadget_ki img {
+	width: 200px !important;
+	height: 200px !important;
 }
