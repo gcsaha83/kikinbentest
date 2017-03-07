@@ -8878,13 +8878,13 @@ height: 35px;
 .new_products_l .slick-prev::before, .new_products_l .slick-next::before {
     color: #333 !important;
     font-family: FontAwesome !important;
-	font-size: 40px !important;
-	font-weight: normal !important;
-	width: 45px !important;
-	height: 90px !important;
-	line-height: 90px !important;
-	display: block !important;
-	text-align: center !important;
+    font-size: 40px !important;
+    font-weight: normal !important;
+    width: 45px !important;
+    height: 90px !important;
+    line-height: 90px !important;
+    display: block !important;
+    text-align: center !important;
 }
 
 .new_products_l .slick-arrow {
