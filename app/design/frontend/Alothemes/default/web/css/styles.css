@@ -8875,8 +8875,7 @@ height: 35px;
     border-radius: 3px 0 0 3px !important;
 }
 
-.new_products_l .slick-prev::before, 
-::before {
+.new_products_l .slick-prev::before, .new_products_l .slick-next::before {
     color: #333 !important;
     font-family: FontAwesome !important;
 	font-size: 40px !important;
