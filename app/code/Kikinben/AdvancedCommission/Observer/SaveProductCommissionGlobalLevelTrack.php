@@ -15,7 +15,8 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         \Apptha\Marketplace\Model\Seller $seller,
         \Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission,
     	\Kikinben\AdvancedCommission\Model\CommissionFactory $sellerCommission,
-    	\Magento\Catalog\Model\CategoryFactory $categoryFactory
+    	\Magento\Catalog\Model\CategoryFactory $categoryFactory,
+    	\Magento\Customer\Model\Customer $sellerDetails
     
     
     ){
@@ -23,6 +24,7 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $this->_order          = $order;
         $this->_product        = $product;
         $this->_seller         = $seller;
+        $this->_sellerDetails         = $sellerDetails;
         $this->_SellerProductCommission = $SellerProductCommission;
         $this->_sellerCommission = $sellerCommission;
         $this->_categoryInstance = $categoryFactory->create();
@@ -52,6 +54,8 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
             $productId[] = $item->getProductId ();
             $product = $this->_product->load($item->getProductId());
             $sellerIdGlobal[] = $product->getSellerId ();
+            $sellerEmail = $this->_sellerDetails->load($product->getSellerId ())->getEmail();
+            
             $items[$item->getProductId ()] = [
 
                 'order_id'      => $orderData->getIncrementId(),
@@ -61,7 +65,23 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
                 'Qty'           => $item->getQtyOrdered(),
                 'buyer_id'      => $orderData->getCustomerId(),
                 'product_id'    => $item->getProductId (),
-            	'seller_index'  => $product->getSellerId ()	
+            	'seller_index'  => $product->getSellerId (),
+            	
+            
+            ];
+            
+            $commission[$item->getProductId ()] = [
+            
+            		'order_id'      => $orderData->getIncrementId(),
+            		'name'          => $item->getName(),
+            		'sku'           => $item->getSku(),
+            		'product_price' => $item->getPrice(),
+            		'Qty'           => $item->getQtyOrdered(),
+            		'buyer_id'      => $orderData->getCustomerId(),
+            		'product_id'    => $item->getProductId (),
+            		'seller_index'  => $product->getSellerId (),
+            		'seller_email'  => $sellerEmail,
+            		
             
             ];
 
@@ -69,41 +89,49 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $sellerProductCollection = $this->_SellerProductCommission->create()->getCollection();
         $sellerProducts = $sellerProductCollection->addFieldToFilter('product_id',['in'=>$productId])->getData();
         
-        if(count($sellerProducts)){
+        
         for($i=0;$i< count($sellerProducts);$i++){
             $productIdRecord  = $sellerProducts[$i]['product_id'];
             $sellerId         = $sellerProducts[$i]['seller_id'];
             //$commissionFk     = $sellerProducts[$i]['id'];
             if(in_array($productIdRecord,$productId)){
+            	
 
                 $product = $this->_product->load($productIdRecord);
                 $productPrice  = $product->getPrice();
                 $commissionAmount = $sellerProducts[$i]['amount'];
                 $commissionType   = $sellerProducts[$i]['percentage'];
-                $items[$productIdRecord]['seller_id'] = $sellerId;
-                $items[$productIdRecord]['product_commission_global_level_id'] = $commissionFk;
-                $items[$productIdRecord]['commission_amount'] = $commissionAmount;
+                $commission[$productIdRecord]['seller_id'] = $sellerId;
+                //$commission[$productIdRecord]['product_commission_global_level_id'] = $commissionFk;
+                $commission[$productIdRecord]['commission_amount'] = $commissionAmount;
+                $commissionTypeString = ($commissionType == 2) ? 'Percentage' : 'Fixed' ;
 
                 if($commissionType == 2){ // if percentage
+                	
 
-                    $priceAfterCommissionPercent =  $productPrice - (($commissionAmount / 100) * $productPrice);
-                    $chargeToSeller              =  $productPrice - $priceAfterCommissionPercent;
+                    $productpriceAfterCommissionPercent =  $productPrice - (($commissionAmount / 100) * $productPrice);
+                    $ProductchargeToSeller              =  $productPrice - $productpriceAfterCommissionPercent;
 
-                    $items[$productIdRecord]['commission'] =  [
-                        'PriceAfterCommission'=> $priceAfterCommissionPercent,
-                        'commissionAmount'    => $chargeToSeller,
+                    $commission[$productIdRecord]['commission'] =  [
+                        'PriceAfterCommission'=> $productpriceAfterCommissionPercent,
+                        'commissionAmount'    => $ProductchargeToSeller,
+                    	'commissiontype'	  => $commissionTypeString,
+                    	'commission_value'	  => $commissionAmount
 
                     ];
 
                 }
                 else if($commissionType == 1){ // fixed amount
+                	
 
-                    $chargeFixedAmount = $productPrice - $commissionAmount;
-                    $priceAfterCommission = $productPrice - $chargeFixedAmount;
+                    $productchargeFixedAmount = $productPrice - $commissionAmount;
+                    $productpriceAfterCommission = $productPrice - $productchargeFixedAmount;
 
-                    $items[$productIdRecord]['commission'] =  [
-                        'PriceAfterCommission'=> $chargeFixedAmount,
-                        'commissionAmount'    => $priceAfterCommission,
+                    $commission[$productIdRecord]['commission'] =  [
+                        'PriceAfterCommission'=> $productchargeFixedAmount,
+                        'commissionAmount'    => $productpriceAfterCommission,
+                    	'commissiontype'	  => $commissionTypeString,
+                    	'commission_value'	  => $commissionAmount
 
                     ];
 
@@ -112,16 +140,8 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
             }
             
         }
-        foreach($items as $itemKey => $itemValue){
-        	//echo '<pre>';
-        	//print_r($itemValue);
-        	//echo '</pre>';
-        	//$amount   = $itemValue['commission']['commissionAmount'] * (int)$itemValue['Qty'];
-        	//$items[$itemKey]['finalCommission'] = $amount;
-        	 
-        }
-        }
-        else{
+       
+        	
         	$sellerCommissionCollection = $this->_sellerCommission->create()->getCollection();
         	$sellerCommission = $sellerCommissionCollection->addFieldToFilter('seller_id',['in'=>$sellerIdGlobal])->getData();
         	
@@ -144,16 +164,19 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         					$globalSet 	 = $sellerCommission[$i]['product_id'];
         					$orderTotal = $price * (int)$qunatity;
         					$appathaCommission = $sellerDetails->getCommission();
+        					$commissionTypeString = ($commissionType == 2) ? 'Percentage' : 'Fixed' ;
         					if($globalSet == 2 ){ // price range not set
         						
         						if($commissionType == 2){ // fixed
         							
         							$priceAfterCommissionPercent =  $price - (($amount / 100) * $price);
         							$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
-        							$commission[$product_id] = [
+        							$commission[$product_id]['commission'] = [
         									
         									'PriceAfterCommission'=>$priceAfterCommissionPercent,
-        									'commissionAmount' =>$chargeToSeller
+        									'commissionAmount' =>$chargeToSeller,
+        									'commissiontype'	  => $commissionTypeString,
+        									'commission_value'    => $amount
         							
         							];
         						}
@@ -161,10 +184,12 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         							
         							$chargeFixedAmount = $price - $amount;
         							$priceAfterCommission = ($price - $chargeFixedAmount)*$qunatity;
-        							$commission[$product_id] = [
+        							$commission[$product_id]['commission'] = [
         									
         									'PriceAfterCommission'=>$chargeFixedAmount,
-        									'commissionAmount' =>$priceAfterCommission
+        									'commissionAmount' =>$priceAfterCommission,
+        									'commissiontype'	  => $commissionTypeString,
+        									'commission_value'    => $amount
         							
         							];
         							
@@ -173,15 +198,28 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         					}
         					else if($globalSet == 1){ // price range set
         						
-        						if((floatval($range_start) <= floatval($orderTotal)) && (floatval($orderTotal) >= floatval($range_end))){
+        						$sellerProductCollectionNonRange = $this->_SellerProductCommission->create()->getCollection();
+        						$sellerProductsNonRange = $sellerProductCollectionNonRange->addFieldToFilter('product_id',['in'=>$product_id])->getData();
+        						
+        						if(!empty($sellerProductsNonRange)){
+        							//echo "Product gets fixed";
+        							//echo '<pre>';
+        							//print_r($sellerProductsNonRange);
+        							//echo '</pre>';
+        						}
+        						else{
+        						if((floatval($range_start) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($range_end))){
         							
         							if($commissionType == 2){ // percentage
         								
         								$priceAfterCommissionPercentRange =  $price - (($amount / 100) * $price);
         								$chargeToSellerRange              =  ($price - $priceAfterCommissionPercentRange)*$qunatity;
-        								$commission[$product_id] = [
+        								$commission[$product_id]['commission'] = [
         										'PriceAfterCommission'=>$priceAfterCommissionPercentRange,
-        										'commissionAmount' =>$chargeToSellerRange
+        										'commissionAmount' =>$chargeToSellerRange,
+        										'commissiontype'	  => $commissionTypeString,
+        										'range'	=>[$range_start,$range_end],
+        										'commission_value'    => $amount
         										
         								];
         								 
@@ -190,49 +228,99 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         								
         								$chargeFixedAmountRange = $price - $amount;
         								$priceAfterCommissionRange = ($price - $chargeFixedAmountRange)*$qunatity;
-        								$commission[$product_id] = [
+        								$commission[$product_id]['commission'] = [
         										'PriceAfterCommission'=>$chargeFixedAmountRange,
-        										'commissionAmount' =>$priceAfterCommissionRange
+        										'commissionAmount' =>$priceAfterCommissionRange,
+        										'commissiontype'	  => $commissionTypeString,
+        										'range'	=>[$range_start,$range_end],
+        										'commission_value'    => $amount
         								
         								];
         							}
         							
         						}
+        					}
         						
         					}
         					
-        					//echo $seller_id.'-'.$product_id.'-'.$qunatity.'-'.$price.'-'.$amount;
-        					//echo '<br>';
+        					
         				}
         				
         			}
         		}
         	   }
-        	   else{ // global category
-        	   	
-        	   	foreach($items as $product_id => $v){
-        	   		
-        	   		/*$catListTop = $this->_categoryInstance->getCollection()
-        	   		->addAttributeToSelect(array('entity_id','name','magic_label','url_path','magic_image','magic_thumbnail','kinkinbin_icon_thumb','image'))
-        	   		->addAttributeToFilter('entity_id', $withoutParent)
-        	   		->addAttributeToFilter('include_in_menu', 1)
-        	   		->addIsActiveFilter()
-        	   		->addAttributeToSort('position', 'asc');*/
-        	   	}
-        	   	
-        	   }
+        	  
+        	
+        	foreach($commission as $commissionK=>$commissionV){
+        		 
+        		if(!array_key_exists('commission',$commissionV)){
+        			$productIdCat=$commissionV['product_id'];
+        			$productCategory = $this->_product->load($productIdCat);
+        			$categories = $productCategory->getCategoryIds();
+        			foreach($categories as $categoriesK=>$categoriesV){
+        				$categoryIds[] = $categoriesV;
+        			}
+        			$catListTop = $this->_categoryInstance->getCollection()
+        			->addAttributeToSelect(array('entity_id','name','kikinben_fulfilled','kikinben_percentage_amount','kikinben_product_commission'))
+        			->addAttributeToFilter('entity_id', $categoryIds)
+        			->addAttributeToFilter('include_in_menu', 1)
+        			->addIsActiveFilter()
+        			->addAttributeToSort('position', 'asc');      
+        			
+        			foreach ($catListTop as $catTop){
+        				 
+        				$idTop    = $catTop->getEntityId();
+        				$percentage_amount = $catTop->getKikinbenPercentageAmount();
+        				$commissionTypeStringCatg = ($percentage_amount == 1) ? 'Percentage' : 'Fixed' ;
+        				if($percentage_amount == 1){ // percentage
+        					
+        					$percentage_commission = $catTop->getKikinbenProductCommission();
+        					$product_amount = $commission[$productIdCat]['product_price'];
+        					$qty			= $commission[$productIdCat]['Qty'];        					
+        					$categoryCommissionPercentRange =  $product_amount - (($percentage_commission / 100) * $product_amount);
+        					$categoryCommission              =  ($product_amount - $categoryCommissionPercentRange)*$qty;
+        					
+        					$commission[$productIdCat]['commission'] = [
+        							
+        							'PriceAfterCommission'=>$categoryCommissionPercentRange,
+        							'commissionAmount' =>$categoryCommission,
+        							'commissiontype'	  => $commissionTypeStringCatg,   
+        							'commission_value'    => $percentage_commission
+        					];
+        					
+        				}
+        				else{ //fixed
+        					$percentage_commission = $catTop->getKikinbenProductCommission();
+        					$chargeFixedAmountRange = $product_amount - $percentage_commission;
+        					$priceAfterCommissionRange = ($product_amount - $chargeFixedAmountRange)*$qty;
+        					
+        					$commission[$productIdCat]['commission'] = [
+        							 
+        							'PriceAfterCommission'=>$priceAfterCommissionRange,
+        							'commissionAmount' 	  =>$chargeFixedAmountRange,
+        							'commissiontype'	  => $commissionTypeStringCatg,
+        							'commission_value'    => $percentage_commission
+        							
+        					];
+        				}
+        				
+        				 
+        			}
+        		}
+        			
+        		
+        		 
+        	}
         	
         	
-        	echo '<pre>';
-        	print_r( $sellerCommission );
-        	echo "==";
-        	print_r( $items );  
-        	echo "==";
-        	print_r($commission);
-        	echo '</pre>'; 
-        	
-        }
         
+        	echo '<pre>';
+        	//print_r( $sellerCommission );
+        	//echo "==";
+        	//print_r( $items );
+        	//echo "==";
+        	print_r($commission);
+        	echo '</pre>';
 
         
          
