@@ -8,7 +8,7 @@
  * @@Modify Date: 2016-07-15 15:05:42
  * @@Function:*/
 .sections .nav-sections-item-content > .navigation{display: none;}
-.nav-sections-item-content .magicmenu{position:relative;display:block; left:15%;}
+.nav-sections-item-content .magicmenu{position:relative;display:block;}
 .magicmenu .nav-desktop{position:static;margin:0;padding:0;}
 .magicmenu .nav-desktop .level0{padding:0px;margin:0px;display: inline-block;}
 .magicmenu .nav-desktop .level0.logo.display{display: none;border: 0;}
