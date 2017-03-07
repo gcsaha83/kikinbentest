@@ -15,26 +15,25 @@
 	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/
 Framework/View/Layout/etc/page_configuration.xsd">
 	<head>
-		<css src="Apptha_Marketplace::css/style.css" />
+		<css src="Kikinben_SellerCategory::css/style.css" />
 	</head>
 	<body>
 		<referenceBlock name="seller_account" remove="true" />
-		<referenceBlock name="customer_account_navigation"
-			remove="true" />
+		<referenceBlock name="customer_account_navigation" remove="true" />
 		<referenceContainer name="content">
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
-				name="seller_content" template="seller/displayseller.phtml" />
+				name="seller_content" template="Kikinben_SellerCategory::seller/displayseller.phtml" />
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
-				name="marketplace.allproducts" template="seller/allproducts.phtml"
+				name="marketplace.allproducts" template="Kikinben_SellerCategory::seller/allproducts.phtml"
 				after="-" />
 		</referenceContainer>
 		<referenceContainer name="sidebar.main">
 			<!-- <block class="Apptha\Marketplace\Block\Seller\Displayseller"
 				name="seller_location" template="seller/map.phtml" /> -->
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
-				name="seller_ratings" template="seller/feedback.phtml" />
+				name="seller_ratings" template="Kikinben_SellerCategory::seller/feedback.phtml" />
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
-				name="seller_contact" template="seller/contact.phtml" />
+				name="seller_contact" template="Kikinben_SellerCategory::seller/contact.phtml" />
 		</referenceContainer>
 	</body>
 </page>

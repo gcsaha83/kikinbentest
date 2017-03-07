@@ -69,39 +69,12 @@ class Displayseller extends \Magento\Directory\Block\Data {
      * @return void
      */
     protected function _construct() {
-        /*$objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
+        $objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
         $customerId = $this->getRequest ()->getParam ( 'id' );
-        $categoryId = $this->getRequest ()->getParam ( 'catgid' );
-        
-        $categoryCollection = $objectModelManager->get ( '\Magento\Catalog\Model\CategoryFactory' )->create()->load($categoryId);
-        
-        
-        
-        
-        if($categoryId){
-            $collection = $objectModelManager->get ( 'Magento\Catalog\Model\ResourceModel\Product\Collection' )
-                ->addAttributeToSelect ( '*' )
-                ->addAttributeToFilter ( 'seller_id', $customerId )
-                ->addAttributeToFilter ( 'product_approval', 1 )
-                ->addCategoryFilter($categoryCollection)    
-                ->addAttributeToFilter ( 'status', 1 )
-                ->addAttributeToFilter ( 'visibility', array (
+        $collection = $objectModelManager->get ( 'Magento\Catalog\Model\ResourceModel\Product\Collection' )->addAttributeToSelect ( '*' )->addAttributeToFilter ( 'seller_id', $customerId )->addAttributeToFilter ( 'product_approval', 1 )->addAttributeToFilter ( 'status', 1 )->addAttributeToFilter ( 'visibility', array (
                 'eq' => \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH
         ) );
-            
-        }
-        else{
-             $collection = $objectModelManager->get ( 'Magento\Catalog\Model\ResourceModel\Product\Collection' )
-                ->addAttributeToSelect ( '*' )
-                ->addAttributeToFilter ( 'seller_id', $customerId )
-                ->addAttributeToFilter ( 'product_approval', 1 )                
-                ->addAttributeToFilter ( 'status', 1 )
-                ->addAttributeToFilter ( 'visibility', array (
-                'eq' => \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH
-        ) );
-        }
-        //echo $collection->getSelect();die;
-        $this->setCollection ( $collection );*/
+        $this->setCollection ( $collection );
     }
 
     /**
@@ -418,5 +391,19 @@ class Displayseller extends \Magento\Directory\Block\Data {
             $isSellerStoreInformationEnabled = 1;
         }
         return $isSellerStoreInformationEnabled;
+    }
+    public function getAdditionalHtml()
+    {
+    	return $this->getChildHtml('additional');
+    }
+    
+    /**
+     * Retrieve list toolbar HTML
+     *
+     * @return string
+     */
+    public function getToolbarHtml()
+    {
+    	return $this->getChildHtml('toolbar');
     }
 }
