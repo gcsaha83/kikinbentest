@@ -12,7 +12,7 @@
 $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data');
 ?>
 <?php if ($wishlistHelper->isAllow()) : ?>
-    <div class="block block-wishlist" data-bind="scope: 'wishlist'">
+    <div class="block block-wishlist view_cart_ordered_l" data-bind="scope: 'wishlist'">
         <div class="block-title block_title_l">
             <strong><?php /* @escapeNotVerified */ echo $block->getTitle(); ?></strong>
             <!-- ko if: wishlist().counter -->
@@ -37,7 +37,7 @@ $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data');
                                 <div data-bind="html: product_price"></div>
                                 <div class="product-item-actions">
                                     <!-- ko if: product_is_saleable_and_visible -->
-                                    <div class="actions-primary">
+                                    <div class="actions-primary btn-custom">
                                         <!-- ko if: product_has_required_options -->
                                         <a href="#" data-bind="attr: {'data-post': add_to_cart_params}" class="action tocart primary"><span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span></a>
                                         <!-- /ko -->
@@ -46,7 +46,7 @@ $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data');
                                         <!-- /ko -->
                                     </div>
                                     <!-- /ko -->
-                                    <div class="actions-secondary">
+                                    <div class="view_remove_cust_l actions-secondary">
                                         <a href="#"  data-bind="attr: {'data-post': delete_item_params}"
                                            title="<?php /* @escapeNotVerified */ echo __('Remove This Item') ?>"
                                            class="btn-remove action delete">
@@ -60,7 +60,7 @@ $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data');
                 </ol>
                 <div class="actions-toolbar no-display" data-bind="css: {'no-display': null}">
                     <div class="primary">
-                        <a class="action details"
+                        <a class="action details order_wishlist_view"
                            href="<?php /* @escapeNotVerified */ echo $this->helper('Magento\Wishlist\Helper\Data')->getListUrl() ?>"
                            title="<?php /* @escapeNotVerified */ echo __('Go to Wish List') ?>"><span><?php /* @escapeNotVerified */ echo __('Go to Wish List') ?></span></a>
                     </div>
