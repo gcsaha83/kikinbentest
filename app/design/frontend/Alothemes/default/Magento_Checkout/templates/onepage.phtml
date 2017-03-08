@@ -6,8 +6,10 @@
 
 // @codingStandardsIgnoreFile
 ?>
+
+<div class="checkout_page_cust_n">
 <div class="checkout_cust_logo">
-<a href="<?php echo $block->getBaseUrl(); ?>"><span><img class="img-responsive logo_tm_l" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/logo_tm.png')?>"></span></a>
+<a href="<?php echo $block->getBaseUrl(); ?>"><span><img class="img-responsive logo_tm_l_t" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/logo_tm.png')?>"></span></a>
 </div>
 
 <div id="checkout" data-bind="scope:'checkout'" class="checkout-container">
@@ -41,4 +43,5 @@
             return url.setBaseUrl('<?php /* @escapeNotVerified */ echo $block->getBaseUrl();?>');
         })
     </script>
+</div>
 </div>
