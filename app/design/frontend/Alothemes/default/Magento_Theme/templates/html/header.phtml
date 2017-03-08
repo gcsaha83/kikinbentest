@@ -218,7 +218,19 @@ $isLoggedIn = $customerSession->isLoggedIn();
 								  		<?php }  ?>
 								  	</ul>
                                 </div>
-                                        <?php if( $isLoggedIn ) { ?>
+                                        <?php if( $isLoggedIn && ($request->getFullActionName() == 'cms_index_index')) { ?>
+
+                                        <div  id="nav-signin" data-toggle='popover' class="veggie-flyout-cus-l">
+
+						<div class="nav-arrow-cus-l">
+						<div class="nav-arrow-cus-l-inner"></div>
+					</div>
+
+					<div id="nav-signin-tooltip-cus-l">
+					<a href="#"><img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/veggiepop.png')?>"></a>
+
+					</div>
+					</div>
 		
 											<?php } elseif($request->getFullActionName() == 'cms_index_index') { ?>
 											<div  id="nav-signin" data-toggle='popover' class="nav-flyout-cus-l">
