@@ -14,9 +14,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
 	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/
 Framework/View/Layout/etc/page_configuration.xsd">
-	<head>
+	<!-- <head>
 		<css src="Kikinben_SellerCategory::css/style.css" />
-	</head>
+	</head>-->
 	<body>
 		<referenceBlock name="seller_account" remove="true" />
 		<referenceBlock name="customer_account_navigation" remove="true" />
