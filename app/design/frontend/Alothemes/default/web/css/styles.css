@@ -8809,7 +8809,7 @@ height: 35px;
     line-height: 0;
     position: absolute;
     top: -7px;
-    margin-left: 136px;
+    margin-left: 80px;
 }
 
 .promo_img_size_l img {
@@ -8903,3 +8903,59 @@ height: 35px;
 	width: 200px !important;
 	height: 200px !important;
 }
+/*---------- 8-3-17---------*/
+.veggie-flyout-cus-l {
+    position: absolute;
+    overflow: visible!important;
+    background: #fff;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    -ms-user-select: none;
+    zoom: 1;
+    -webkit-transform: translate3d(0,0,0);
+    font-size: 13px;
+    font-family: arial,sans-serif;
+    line-height: normal;
+    z-index: 99999;
+	margin-top: 38px;
+	left: -134%;
+}
+
+
+	.veggie-flyout-cus-l .nav-arrow-cus-l {
+	    border-style: solid;
+	    _border-style: dashed;
+	    border-width: 9px;
+	    border-color: transparent;
+	    border-top-width: 0;
+	    border-bottom: 9px solid #ccc;
+	    width: 0;
+	    height: 0;
+	    font-size: 0;
+	    line-height: 0;
+	    position: absolute;
+	    top: -9px;
+	    left: 65px;
+	}
+
+	.veggie-flyout-cus-l .nav-arrow-cus-l-inner {
+	    border-style: solid;
+	    _border-style: dashed;
+	    border-width: 9px;
+	    border-color: transparent;
+	    border-top-width: 0;
+	    border-bottom: 9px solid #fff;
+	    width: 0;
+	    height: 0;
+	    font-size: 0;
+	    line-height: 0;
+	    position: absolute;
+	    top: 1px;
+	    left: -9px;
+	}
