@@ -68,7 +68,7 @@ $vdrawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
 		<li><a href="#">Gift Card &amp; Top Up</a></li>
 		<li><a href="#">Start Selling on KiKinben</a></li>
 		<li class="dropdown_top_nav">
-			<a href="#" class="dropbtn_top_nav top_nav_arrow">Veggie Box</a>
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Veggie Box</a>
 
 			<div class="dropdown_top_nav-content">
 
@@ -110,4 +110,13 @@ $vdrawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
 
 <script type="text/javascript">
 	require(['jquery','magiccart/easing','magicmenu']);
+</script>
+
+<script type="text/javascript">
+	setTimeout(function(){  jQuery('#nav-signin').fadeOut(400);}, 10000);
+		 function popsupveggie(obj)
+		  {
+		  	document.getElementById('nav-signin').style.display = 'none';
+		  }
+
 </script>
