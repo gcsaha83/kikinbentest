@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+
+<div class="view_cart_dust_l">
+<?php
+/**
+ * Shopping cart template
+ *
+ * @var $block \Magento\Checkout\Block\Cart
+ */
+
+
+
+if ($block->getItemsCount()) {
+    echo $block->getChildHtml('with-items');
+} else {
+    echo $block->getChildHtml('no-items');
+}
+
+?></div>
