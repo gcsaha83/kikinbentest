@@ -19,16 +19,14 @@
 <!-- ko foreach: getRegion('messages') -->
     <!-- ko template: getTemplate() --><!-- /ko -->
 <!--/ko-->
-<div class="checkout_cust_logo">
-<a href="<?php echo $block->getBaseUrl(); ?>"><span><img class="img-responsive logo_tm_l" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/logo_tm.png')?>"></span></a>
-</div>
-<div class="opc-wrapper">
-    <ol class="opc" id="checkoutSteps">
-    <!-- ko foreach: getRegion('steps') -->
-        <!-- ko template: getTemplate() --><!-- /ko -->
-    <!--/ko-->
-    </ol>
-</div>
+
+	<div class="opc-wrapper">
+	    <ol class="opc" id="checkoutSteps">
+	    <!-- ko foreach: getRegion('steps') -->
+	        <!-- ko template: getTemplate() --><!-- /ko -->
+	    <!--/ko-->
+	    </ol>
+	</div>
 
 <!-- ko foreach: getRegion('sidebar') -->
     <!-- ko template: getTemplate() --><!-- /ko -->
