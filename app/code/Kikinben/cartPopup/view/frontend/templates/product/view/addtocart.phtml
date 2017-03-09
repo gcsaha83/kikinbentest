@@ -121,12 +121,12 @@ if ($productType === 'simple') {
 <?php $buttonTitle = __('Add to Cart'); ?>
 <?php if ($_product->isSaleable()): ?>
 <div class="box-tocart">
-    <div class="fieldset">
+    <div class="fieldset details_addTocart_l">
         <?php if ($block->shouldRenderQuantity()): ?>
         <div class="field qty details_qty_l">
             <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Quantity: ') ?></span></label>
             <div class="control">
-            	<button type="button" class="reduced items" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--;return false;">
+            	<button type="button" class="reduced items plus_minus_view" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--;return false;">
 					<i class="fa fa-minus"></i>
 				</button>
                 <input type="number"
@@ -137,7 +137,7 @@ if ($productType === 'simple') {
                        title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
                        data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
                        />
-                <button type="button" class="increase items" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;">
+                <button type="button" class="increase items plus_minus_view" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;">
 					<i class="fa fa-plus"></i>
 				</button>
             </div>
