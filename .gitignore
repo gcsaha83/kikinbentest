@@ -57,3 +57,18 @@ pub/media
 
 .htaccess
 .htpasswd
+app/autoload.php
+app/bootstrap.php
+index.php
+app/etc/NonComposerComponentRegistration.php
+app/etc/di.xml
+app/functions.php
+bin/magento
+composer.json
+dev/
+lib/
+pub/errors/
+pub/get.php
+pub/index.php
+pub/static.php
+setup/
