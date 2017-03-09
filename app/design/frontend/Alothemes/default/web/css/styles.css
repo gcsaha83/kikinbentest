@@ -5402,7 +5402,8 @@ font-size: 12px;
 	    font-family: arial,sans-serif;
 	    line-height: normal;
 	    z-index: 99999;
-		margin-top: 42px;
+	    margin-top: 40px;
+	    left: 26%;
 	}
 
 	.nav-signin-cus-l .nav-arrow-cus-l {
@@ -5423,6 +5424,7 @@ font-size: 12px;
 	    line-height: 0;
 	    position: absolute;
 	    top: -9px;
+	    left: 44%;
 	}
 
 	.nav-flyout-cus-l .nav-arrow-cus-l-inner {
@@ -8923,8 +8925,8 @@ height: 35px;
     font-family: arial,sans-serif;
     line-height: normal;
     z-index: 99999;
-	margin-top: 38px;
-	left: -134%;
+    margin-top: 40px;
+    left: -193%;
 }
 
 
@@ -8941,7 +8943,7 @@ height: 35px;
 	    line-height: 0;
 	    position: absolute;
 	    top: -9px;
-	    left: 65px;
+	    left: 48%;
 	}
 
 	.veggie-flyout-cus-l .nav-arrow-cus-l-inner {
