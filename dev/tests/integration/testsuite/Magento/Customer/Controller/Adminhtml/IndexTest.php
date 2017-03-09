@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Magento\Customer\Controller\Adminhtml;
@@ -339,7 +339,12 @@ class IndexTest extends \Magento\TestFramework\TestCase\AbstractBackendControlle
         $this->assertEquals(1, $subscriber->getStatus());
 
         $post = [
-            'customer' => ['entity_id' => $customerId],
+            'customer' => [
+                'entity_id' => $customerId,
+                'email' => 'customer@example.com',
+                'firstname' => 'test firstname',
+                'lastname' => 'test lastname',
+            ],
             'subscription' => 'false'
         ];
         $this->getRequest()->setPostValue($post);
