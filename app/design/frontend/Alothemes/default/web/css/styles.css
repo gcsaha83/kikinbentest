@@ -9403,3 +9403,13 @@ height: 35px;
 .details_addTocart_l .plus_minus_view {
 	background: transparent !important;
 }
+
+
+.vegetableImg_pop_l a img {
+	width: 355px;
+	background: transparent;
+	margin-top: -230px;
+	margin-left: 175px;
+	overflow: hidden;
+	position: absolute;
+}
