@@ -5,10 +5,10 @@
 		<resources>
             <resource id="Magento_Adminhtml::admin">
                 
-                <resource id="Ipragmatech_Registration::{{gridname}}"
+               <!-- <resource id="Ipragmatech_Registration::{{gridname}}"
                     title="{{gridname}}" sortOrder="100" />
 
-                   	<resource id="Ipragmatech_Registration::config_twiliosetting" title="Twilio Setting" sortOrder="80" />
+                   	<resource id="Ipragmatech_Registration::config_twiliosetting" title="Twilio Setting" sortOrder="80" />-->
 
 				<!--AddMenuAcl -->
 			</resource>
