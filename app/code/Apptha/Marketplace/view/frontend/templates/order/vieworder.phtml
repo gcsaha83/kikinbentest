@@ -90,7 +90,7 @@ if ($orderDetails ['refund_flag'] != 1 && $orderDetails ['is_refunded']) {
 		<div class="order-title">
 			<strong><?php echo __('Items Ordered');?></strong>
 		</div>
-		<div class="table-wrapper order-items">
+		<div class="table-wrapper order-items recent_ord_cust_l">
 			<table class="data table table-order-items" id="my-orders-table"
 				summary="Items Ordered">
 				<caption class="table-caption"><?php echo __('Items Ordered');?></caption>
@@ -116,19 +116,21 @@ foreach ( $productDatas as $product ) {
         $decodedOptions = json_decode ( ($productData ['options']), true );
         ?>
                 <tr id="<?php echo $orderId?>">
-						<td class="col name" data-th="Product Name"><strong
-							class="product name product-item-name"><?php echo $productData['product_name'];?><br />
-        <?php
+						<td class="col name items_ordered_tab_l" data-th="Product Name">
+						<strong class="product name product-item-name">
+							<?php echo $productData['product_name'];?><br />
+        					<?php
         
-if (isset ( $decodedOptions ['options'] )) {
-            $options = $decodedOptions ['options'];
-            foreach ( $options as $option ) {
-                ?><h4><?php  echo ($option['label'])?></h4>
-         		<?php echo ($option['value']);?><br /><?php
-            }
-        }
+							if (isset ( $decodedOptions ['options'] )) {
+							            $options = $decodedOptions ['options'];
+							            foreach ( $options as $option ) {
+							                ?><h4><?php  echo ($option['label'])?></h4>
+							         		<?php echo ($option['value']);?><br /><?php
+							            }
+							        }
         
-        ?></strong></td>
+        					?></strong>
+        				</td>
 						<td class="col sku" data-th="SKU"><?php echo $productData['product_sku'];?></td>
 						<td class="col price" data-th="Price"><span
 							class="price-excluding-tax" data-label="Excl. Tax"> <span
@@ -171,7 +173,7 @@ if (isset ( $decodedOptions ['options'] )) {
             <?php } ?>
         </ul>
 						</td>
-						<td class="col subtotal" data-th="Subtotal"><span
+						<td class="col subtotal items_ordered_tab_l" data-th="Subtotal"><span
 							class="price-excluding-tax" data-label="Excl. Tax"> <span
 								class="cart-price"> <span class="price"><?php echo $currencySymbol. round($productData['product_price']*$productData['product_qty'],2);?></span>
 							</span>
@@ -264,7 +266,7 @@ echo $block->getOrderItemUrl () . 'id/' . $itemId . '/action/';
 			</div>
 		</div>
 	</div>
-	<div class="block block-order-details-view">
+	<div class="block block-order-details-view order_info_cust_l">
 		<div class="block-title">
 			<strong><?php echo __('Order Information');?></strong>
 		</div>
@@ -273,7 +275,8 @@ echo $block->getOrderItemUrl () . 'id/' . $itemId . '/action/';
     <?php if(count($orderDetails['shipping_address']) > 0){ ?>
            
     <div class="box box-order-shipping-address">
-				<strong class="box-title"><span><?php echo __('Shipping Address');?></span></strong>
+				<strong class="box-title">
+					<span><?php echo __('Shipping Address');?></span></strong>
 				<div class="box-content">
 					<address>
 						<div class="billing-name"><?php echo $orderDetails['shipping_address']['firstname'].' '.$orderDetails['billing_address']['lastname'];?></div>
