@@ -9106,7 +9106,7 @@ height: 35px;
   margin-top: 6px;
 }
 
-.view_cart_dust_l .cart-container {
+.view_cart_dust_l {
 	background: #fff;
 	padding: 20px;
 	border: 1px solid #ddd;
@@ -9145,7 +9145,7 @@ height: 35px;
 }
 
 .checkout_page_cust_n .shipping-address-item {
-  padding-left: 0px !important; 
+/*   padding-left: 0px !important;  */
 }
 
 .checkout_page_cust_n .action-show-popup {
@@ -9413,3 +9413,15 @@ height: 35px;
 	overflow: hidden;
 	position: absolute;
 }
+.checkout_page_cust_n .edit-address-link {
+margin: 20px 5px 0 0 !important;
+}
+
+.recent_ord_cust_l .col {
+font-size: 11px;
+}
+
+.view_cart_dust_l .action-edit {
+	display: none !important;
+}
+
