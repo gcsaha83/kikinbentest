@@ -33,10 +33,13 @@ use Magento\Framework\App\Action\Action;
 $_productCollection = $block->getCollection ();
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance ();
 $dataHelper = $objectManager->get ( 'Apptha\Marketplace\Helper\Data' );
+$stores = $objectManager->get ( '\Magento\Store\Model\StoreManagerInterface' );
 
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
 $imagehelper = $this->helper ( 'Magento\Catalog\Helper\Image' );
+
+$baseUrl = $stores->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 
 function truncateStringWords($str, $maxlen)
 {
@@ -80,7 +83,7 @@ function truncateStringWords($str, $maxlen)
     
     ?>
     
-    <div class="products wrapper <?php /* @escapeNotVerified */ echo $viewMode; ?> products-<?php echo $viewMode; ?> category-product-<?php echo $viewMode; ?>">
+    <div id='display_products_all' class="products wrapper <?php /* @escapeNotVerified */ echo $viewMode; ?> products-<?php echo $viewMode; ?> category-product-<?php echo $viewMode; ?>">
      <?php $iterator = 1; ?>
      <ol class="products list items product-items">
      <?php foreach ($_productCollection as $_product): ?>
@@ -195,10 +198,25 @@ function truncateStringWords($str, $maxlen)
      
      </ol>
     </div>
+<script type="text/javascript">	
+	
+	function getSellerProducts(sellerId,categoryId){
+		require(
+		        ['jquery','ajaxmenu'],
+		        function($,ajaxmenu){
+		        	var baseurl = "<?php echo $baseUrl;?>";
+		    		var sellerProductUrl = baseurl+'kikinben_sellercategory/index/index/id/'+sellerId+'/catgid/'+categoryId;
+		        	ajaxmenu.ajaxMenu(sellerProductUrl,sellerId,categoryId);
+
+		    }); 
+
+	}
+</script>
+<div id="display_products"></div>
 
 <div class="toolbar-bottom toolbar-view-<?php echo $viewMode;?>">
         <?php echo $block->getToolbarHtml() ?>
-    </div>
+</div>
     <?php /* if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
         {
@@ -209,4 +227,3 @@ function truncateStringWords($str, $maxlen)
         </script>
     <?php endif; */ ?>
 <?php endif;?>
-

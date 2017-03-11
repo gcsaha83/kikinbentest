@@ -406,4 +406,7 @@ class Displayseller extends \Magento\Directory\Block\Data {
     {
     	return $this->getChildHtml('toolbar');
     }
+    public function getAjaxUrl(){
+    	return $this->getUrl("kikinben_sellercategory/index/index"); // Controller Url
+    }
 }
