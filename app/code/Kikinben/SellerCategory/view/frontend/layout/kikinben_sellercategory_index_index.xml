@@ -5,25 +5,42 @@
     </head>
     <body>
         
-        <referenceBlock name="seller_account" remove="true" />
+    <referenceBlock name="seller_account" remove="true" />
 	<referenceBlock name="customer_account_navigation" remove="true" />
+	
+		<referenceBlock name="minicart" remove="false"/>
+	 	<referenceContainer name="header.panel" remove="false"/>
+	  	<referenceBlock name="top.search" remove="false"/>
+	 	<referenceBlock name="catalog.compare.link" remove="false"/>
+	  	<referenceBlock name="catalog.topnav" remove="false"/>
+	 	<referenceContainer name="footer-container" remove="false"/>        
+        <referenceBlock name="alo.footer" remove="true" />
+        <referenceBlock name="alothemes_header" remove="true" />
+        <referenceBlock name="customer_newsletter" remove="true" />
+        <referenceBlock name="newsletter_head_components" remove="true" />
+        <referenceBlock name="footer.newsletter" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="main-footer" remove="true" />
+        <referenceBlock name="page.bottom" remove="true" />
+        <referenceContainer name="sidebar.additional" remove="true" />
+         
     <referenceBlock name="content">
-        <block class="Apptha\Marketplace\Block\Seller\Displayseller" name="seller_content" template="seller/displayseller.phtml" />
-        <block template="sellerproducts.phtml" class="Kikinben\SellerCategory\Block\Menu" name="kikinben_sellercategory_block_menu"/>
+        <!--<block class="Apptha\Marketplace\Block\Seller\Displayseller" name="seller_content" template="seller/displayseller.phtml" />-->
+         <block template="sellerproducts.phtml" class="Kikinben\SellerCategory\Block\Menu" name="kikinben_sellercategory_block_menu"/>
     </referenceBlock>
     
     
-<referenceContainer name="div.sidebar.main">
+<!--<referenceContainer name="div.sidebar.main">
     <block class="Kikinben\SellerCategory\Block\Menu" name="accordion.sidebar" before="-" template="Kikinben_SellerCategory::accordion.phtml" />
-</referenceContainer>
+</referenceContainer>-->
    
-   <referenceContainer name="sidebar.main">
-			<!-- <block class="Apptha\Marketplace\Block\Seller\Displayseller"
-				name="seller_location" template="seller/map.phtml" /> -->
+   <!-- <referenceContainer name="sidebar.main">
+			 <block class="Apptha\Marketplace\Block\Seller\Displayseller"
+				name="seller_location" template="seller/map.phtml" /> 
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
 				name="seller_ratings" template="seller/feedback.phtml" />
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
 				name="seller_contact" template="seller/contact.phtml" />
-		</referenceContainer>
+		</referenceContainer>-->
 </body>
 </page>
