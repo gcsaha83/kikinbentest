@@ -20,7 +20,7 @@
     <div class="block-content">
     <?php echo $block->getChildHtml()?>
     <?php if (sizeof($_orders->getItems()) > 0): ?>
-        <div class="table-wrapper orders-recent">
+        <div class="table-wrapper orders-recent recent_ord_cust_l">
             <table class="data table table-order-items recent" id="my-orders-table">
                 <caption class="table-caption"><?php /* @escapeNotVerified */ echo __('Recent Orders') ?></caption>
                 <thead>
