@@ -65,12 +65,12 @@ $paymentMethods = $block->getWizardPaymentMethodOptions();
 
     <?php if ($paymentMethods): ?>
         <form action="<?php echo $block->escapeUrl($block->getCreateUrl()); ?>" method="post"
-              class="form form-new-agreement">
+            class="form form-new-agreement billing_page_cust_l">
             <fieldset class="fieldset">
                 <legend class="legend">
                     <span><?php echo $block->escapeHtml(__('New Billing Agreement')); ?></span>
                 </legend>
-                <br />
+                
                 <p class="note">
                     <?php echo $block->escapeHtml(__('You will be redirected to the payment system website.')); ?>
                 </p>
@@ -87,6 +87,7 @@ $paymentMethods = $block->getWizardPaymentMethodOptions();
                         </select>
                     </div>
                 </div>
+
                 <div class="actions-toolbar">
                     <div class="primary redeem_gift_cust_l">
                         <button type="submit" class="primary action create ">
@@ -99,6 +100,7 @@ $paymentMethods = $block->getWizardPaymentMethodOptions();
                         </a>
                     </div>
                 </div>
+
             </fieldset>
         </form>
     <?php else: ?>
