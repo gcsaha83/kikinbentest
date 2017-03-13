@@ -7620,12 +7620,12 @@ display: none !important;
 }
 
 .redeem_cust_tit {
-	font-size: 17px;
-	color: #333 !important;
+	font-size: 25px !important;
+	color: #3db92b !important;
 }
 
 .redeem_cust_tit span {
-	font-size: 17px;
+	font-size: 22px !important;
 }
 
 .redeem_btn_page span {
@@ -7765,12 +7765,12 @@ display: none !important;
 }
 
 .redeem_cust_tit {
-	font-size: 17px;
-	color: #333 !important;
+	font-size: 25px !important;
+	color: #3db92b !important;
 }
 
 .redeem_cust_tit span {
-	font-size: 17px;
+	font-size: 22px !important;
 }
 
 .redeem_btn_page span {
