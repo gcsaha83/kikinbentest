@@ -9425,3 +9425,83 @@ font-size: 11px;
 	display: none !important;
 }
 
+/*.......... New CSS..........*/
+
+.order-details-items .secondary .back span {
+	color: #1979c3 !important;
+}
+
+.order_info_cust_l .box-title {
+	border: none !important;
+}
+
+.order_info_cust_l .box-content {
+	border: none !important;
+}
+
+.billing_page_cust_l {
+	padding: 30px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.sidebar .block_title_l {
+    border-left: none !important;
+}
+
+.giftvoucher-grid-detail a {
+	color: #1979c3 !important;
+}
+
+.gift_btn_cust_l button {
+	border: none !important;
+	background: #f89a22 !important;
+	color: #fff !important;
+	border-radius: 5px !important;
+	box-shadow: 0 2px #E76C33 !important;
+	padding: 16px !important;
+}
+
+.gift_btn_cust_l button span{
+	font-size: 13px !important;
+}
+
+.gift_btn_cust_l button:hover,.gift_btn_cust_l button:visited, .gift_btn_cust_l button:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.gift_btn_cust_l button:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.anchor_cust_l a {
+	color: #1979c3 !important;
+}
+
+.gift_page_cust_l {
+	background: #fff;
+	padding: 30px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.redeem_gift_for_l {
+	margin-bottom: 0px !important;
+}
+
+.gift_balance_cust_l {
+	width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	height: 125px;
+	margin-bottom: 20px;
+}
