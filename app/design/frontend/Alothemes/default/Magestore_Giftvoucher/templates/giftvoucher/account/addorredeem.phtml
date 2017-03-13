@@ -19,13 +19,13 @@
 
 ?>
 <?php $helper = $block->getHelper(); ?>
-<div class="gift-card">
+<div class="gift-card billing_page_cust_l">
     <form id="addredeem-giftvoucher-code" method="post" action="<?php echo $block->getFormActionUrl() ?>">
         <fieldset class="fieldset info">
             <?php echo $block->getBlockHtml('formkey') ?>
             <?php if ($block->getHelper()->getGeneralConfig('enablecredit')): ?>
                         <!--span><?php echo __('Add / Redeem a Gift Card') ?></span-->
-                <legend class="legend"><span><?php echo __('Add / Redeem a Gift Card') ?></span></legend><br>
+                <legend class="legend"><span><?php echo __('Add / Redeem a Gift Card') ?></span></legend>
             <?php else: ?>
                 <!--span><?php echo __('Add a Gift Card') ?></span-->
                 <legend class="legend"><span><?php echo __('Add a Gift Card to your list') ?></span></legend><br>
@@ -48,8 +48,8 @@
             <!--div class="secondary">
                 <a class="action back" href="<?php echo $this->getUrl('giftvoucher/index/index') ?>"><span><?php echo __('Go back') ?></span></a>
             </div-->
-            <div class="form-group" style="clear: both;padding: 10px 0">
-                <p class="back-link"><a href="<?php echo $this->getUrl('giftvoucher/index/index') ?>"><small>« </small><?php echo __('Back') ?></a></p>
+            <div class="form-group redeem_gift_for_l" style="clear: both;padding: 10px 0">
+                <p class="back-link anchor_cust_l"><a href="<?php echo $this->getUrl('giftvoucher/index/index') ?>"><small>« </small><?php echo __('Back') ?></a></p>
             </div>
         </div>
     </form>
