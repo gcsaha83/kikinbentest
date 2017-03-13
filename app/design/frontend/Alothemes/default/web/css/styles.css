@@ -1996,7 +1996,11 @@ font-size: 12px;
 	text-align: center;
 	margin: 0 !important;
 }
-.box-tocart .fieldset .qty, .box-tocart .fieldset .actions{display: inline-block; vertical-align: bottom; margin: 0 12px !important;}
+.box-tocart .fieldset .qty, .box-tocart .fieldset .actions{
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0 15px 0 0 !important;
+}
 .box-tocart .fieldset .qty{margin-left: 0}
 .box-tocart .fieldset .actions{margin-right: 0}
 .box-tocart .fieldset .actions .tocart{height: 40px; border: 0; background-color: #fed700; line-height: 35px; color: #fff; padding: 0 45px 0 40px;border-radius: 0px;-moz-border-radius: 0px;-webkit-border-radius: 0px;-ms-border-radius: 0px; -o-border-radius: 0px;}
@@ -9504,4 +9508,32 @@ font-size: 11px;
 	border-radius: 5px;
 	height: 125px;
 	margin-bottom: 20px;
+}
+.order_info_cust_l .box-title, .order_info_cust_l .box-content {
+border: none !important;
+}
+
+.hello_cust_l {
+    line-height: 12px !important;
+}
+
+.block-title-vmagicmenu .cat_shop_l {
+	font-weight: normal !important;
+	line-height: 12px !important;
+}
+
+.block-title-vmagicmenu {
+	margin-top: 5px;
+}
+
+.arrow_cust_ki_l:after {
+	margin-top: 0px;
+}
+
+.dropdown_block_ki {
+	margin-top: 4px !important;
+}
+
+.dropdown-content {
+    margin-top: 30px !important;
 }
