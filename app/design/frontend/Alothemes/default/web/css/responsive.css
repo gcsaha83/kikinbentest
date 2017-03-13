@@ -2175,3 +2175,55 @@ height: 152px;
 	    width: 73.7%;
 	}
 }
+/*........New CSS.........*/
+@media (max-width: 767px) {
+	.item .images-container {
+	    padding: 15px 15px 0;
+	}
+
+	.products-grid .item .actions .actions-primary {
+	    padding: 9px 0 8px 0;
+	}
+
+	.item button.button {
+	    width: 25px;
+	    height: 25px;
+	}
+
+	.item button.button .icon {
+	    font-size: 15px;
+	    line-height: 17px;
+	}
+
+	.price-box > .price-container .price, .product-item .price-box .minimal-price .price {
+	    font-size: 16px;
+	}
+
+	.redeem_cust_page {
+	    width: 100% !important;
+	}
+}
+
+@media (max-width: 440px) {
+	.header-search .form-search button.button > span > span {
+	    line-height: 32px;
+	}
+}
+
+@media (max-width: 360px) {
+	.header-search .form-search button.button > span > span {
+	    line-height: 22px;
+	}
+}
+
+@media (max-width: 991px) {
+	.footer_img_l {
+		text-align: center;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.top_nav_cust .dropdown_top_nav-content {
+	    min-width: 430px;
+	}
+}
