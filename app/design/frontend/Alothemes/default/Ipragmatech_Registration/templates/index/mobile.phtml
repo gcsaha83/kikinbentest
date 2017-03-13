@@ -1,5 +1,14 @@
 <?php $formurl = $block->getUrl('registration/index/sendotp'); ?>
 
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // Instance of object manager
+$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+$connection = $resource->getConnection();
+$tableName = $resource->getTableName('kikinben_country_flag');
+$sql = "Select * FROM " . $tableName;
+$result = $connection->fetchAll($sql);
+?>
+
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob_log">
 
 <div class="create_account_float">
@@ -46,7 +55,7 @@
 							<label for="password" class="label"><span><?php /* @escapeNotVerified */ echo __('Enter Mobile Number') ?></span></label>
 							</div>
 
-		<select class="countrycode2" name = "Cities" onChange="OnDropDownChange(this);">
+		<!-- <select class="countrycode2" name = "Cities" onChange="OnDropDownChange(this);">
         <optgroup label="Other countries" option value="Select your country">Select</option>
         				<option data-icon="AU" value="+61">Australia(+61)</option>
 						<option data-icon="AT" value="+43">Austria(+43)</option>
@@ -87,6 +96,21 @@
 						<option data-icon="GB" value="+44">UK(+44)</option>
 						<option data-icon="US" value="+1">USA(+1)</option>
 	</optgroup>
+    </select>-->
+    
+    <select class="countrycode2" name = "Cities" onChange="OnDropDownChange(this);">
+    <optgroup label="Other countries" option value="Select your country">Select</option>
+    <?php for($i=0;$i<count($result);$i++):?>
+    <?php 
+    
+    $countryCode = $result[$i]['flagcode'];    
+    $image = $block->getViewFileUrl('images/country_png/'.$result[$i]['file']);
+    $countryName = $result[$i]['country'];
+    $countryCode = $result[$i]['country_code'];
+    
+    ?>
+    <option data-icon="AU" value="<?php echo $countryCode; ?>" style="background-image:url(<?php echo $image; ?>);"><?php echo $countryName;?>(<?php echo $countryCode; ?>)</option>
+    <?php endfor;?>
     </select>
 
 	<input class="data-list-input-code" required="required"
