@@ -111,14 +111,14 @@
     <div class="form-group">
         <div class="row">
             <div class="col-xs-4">
-                <p class="back-link">
+                <p class="back-link anchor_cust_l">
                     <a href="#" onclick="window.location.href = '<?php echo $this->getUrl('*/*/index') ?>';
                         return false;">
                         <small>« </small><?php echo __('Back') ?>
                     </a>
                 </p>
             </div>
-            <div class="col-xs-8 text-right">
+            <div class="col-xs-8 text-right gift_btn_cust_l">
                 <?php if ($this->checkSendFriendGiftCard($_giftCard)): ?>
                     <button type="button" class="button" onclick="window.location.href = '<?php echo $this->getUrl('*/*/email', array('id' => $this->getCustomerGift()->getId())) ?>'">
                         <span>
