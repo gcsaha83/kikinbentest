@@ -2955,7 +2955,7 @@ cursor: pointer;}
 	margin-top: 10px
 }
 .footer-item:first-child .box-content .content{
-	margin-top: 25px
+/* 	margin-top: 25px */
 }
 .footer-item .box-content .content .icon,
 .footer-item .box-content .content .info{display: table-cell; vertical-align: middle;}
