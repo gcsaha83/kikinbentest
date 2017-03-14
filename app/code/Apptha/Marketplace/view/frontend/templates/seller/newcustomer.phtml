@@ -38,7 +38,7 @@
 ?>
 <?php if ($block->getRegistration()->isAllowed()): ?>
 <div class="block block-new-customer">
-	<div class="block-title">
+	<div class="block-title block_title_l">
 		<strong id="block-new-customer-heading" role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo __('New Seller') ?></strong>
 	</div>
 	<div class="block-content" aria-labelledby="block-new-customer-heading">
@@ -47,7 +47,7 @@
 			<div class="primary">
 				<a
 					href="<?php /* @escapeNotVerified */ echo  $block->getUrl('marketplace/seller/create') ?>"
-					class="action create primary"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></a>
+					class="action create primary seller_btn_l_newacc"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></a>
 			</div>
 		</div>
 	</div>
