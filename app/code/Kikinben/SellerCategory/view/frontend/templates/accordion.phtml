@@ -21,7 +21,7 @@ if(!$accordion['enabled']) return;
 $seller = $this->getRequest()->getControllerName();
 $viewseller = $this->getRequest()->getActionName(); 
 $customerId = $this->getRequest ()->getParam ( 'id' );
-
+$baseUrl = $this->_stores->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
 
 
 if($seller === 'seller' && $viewseller === 'displayseller'){
@@ -72,22 +72,18 @@ else{
 <?php
 }
 ?>
-<script type="text/javascript">
-	require(['jquery','magiccart/easing','magicmenu']);
+<!--  <script type="text/javascript">	
+	
+	function getSellerProducts(sellerId,categoryId){
+		require(
+		        ['jquery','ajaxmenu'],
+		        function($,ajaxmenu){
+		        	var baseurl = "<?php echo $baseUrl;?>";
+		    		var sellerProductUrl = baseurl+'kikinben_sellercategory/index/index/id/'+sellerId+'/catgid/'+categoryId;
+		        	ajaxmenu.ajaxMenu(sellerProductUrl,sellerId,categoryId);
 
-	require([
-		'jquery'
-		],function ($) {
+		    }); 
 
-		$(document).ready(function()
-		{
-		    $('#aptha_marketplace_sellers div.accordion-container.mean-container div.mean-bar nav.mean-nav ul.accordion nav-accordion li.level0 nav-1 first a.level-top').bind('click', function() 
-		    {
-		        alert('111');
-		    });
-		    
-		});
-
-		});
-</script>
+	}
+</script>-->
 

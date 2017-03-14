@@ -12,10 +12,15 @@
 			<label>Twilio Setting</label>
 			<tab>registration</tab>
 			<!-- resource tag name which we have to defined in the acl.xml -->
-			<resource>Ipragmatech_Registration::config_twiliosetting</resource>
+            <resource>Ipragmatech_Registration::config_twiliosetting</resource>
 
-			<group id="frontend_display" translate="label" type="text"
+
+           <!-- <group id="frontend_display" translate="label" type="text"
 				delault="1" sortOrder="2" showInDefault="1" showInWebsite="1"
+                showInStore="1">-->
+
+                <group id="frontend_display" translate="label" type="text"
+				sortOrder="2" showInDefault="1" showInWebsite="1"
 				showInStore="1">
 				<label>Twilio Setting</label>
 				<!-- create text type field -->

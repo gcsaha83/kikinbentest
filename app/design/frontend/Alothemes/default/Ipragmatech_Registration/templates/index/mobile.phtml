@@ -1,5 +1,14 @@
 <?php $formurl = $block->getUrl('registration/index/sendotp'); ?>
 
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // Instance of object manager
+$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+$connection = $resource->getConnection();
+$tableName = $resource->getTableName('kikinben_country_flag');
+$sql = "Select * FROM " . $tableName;
+$result = $connection->fetchAll($sql);
+?>
+
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob_log">
 
 <div class="create_account_float">
@@ -46,7 +55,7 @@
 							<label for="password" class="label"><span><?php /* @escapeNotVerified */ echo __('Enter Mobile Number') ?></span></label>
 							</div>
 
-		<select class="countrycode2" name = "Cities" onChange="OnDropDownChange(this);">
+		<!-- <select class="countrycode2" name = "Cities" onChange="OnDropDownChange(this);">
         <optgroup label="Other countries" option value="Select your country">Select</option>
         				<option data-icon="AU" value="+61">Australia(+61)</option>
 						<option data-icon="AT" value="+43">Austria(+43)</option>
@@ -87,7 +96,48 @@
 						<option data-icon="GB" value="+44">UK(+44)</option>
 						<option data-icon="US" value="+1">USA(+1)</option>
 	</optgroup>
-    </select>
+    </select>-->
+    
+   <!--  <select class="countrycode2" name = "Cities" onChange="OnDropDownChange(this);">
+    <optgroup label="Other countries" option value="Select your country">Select</option>
+    <?php for($i=0;$i<count($result);$i++):?>
+    <?php 
+    
+    $countryCode = $result[$i]['flagcode'];    
+    $image = $block->getViewFileUrl('images/country_png/'.$result[$i]['file']);
+    $countryName = $result[$i]['country'];
+    $countryCode = $result[$i]['country_code'];
+    
+    ?>
+    <option data-icon="AU" value="<?php echo $countryCode; ?>" style="background-image:url(<?php echo $image; ?>);"><?php echo $countryName;?>(<?php echo $countryCode; ?>)</option>
+    <?php endfor;?>
+    </select>-->
+    
+    <dl id="sample" class="dropdown">
+        <dt><a href="#"><span>Please select the country</span></a></dt>
+        <dd>
+            <ul>
+            <?php for($i=0;$i<count($result);$i++):?>
+    		<?php 
+    
+			    $countryCode = $result[$i]['flagcode'];    
+			    $image = $block->getViewFileUrl('images/country_png/'.$result[$i]['file']);
+			    $countryName = $result[$i]['country'];
+			    $countryCode = $result[$i]['country_code'];			    
+    		?>
+                <li>
+                <a href="#">
+                <?php echo $countryName;?>
+                <img class="flag" src="<?php echo $image;?>" alt="" />
+                  <span class="value"><?php echo $countryCode;?>
+                 </span></a>
+                </li>
+                
+              <?php endfor;?> 
+            </ul>
+        </dd>
+    </dl>
+     
 
 	<input class="data-list-input-code" required="required"
 							data-validate="{required:true, required 'validate-number':true}" type="text"
@@ -153,6 +203,48 @@
     </div>
   </div>
 
+<script>
+
+require(
+        ['jquery'],
+        function($){
+        	var regex = /(<([^>]+)>)/ig;
+        	
+
+        	$(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                var result = text.replace(regex, "");
+                var mobileNumberText = result.replace(/\s+/g, '');
+                var splitNumber = mobileNumberText.split("+");
+                
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+                $("#mobilenumber").val('+'+splitNumber[1]);
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+           $(".dropdown img.flag").toggleClass("flagvisibility");
+        	
+
+    }); 
+
+</script>
 
 <script type="text/javascript">
     function OnDropDownChange(dropDown) {
@@ -191,5 +283,8 @@ jQuery(function() {
 		$(this).siblings('select.data-list-input-code').val('');
 	});
 });
+
+
+
 </script>
 

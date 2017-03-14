@@ -67,7 +67,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended {
 	
 	protected function _preparePage()
 	{
-		$this->getCollection()->setPageSize(5)->setCurPage(1);
+		$this->getCollection()->setPageSize(500)->setCurPage(1);
 	}
 	
 	protected function _prepareCollection()
