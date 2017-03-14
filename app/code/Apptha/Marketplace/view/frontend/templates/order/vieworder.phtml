@@ -62,7 +62,7 @@ if (! empty ( $orderCurrencyCode )) {
 
 ?>
 <div id="marketplace-order-vieworder"
-	class="marketplace-order-vieworder">
+	class="marketplace-order-vieworder vieworder_cust_l_new">
 	<span class="order-status"><?php
 if ($orderDetails ['refund_flag'] != 1 && $orderDetails ['is_refunded']) {
     
@@ -99,7 +99,7 @@ if ($orderDetails ['refund_flag'] != 1 && $orderDetails ['is_refunded']) {
 						<th class="col name"><?php echo __('Product Name');?></th>
 						<th class="col sku"><?php echo __('SKU');?></th>
 						<th class="col price"><?php echo __('Price');?></th>
-						<th class="col qty"><?php echo __('Qty');?></th>
+						<th class="col qty"><?php echo __('Quantity');?></th>
 						<th class="col subtotal"><?php echo __('Subtotal');?></th>
 					</tr>
 				</thead>
@@ -267,14 +267,14 @@ echo $block->getOrderItemUrl () . 'id/' . $itemId . '/action/';
 		</div>
 	</div>
 	<div class="block block-order-details-view order_info_cust_l">
-		<div class="block-title">
+		<div class="block-title block_title_l">
 			<strong><?php echo __('Order Information');?></strong>
 		</div>
 		<div class="block-content">
     
     <?php if(count($orderDetails['shipping_address']) > 0){ ?>
            
-    <div class="box box-order-shipping-address">
+    <div class="box box-order-shipping-address customer_info_account">
 				<strong class="box-title">
 					<span><?php echo __('Shipping Address');?></span></strong>
 				<div class="box-content">
@@ -292,7 +292,7 @@ echo $block->getOrderItemUrl () . 'id/' . $itemId . '/action/';
         <?php } ?>
 
         <?php if(isset($orderDetails['shipping_method'])){ ?>
-        <div class="box box-order-shipping-method">
+        <div class="box box-order-shipping-method customer_info_account">
 				<strong class="box-title"> <span><?php echo __('Shipping Method');?></span>
 				</strong>
 				<div class="box-content">
@@ -300,7 +300,7 @@ echo $block->getOrderItemUrl () . 'id/' . $itemId . '/action/';
 			</div>
         <?php } ?>
     
-        <div class="box box-order-billing-address">
+        <div class="box box-order-billing-address customer_info_account">
 				<strong class="box-title"> <span><?php echo __('Billing Address');?></span>
 				</strong>
 				<div class="box-content">
@@ -313,7 +313,7 @@ echo $block->getOrderItemUrl () . 'id/' . $itemId . '/action/';
 					</address>
 				</div>
 			</div>
-			<div class="box box-order-billing-method">
+			<div class="box box-order-billing-method customer_info_account">
 				<strong class="box-title"> <span><?php echo __('Payment Method');?></span>
 				</strong>
 				<div class="box-content">
@@ -347,7 +347,7 @@ if ($isSellerOrderManagement == 1) {
 		<input type="hidden" name="order_id" value="<?php  echo $orderId; ?>" />
 		<input type="hidden" name="action" value="invoice" /> <input
 			type="hidden" name="ship_flag" value="<?php  echo $shippingFlag; ?>" />
-		<input class="action submit primary" type="submit"
+		<input class="action submit primary vieworder_btn_l_new" type="submit"
 			value="<?php echo __('Invoice'); ?>"
 			<?php if($orderDetails['is_invoiced'] == 1 || $orderDetails['is_canceled'] == 1 || $orderDetails['is_returned'] == 1 || $orderDetails['refund_flag'] == 1 || $orderDetails['original_Status'] == 'canceled'){ echo ' disabled '; } ?>>
 	</form>
@@ -361,7 +361,7 @@ if ($isSellerOrderManagement == 1) {
 			<input type="hidden" name="order_id" value="<?php  echo $orderId; ?>" />
 			<input type="hidden" name="action" value="shipment" />
 <?php if($shippingFlag == 1){ ?>
-<input class="action submit primary" id="udpate_shipment" type="button"
+<input class="action submit primary vieworder_btn_l_new" id="udpate_shipment" type="button"
 				<?php if($orderDetails['is_shipped'] == 1 || $orderDetails['is_canceled'] == 1 || $orderDetails['is_returned'] == 1 || $orderDetails['refund_flag'] == 1 || $orderDetails['original_Status'] == 'canceled'){ echo ' disabled '; } ?>
 				value="<?php echo __('Shipment'); ?>">
 <?php } ?>
