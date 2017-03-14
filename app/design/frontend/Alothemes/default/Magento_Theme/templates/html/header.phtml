@@ -161,9 +161,9 @@ $isLoggedIn = $customerSession->isLoggedIn();
 										    <li class="first signInHover">
 
 												<a id="quick_sigup_link" style="position:relative;" href="<?php echo $this->getUrl('customer/account/');?>">
-                                                <span>Hello, <?php echo $msg; ?> </span>
+                                                <span class="hello_cust_l">Hello, <?php echo $msg; ?> </span>
 
-													<span class="youraccount acc_arr_s">Your Account</span>
+													<span class="youraccount acc_arr_s arrow_cust_ki_l">Your Account</span>
 												</a>
 											</li>
 
@@ -190,7 +190,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 										<?php } else { ?>
 
 										<li onmouseover="popsup(this);" class="first">
-											<a  id="quick" style="positon:relative;" ><span>Hello. Sign In</span><span class="youraccount acc_arr_l" style="">Your Account</span></a>
+											<a  id="quick" style="positon:relative;" ><span class="hello_cust_l">Hello, Sign In</span><span class="youraccount acc_arr_l arrow_cust_ki_l" style="">Your Account</span></a>
 										</li>
 
 										<div class="dropdown-content">
@@ -198,7 +198,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 											<input type="button" class="btn btn-sm btn-signIn btn-block register_cust_l" value="Sign in">
 											</a><br>
 								    
-								    		<p><span style="float: left;">New Customer? </span>&nbsp;
+								    		<p><span style="float: left;color:#333;">New Customer? </span>&nbsp;
 								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" style="float: left;margin-left:5px; color:#1979c3;"> Join Free</a></p>
 								    		<a href="<?php echo $this->getUrl('customer/account/create'); ?>" title="Register" style="padding:0">
 								    		<input type="button" class="btn btn-sm btn-register register_cust_l btn-block" value="Register Here" >
