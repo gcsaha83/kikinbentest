@@ -208,4 +208,15 @@ jQuery(document).ready(function(e) {
 
 
 </script>
+
+<script>
+require([ 'jquery', 'intlTelInput'], function($){
+  $(document).ready(function(){
+   	$("#email").intlTelInput({
+		//excludeCountries: ["us"],
+		//onlyCountries: ['us', 'gb', 'ch', 'ca', 'do', 'in'],
+	});
+  });
+});
+</script>
 <!-- magecomp end -->
