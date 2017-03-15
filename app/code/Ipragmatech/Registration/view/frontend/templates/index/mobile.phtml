@@ -9,7 +9,7 @@
 			<div class="control">
 				<input required="required"
 					data-validate="{required:true, 'validate-number':true}" type="text"
-					name="mobilenumber" id="mobilenumber" />
+					name="phone" id="phone" />
 			</div>
 		</div>
 	</fieldset>
@@ -22,3 +22,14 @@
 		</div>
 	</div>
 </form>
+
+<script>
+require([ 'jquery', 'intlTelInput'], function($){
+  $(document).ready(function(){
+   	$("#phone").intlTelInput({
+		//excludeCountries: ["us"],
+		//onlyCountries: ['us', 'gb', 'ch', 'ca', 'do', 'in'],
+	});
+  });
+});
+</script>
