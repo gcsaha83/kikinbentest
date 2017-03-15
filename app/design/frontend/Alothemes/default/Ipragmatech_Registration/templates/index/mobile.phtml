@@ -99,9 +99,9 @@ $result = $connection->fetchAll($sql);
     </select>-->
 
 	<input class="data-list-input-code" required="required"
-							data-validate="{required:true, required 'validate-number':true}" type="text"
-							name="mobilenumber" id="mobilenumber" placeholder="+8801970112211" value="+880" pattern="^[+]\d{3}\d{4}\d{3}\d{3}$" />
-
+data-validate="{required:true, required 'validate-number':true}" type="text"
+name="mobilenumber" id="mobilenumber" placeholder="+8801970112211" value="+880" pattern="^[+]\d{3}\d{4}\d{3}\d{3}$" oninvalid="this.setCustomValidity('Please enter a valid mobile number.')"
+   oninput="setCustomValidity('')"/>
 						</div>
 
 					</div>
