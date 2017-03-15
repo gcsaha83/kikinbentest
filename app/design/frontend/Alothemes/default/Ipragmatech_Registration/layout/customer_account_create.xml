@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
 	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+       <!-- for css file -->
+	<css src="Ipragmatech_Registration::intlTelInput.css"/>
+	<css src="Ipragmatech_Registration::demo.css"/>
+</head>
+
 	<body>
         <referenceBlock name="customer_form_register" remove="true" />
         <referenceBlock name="alo.footer" remove="true" />

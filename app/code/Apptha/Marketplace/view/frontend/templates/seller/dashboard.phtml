@@ -35,7 +35,7 @@ if ($OrderItemCollection->getSize () > 0) {
     ?>
              
  <div class="table-wrapper orders-history">
-		<table class="data table table-order-items history"
+		<table class="data table table-order-items history seller_dashboard_cust_l"
 			id="my-orders-table">
 			<caption class="table-caption"><?php echo __('Recent Orders');?></caption>
 			<tr>
@@ -75,7 +75,7 @@ foreach ( $OrderItemCollection as $item ) {
 				<td><?php echo ucfirst($item->getStatus());?></td>
 				<td><a
 					href="<?php echo $block->getUrl('marketplace/order/vieworder/id/'.$orderId)?>"
-					class="action view"> <span><?php echo __('View');?></span>
+					class="action view seller_link_l"> <span><?php echo __('View');?></span>
 				</a></td>
 			</tr>
          <?php }?>    

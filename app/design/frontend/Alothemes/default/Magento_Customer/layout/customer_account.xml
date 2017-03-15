@@ -6,7 +6,14 @@
  */
 -->
 <page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
+    
+	<head>
+       <!-- for css file -->
+	<css src="Ipragmatech_Registration::intlTelInput.css"/>
+	<css src="Ipragmatech_Registration::demo.css"/>
+	</head>
+	
+	<body>
 		<referenceContainer name="sidebar.additional" remove="true"/>
 		<referenceBlock name="accordion.sidebar" remove="true"/>
     </body>

@@ -94,7 +94,7 @@ if (count ( $productTypes ) >= 1 && $productTypes [0] == 'virtual' || count ( $p
     $weightFlag = 0;
 }
 ?>
-<form class="form product form-product"
+<form class="form product form-product configurable_prod_cust_page"
 	action="<?php echo $block->getPostActionUrl() ?>" method="post"
 	id="form_product_validate" enctype="multipart/form-data"
 	autocomplete="off">
@@ -105,7 +105,7 @@ if (count ( $productTypes ) >= 1 && $productTypes [0] == 'virtual' || count ( $p
 			<span><?php echo __('Product Details') ?></span>
 		</legend>
 		<br>
-		<div class="field required">
+		<div class="field required column_width_cust_l">
 			<div <?php if(!empty($productId)){ echo 'style="display:none;"'; } ?>>
 				<label for="name" class="label label-attribute"><span><?php echo __('Attribute Set'); ?></span></label>
 				<div class="control control-attribute">
@@ -220,13 +220,13 @@ if (! empty ( $categories )) {
 				</div>
 
 				<div id="date_range">
-					<label for="specialpricefromdate"><span><?php echo __('Special Price From Date') ?>:</span></label>
+					<label for="specialpricefromdate"><span class="form_menu_cust_l"><?php echo __('Special Price From Date') ?>:</span></label>
 					<div class="control">
 						<input class="input-text " type="text" id="specialpricefromdate"
 							name="product[specialpricefromdate]"
 							value="<?php echo $specialPriceFromDate;?>" />
 					</div>
-					<label for="specialpricetodate"><span><?php echo __('Special Price To Date') ?>:</span></label>
+					<label for="specialpricetodate"><span class="form_menu_cust_l"><?php echo __('Special Price To Date') ?>:</span></label>
 					<div class="control">
 						<input class="input-text " type="text" id="specialpricetodate"
 							name="product[specialpricetodate]"
@@ -452,7 +452,7 @@ $productCustomOptionsEnable = $block->getProductCustomOptions ();
 
 if ($productCustomOptionsEnable == 1) {
     ?>
-<div class="fieldset marketplace-custom-option">
+<div class="fieldset marketplace-custom-option seller_page_custom_opt_l">
 		<h2 class="legend"><?php echo __('Custom Options'); ?></h2>
 		<!-- Custom option add button -->
 		<div class="right" id="marketplace_custom_option">

@@ -36,7 +36,7 @@ $storeCurrencySymbol = $block->getStoreCurrencySymbol ();
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance ();
 $dataHelper = $objectManager->get ( 'Apptha\Marketplace\Helper\Data' );
 ?>
-<form name="assign_product_form" class="assign_product_form"
+<form name="assign_product_form" class="assign_product_form assign_page_cust_l"
 	id="assign_product_form" method="GET"
 	action="<?php echo $block->getSearchResultUrl();?>">
 	<div>
@@ -45,12 +45,12 @@ $dataHelper = $objectManager->get ( 'Apptha\Marketplace\Helper\Data' );
 			value="<?php if(!empty($searchedProductName)){ echo $searchedProductName ;}?>"
 			class="assign_product_name" type="text" placeholder="Product Name"
 			name="filter_name" id="filter_name" />
-		<button type="submit" class="button multi_submit" title="Search"
+		<button type="submit" class="button multi_submit seller_manage_btn_l" title="Search"
 			name="multi_submit" id="multi_submit">
 			<span><span><?php echo __('Search');?></span></span>
 		</button>
-	<?php echo __("Not exist in the Store's Catalog? Want to add a new product?"); ?><a
-			class="button" href="<?php echo  $block->getNewProductUrl() ?>"><?php echo __('Click here'); ?></a>
+	<?php echo __("Not exist in the Store's Catalog? Want to add a new product?"); ?>
+		<a class="button search_btn_cust_l" href="<?php echo  $block->getNewProductUrl() ?>"><?php echo __(' Click here'); ?></a>
 	</div>
 </form>
 <div class="assign-products">
