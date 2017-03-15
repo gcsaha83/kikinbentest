@@ -2,6 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance dc" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <head>
 	<css src="Magecomp_Mobilelogin::css/mobilelogin.css"/>
+	<css src="Magecomp_Mobilelogin::intlTelInput.css"/>
+	<css src="Magecomp_Mobilelogin::demo.css"/>
 </head> 
 <body>
 
