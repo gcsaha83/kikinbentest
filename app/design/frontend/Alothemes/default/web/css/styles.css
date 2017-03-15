@@ -9705,16 +9705,16 @@ border: none !important;
 
 .configurable_prod_cust_page {
 	background: #fff !important;
-	padding: 30px !important;
+	padding: 15px !important;
 	border:1px solid #ddd !important;
 }
 
-.configurable_prod_cust_page .column_width_cust_l label {
-	width: 24% !important;
+.seller_page_custom_opt_l .legend {
+	border: none !important;
 }
 
-.seller_page_custom_opt_l .fieldset .legend {
-	border: none !important;
+.seller_page_custom_opt_l .delete-product-option span {
+	font-size: 13px !important;
 }
 
 .seller_page_custom_opt_l .right {
@@ -9728,8 +9728,8 @@ border: none !important;
 	color: #fff !important;
 	border-radius: 5px !important;
 	box-shadow: 0 2px #E76C33 !important;
-	padding: 0px 15px !important;
-	margin-top: 0px;
+	padding: 15px !important;
+	margin-top: 20px;
 }
 
 .seller_page_custom_opt_l button:hover,.seller_page_custom_opt_l button:visited, .seller_page_custom_opt_l button:focus {
@@ -9742,4 +9742,54 @@ border: none !important;
   background-color: #f89a22 !important;
   box-shadow: 0 1px #E76C33 !important;
   transform: translateY(1px) !important;
+}
+
+.manage_link_l a {
+	color: #1979c3 !important;
+}
+
+.manage_bulk_cust_l {
+	margin-top: 20px !important;
+}
+
+
+.seller_manage_btn_l {
+	border: none !important;
+	background: #f89a22 !important;
+	color: #fff !important;
+	border-radius: 5px !important;
+	box-shadow: 0 2px #E76C33 !important;
+	padding: 15px !important;
+	margin-top: 0px;
+}
+
+.seller_manage_btn_l:hover,.seller_manage_btn_l:visited, .seller_manage_btn_l:focus {
+    background: #f89a22 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.seller_manage_btn_l:active {
+  background-color: #f89a22 !important;
+  box-shadow: 0 1px #E76C33 !important;
+  transform: translateY(1px) !important;
+}
+
+.assign_page_cust_l {
+	background: #fff;
+	padding: 30px;
+	border: 1px solid #ddd;
+}
+
+.assign_page_cust_l .assign_product_name {
+	width: 50%;
+}
+
+.form_menu_cust_l {
+	float: right;
+	margin-right: 15px;
+}
+
+.search_btn_cust_l {
+	color: #1979c3 !important;
 }
