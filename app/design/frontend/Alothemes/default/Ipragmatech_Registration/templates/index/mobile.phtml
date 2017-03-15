@@ -100,7 +100,7 @@ $result = $connection->fetchAll($sql);
 
 	<input class="data-list-input-code" required="required"
 							data-validate="{required:true, required 'validate-number':true}" type="text"
-							name="phone" id="phone" placeholder="+8801970112211" value="+880" pattern="^[+]\d{3}\d{4}\d{3}\d{3}$" />
+							name="mobilenumber" id="mobilenumber" placeholder="+8801970112211" value="+880" pattern="^[+]\d{3}\d{4}\d{3}\d{3}$" />
 
 						</div>
 
@@ -249,7 +249,7 @@ jQuery(function() {
 <script>
 require([ 'jquery', 'intlTelInput'], function($){
   $(document).ready(function(){
-   	$("#phone").intlTelInput({
+   	$("#mobilenumber").intlTelInput({
 		//excludeCountries: ["us"],
 		//onlyCountries: ['us', 'gb', 'ch', 'ca', 'do', 'in'],
 	});
