@@ -2331,3 +2331,17 @@ height: 152px;
 	    margin-left: -20px;
 	}
 }
+
+@media (max-width: 568px) {
+	.company_desc_cust_l {
+		width: 270px;
+		overflow-x: auto;
+	}
+}
+
+@media (max-width: 1199px) {
+	.marketplace-product-manage .product-manage {
+	    width: 100%;
+	    overflow-x: auto;
+	}
+}
