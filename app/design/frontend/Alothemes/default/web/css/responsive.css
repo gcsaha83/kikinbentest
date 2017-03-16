@@ -2224,11 +2224,11 @@ height: 152px;
 
 @media (max-width: 1199px) and (min-width: 991px){
 	.last_sticker_l img {
-		height: 52px;
+		height: 46px;
 	}
 }
 
-@media (max-width: 1199px) and (min-width: 991px){
+@media (max-width: 991px) {
 	.last_sticker_l {
 		border-top: none;
 	}
