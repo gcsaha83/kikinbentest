@@ -2169,7 +2169,7 @@ table.market_place_dropdown_row #delete_select_row_button {
 	.marketplace-product-manage .field.name, .marketplace-product-manage .field.type,
 		.marketplace-product-manage .field.price, .marketplace-product-manage .field.sku
 		{
-		width: 282px !important;
+		width: 282px;
 		float: left !important;
 		margin: 5px;
 		clear: both !important;
@@ -5003,7 +5003,7 @@ table.market_place_dropdown_row #delete_select_row_button {
     .marketplace-product-manage .field.name, .marketplace-product-manage .field.type,
         .marketplace-product-manage .field.price, .marketplace-product-manage .field.sku
         {
-        width: 282px !important;
+        width: 282px;
         float: left !important;
         margin: 5px;
         clear: both !important;
@@ -7846,7 +7846,7 @@ table.market_place_dropdown_row #delete_select_row_button {
     .marketplace-product-manage .field.name, .marketplace-product-manage .field.type,
         .marketplace-product-manage .field.price, .marketplace-product-manage .field.sku
         {
-        width: 282px !important;
+        width: 282px;
         float: left !important;
         margin: 5px;
         clear: both !important;
