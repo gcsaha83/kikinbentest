@@ -9795,13 +9795,13 @@ border: none !important;
 
 .myStore_page_cust_l {
 	border: none !important;
-    padding: 0px !important;
-    margin-top: 15px !important;
+    	padding: 0px !important;
+    	margin-top: 15px !important;
 }
 
 .myStore_page_bord_l {
 	background: #fff;
-	padding: 30px;
+	padding: 0px 15px 30px !important;
 	border: 1px solid #ddd;
 }
 
