@@ -2345,3 +2345,18 @@ height: 152px;
 	    overflow-x: auto;
 	}
 }
+
+
+@media (min-width: 458px) and (max-width: 850px) {
+	.manage_prod_seller_l .field {
+		width: 100% !important;
+		overflow-x: auto;
+	}
+}
+
+@media (max-width: 457px) {
+	.manage_prod_seller_l .field {
+		width: 282px !important;
+		overflow-x: auto;
+	}
+}
