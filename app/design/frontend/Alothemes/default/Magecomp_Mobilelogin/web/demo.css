@@ -19,9 +19,6 @@ input {
   color: inherit;
 }
 
-input, select {
-  border: 1px solid #CCC;
-}
 
 ::-webkit-input-placeholder {
   color: #BBB; }

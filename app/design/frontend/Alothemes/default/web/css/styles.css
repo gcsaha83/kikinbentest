@@ -3435,7 +3435,6 @@ font-size: 12px;
     vertical-align: baseline;
     width: 87%;
     box-sizing: border-box;
-    border-left: none;
 }
 
 /*---- Registration Page Image ----*/
@@ -8716,7 +8715,7 @@ height: 35px;
 	display: none;
 	position: absolute;
 	background: #ffffff;
-	min-width: 650px;
+	min-width: 420px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 	z-index: 999999;
 	border-radius: 0 0 5px 5px;
@@ -9792,4 +9791,38 @@ border: none !important;
 
 .search_btn_cust_l {
 	color: #1979c3 !important;
+}
+
+.myStore_page_cust_l {
+	border: none !important;
+    padding: 0px !important;
+    margin-top: 15px !important;
+}
+
+.myStore_page_bord_l {
+	background: #fff;
+	padding: 30px;
+	border: 1px solid #ddd;
+}
+
+.manage_inp_cust_l {
+	width: 100%;
+}
+
+.myStore_page_cust_l textarea {
+	width: 279px;
+}
+
+.contact_admin_seller_l {
+	background: #fff !important;
+	padding: 30px !important;
+	height: 325px !important;
+}
+
+.nav-sections .vmagicmenu {
+    width: 22%;
+}
+
+.cocode ul li {
+margin: 0px !important;
 }
