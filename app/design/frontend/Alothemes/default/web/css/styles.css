@@ -3307,7 +3307,7 @@ display: block !important;
 	font-size: 14px !important;
 	font-weight: 700 !important;
 	line-height: 14px !important;
-	font-family: arial,sans-serif;
+	font-family: arial,sans-serif !important;
 }
 
 /*-------- minicurt ----------*/
@@ -8716,12 +8716,12 @@ height: 35px;
 	display: none;
 	position: absolute;
 	background: #ffffff;
-	min-width: 767px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 	z-index: 999999;
 	border-radius: 0 0 5px 5px;
-	left: 23.4%;
+	left: 21.6%;
 	height: 275px;
+	width: 82%;
 }
 
 .top_nav_cust .dropdown_top_nav-content a {
