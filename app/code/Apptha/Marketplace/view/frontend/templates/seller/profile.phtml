@@ -35,10 +35,10 @@ $bannerImage = $sellerProfileDetails ['banner_image'];
 $objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
 ?>
 <h2><?php echo __('Store Information');?></h2>
-<form class="form form-edit-account " enctype="multipart/form-data"
+<form class="form form-edit-account myStore_page_cust_l" enctype="multipart/form-data"
 	action="<?php  echo $block->getUrl('*/*/saveprofile')?>" method="post"
 	id="seller_profile_validate" data-mage-init='{"validation":{}}'>
-	<fieldset class="fieldset"
+	<fieldset class="fieldset myStore_page_bord_l"
 		data-hasrequired="<?php  echo __('* Required Fields') ?>">
 		<div class="fields">
 			<div class="field store_name required">
@@ -149,7 +149,7 @@ $objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
       <?php } ?>
 
 
-      	<div class="fields">
+      	<div class="fields company_desc_cust_l">
 			<div class="field company_description">
 				<label for="company_description" class="label"><span><?php  echo __('Company Description') ?></span></label>
 				<textarea type="text" id="company_description"
@@ -168,7 +168,7 @@ $objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
 				<div style="clear: both;"></div>
 			<?php if($sellerDetails->getLogoName()!=''){?>
 			<img src="<?php echo $logoImage.$sellerDetails->getLogoName(); ?>"
-					alt="store logo" class="store_img" />
+					alt="store logo" class="store_img img-responsive" />
 				<div style="clear: both;"></div>
 				<input type="checkbox" name="remove_logo" value="1"> <?php echo __('Remove'); ?>
 			<?php }?>
@@ -187,7 +187,7 @@ $objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
 			<?php if($sellerDetails->getBannerName()!=''){?>
 			<img
 					src="<?php echo $bannerImage.$sellerDetails->getBannerName(); ?>"
-					alt="store banner" class="store_img" />
+					alt="store banner" class="store_img img-responsive"/>
 				<div style="clear: both;"></div>
 				<input type="checkbox" name="remove_banner" value="1"> <?php echo __('Remove'); ?>
 			<?php }?>
@@ -300,7 +300,7 @@ $objectModelManager = \Magento\Framework\App\ObjectManager::getInstance ();
 					detail page</label>
 			</div>
 		</div>
-		<button type="submit" class="button validation-passed"
+		<button type="submit" class="button validation-passed seller_manage_btn_l"
 			title="Save Profile" name="save_profile" id="save_profile">
 			<span><span>Save Profile</span></span>
 		</button>
