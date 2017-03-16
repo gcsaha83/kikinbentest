@@ -43,7 +43,6 @@ $vdrawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
 ?>
 <?php if($vmenu['enabled']): ?> 
 <div class="vmagicmenu vertical-menu clearfix">
-	
 	<div class="block-title block-title-vmagicmenu">
 	  <strong>
 	  	<span class="cat_shop_l">Shop By</span>
@@ -64,29 +63,292 @@ $vdrawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
 <div class="magicmenu categories_cust clearfix top_nav_cust">
 	
 	<ul class="nav-desktop <?php echo $menu['sticker'] ? 'sticker' : '' ?>">
-		<li><a href="#">Today's Deals</a></li>
-		<li><a href="#">Gift Card &amp; Top Up</a></li>
-		<li><a href="#">Start Selling on KiKinben</a></li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Today's Deals</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Men's Clothing</h1>
+					<ul>
+						<li><a href="#">Shirt</a></li>
+						<li><a href="#">T-Shirt</a></li>
+						<li><a href="#">Pants</a></li>
+						<li><a href="#">Shoes</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Women's Clothing</h1>
+
+					<ul>
+						<li><a href="#">Salwar Kameez</a></li>
+						<li><a href="#">T-Shirt &amp; Tops</a></li>
+						<li><a href="#">Palazzo</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Makeup &amp; Glam</h1>
+
+					<ul>
+						<li><a href="#">Face</a></li>
+						<li><a href="#">Eyes</a></li>
+						<li><a href="#">Lips</a></li>
+						<li><a href="#">Hair</a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Mackup &amp; Glam</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Face</h1>
+
+					<ul>
+						<li><a href="#">Primer</a></li>
+						<li><a href="#">Foundation</a></li>
+						<li><a href="#">Concealer</a></li>
+						<li><a href="#">Face Powder</a></li>
+						<li><a href="#">Contouring</a></li>
+						<li><a href="#">Brushes</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Eyes</h1>
+
+					<ul>
+						<li><a href="#">Eyeshadow</a></li>
+						<li><a href="#">Eyeliner</a></li>
+						<li><a href="#">Lashes &amp; Mascara</a></li>
+						<li><a href="#">Brow</a></li>
+						<li><a href="#">Eye Primer</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Lips</h1>
+
+					<ul>
+						<li><a href="#">Liquid Lipstick</a></li>
+						<li><a href="#">Lip Gloss</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					
+				</div>
+			</div>
+		</li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Women</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Women's Clothing</h1>
+
+					<ul>
+						<li><a href="#">Salwar Kameez</a></li>
+						<li><a href="#">T-Shirt &amp; Tops</a></li>
+						<li><a href="#">Palazzo</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Women's Shoes</h1>
+
+					<ul>
+						<li><a href="#">Flats &amp; Sandals</a></li>
+						<li><a href="#">Heels</a></li>
+						<li><a href="#">Boots</a></li>
+						<li><a href="#">Sneakers</a></li>
+						<li><a href="#">Shoes Accessories</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Jewelleries</h1>
+
+					<ul>
+						<li><a href="#">Rings</a></li>
+						<li><a href="#">Earrings</a></li>
+						<li><a href="#">Bangles &amp; Bracelets</a></li>
+						<li><a href="#">Necklaces &amp; Pendants</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					
+				</div>
+			</div>
+		</li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Men</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Men's Clothing</h1>
+
+					<ul>
+						<li><a href="#">T-Shirts</a></li>
+						<li><a href="#">Polos</a></li>
+						<li><a href="#">Casual Shirts</a></li>
+						<li><a href="#">Formal Shirts</a></li>
+						<li><a href="#">Pants</a></li>
+						<li><a href="#">Coats &amp; Jackets</a></li>
+						<li><a href="#">Sweaters &amp; Hoodies</a></li>
+						<li><a href="#">Panjabi &amp; Sherwani</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Men's Shoes</h1>
+
+					<ul>
+						<li><a href="#">Formal Shoes</a></li>
+						<li><a href="#">Sandals &amp; Slippers</a></li>
+						<li><a href="#">Sneakers &amp; Casuals</a></li>
+						<li><a href="#">Loafers</a></li>
+						<li><a href="#">Boots</a></li>
+						<li><a href="#">Sports Shoes</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Watches</h1>
+
+					<ul>
+						<li><a href="#">Formal Watches</a></li>
+						<li><a href="#">Casual Watches</a></li>
+						<li><a href="#">Smart Watches</a></li>
+						<li><a href="#">LED Watches</a></li>
+						<li><a href="#">Kid's Watches</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					
+				</div>
+			</div>
+		</li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Bags &amp; Luggages</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Men's Bags</h1>
+
+					<ul>
+						<li><a href="#">Backpacks</a></li>
+						<li><a href="#">Wallets &amp; Clutches</a></li>
+						<li><a href="#">Soulder Bags</a></li>
+						<li><a href="#">Handbags</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Women's Bags</h1>
+
+					<ul>
+						<li><a href="#">Sling Bags</a></li>
+						<li><a href="#">Satchels</a></li>
+						<li><a href="#">Handbags</a></li>
+						<li><a href="#">Wallets</a></li>
+						<li><a href="#">Totes</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Kids &amp; Baby's Bags</h1>
+
+					<ul>
+						<li><a href="#">Backpacks</a></li>
+						<li><a href="#">Soulder Bags</a></li>
+						<li><a href="#">Handbags</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					
+				</div>
+			</div>
+		</li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Gift Card</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Birthday Gift Card</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Wishing Gift Card</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Welcome Gift Card</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Gift Card</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li class="dropdown_top_nav">
+			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Sell</a>
+			<div class="dropdown_top_nav-content">
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Benefits</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>How it Works</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Pricing</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 veggie_drop_cont">
+					<h1>Eligible Categories</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
 		<li class="dropdown_top_nav">
 			<a onmouseover="popsupveggie(this);" href="#" class="dropbtn_top_nav top_nav_arrow">Veggie Box</a>
 
 			<div class="dropdown_top_nav-content">
-
-			<div class="nav-arrow-cus-l">
-				<div class="nav-arrow-cus-l-inner"></div>
-			</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 veggie_drop_cont">
+				<!-- <div class="nav-arrow-cus-l">
+					<div class="nav-arrow-cus-l-inner"></div>
+				</div> -->
+				<div class="col-lg-4 col-md-4 col-sm-4 veggie_drop_cont">
 					<h1>Farm Fresh vegetable</h1>
 
 					<ul>
 						<li><a href="<?php echo $this->getUrl('customer/account/create'); ?>">Sign up now</a></li>
 						<li><a href="#">Learn more</a></li>
 						<li><a href="#">Veg deals</a></li>
-						<li><a href="#">What is formalin?</a></li>
 					</ul>
 
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 veggie_drop_img">
+
+				<div class="col-lg-4 col-md-4 col-sm-4 veggie_drop_cont">
+					<h1>What is Formalin?</h1>
+
+					<ul>
+						<li><a href="#"></a></li>
+					</ul>
+
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 veggie_drop_img">
 					<img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/veggie.jpg')?>">
 				</div>
 			</div>
