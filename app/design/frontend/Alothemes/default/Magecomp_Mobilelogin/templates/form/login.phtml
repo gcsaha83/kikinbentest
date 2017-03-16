@@ -42,7 +42,7 @@
                 <div class="field email required">
                     <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Mobile Number') ?></span></label>
                     <div class="control">
-                        <input name="login[username]" value="<?php echo $block->escapeHtml($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()) :?> autocomplete="off"<?php endif; ?> id="email" type="text" class="input-text emailandmob" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" data-validate="{required:true}" placeholder="Enter Mobile Number">
+                        <input name="login[username]" value="+880<?php echo $block->escapeHtml($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()) :?> autocomplete="off"<?php endif; ?> id="email" type="text" class="input-text emailandmob" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" data-validate="{required:true}" placeholder="Enter Mobile Number">
                         <!-- magecomp start -->
                         <div for="email" style="color:#e02b27;display:none; font-size: 1.2rem;" id="custom-email-error" >Please enter valid number/email.</div>
                         <!-- magecomp end -->
