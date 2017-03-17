@@ -2,151 +2,126 @@
 
 namespace Kikinben\Sslcommerz\Controller\Index;
 
-use Magento\Framework\Controller\ResultFactory;
-use Kikinben\Sslcommerz\Model\Api\RedsysAPI;
-use Kikinben\Sslcommerz\Api\RedsysLibrary;
 
-class Index extends \Codeko\Redsys\Controller\Index
+
+class Index extends \Magento\Framework\App\Action\Action
 {
+	protected $_helper;
+	protected $_checkoutSession;
+	protected $_storeManager;
+	protected $_urlInterface;
+	protected $resultPageFactory;
+	
+	public function __construct(
+			\Magento\Framework\App\Action\Context $context,
+			\Magento\Framework\View\Result\PageFactory $resultPageFactory,
+			\Kikinben\Sslcommerz\Helper\Data $helper,
+			\Magento\Checkout\Model\Session $checkoutSession,
+			\Magento\Sales\Model\Order $order,
+			\Magento\Checkout\Model\Cart $cart,
+			\Magento\Store\Model\StoreManagerInterface $storeManager,
+			\Magento\Framework\UrlInterface $urlInterface
+			) {
+				$this->_storeManager = $storeManager;
+				$this->_helper = $helper;
+				$this->_checkoutSession = $checkoutSession;
+				$this->_order           = $order;
+				$this->_cart = $cart;
+				$this->_urlInterface = $urlInterface;
+				$this->resultPageFactory = $resultPageFactory;
+				parent::__construct($context);
+	
+	}
 
     public function execute()
     {
-       /* $this->getHelper()->log('Pago Redsys');
-
-        //Obtenemos los valores de la configuración del módulo
-        $entorno = $this->getHelper()->getConfigData('entorno');
-        $nombre = $this->getHelper()->getConfigData('nombre_comercio');
-        $codigo = $this->getHelper()->getConfigData('numero_comercio');
-        $clave256 = $this->getHelper()->getConfigData('clave256');
-        $terminal = $this->getHelper()->getConfigData('terminal');
-        $moneda = $this->getHelper()->getConfigData('currency');
-        $trans = $this->getHelper()->getConfigData('tipo_transaccion');
-        $tipopago = $this->getHelper()->getConfigData('tipopago');
-
-        //Obtenemos datos del pedido
-        $order_id = $this->getCheckoutSession()->getLastRealOrderId();
-        if (!empty($order_id)) {
-            $_order = $this->getOrderFactory()->create();
-            $_order->loadByIncrementId($order_id);
-
-            // Activamos carrito en el caso de que esté configurado con la opción de mantener carrito
-            $mantener_carrito = $this->getHelper()->getConfigData('mantener_carrito');
-            if ($mantener_carrito) {
-                $quote = $this->getQuoteFactory()->create()->load($_order->getQuoteId());
-                $quote->setIsActive(true);
-                $quote->setReservedOrderId(null);
-                $quote->save();
-                $this->getCheckoutSession()->setQuoteId($_order->getQuoteId());
-            }
-
-            // Datos del cliente
-            $customer = $this->getCustomerSession()->getCustomer();
-
-            // Datos de los productos del pedido
-            $productos = '';
-
-            $items = $_order->getAllVisibleItems();
-            foreach ($items as $itemId => $item) {
-                $productos .= $item->getName();
-                $productos .= "X" . $item->getQtyToInvoice();
-                $productos .= "/";
-            }
-            //Formateamos el precio total del pedido
-            $transaction_amount = number_format($_order->getBaseGrandTotal(), 2, '', '');
-
-            $numpedido = str_pad($order_id, 12, "0", STR_PAD_LEFT);
-            $cantidad = (float) $transaction_amount;
-            $titular = $customer->getFirstname() . " " .
-                $customer->getMastname() . " " .
-                $customer->getLastname() . "/ Correo:" .
-                $customer->getEmail();
-
-            $base_url = $this->getStoreManager()->getStore()->getBaseUrl();
-            $urltienda = $base_url . 'sslcommerz/index/notify';
-            $urlok = $base_url . 'sslcommerz/index/success';
-            $urlko = $base_url . 'sslcommerz/index/cancel';
-
-            $idioma_tpv = $this->getUtilities()->getIdiomaTpv();
-
-            $moneda = $this->getUtilities()->getMonedaTpv($moneda);
-
-            $tipopago = $this->getUtilities()->getTipoPagoTpv($tipopago);
-
-            $this->getUtilities()->setParameter("DS_MERCHANT_AMOUNT", $cantidad);
-            $this->getUtilities()->setParameter("DS_MERCHANT_ORDER", (string) $numpedido);
-            $this->getUtilities()->setParameter("DS_MERCHANT_MERCHANTCODE", $codigo);
-            $this->getUtilities()->setParameter("DS_MERCHANT_CURRENCY", $moneda);
-            $this->getUtilities()->setParameter("DS_MERCHANT_TRANSACTIONTYPE", $trans);
-            $this->getUtilities()->setParameter("DS_MERCHANT_TERMINAL", $terminal);
-            $this->getUtilities()->setParameter("DS_MERCHANT_MERCHANTURL", $urltienda);
-            $this->getUtilities()->setParameter("DS_MERCHANT_URLOK", $urlok);
-            $this->getUtilities()->setParameter("DS_MERCHANT_URLKO", $urlko);
-            $this->getUtilities()->setParameter("Ds_Merchant_ConsumerLanguage", $idioma_tpv);
-            $this->getUtilities()->setParameter("Ds_Merchant_ProductDescription", $productos);
-            $this->getUtilities()->setParameter("Ds_Merchant_Titular", $nombre);
-            $this->getUtilities()->setParameter("Ds_Merchant_MerchantData", sha1($urltienda));
-            $this->getUtilities()->setParameter("Ds_Merchant_MerchantName", $nombre);
-            $this->getUtilities()->setParameter("Ds_Merchant_PayMethods", $tipopago);
-            $this->getUtilities()->setParameter("Ds_Merchant_Module", "magento_redsys_2.8.3");
-            $version = $this->getUtilities()->getVersionClave();
-
-            //Clave del comercio que se extrae de la configuración del comercio
-            // Se generan los parámetros de la petición
-            $request = "";
-            $paramsBase64 = $this->getUtilities()->createMerchantParameters();
-            $signatureMac = $this->getUtilities()->createMerchantSignature($clave256);
-
-            $this->getHelper()->log('Redsys: Redirigiendo a TPV pedido: ' . (string) $numpedido);
-            $this->getHelper()->log('Enviando Ds_SignatureVersion: ' . $version);
-            $this->getHelper()->log('Enviando Ds_MerchantParameters: ' . $paramsBase64);
-            $this->getHelper()->log('Enviando Ds_Signature: ' . $signatureMac);
-            $this->getHelper()->log('Esperando Notificación .....');
-
-            $action_entorno = $this->getUtilities()->getEntornoTpv($entorno);
-
-            $form_redsys = '<form action="' . $action_entorno . '" method="post" id="redsys_form" name="redsys_form">';
-            $form_redsys .= '<input type="hidden" name="Ds_SignatureVersion" value="' . $version . '" />';
-            $form_redsys .= '<input type="hidden" name="Ds_MerchantParameters" value="' . $paramsBase64 . '" />';
-            $form_redsys .= '<input type="hidden" name="Ds_Signature" value="' . $signatureMac . '" />';
-            $form_redsys .= '</form>';
-            $form_redsys .= '<h3> Cargando el TPV... Espere por favor. </h3>';
-            $form_redsys .= '<script type="text/javascript">';
-            $form_redsys .= 'document.redsys_form.submit();';
-            $form_redsys .= '</script>';
-
-            $data_trans = [];
-            $data_trans['Ds_SignatureVersion'] = $version;
-            $data_trans['Ds_MerchantParameters'] = $paramsBase64;
-            $data_trans['Ds_Signature'] = $signatureMac;
-
-            $this->addTransaction($_order, $data_trans);
-
-            $this->getResponse()->setBody($form_redsys);
-            return;
-        }*/
+    	$fields = array();
+    	$serverType = array('1'=>'https://sandbox.sslcommerz.com/gwprocess/v3/process.php',
+    			'2'=>'https://sandbox.sslcommerz.com/gwprocess/v3/process.php');
+    	 
+    	$fields_string = "";
+    	 
+    	$marchent_id = $this->_helper->getConfigData('store_id');
+    	$storePasswd = $this->_helper->getConfigData('validation_password');
+    	$envType = $this->_helper->getConfigData('env');
+    	$order_id = $this->_checkoutSession->getLastRealOrderId();
+    	$url = ($envType == 1) ? $serverType[2] : $serverType[1] ;
+    	 
+    	$url_success = $this->_urlInterface->getUrl($this->getStoreUrl()."sslcommerz/index/success",array('_secure'=>true));
+    	$url_fail 	 = $this->_urlInterface->getUrl($this->getStoreUrl()."sslcommerz/index/notify",array('_secure'=>true));
+    	$url_cancel  = $this->_urlInterface->getUrl($this->getStoreUrl()."sslcommerz/index/cancel",array('_secure'=>true));
+    	 
+    	 
+    	if (!empty($order_id)) {
+    		$order = $this->_order->load ( $order_id );
+    		$items = $this->_cart->getQuote()->getAllVisibleItems();
+    		$totalItems = $this->_cart->getQuote()->getItemsCount();
+    		$totalQuantity = $this->_cart->getQuote()->getItemsQty();
+    		$billingaddress = $order->getBillingAddress();    		
+    		$shippingaddress = $order->getShippingAddress();
+    		$address = $billingaddress->getStreet();
+    		$address1 = $shippingaddress->getStreet();
+    	
+    		foreach($order->getAllVisibleItems() as $itemId => $item){
+    			 
+    			$name[]		 = $item->getName();
+    			$unitPrice[] =$item->getPrice();
+    			$sku[]		 =$item->getSku();
+    			$ids[]		 =$item->getProductId();
+    			$qty[]		 =$item->getQtyToInvoice();
+    			 
+    			 
+    		}
+    		$productname = implode(',',$name);
+    		$productunitPrice= implode(',',$unitPrice);
+    		$productsku= implode(',',$sku);
+    		$productids= implode(',',$ids);
+    		$productqty= implode(',',$qty);
+    		$desc = 'Product Name: '.$productname.'@ Product Sku: '.$productsku.'@ Product Quantity: '. $productqty.'@ Product Price: '.$productunitPrice;
+    	}
+    	$fields = array(
+    			'store_id' => $marchent_id,
+    			'total_amount' => $this->_cart->getQuote()->getBaseGrandTotal(),
+    			'total_amount' => 200,
+    			'currency' => $this->_storeManager->getStore()->getCurrentCurrencyCode(),
+    			'tran_id' => $order_id,
+    			'cus_name' => $order->getCustomerFirstname().' '.$order->getCustomerLastname(),
+    			'cus_email' => $order->getCustomerEmail(),
+    			'cus_add1' => $address[0],
+    			'cus_add2' => (isset($address[1])) ? $address[1] : "" ,
+    			'cus_city' => $billingaddress->getCity(),
+    			'cus_state' => $billingaddress->getRegion(),
+    			'cus_postcode' => $billingaddress->getPostcode(),
+    			'cus_country' => $billingaddress->getCountryId(),
+    			'cus_phone' => $billingaddress->getTelephone(),
+    			'cus_fax' => 'NotApplicable',
+    			'ship_name' => $shippingaddress->getCustomerFirstname().' '.$shippingaddress->getCustomerLastname(),
+    			'ship_add1' => $address1[0],
+    			'ship_add2' => (isset($address1[1])) ? $address1[1] : ""  ,
+    			'ship_city' => $shippingaddress->getCity(),
+    			'ship_state' => $shippingaddress->getRegion(),
+    			'ship_postcode' => $shippingaddress->getPostcode(),
+    			'ship_country' => $shippingaddress->getCountryId(),
+    			'success_url' => $url_success,
+    			'fail_url' => $url_fail,
+    			'cancel_url' => $url_cancel
+    			 
+    	);
+    	$security_key = $this->_helper->sslcommerz_hash_key($storePasswd,$fields);
+    	 
+    	$fields['verify_sign'] = $security_key['verify_sign'];
+    	$fields['verify_key'] = $security_key['verify_key'];
+    	 
+    	foreach($fields as $key => $val){
+    		$fields_string .= $key.'='.$val.'&';
+    	}
+    	rtrim($fields_string, '&');
+    	$return = $this->_helper->curl_post_wrapper($url,$fields_string,$fields);
+    	
+    	
     }
-
-    private function addTransaction(\Magento\Sales\Model\Order $order, $data_trans)
+    public function getStoreUrl()
     {
-        /*$payment = $order->getPayment();
-        if (!empty($payment)) {
-            $datetime = new \DateTime();
-            $parent_trans_id = 'Redsys_Payment';
-            $payment->setTransactionId(htmlentities($parent_trans_id));
-            $payment->setIsTransactionClosed(false);
-            $payment->addTransaction(\Magento\Sales\Model\Order\Payment\Transaction::TYPE_ORDER);
-            
-            $payment->resetTransactionAdditionalInfo();
-            
-            $payment->setTransactionId(htmlentities('Redsys_Request_' . $datetime->getTimestamp()));
-            $payment->setParentTransactionId($parent_trans_id);
-            $payment->setTransactionAdditionalInfo(\Magento\Sales\Model\Order\Payment\Transaction::RAW_DETAILS, $data_trans);
-            $payment->setIsTransactionClosed(true);
-            $payment->addTransaction(\Magento\Sales\Model\Order\Payment\Transaction::TYPE_AUTH);
-            
-            $payment->save();
-            $order->setPayment($payment);
-            $order->save();
-        }*/
+    	return $this->_storeManager->getStore()->getBaseUrl();
     }
 }

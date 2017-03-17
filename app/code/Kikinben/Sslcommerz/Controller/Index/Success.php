@@ -4,9 +4,8 @@ namespace Kikinben\Sslcommerz\Controller\Index;
 
 use Magento\Framework\Controller\ResultFactory;
 
-class Success extends \Codeko\Redsys\Controller\Index
+class Success extends \Kikinben\Sslcommerz\Controller\Index
 {
-
     public function execute()
     {
        /* $this->getHelper()->log('Success: Entrada');

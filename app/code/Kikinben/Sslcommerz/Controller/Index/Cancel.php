@@ -4,7 +4,7 @@ namespace Kikinben\Sslcommerz\Controller\Index;
 
 use Magento\Framework\Controller\ResultFactory;
 
-class Cancel extends \Codeko\Redsys\Controller\Index
+class Cancel extends \Kikinben\Sslcommerz\Controller\Index
 {
 
     public function execute()
