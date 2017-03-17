@@ -218,7 +218,7 @@
 	.block-subscribe .form.subscribe{text-align: right;}
 	/*Footer*/
 	/*.footer-item .toggle-tab{top: 10px;}*/
-	.cms-static-main-footer .footer-item:not(:first-child){margin-top: 20px}
+	.cms-static-main-footer .footer-item:not(:first-child){}
 
 	/*product tab*/
 	.magicproduct .magictabs .item .title{ font-size: 18px;}
@@ -401,7 +401,7 @@
 	}
 
 	.footer-item .title {
-	    font-size: 14px;
+	    font-size: 12px;
 	}
 	/*--------- footer Ends---------------------*/
 
@@ -2272,7 +2272,7 @@ height: 152px;
 
 @media (max-width: 991px) and (min-width: 768px) {
 	.footer_cust_logo_l {
-		margin-top: 225px;
+		margin-top: 210px;
 	}
 }
 
