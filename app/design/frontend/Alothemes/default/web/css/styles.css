@@ -9848,3 +9848,7 @@ margin: 0px !important;
     border-top: none !important;
     margin-top: 0px !important;
 }
+
+.account_details ul {
+    margin-top: 0px !important;
+}
