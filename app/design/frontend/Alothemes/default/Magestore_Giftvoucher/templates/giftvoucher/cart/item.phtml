@@ -19,6 +19,12 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
 ?>
 <tbody class="cart item">
     <tr class="item-info">
+
+        <td class="item-actions">
+            <div class="actions-toolbar">
+                <?php echo $block->getActions($_item) ?>
+            </div>
+        </td>
         <td data-th="<?php echo $block->escapeHtml(__('Item')); ?>" class="col item">
             <?php if ($block->hasProductUrl()):?>
                 <a href="<?php echo $block->getProductUrl() ?>"
@@ -30,9 +36,9 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
             <?php endif;?>
             <?php echo $block->getImage($block->getProductForThumbnail(), 'cart_page_product_thumbnail')->toHtml(); ?>
             <?php if ($block->hasProductUrl()):?>
+                </span>
                 </a>
             <?php else: ?>
-                </span>
             <?php endif; ?>
             <div class="product-item-details">
                 <strong class="product-item-name">
@@ -89,14 +95,17 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
         <?php endif; ?>
         <td class="col qty" data-th="<?php echo $block->escapeHtml(__('Qty')); ?>">
             <div class="field qty">
-                <label class="label" for="cart-<?php echo $_item->getId() ?>-qty">
-                    <span><?php echo __('Qty') ?></span>
+                <label class="label" for="cart-<?php /* @escapeNotVerified */ echo $_item->getId() ?>-qty">
+                    <span><?php /* @escapeNotVerified */ echo __('Qty') ?></span>
                 </label>
                 <div class="control qty">
-                    <input id="cart-<?php echo $_item->getId() ?>-qty"
-                           name="cart[<?php echo $_item->getId() ?>][qty]"
-                           data-cart-item-id="<?php echo $_item->getSku() ?>"
-                           value="<?php echo $block->getQty() ?>"
+                    <button type="button" class="reduced" onclick="var result = document.getElementById('cart-<?php  echo $_item->getId() ?>-qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--;return false;">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <input id="cart-<?php  echo $_item->getId() ?>-qty"
+                           name="cart[<?php /* @escapeNotVerified */ echo $_item->getId() ?>][qty]"
+                           data-cart-item-id="<?php /* @escapeNotVerified */ echo $_item->getSku() ?>"
+                           value="<?php /* @escapeNotVerified */ echo $block->getQty() ?>"
                            type="number"
                            size="4"
                            title="<?php echo $block->escapeHtml(__('Qty')); ?>"
@@ -104,9 +113,11 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                            maxlength="12"
                            data-validate="{required:true,'validate-greater-than-zero':true}"
                            data-role="cart-item-qty"/>
+                    <button type="button" class="increase" onclick="var result = document.getElementById('cart-<?php  echo $_item->getId() ?>-qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;">
+                    <i class="fa fa-plus"></i>
+                </button>
                 </div>
             </div>
-            <?php $cols++; ?>
         </td>
 
         <td class="col subtotal" data-th="<?php echo $block->escapeHtml(__('Subtotal'));?>">
@@ -116,13 +127,6 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                 <?php echo $block->getRowTotalHtml($_item); ?>
             <?php endif; ?>
             <?php $cols++; ?>
-        </td>
-    </tr>
-    <tr class="item-actions">
-        <td colspan="<?php echo $cols;?>">
-            <div class="actions-toolbar">
-                <?php echo $block->getActions($_item) ?>
-            </div>
         </td>
     </tr>
 </tbody>
