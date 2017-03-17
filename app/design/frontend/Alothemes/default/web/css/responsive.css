@@ -2351,34 +2351,6 @@ height: 152px;
 	}
 }
 
-@media (min-width: 1176px) and (max-width: 1250px) {
-	.top_nav_cust .dropdown_top_nav-content {
-	    min-width: 400px;
-	    margin-left: -13px;
-	}
-}
-
-@media (min-width: 1105px) and (max-width: 1175px) {
-	.top_nav_cust .dropdown_top_nav-content {
-	    min-width: 380px;
-	    margin-left: -13px;
-	}
-}
-
-@media (min-width: 1059px) and (max-width: 1104px) {
-	.top_nav_cust .dropdown_top_nav-content {
-	    min-width: 367px;
-	    margin-left: -13px;
-	}
-}
-
-@media (min-width: 992px) and (max-width: 1058px) {
-	.top_nav_cust .dropdown_top_nav-content {
-	    min-width: 367px;
-	    margin-left: -20px;
-	}
-}
-
 @media (max-width: 568px) {
 	.company_desc_cust_l {
 		width: 270px;
