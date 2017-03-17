@@ -81,9 +81,9 @@
                         <address>
                             <?php echo $block->getAddressHtml($_address) ?><br />
                         </address>
-                        <div class="item actions">
+                        <div class="item actions go_back_ki">
                             <a class="action edit" href="<?php /* @escapeNotVerified */ echo $block->getUrl('customer/address/edit', ['id' => $_address->getId()]) ?>"><span><?php /* @escapeNotVerified */ echo __('Edit Address') ?></span></a>
-                            <a class="action delete" href="#" role="delete-address" data-address="<?php /* @escapeNotVerified */ echo $_address->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Delete Address') ?></span></a>
+<!--                             <a class="action delete" href="#" role="delete-address" data-address="<?php /* @escapeNotVerified */ echo $_address->getId() ?>"><span><?php /* @escapeNotVerified */ echo __('Delete Address') ?></span></a> -->
                         </div>
                     </li>
                 <?php endforeach; ?>
@@ -96,8 +96,9 @@
 
 <div class="actions-toolbar">
     <div class="primary redeem_gift_cust_l">
-        <button type="button" role="add-address" title="<?php /* @escapeNotVerified */ echo __('Add New Address') ?>" class="action primary add"><span><?php /* @escapeNotVerified */ echo __('Add New Address') ?></span></button>
-    </div>
+        <a href="<?php echo $this->getUrl('customer/address/new');?>">
+        <button type="button" role="add-address" title="<?php /* @escapeNotVerified */ echo __('Add New Address') ?>" class="action primary add"><span><?php /* @escapeNotVerified */ echo __('Add New Address') ?></span></button></a>
+            </div>
     <div class="secondary go_back_ki">
         <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('<< Back') ?></span></a>
     </div>
