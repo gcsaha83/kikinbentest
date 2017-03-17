@@ -167,7 +167,7 @@ $isLoggedIn = $customerSession->isLoggedIn();
 												</a>
 											</li>
 
-											<div class="dropdown-content">
+											<div class="dropdown-content drop_signed_cust_l">
 											  	<div class="account_details">
 													<ul>
 														<li class="signed_drop">
@@ -178,6 +178,9 @@ $isLoggedIn = $customerSession->isLoggedIn();
 													  	</li>
 													  	<li class="signed_drop">
 													  		<a href="<?php echo $this->getUrl('wishlist') ?>">Your Wishlists</a>
+													  	</li>
+													  	<li class="signed_drop">
+													  		<a href="<?php echo $this->getUrl('giftvoucher') ?>">Your Gift Card</a>
 													  	</li>
 													</ul>
 
@@ -209,9 +212,8 @@ $isLoggedIn = $customerSession->isLoggedIn();
 												<ul>
 												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('customer/account/'); ?>">Your Account</a></li>
 												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('sales/order/history/'); ?>">Your Order</a></li>
-
-												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('wishlist') ?>">Your Wishlists</a>
-												  	</li>
+												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('wishlist') ?>">Your Wishlists</a></li>
+												  	<li class="signed_drop"><a href="<?php echo $this->getUrl('giftvoucher') ?>">Your Gift Card</a></li>
 												</ul>
 										  	</div>
 								  		</div>
