@@ -16,10 +16,17 @@ class Payment implements OptionSourceInterface
     {
         $options = [];
         $options[] = [
-            'label' => __('TODO'),
+            'label' => __('Todos'),
             'value' => 0,
         ];
-        
+        $options[] = [
+            'label' => __('Solo tarjeta'),
+            'value' => 1,
+        ];
+        $options[] = [
+            'label' => __('Tarjeta y Iupay'),
+            'value' => 2,
+        ];
         return $options;
     }
 }

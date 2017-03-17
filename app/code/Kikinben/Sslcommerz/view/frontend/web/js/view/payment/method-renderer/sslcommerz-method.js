@@ -30,9 +30,11 @@ define(
                     },
                 
                     afterPlaceOrder: function () {
-                        window.location.replace(url.build('sslcommerz/'));
+                        window.location.replace(url.build('sslcommerz/index/index'));
                     }
                 }
             );
     }
 );
+
+

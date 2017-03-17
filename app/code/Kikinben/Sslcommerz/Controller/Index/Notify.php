@@ -149,7 +149,7 @@ class Notify extends \Kikinben\Sslcommerz\Controller\Index
         }*/
     }
 
-    /*private function deactiveCart(\Magento\Sales\Model\Order $order)
+    private function deactiveCart(\Magento\Sales\Model\Order $order)
     {
         $mantener_carrito = $this->getHelper()->getConfigData('mantener_carrito');
         if ($mantener_carrito) {
@@ -218,5 +218,5 @@ class Notify extends \Kikinben\Sslcommerz\Controller\Index
             $order->registerCancellation("");
         }
         $order->save();
-    }*/
+    }
 }

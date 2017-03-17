@@ -1,306 +1,122 @@
 <?php
 
 namespace Kikinben\Sslcommerz\Controller;
-
-use Magento\Store\Model\StoreManager;
-use Magento\Framework\Controller\ResultFactory;
-
 abstract class Index extends \Magento\Framework\App\Action\Action
 {
+	protected $_helper;
+	protected $_checkoutSession;
+	protected $_storeManager;
+	protected $_urlInterface;
+	protected $resultPageFactory;
 
-    /**
-     * @var \Magento\Checkout\Model\Session
-     */
-    private $checkout_session;
-
-    /**
-     * @var \Magento\Customer\Model\Session
-     */
-    private $customer_session;
-
-    /**
-     * @var \Magento\Sales\Model\OrderFactory
-     */
-    private $order_factory;
-
-    /**
-     * @var \Magento\Framework\App\ObjectManager
-     */
-    private $object_manager;
-
-    /**
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
-    private $store_manager;
-
-    /**
-     * @var \Codeko\Redsys\Helper\Data
-     */
-    private $helper;
-
-    /**
-     * @var \Codeko\Redsys\Helper\Validator
-     */
-    private $validator;
-
-    /**
-     * @var \Codeko\Redsys\Helper\Utilities
-     */
-    private $utilities;
-
-    /**
-     * @var \Magento\Sales\Model\OrderRepository
-     */
-    private $order_repository;
     
-    /**
-     * @var \Magento\Sales\Model\Order\InvoiceRepository
-     */
-    private $invoice_repository;
-
-    /**
-     * @var \Magento\Sales\Model\Service\InvoiceService
-     */
-    private $invoice_service;
-
-    /**
-     * @var \Magento\Sales\Model\Order\Email\Sender\InvoiceSender
-     */
-    private $invoice_sender;
-
-    /**
-     * @var \Magento\Framework\DB\Transaction
-     */
-    private $transaction;
-
-    /**
-     * @var \Magento\Framework\App\Request\Http $request
-     */
-    private $request;
-    
-    /**
-     * @var \Magento\Quote\Api\CartRepositoryInterface $quote_repository
-     */
-    private $quote_repository;
-    
-    /**
-     * @var \Magento\Quote\Model\QuoteFactory $quote_factory
-     */
-    private $quote_factory;
-    
-    /**
-     * @var \Magento\Sales\Api\Data\TransactionSearchResultInterfaceFactory $trans_search
-     */
-    private $trans_search;
-    
-    public function getTransSearch()
-    {
-        return $this->trans_search;
-    }
-
-    public function setTransSearch(\Magento\Sales\Api\Data\TransactionSearchResultInterfaceFactory $trans_search)
-    {
-        $this->trans_search = $trans_search;
-    }
-
-    public function getCheckoutSession()
-    {
-        return $this->checkout_session;
-    }
-
-    public function getCustomerSession()
-    {
-        return $this->customer_session;
-    }
-
-    public function getOrderFactory()
-    {
-        return $this->order_factory;
-    }
-
-    public function getStoreManager()
-    {
-        return $this->store_manager;
-    }
-
-    public function getHelper()
-    {
-        return $this->helper;
-    }
-
-    public function getValidator()
-    {
-        return $this->validator;
-    }
-
-    public function getUtilities()
-    {
-        return $this->utilities;
-    }
-
-    public function getOrderRepository()
-    {
-        return $this->order_repository;
-    }
-    
-    public function getInvoiceRepository()
-    {
-        return $this->invoice_repository;
-    }
-    
-    public function getQuoteRepository()
-    {
-        return $this->quote_repository;
-    }
-
-    public function getInvoiceService()
-    {
-        return $this->invoice_service;
-    }
-
-    public function getInvoiceSender()
-    {
-        return $this->invoice_sender;
-    }
-
-    public function getTransaction()
-    {
-        return $this->transaction;
-    }
-
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    public function setCheckoutSession(\Magento\Checkout\Model\Session $checkout_session)
-    {
-        $this->checkout_session = $checkout_session;
-    }
-
-    public function setCustomerSession(\Magento\Customer\Model\Session $customer_session)
-    {
-        $this->customer_session = $customer_session;
-    }
-
-    public function setOrderFactory(\Magento\Sales\Model\OrderFactory $order_factory)
-    {
-        $this->order_factory = $order_factory;
-    }
-
-    public function setStoreManager(\Magento\Store\Model\StoreManagerInterface $store_manager)
-    {
-        $this->store_manager = $store_manager;
-    }
-
-    public function setHelper(\Kikinben\Sslcommerz\Helper\Data $helper)
-    {
-        $this->helper = $helper;
-    }
-
-    public function setValidator(\Kikinben\Sslcommerz\Helper\Validator $validator)
-    {
-        $this->validator = $validator;
-    }
-
-    public function setUtilities(\Kikinben\Sslcommerz\Helper\Utilities $utilities)
-    {
-        $this->utilities = $utilities;
-    }
-
-    public function setOrderRepository(\Magento\Sales\Model\OrderRepository $order_repository)
-    {
-        $this->order_repository = $order_repository;
-    }
-    
-    public function setInvoiceRepository(\Magento\Sales\Model\Order\InvoiceRepository $invoice_repository)
-    {
-        $this->invoice_repository = $invoice_repository;
-    }
-
-    public function setInvoiceService(\Magento\Sales\Model\Service\InvoiceService $invoice_service)
-    {
-        $this->invoice_service = $invoice_service;
-    }
-
-    public function setInvoiceSender(\Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoice_sender)
-    {
-        $this->invoice_sender = $invoice_sender;
-    }
-
-    public function setTransaction(\Magento\Framework\DB\Transaction $transaction)
-    {
-        $this->transaction = $transaction;
-    }
-
-    public function setRequest(\Magento\Framework\App\Request\Http $request)
-    {
-        $this->request = $request;
-    }
-    
-    public function setQuoteRepository(\Magento\Quote\Api\CartRepositoryInterface $quote_repository)
-    {
-        $this->quote_repository = $quote_repository;
-    }
-    
-    public function getQuoteFactory()
-    {
-        return $this->quote_factory;
-    }
-
-    public function setQuoteFactory(\Magento\Quote\Model\QuoteFactory $quote_factory)
-    {
-        $this->quote_factory = $quote_factory;
-    }
-
-    /**
-     * @param \Magento\Framework\App\Action\Context $context
-     * @param \Magento\Sales\Model\OrderFactory $order_factory
-     * @param \Magento\Framework\App\ObjectManagerFactory $object_factory
-     * @param \Magento\Store\Model\StoreManagerInterface $store_manager
-     * @param \Magento\Sales\Model\Service\InvoiceService $invoice_service
-     * @param \Magento\Framework\DB\Transaction $transaction
-     * @param \Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoice_sender
-     * @param \Magento\Sales\Model\OrderRepository $order_repository
-     * @param \Magento\Sales\Model\Order\InvoiceRepository $invoice_repository
-     * @param \Magento\Quote\Api\CartRepositoryInterface $quote_repository
-     * @param \Magento\Quote\Model\QuoteFactory $quote_factory
-     * @param \Magento\Sales\Api\Data\TransactionSearchResultInterfaceFactory $trans_search
-     */
     public function __construct(
-        \Magento\Framework\App\Action\Context $context,
-        \Magento\Sales\Model\OrderFactory $order_factory,
-        \Magento\Framework\App\ObjectManagerFactory $object_factory,
-        \Magento\Store\Model\StoreManagerInterface $store_manager,
-        \Magento\Sales\Model\Service\InvoiceService $invoice_service,
-        \Magento\Framework\DB\Transaction $transaction,
-        \Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoice_sender,
-        \Magento\Sales\Model\OrderRepository $order_repository,
-        \Magento\Sales\Model\Order\InvoiceRepository $invoice_repository,
-        \Magento\Quote\Api\CartRepositoryInterface $quote_repository,
-        \Magento\Quote\Model\QuoteFactory $quote_factory,
-        \Magento\Sales\Api\Data\TransactionSearchResultInterfaceFactory $trans_search
+        \Magento\Framework\App\Action\Context $context, 
+    	\Magento\Framework\View\Result\PageFactory $resultPageFactory,
+    	\Kikinben\Sslcommerz\Helper\Data $helper,
+    	\Magento\Checkout\Model\Session $checkoutSession,
+    	\Magento\Sales\Model\Order $order,
+    	\Magento\Checkout\Model\Cart $cart,
+    	\Magento\Store\Model\StoreManagerInterface $storeManager,
+    	\Magento\Framework\UrlInterface $urlInterface
     ) {
-    
+    	$this->_storeManager = $storeManager;
+    	$this->_helper = $helper;    
+    	$this->_checkoutSession = $checkoutSession;
+    	$this->_order           = $order;
+    	$this->_cart = $cart;
+    	$this->_urlInterface = $urlInterface;
+    	$this->resultPageFactory = $resultPageFactory;
         parent::__construct($context);
-        /*$this->setOrderFactory($order_factory);
-        $this->setOrderRepository($order_repository);
-        $this->setInvoiceRepository($invoice_repository);
-        $this->setStoreManager($store_manager);
-        $this->setInvoiceService($invoice_service);
-        $this->setInvoiceSender($invoice_sender);
-        $this->setTransaction($transaction);
-        $params[StoreManager::PARAM_RUN_CODE] = 'admin';
-        $params[StoreManager::PARAM_RUN_TYPE] = 'store';
-        $object_manager = $object_factory->create($params);
-        $this->setHelper($object_manager->create('Kikinben\Sslcommerz\Helper\Data'));
-        $this->setValidator($object_manager->create('Kikinben\Sslcommerz\Helper\Validator'));
-        $this->setUtilities($object_manager->create('Kikinben\Sslcommerz\Helper\Utilities'));
-        $this->setCheckoutSession($object_manager->create(\Magento\Checkout\Model\Session::class));
-        $this->setCustomerSession($object_manager->create(\Magento\Customer\Model\Session::class));
-        $this->setRequest($object_manager->get(\Magento\Framework\App\Request\Http::class));
-        $this->setQuoteRepository($quote_repository);
-        $this->setQuoteFactory($quote_factory);
-        $this->setTransSearch($trans_search);*/
+	
+    }
+    public function execute()
+    {
+    	
+    	/*$fields = array();
+    	$serverType = array('1'=>'https://sandbox.sslcommerz.com/gwprocess/v3/process.php',
+    			'2'=>'https://sandbox.sslcommerz.com/gwprocess/v3/process.php');
+    	
+    	
+    	$marchent_id = $this->_helper->getConfigData('store_id');
+    	$storePasswd = $this->_helper->getConfigData('validation_password');
+    	$envType = $this->_helper->getConfigData('env');
+    	$order_id = $this->_checkoutSession->getLastRealOrderId();
+    	$url = ($envType == 1) ? $serverType[2] : $serverType[1] ; 
+    	
+    	$url_success = $this->_urlInterface->getUrl($this->getStoreUrl()."sslcommerz/index/success",array('_secure'=>true));
+    	$url_fail 	 = $this->_urlInterface->getUrl($this->getStoreUrl()."sslcommerz/index/notify",array('_secure'=>true));
+    	$url_cancel  = $this->_urlInterface->getUrl($this->getStoreUrl()."sslcommerz/index/cancel",array('_secure'=>true));
+    	
+    	
+    	if (!empty($order_id)) {
+    		$order = $this->_order->load ( $order_id );
+    		$items = $this->_cart->getQuote()->getAllVisibleItems();
+    		$totalItems = $this->_cart->getQuote()->getItemsCount();
+    		$totalQuantity = $this->_cart->getQuote()->getItemsQty();
+    		$billingaddress = $order->getBillingAddress();
+    		$shippingaddress = $order->getShippingAddress();
+    		$address = $billingaddress->getStreet();
+    		$address1 = $shippingaddress->getStreet();
+    		
+    		foreach($items as $itemId => $item){
+    			
+    			$name[]		 = $item->getName();
+    			$unitPrice[] =$item->getPrice();
+    			$sku[]		 =$item->getSku();
+    			$ids[]		 =$item->getProductId();
+    			$qty[]		 =$item->getQtyToInvoice();
+    			
+    			
+    		}
+    		$productname = implode(',',$name);
+    		$productunitPrice= implode(',',$unitPrice);
+    		$productsku= implode(',',$sku);
+    		$productids= implode(',',$ids);
+    		$productqty= implode(',',$qty);
+    		$desc = 'Product Name: '.$productname.'@ Product Sku: '.$productsku.'@ Product Quantity: '. $productqty.'@ Product Price: '.$productunitPrice;
+    	}
+    	$fields = array(
+    			'store_id' => $marchent_id,
+    			'total_amount' => $this->_cart->getQuote()->getBaseGrandTotal(),
+    			'currency' => $currencyDesc,
+    			'tran_id' => $order_id,
+    			'cus_name' => $order->getCustomerFirstname().' '.$order->getCustomerLastname(),
+    			'cus_email' => $order->getCustomerEmail(),
+    			'cus_add1' => $address[0],
+    			'cus_add2' => $address[1],
+    			'cus_city' => $billingaddress->getCity(),
+    			'cus_state' => $billingaddress->getRegion(),
+    			'cus_postcode' => $billingaddress->getPostcode(),
+    			'cus_country' => $billingaddress->getCountryId(),
+    			'cus_phone' => $billingaddress->getTelephone(),
+    			'cus_fax' => 'NotApplicable',
+    			'ship_name' => $shippingaddress->getCustomerFirstname().' '.$shippingaddress->getCustomerLastname(),
+    			'ship_add1' => $address1[0],
+    			'ship_add2' => $address1[1],
+    			'ship_city' => $shippingaddress->getCity(),
+    			'ship_state' => $shippingaddress->getRegion(),
+    			'ship_postcode' => $shippingaddress->getPostcode(),
+    			'ship_country' => $shippingaddress->getCountryId(),
+    			'success_url' => $url_success,
+    			'fail_url' => $url_fail,
+    			'cancel_url' => $url_cancel
+    	
+    	);
+    	$security_key = $this->_helper->sslcommerz_hash_key($storePasswd,$fields);
+    	
+    	$fields['verify_sign'] = $security_key['verify_sign'];
+    	$fields['verify_key'] = $security_key['verify_key'];
+    	
+    	foreach($fields as $key => $val){
+    		$fields_string .= $key.'='.$value.'&';    		
+    	}
+    	rtrim($fields_string, '&');    	
+    	$return = $this->_helper->curl_post_wrapper($url,$fields_string,$fields);*/
+    	     	   	
+    }
+    public function getStoreUrl()
+    {
+    	return $this->_storeManager->getStore()->getBaseUrl();
     }
 }

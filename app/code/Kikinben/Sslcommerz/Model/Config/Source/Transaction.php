@@ -16,11 +16,11 @@ class Transaction implements OptionSourceInterface
     {
         $options = [];
         $options[] = [
-            'label' => __('Authorization'),
+            'label' => __('Test Url'),
             'value' => 0,
         ];
         $options[] = [
-            'label' => __('Capture'),
+            'label' => __('Live Url'),
             'value' => 1,
         ];
         return $options;

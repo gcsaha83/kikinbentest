@@ -17,12 +17,13 @@ class Environment implements OptionSourceInterface
         $options = [];
         $options[] = [
             'label' => __('Real'),
-            'value' => 0,
+            'value' => 1,
         ];
         $options[] = [
             'label' => __('Test'),
-            'value' => 1,
-        ];        
+            'value' => 2,
+        ];
+        
         return $options;
     }
 }

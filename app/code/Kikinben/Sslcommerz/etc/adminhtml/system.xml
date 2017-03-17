@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="payment">
@@ -11,46 +17,20 @@
                 <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title</label>
                 </field>
-                <field id="debug" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Debug</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="entorno" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0">
+                
+                <field id="env" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Environment</label>
                     <source_model>Kikinben\Sslcommerz\Model\Config\Source\Environment</source_model>
                 </field>
-                <field id="nombre_comercio" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Name of the trade</label>
+                <field id="store_id" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Store ID</label>
                 </field>
-                <field id="numero_comercio" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Trade Number (FUC)</label>
+                <field id="validation_password" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Validation Password</label>
                 </field>
                 <field id="tipopago" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Allowed payment types</label>
+                    <label>Initial Order Status</label>
                     <source_model>Kikinben\Sslcommerz\Model\Config\Source\Payment</source_model>
-                </field>
-                <field id="clave256" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Clave 256</label>
-                </field>
-                <field id="terminal" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Terminal</label>
-                </field>
-                <field id="currency" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Currency</label>
-                    <source_model>Kikinben\Sslcommerz\Model\Config\Source\Currency</source_model>
-                </field>
-                <field id="tipo_transaccion" translate="label" type="select" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Transaction Type</label>
-                    <source_model>Kikinben\Sslcommerz\Model\Config\Source\Transaction</source_model>
-                </field>
-                <field id="facturar" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Crear factura</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                
-                <field id="logactivo" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Actiavte Log</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="allowspecific" translate="label" type="allowspecific" sortOrder="180" showInDefault="9" showInWebsite="1" showInStore="0">
                     <label>Payment From Applicable Countries</label>
