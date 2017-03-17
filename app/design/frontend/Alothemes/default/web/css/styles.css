@@ -3306,7 +3306,7 @@ display: block !important;
 .youraccount{
 	font-size: 14px !important;
 	font-weight: 700 !important;
-	line-height: 14px !important;
+	line-height: 16px !important;
 	font-family: arial,sans-serif !important;
 }
 
@@ -8368,7 +8368,7 @@ height: 35px;
 	width: 10px;
 	position: absolute;
 	top: 54%;
-	margin-top: 3px;
+	margin-top: 2px;
 	margin-left:4px;
 	color:transparent !important;
 }
@@ -8677,10 +8677,11 @@ height: 35px;
 }
 
 .header-bottom {
-    padding: 5px 0 3px 0 !important;
+/*     padding: 5px 0 3px 0 !important; */
 }
 .header_right_ki {
 	padding-right: 25px !important;
+	padding: 5px;
 }
 .top_nav_cust ul {
 	list-style-type: none;
@@ -8698,9 +8699,9 @@ height: 35px;
 	display: inline-block;
 	color: #333;
 	text-align: center;
-	padding: 0px 16px;
+	padding: 6px 16px;
 	text-decoration: none;
-	margin-top: 14px;
+	margin-top: 13px;
 }
 
 .top_nav_cust ul li a:hover, .top_nav_cust .dropdown_top_nav:hover .dropbtn_top_nav {
@@ -9542,7 +9543,7 @@ border: none !important;
 }
 
 .arrow_cust_ki_l:after {
-	margin-top: 0px;
+	margin-top: 0px !important;
 }
 
 .dropdown_block_ki {
@@ -9695,7 +9696,7 @@ border: none !important;
 .vmagicmenu .shop_categories_cust_l {
     font-size: 14px !important;
     font-weight: 700 !important;
-    line-height: 15px !important;
+    line-height: 17px !important;
     display: block !important;
     font-family: arial,sans-serif !important;
 }
@@ -9837,4 +9838,13 @@ margin: 0px !important;
 
 .block-collapsible-nav .item a:hover {
     color: #f89a22 !important;
+}
+
+.drop_signed_cust_l {
+    padding: 0 20px 20px !important;
+}
+
+.drop_signed_cust_l .account_details {
+    border-top: none !important;
+    margin-top: 0px !important;
 }
