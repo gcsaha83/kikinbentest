@@ -9839,3 +9839,12 @@ margin: 0px !important;
 .block-collapsible-nav .item a:hover {
     color: #f89a22 !important;
 }
+
+.drop_signed_cust_l {
+    padding: 0 20px 20px !important;
+}
+
+.drop_signed_cust_l .account_details {
+    border-top: none !important;
+    margin-top: 0px !important;
+}
