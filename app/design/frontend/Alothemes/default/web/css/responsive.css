@@ -2276,6 +2276,12 @@ height: 152px;
 	}
 }
 
+@media (min-width: 992px) {
+	.footer_cust_logo_l {
+		margin-top: 185px;
+	}
+}
+
 @media (min-width: 1025px) {
 	.configurable_prod_cust_page .column_width_cust_l label {
 	    width: 30% !important;
@@ -2398,5 +2404,29 @@ height: 152px;
 		width: 282px !important;
 		overflow-x: auto;
 	}
+	
+	.breadcrumbs li.home a {
+	    font-size: 13px;
+	}
+
+	.breadcrumbs li::before {
+	    font-size: 13px;
+	    padding-right: 0;
+	}
+
+	.breadcrumbs li a, .breadcrumbs li strong {
+	    font-size: 12px;
+	    padding: 0px;
+	}
 }
 
+@media (max-width: 500px) {
+	.gift_balance_cust_l {
+		width: auto;
+		height: 150px;
+	}
+
+	.redeem_cust_tit {
+	    font-size: 18px !important;
+	}
+}
