@@ -2275,16 +2275,14 @@ height: 152px;
 
 @media (min-width: 1501px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 0px 20px;
-	    margin-top: 15px;
+	    padding: 6px 20px;
 	    font-size: 13px;
 	}
 }
 
 @media (min-width: 1327px) and (max-width: 1500px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 0px 18px;
-	    margin-top: 17px;
+	    padding: 6px 18px;
 	    font-size: 12px;
 	}
 
@@ -2297,8 +2295,7 @@ height: 152px;
 
 @media (min-width: 1234px) and (max-width: 1326px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 0px 15px;
-	    margin-top: 17px;
+	    padding: 6px 15px;
 	    font-size: 12px;
 	}
 
@@ -2311,8 +2308,7 @@ height: 152px;
 
 @media (min-width: 1141px) and (max-width: 1233px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 0px 14px;
-	    margin-top: 17px;
+	    padding: 6px 14px;
 	    font-size: 11px;
 	}
 
@@ -2325,8 +2321,7 @@ height: 152px;
 
 @media (min-width: 1059px) and (max-width: 1140px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 0px 11px;
-	    margin-top: 17px;
+	    padding: 6px 11px;
 	    font-size: 11px;
 	}
 
@@ -2339,8 +2334,7 @@ height: 152px;
 
 @media (min-width: 992px) and (max-width: 1058px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 0px 9px;
-	    margin-top: 17px;
+	    padding: 6px 9px;
 	    font-size: 10px;
 	}
 
