@@ -9,7 +9,7 @@ var config = {
             checkoutBalance:    'Magento_Customer/js/checkout-balance',
             address:            'Magento_Customer/address',
             setPassword:        'Magento_Customer/set-password',
-	intlTelInput:        'Ipragmatech_Registration/intlTelInput'
+	    intlTelInput:        'Magento_Customer/intlTelInput'
         }
     }
 };
