@@ -9903,3 +9903,13 @@ margin: 0px !important;
 .paging_cust_l_nu .pages .action.next:before {
 	margin: 1px 0 0 -9px !important;
 }
+
+.address_book_check_l input {
+	float: left;
+	margin-top: 6px;
+}
+
+.address_book_check_l label span {
+	font-size: 11px;
+    font-weight: 400;
+}
