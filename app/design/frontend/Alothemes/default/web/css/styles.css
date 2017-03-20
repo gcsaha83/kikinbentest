@@ -9960,4 +9960,8 @@ margin: 0px !important;
 .fotorama__arr {
 	width: 40px !important;
 }
-	
+
+.latest_prod_cust_l .item:hover {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
