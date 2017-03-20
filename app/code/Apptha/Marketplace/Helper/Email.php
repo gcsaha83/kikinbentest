@@ -335,7 +335,7 @@ class Email extends \Magento\Framework\App\Helper\AbstractHelper {
         /**
          * Send message function
          */
-        $transport->sendMessage ();
+        //$transport->sendMessage ();
         /**
          * Resume the inline translation
          */

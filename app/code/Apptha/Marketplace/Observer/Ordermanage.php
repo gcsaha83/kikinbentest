@@ -187,7 +187,7 @@ class Ordermanage implements ObserverInterface {
             /**
              * Send order details to seller
              */
-            $this->sendOrderEmailToSeller ( $sellerId, $orderId );
+           // $this->sendOrderEmailToSeller ( $sellerId, $orderId );
         }
     }
     
@@ -294,6 +294,6 @@ class Ordermanage implements ObserverInterface {
         /**
          * Send email notification
          */
-        $objectManager->get ( 'Apptha\Marketplace\Helper\Email' )->yourCustomMailSendMethod ( $emailTempVariables, $senderInfo, $receiverInfo, $templateId );
+        //$objectManager->get ( 'Apptha\Marketplace\Helper\Email' )->yourCustomMailSendMethod ( $emailTempVariables, $senderInfo, $receiverInfo, $templateId );
     }
 }

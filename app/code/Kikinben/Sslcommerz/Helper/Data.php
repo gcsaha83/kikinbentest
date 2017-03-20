@@ -73,19 +73,17 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 		return $sslcz; 
 		
 	}
-	public function curl_post_wrapper($url,$fields_string,$counts){
-				
+	public function curl_post_wrapper($url,$fields_string){				
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);		
-		$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);				
 		$content = curl_exec($ch);
-		if($code == 200 && !( curl_errno($ch))) {
-			
+		$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		if($code == 200 && !( curl_errno($ch))) {			
 			curl_close( $ch);
 			$sslcommerzResponse = $content;			
 		} else {
