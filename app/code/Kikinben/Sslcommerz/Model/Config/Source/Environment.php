@@ -6,12 +6,7 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class Environment implements OptionSourceInterface
 {
-
-    /**
-     * Get options
-     *
-     * @return array
-     */
+    
     public function toOptionArray()
     {
         $options = [];

@@ -1,0 +1,145 @@
+<?php $sslcz = $block->getOrderDetails();?>
+
+<?php 
+
+if(isset($sslcz['status']) && $sslcz['status']=='SUCCESS') {
+	# VISA GATEWAY
+	if(isset($sslcz['gw']['visa']) &&  $sslcz['gw']['visa']!=""){
+		echo "<h3>VISA</h3>";
+		$sslcz_visa = explode(",", $sslcz['gw']['visa']);
+		foreach($sslcz_visa as $gw_value) {
+			if($gw_value=='dbbl_visa') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."dbbl_visa'>DBBL VISA</a><br />";
+			}
+			if($gw_value=='brac_visa') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."brac_visa'>BRAC VISA</a><br />";
+			}
+			if($gw_value=='city_visa') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."city_visa'>CITY VISA</a><br />";
+			}
+			if($gw_value=='ebl_visa') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."ebl_visa'>EBL VISA</a><br />";
+			}
+			if($gw_value=='visacard') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."visacard'>VISA</a><br />";
+			}
+		}
+	} # END OF VISA
+
+	# MASTER GATEWAY
+	if(isset($sslcz['gw']['master']) &&  $sslcz['gw']['master']!=""){
+		echo "<h3>MASTER</h3>";
+		$sslcz_visa = explode(",", $sslcz['gw']['master']);
+		foreach($sslcz_visa as $gw_value) {
+			if($gw_value=='dbbl_master') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."dbbl_master'>DBBL MASTER</a><br />";
+			}
+			if($gw_value=='brac_master') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."brac_master'>BRAC MASTER</a><br />";
+			}
+			if($gw_value=='city_master') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."city_master'>CITY MASTER</a><br />";
+			}
+			if($gw_value=='ebl_master') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."ebl_master'>EBL MASTER</a><br />";
+			}
+			if($gw_value=='mastercard') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."mastercard'>MASTER</a><br />";
+			}
+		}
+	} # END OF MASTER
+
+
+	# AMEX GATEWAY
+	if(isset($sslcz['gw']['amex']) &&  $sslcz['gw']['amex']!=""){
+		echo "<h3>AMEX</h3>";
+		$sslcz_visa = explode(",", $sslcz['gw']['amex']);
+		foreach($sslcz_visa as $gw_value) {
+			if($gw_value=='city_amex') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."city_amex'>AMEX</a><br />";
+			}
+
+		}
+	} # END OF AMEX
+
+
+	# OTHER CARDS GATEWAY
+	if(isset($sslcz['gw']['othercards']) &&  $sslcz['gw']['othercards']!=""){
+		echo "<h3>OTHER CARDS</h3>";
+		$sslcz_visa = explode(",", $sslcz['gw']['othercards']);
+		foreach($sslcz_visa as $gw_value) {
+			if($gw_value=='dbbl_nexus') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."dbbl_nexus'>NEXUS</a><br />";
+			}
+				
+			if($gw_value=='qcash') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."qcash'>QCASH</a><br />";
+			}
+
+			if($gw_value=='fastcash') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."fastcash'>FASTCASH</a><br />";
+			}
+		}
+	} # END OF OTHER CARDS
+
+	# INTERNET BANKING GATEWAY
+	if(isset($sslcz['gw']['internetbanking']) &&  $sslcz['gw']['internetbanking']!=""){
+		echo "<h3>INTERNET BANKING</h3>";
+		$sslcz_visa = explode(",", $sslcz['gw']['internetbanking']);
+		foreach($sslcz_visa as $gw_value) {
+			if($gw_value=='city') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."city'>CITYTOUCH</a><br />";
+			}
+				
+			if($gw_value=='bankasia') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."bankasia'>BANK ASIA</a><br />";
+			}
+
+			if($gw_value=='ibbl') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."ibbl'>IBBL</a><br />";
+			}
+				
+			if($gw_value=='mtbl') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."mtbl'>MTBL</a><br />";
+			}
+		}
+	} # END OF INTERNET BANKING
+
+	# MOBILE BANKING GATEWAY
+	if(isset($sslcz['gw']['mobilebanking']) &&  $sslcz['gw']['mobilebanking']!=""){
+		echo "<h3>MOBILE BANKING</h3>";
+		$sslcz_visa = explode(",", $sslcz['gw']['mobilebanking']);
+		foreach($sslcz_visa as $gw_value) {
+			if($gw_value=='dbblmobilebanking') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."dbblmobilebanking'>DBBL MOBILE BANKING</a><br />";
+			}
+				
+			if($gw_value=='bkash') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."bkash'>Bkash</a><br />";
+			}
+
+			if($gw_value=='abbank') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."abbank'>AB Direct</a><br />";
+			}
+				
+			if($gw_value=='ibbl') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."ibbl'>IBBL</a><br />";
+			}
+
+			if($gw_value=='mycash') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."mycash'>MYCASH</a><br />";
+			}
+				
+			if($gw_value=='ific') {
+				echo "<a href='".$sslcz['redirectGatewayURL']."ific'>IFIC</a><br />";
+			}
+		}
+	} # END OF MOBILE BANKING
+
+} else {
+
+	echo "Invalid Credential!";
+}
+
+
+?>
