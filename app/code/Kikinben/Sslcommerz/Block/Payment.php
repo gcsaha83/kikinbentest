@@ -42,7 +42,7 @@ class Payment extends \Magento\Backend\Block\Template
 		$marchent_id = $this->_helper->getConfigData('store_id');
 		$storePasswd = $this->_helper->getConfigData('validation_password');
 		$envType = $this->_helper->getConfigData('env');
-		$order_id = $this->_checkoutSession->getLastRealOrderId();
+		$order_id = $this->_checkoutSession->getLastRealOrderId(); 
 		$url = ($envType == 1) ? $serverType[2] : $serverType[1] ;
 		
 		$url_success = $this->_urlInterface->getUrl($this->getStoreUrl()."checkout/onepage/success",array('_secure'=>true));
@@ -51,7 +51,10 @@ class Payment extends \Magento\Backend\Block\Template
 		
 		
 		if (!empty($order_id)) {
-			$order = $this->_order->load ( $order_id );
+			//$order = $this->_order->load ( $order_id );
+			$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+			$order = $objectManager->create('\Magento\Sales\Api\Data\OrderInterface')->loadByIncrementId($order_id);
+
 			$items = $this->_cart->getQuote()->getAllVisibleItems();
 			$totalItems = $this->_cart->getQuote()->getItemsCount();
 			$totalQuantity = $this->_cart->getQuote()->getItemsQty();
@@ -77,7 +80,8 @@ class Payment extends \Magento\Backend\Block\Template
 		}
 		$fields = array(
 				'store_id' => $marchent_id,
-				'total_amount' => $this->_cart->getQuote()->getBaseGrandTotal(),
+				'store_passwd' =>$storePasswd,
+				'total_amount' => $order->getGrandTotal(),				
 				'currency' => $this->_storeManager->getStore()->getCurrentCurrencyCode(),
 				'tran_id' => $order_id,
 				'cus_name' => $order->getCustomerFirstname().' '.$order->getCustomerLastname(),
@@ -100,7 +104,7 @@ class Payment extends \Magento\Backend\Block\Template
 				'success_url' => $url_success,
 				'fail_url' => $url_fail,
 				'cancel_url' => $url_cancel,
-				'store_passwd' =>$storePasswd
+				
 		
 		);
 		//$security_key = $this->_helper->sslcommerz_hash_key($storePasswd,$fields);
