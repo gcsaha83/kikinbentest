@@ -2174,8 +2174,7 @@ height: 152px;
 	}
 
 	.block_sign_tit::after {
-	    width: 51%;
-	    margin-top: -4px;
+	    display:none;
 	}
 
 	.actions-toolbar::before, .actions-toolbar::after {
@@ -2250,7 +2249,7 @@ height: 152px;
 
 @media (max-width: 1199px) and (min-width: 991px){
 	.last_sticker_l img {
-		height: 46px;
+		height: 52px;
 	}
 }
 
@@ -2428,5 +2427,18 @@ height: 152px;
 
 	.redeem_cust_tit {
 	    font-size: 18px !important;
+	}
+}
+
+@media (max-width: 530px) {
+	.edit_customer_info_ki .address_book_field_l {
+		float: left;
+		padding: 0 12px;
+	}
+}
+
+@media (max-width: 639px) {
+	.product.info.detailed .product.data.items > .item.title .switch {
+		font-size:14px;
 	}
 }

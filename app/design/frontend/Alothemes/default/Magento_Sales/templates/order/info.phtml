@@ -15,14 +15,14 @@
     </div>
     <div class="block-content">
     <?php if (!$_order->getIsVirtual()): ?>
-        <div class="box box-order-shipping-address">
+        <div class="box box-order-shipping-address customer_info_account">
             <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Shipping Address') ?></span></strong>
             <div class="box-content">
                 <address><?php /* @escapeNotVerified */ echo $block->getFormattedAddress($_order->getShippingAddress()); ?></address>
             </div>
         </div>
 
-        <div class="box box-order-shipping-method">
+        <div class="box box-order-shipping-method customer_info_account">
             <strong class="box-title">
                 <span><?php /* @escapeNotVerified */ echo __('Shipping Method') ?></span>
             </strong>
@@ -36,7 +36,7 @@
         </div>
     <?php endif; ?>
 
-        <div class="box box-order-billing-address">
+        <div class="box box-order-billing-address customer_info_account">
             <strong class="box-title">
                 <span><?php /* @escapeNotVerified */ echo __('Billing Address') ?></span>
             </strong>
@@ -44,7 +44,7 @@
                 <address><?php /* @escapeNotVerified */ echo $block->getFormattedAddress($_order->getBillingAddress()); ?></address>
             </div>
         </div>
-        <div class="box box-order-billing-method">
+        <div class="box box-order-billing-method customer_info_account">
             <strong class="box-title">
                 <span><?php /* @escapeNotVerified */ echo __('Payment Method') ?></span>
             </strong>
