@@ -67,8 +67,6 @@ class Payment extends \Magento\Backend\Block\Template
 				$sku[]		 =$item->getSku();
 				$ids[]		 =$item->getProductId();
 				$qty[]		 =$item->getQtyToInvoice();
-		
-		
 			}
 			$productname = implode(',',$name);
 			$productunitPrice= implode(',',$unitPrice);
@@ -80,7 +78,6 @@ class Payment extends \Magento\Backend\Block\Template
 		$fields = array(
 				'store_id' => $marchent_id,
 				'total_amount' => $this->_cart->getQuote()->getBaseGrandTotal(),
-				'total_amount' => 200,
 				'currency' => $this->_storeManager->getStore()->getCurrentCurrencyCode(),
 				'tran_id' => $order_id,
 				'cus_name' => $order->getCustomerFirstname().' '.$order->getCustomerLastname(),

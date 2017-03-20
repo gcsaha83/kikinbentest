@@ -6,7 +6,12 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class Payment implements OptionSourceInterface
 {
-   
+
+    /**
+     * Get options
+     *
+     * @return array
+     */
     public function toOptionArray()
     {
         $options = [];
