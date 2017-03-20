@@ -9956,3 +9956,8 @@ margin: 0px !important;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 }
+
+.fotorama__arr {
+	width: 40px !important;
+}
+	
