@@ -8746,7 +8746,7 @@ height: 35px;
 }
 
 .top_nav_arrow::after {
-    content: "\2";
+    	content: "\2";
 	color: transparent;
 	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
@@ -9965,3 +9965,8 @@ margin: 0px !important;
 	background-color: transparent !important;
 	box-shadow: none !important;
 }
+
+.nav-toggle:before {
+	margin-top: 5px;
+}
+
