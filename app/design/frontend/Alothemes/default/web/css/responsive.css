@@ -2227,6 +2227,7 @@ height: 152px;
 	.item button.button .icon {
 	    font-size: 15px;
 	    line-height: 17px;
+	    margin-top: 4px;
 	}
 
 	.price-box > .price-container .price, .product-item .price-box .minimal-price .price {
@@ -2262,7 +2263,7 @@ height: 152px;
 
 @media (max-width: 1199px) and (min-width: 991px){
 	.last_sticker_l img {
-		height: 52px;
+		height: 53px;
 	}
 }
 
