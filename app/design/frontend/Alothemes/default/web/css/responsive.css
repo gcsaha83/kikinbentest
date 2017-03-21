@@ -158,8 +158,10 @@
 
 }
 	
-@media(max-width: 991px) {
-
+@media (max-width: 991px) {
+	.top-link-product, .minicart-wrapper {
+    		margin-right: 20px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -172,9 +174,7 @@
 	.place-menu-mobile{display: inline-block;padding: 0 0px 0 20px;}
 	.place-menu-mobile .nav-toggle{position: static;}
 	.menu-mobile .nav-toggle,.mean-container .mean-nav ul.nav-mobile { display: block !important;}
-	.top-link-product, .minicart-wrapper {
-    	margin-right: 45px;
-	}
+	
 	.header-bottom{padding: 5px 0;}
 	.nav-toggle { cursor: pointer;display: block !important;font-size: 0;left: auto; position: absolute;text-decoration: none;top: 0px;z-index: 14;right: 20px;}
 	.nav-toggle:before{content: ""; color: #333e49; font-family: "FontAwesome";font-size: 21px;}
@@ -417,7 +417,10 @@
 			padding: 40px 55px;
 		}
 	/*-------- Login Page Ends -----------*/
-
+	
+	.toolbar .sorter {
+		margin-top: 10px;
+	}
 }
 
 /* Iphone 5 landscape */
@@ -448,7 +451,7 @@
 	.place-menu-mobile .nav-toggle{position: static;}
 	.menu-mobile .nav-toggle,.mean-container .mean-nav ul.nav-mobile { display: block !important;}
 	.top-link-product, .minicart-wrapper {
-    	margin-right: 45px;
+    	
 	}
 	.nav-toggle { cursor: pointer;display: block !important;font-size: 0;left: auto; position: absolute;text-decoration: none;top: 0px;z-index: 14;right: 20px;}
 	.nav-toggle:before{content: ""; color: #333e49; font-family: "FontAwesome";font-size: 21px;}
@@ -882,12 +885,18 @@
 	/*------- Nav toggle -------*/
 
 	.top-link-product, .minicart-wrapper {
-	    margin-right: 40px;
+	    
 	}
 
 
 	.header-bottom{padding: 5px 0;}
 
+}
+
+@media only screen and (max-width: 588px) {
+	.toolbar .sorter {
+		margin-top: 10px;
+	}
 }
 
 /* width < 518px */
@@ -910,7 +919,7 @@
 	.filter-options .narrow-box .filter-options-content{border: 0; margin-bottom: 0}
 
 	/*toolbar*/
-	.toolbar .sorter{text-align: right; margin-right: 15px}
+	.toolbar .sorter{text-align: right; margin-right: 15px; margin-top: 10px;}
 	.toolbar-bottom .toolbar .limiter,.toolbar-bottom .toolbar-products .pages{display: block; float: none;}
 	.toolbar-bottom .toolbar .limiter{margin-bottom: 10px}
 
@@ -950,7 +959,7 @@
 	/*------- Nav toggle -------*/
 
 	.top-link-product, .minicart-wrapper {
-	    margin-right: 40px;
+	    
 	}
 
 
@@ -1020,7 +1029,7 @@
 	/*------- Nav toggle -------*/
 
 	.top-link-product, .minicart-wrapper {
-	    margin-right: 40px;
+	    
 	}
 
 
@@ -1117,7 +1126,7 @@
 	/*------- Nav toggle -------*/
 
 	.top-link-product, .minicart-wrapper {
-	    margin-right: 40px;
+	    
 	}
 
 
@@ -1206,7 +1215,7 @@
 	/*------- Nav toggle -------*/
 
 	.top-link-product, .minicart-wrapper {
-	    margin-right: 40px;
+	    
 	}
 
 
@@ -2218,6 +2227,7 @@ height: 152px;
 	.item button.button .icon {
 	    font-size: 15px;
 	    line-height: 17px;
+	    margin-top: 4px;
 	}
 
 	.price-box > .price-container .price, .product-item .price-box .minimal-price .price {
@@ -2226,6 +2236,10 @@ height: 152px;
 
 	.redeem_cust_page {
 	    width: 100% !important;
+	}
+	
+	.breadcrumbs ul {
+	    padding: 5px 0;
 	}
 }
 
@@ -2249,7 +2263,7 @@ height: 152px;
 
 @media (max-width: 1199px) and (min-width: 991px){
 	.last_sticker_l img {
-		height: 52px;
+		height: 53px;
 	}
 }
 
