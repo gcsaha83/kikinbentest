@@ -1,13 +1,24 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
             <sslcommerz>
-                <payment_action>authorize</payment_action><!-- You can use another methor like capture  -->
-                <model>Kikinben\Sslcommerz\Model\PaymentMethod</model>
-                <active>1</active>
-                <title>Sslcommerz Payment</title>
-                <order_status>pending_payment</order_status><!-- set default order status-->
+                <model>Kikinben\Sslcommerz\Model\Sslcommerz</model>
+                <debug>1</debug>
+                <active>0</active>
+                <order_status>payment_review</order_status>
+                <title>Sslcommerz</title>
+                <payment_action>authorize</payment_action>
+                <currency>EUR</currency>
+                <tipo_transaccion>0</tipo_transaccion>
+                <facturar>1</facturar>
+                <mantener_carrito>1</mantener_carrito>
             </sslcommerz>
         </payment>
     </default>

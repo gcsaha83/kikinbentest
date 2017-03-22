@@ -1,14 +1,50 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="payment">
-                <group id="testpayment" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Sslcommerz Payment</label>
-                    <field id="active" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
-                        <label>Enable</label>
-                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    </field>
-                </group>
+            <group id="sslcommerz" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sslcommerz</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                
+                <field id="env" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Environment</label>
+                    <source_model>Kikinben\Sslcommerz\Model\Config\Source\Environment</source_model>
+                </field>
+                <field id="store_id" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Store ID</label>
+                </field>
+                <field id="validation_password" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Validation Password</label>
+                </field>
+                <field id="tipopago" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Initial Order Status</label>
+                    <source_model>Kikinben\Sslcommerz\Model\Config\Source\Payment</source_model>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="180" showInDefault="9" showInWebsite="1" showInStore="0">
+                    <label>Payment From Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment From Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+            </group>
         </section>
     </system>
 </config>
