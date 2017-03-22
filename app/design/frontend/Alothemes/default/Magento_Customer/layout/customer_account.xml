@@ -11,6 +11,8 @@
        <!-- for css file -->
 	<css src="Ipragmatech_Registration::intlTelInput.css"/>
 	<css src="Ipragmatech_Registration::demo.css"/>
+	<css src="Magento_Customer::intlTelInput.css"/>
+	<css src="Magento_Customer::demo.css"/>
 	</head>
 	
 	<body>
