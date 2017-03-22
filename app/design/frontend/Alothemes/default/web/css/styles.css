@@ -3643,7 +3643,7 @@ font-size: 12px;
 
 .secondary span {
 	/*float: right;*/
-	color: #ffffff !important;
+	color: #ffffff;
 	line-height: 30px;
 }
 
