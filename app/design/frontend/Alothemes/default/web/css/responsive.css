@@ -2166,6 +2166,10 @@ height: 152px;
 	.cart.item .control, .box-tocart .control {
 	    border: 1px solid transparent;
 	}
+	
+	.details_qty_l .control {
+		border: 1px solid #dfdfdf;
+	}
 
 	.form-cart .actions .continue {
 	    margin-left: 3px;
@@ -2178,6 +2182,18 @@ height: 152px;
 	.block_sign_tit::after {
 	    width: 51%;
 	    margin-top: -4px;
+	}
+	
+        .review-add .review-form .review-field-ratings {
+	    width: 100%;
+	    float: left;
+	    margin-bottom: 30px;
+	}
+
+	.review-add .review-form .review-fieldset .review-field-nickname, .review-add .review-form .review-fieldset .review-field-summary, .review-add .review-form .review-fieldset .review-field-text {
+		width: 100%;
+	    float: left;
+	    padding: 4px 0;
 	}
 }
 
@@ -2466,6 +2482,10 @@ height: 152px;
 @media (max-width: 639px) {
 	.product.info.detailed .product.data.items > .item.title .switch {
 		font-size:14px;
+	}
+	
+	#product-attribute-specs-table th {
+	    display: none;
 	}
 }
 /*............ New CSS Code...........*/
