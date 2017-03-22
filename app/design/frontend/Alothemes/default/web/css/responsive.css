@@ -162,6 +162,10 @@
 	.top-link-product, .minicart-wrapper {
     		margin-right: 20px;
 	}
+	
+	.category-product-list .price-box > .price-container .price {
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -725,6 +729,10 @@
 
 		}
 	/*-------- Login Page Ends -----------*/
+	
+	.succes_check_cust_l {
+		width: 100%;
+	}
 
 }
 
@@ -2458,5 +2466,27 @@ height: 152px;
 @media (max-width: 639px) {
 	.product.info.detailed .product.data.items > .item.title .switch {
 		font-size:14px;
+	}
+}
+/*............ New CSS Code...........*/
+@media (max-width: 768px) {
+	.modal-popup.modal-slide._inner-scroll .modal-inner-wrap {
+	    min-height: 0% !important;
+	    margin: 0 auto !important;
+		width: 85% !important;
+		margin-top: 30px !important;
+		min-width: auto !important;
+	}
+
+	.modal-popup.modal-slide .modal-inner-wrap[class] {
+    	background-color: #ffffff !important;
+	}
+
+	.modal-popup.modal-slide {
+	    left: 0px !important;
+	}
+
+	.checkout_sign_in_s span {
+		margin-left: 0px !important;
 	}
 }
