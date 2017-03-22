@@ -68,10 +68,10 @@
             <?php foreach ($block->getFramePages() as $_page): ?>
                 <?php if ($block->isPageCurrent($_page)): ?>
                     <li class="item current">
-                        <span class="page">
+                        <a class="page">
                             <span class="label"><?php /* @escapeNotVerified */ echo __('You\'re currently reading page') ?></span>
                             <span class="number"><?php /* @escapeNotVerified */ echo $_page ?></span>
-                        </span>
+                        </a>
                     </li>
                 <?php else: ?>
                     <li class="item">
