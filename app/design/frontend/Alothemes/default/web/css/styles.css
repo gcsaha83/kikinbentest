@@ -1621,7 +1621,7 @@ font-size: 12px;
 .item .actions{padding-bottom: 7px; position: relative;}
 .item .actions .add-to-links{clear: both; border-top: 1px solid #eaeaea; padding-top: 10px; padding-bottom: 15px; left: 0px; right: 0px;visibility: hidden; opacity: 0; position: absolute; bottom: 0; transition: all 0.3s;}
 .item:hover .actions .add-to-links{visibility: visible; opacity: 1; bottom: -48px}
-.item button.button{padding: 0; border-width: 0; width: 35px; height: 35px;text-align: center;border-radius: 50%;-webkit-border-radius: 50%;-o-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;}
+.item button.button{padding: 0; border-width: 0; width: 35px; height: 35px;text-align: center;}
 .item button.button.disabled{background-color: #fed700}
 .item button.button .icon{font-size: 20px; color: #fff; display: block; line-height: 40px}
 .magiccategory-product .products-grid .item:hover .price-box > .price-container .price{color: #343f49}
@@ -1873,7 +1873,7 @@ font-size: 12px;
 .category-product-list .item button.button .icon{display: inline-block; line-height: 43px; vertical-align: middle;}
 .category-product-list .item button.button > span{display: inline-block;  line-height: 43px; text-transform: none; font-size: 14px; color: #ffffff; font-weight: bold;}
 
-.category-product-list .item button.button{width: 100%; height: auto; border-radius: 43px}
+.category-product-list .item button.button{width: 100%; height: auto;}
 .category-product-list .item button.button span span{text-indent: 0; display: inline-block; line-height: 43px; text-transform: none; font-size: 14px; color: #ffffff; font-weight: bold;}
 .content-products .actions .stock:before {content: "a";font-family: "untitled-font-6" !important;font-size: 20px; font-style: normal !important;font-variant: normal !important; font-weight: normal !important;line-height: 37px;text-transform: none !important;}
 .content-products .actions .stock:after {background-color: #df3737;content: "";display: block; height: 30px;position: absolute;right: 9px;top: 9px;transform: rotate(35deg);width: 2px;}
