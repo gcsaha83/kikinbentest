@@ -162,6 +162,10 @@
 	.top-link-product, .minicart-wrapper {
     		margin-right: 20px;
 	}
+	
+	.category-product-list .price-box > .price-container .price {
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
