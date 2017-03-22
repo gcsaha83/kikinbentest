@@ -2468,3 +2468,25 @@ height: 152px;
 		font-size:14px;
 	}
 }
+/*............ New CSS Code...........*/
+@media (max-width: 768px) {
+	.modal-popup.modal-slide._inner-scroll .modal-inner-wrap {
+	    min-height: 0% !important;
+	    margin: 0 auto !important;
+		width: 85% !important;
+		margin-top: 30px !important;
+		min-width: auto !important;
+	}
+
+	.modal-popup.modal-slide .modal-inner-wrap[class] {
+    	background-color: #ffffff !important;
+	}
+
+	.modal-popup.modal-slide {
+	    left: 0px !important;
+	}
+
+	.checkout_sign_in_s span {
+		margin-left: 0px !important;
+	}
+}
