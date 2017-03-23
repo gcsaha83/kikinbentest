@@ -2510,3 +2510,9 @@ height: 152px;
 		margin-left: 0px !important;
 	}
 }
+
+@media (max-width: 662px) {
+	.btn_cust_one_l {
+		margin-bottom: 7px !important;
+	}
+}
