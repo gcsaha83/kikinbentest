@@ -173,10 +173,10 @@ switch ($type = $block->getType()) {
     </div>
     <div class="block-content content" aria-labelledby="block-<?php /* @escapeNotVerified */ echo $class?>-heading">
         <?php if ($type == 'related' && $canItemsAddToCart): ?>
-        <div class="block-actions block-subtitle">
+<!--         <div class="block-actions block-subtitle">
             <?php /* @escapeNotVerified */ echo __('Check items to add to the cart or') ?>
             <button type="button" class="action select select_det_l_btn" role="select-all"><span><?php /* @escapeNotVerified */ echo __('select all') ?></span></button>
-        </div>
+        </div> -->
         <?php endif; ?>
         <div class="products wrapper grid products-grid products-<?php /* @escapeNotVerified */ echo $type; ?>">
             <?php
@@ -219,7 +219,7 @@ switch ($type = $block->getType()) {
                         </div>
                         <?php if (!$_item->isComposite() && $_item->isSaleable() && $type == 'related'): ?>
                             <?php if (!$_item->getRequiredOptions()): ?>
-                                <div class="field choice related">
+                                <div class="field choice related check_box_s_ki">
                                     <input type="checkbox" class="checkbox related" id="related-checkbox<?php /* @escapeNotVerified */ echo $_item->getId() ?>" name="related_products[]" value="<?php /* @escapeNotVerified */ echo $_item->getId() ?>" />
                                     <!--<label class="label" for="related-checkbox<?php /* @escapeNotVerified */ //echo $_item->getId() ?>"><span><?php /* @escapeNotVerified */ //echo __('Add to Cart') ?></span></label>-->
                                 </div>
