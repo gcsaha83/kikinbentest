@@ -10162,14 +10162,14 @@ margin-top: 0px;
 	border: none !important;
 	padding: 16px;
 	background: #e7e9ec;
-	color: #333;
+	color: #333 !important;
 	border-radius: 5px !important;
 	box-shadow: 0 2px #C6C6C6;
 }
 
 .btn_custom_sign button:hover,.btn_custom_sign button:visited, .btn_custom_sign button:focus {
 	background: #e7e9ec;
-	color: #fff;
+	color: #333 !important;
 	border: none !important;
 }
 
