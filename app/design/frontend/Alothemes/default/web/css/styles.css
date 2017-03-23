@@ -10129,7 +10129,97 @@ margin-top: 0px;
  transform: translateY(1px) !important;
 }
 
-
 .checkout_sign_in_s span {
 	font-weight: normal !important;
 }
+
+.check_box_s_ki {
+	display:none !important;
+}
+
+.prod_review_cust_l {
+	background: #fff !important;
+	border: 1px solid #ddd !important;
+	padding-top: 15px !important;
+	border-radius: 5px !important;
+}
+
+.review_inside_l {
+	border: none !important;
+	border-top: 1px solid #ddd !important;
+}
+
+.popup_modal-body .product-carosoul .owl-buttons {
+	top: 35% !important;
+}
+
+.btn_custom_sign {
+	width: 100%;
+}
+
+.btn_custom_sign button {
+	width: 100% !important;
+	border: none !important;
+	padding: 16px;
+	background: #e7e9ec;
+	color: #333;
+	border-radius: 5px !important;
+	box-shadow: 0 2px #C6C6C6;
+}
+
+.btn_custom_sign button:hover,.btn_custom_sign button:visited, .btn_custom_sign button:focus {
+	background: #e7e9ec;
+	color: #fff;
+	border: none !important;
+}
+
+.btn_custom_sign button:active {
+	background-color: #e7e9ec;
+	box-shadow: 0 1px #C6C6C6;
+	transform: translateY(1px);
+}
+.user_acc_nav_bar_ki {
+	background-color: #ffffff !important;
+	border: 1px solid #ececec !important;
+	border-radius: 5px !important;
+	padding: 0 15px !important;
+	padding-bottom: 15px !important;
+}
+
+.nav_title_ki_l {
+	margin-bottom: -18px;
+    margin-top: 11px !important;
+}
+
+.nav_title_ki_l strong {
+	margin: 0 auto;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.review_item_ki_l {
+	background: #fcfcfc !important;
+}
+
+.market_alo_nav_l {
+	margin-top: 0px !important;
+}
+
+.account_dashboard_cust_l .current strong {
+	position: relative;
+    	display: block;
+    	padding: 10px 15px;
+    	color: #f89a22;
+}
+
+.login_verify span {
+	font-weight: normal !important;
+}
+
+.popup_close {
+	top: 1px !important;
+    	right: 1px !important;
+    	border: 1px solid #fff !important;
+}
+
+

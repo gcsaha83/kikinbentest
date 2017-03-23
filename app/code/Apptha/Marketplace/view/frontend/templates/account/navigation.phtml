@@ -63,7 +63,7 @@ $reviewSellerId = $this->getRequest ()->getParam ( 'seller_id' );
 	<div class="title block-collapsible-nav-title">
 		<strong><?php echo __('MARKETPLACE'); ?></strong>
 	</div>
-	<div class="content block-collapsible-nav-content"
+	<div class="content block-collapsible-nav-content market_alo_nav_l"
 		id="block-collapsible-navigation">
 		<ul class="nav items">
 			<li class="nav item "><strong><?php echo __('MARKETPLACE'); ?></strong></li>
@@ -91,7 +91,7 @@ $reviewSellerId = $this->getRequest ()->getParam ( 'seller_id' );
         <?php }?>
         <li
 				class="nav item <?php if($currentUrl==$block->getUrl('marketplace/seller/profile')){?>current<?php }?>"><a
-				href="<?php echo $block->getUrl('marketplace/seller/profile') ?>"><?php echo __('My Store'); ?></a></li>
+				href="<?php echo $block->getUrl('marketplace/seller/profile') ?>"><?php echo __('Your Store'); ?></a></li>
 			<li
 				class="nav item <?php if($currentUrl==$block->getUrl('marketplace/order/manage')){?>current<?php }?>"><a
 				href="<?php echo $block->getUrl('marketplace/order/manage') ?>"><?php echo __('Order Management'); ?></a></li>
