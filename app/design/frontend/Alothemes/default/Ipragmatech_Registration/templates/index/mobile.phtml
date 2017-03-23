@@ -1,14 +1,5 @@
 <?php $formurl = $block->getUrl('registration/index/sendotp'); ?>
 
-<?php 
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // Instance of object manager
-$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
-$connection = $resource->getConnection();
-$tableName = $resource->getTableName('kikinben_country_flag');
-$sql = "Select * FROM " . $tableName;
-$result = $connection->fetchAll($sql);
-?>
-
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mob_log">
 
 <div class="create_account_float">
