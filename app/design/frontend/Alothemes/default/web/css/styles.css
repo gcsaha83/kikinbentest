@@ -10211,3 +10211,8 @@ margin-top: 0px;
     padding: 10px 15px;
     color: #f89a22;
 }
+
+.login_verify span {
+	font-weight: normal !important;
+}
+
