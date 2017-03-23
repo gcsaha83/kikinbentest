@@ -10149,3 +10149,32 @@ margin-top: 0px;
 	border-top: 1px solid #ddd !important;
 }
 
+.popup_modal-body .product-carosoul .owl-buttons {
+	top: 35% !important;
+}
+
+.btn_custom_sign {
+	width: 100%;
+}
+
+.btn_custom_sign button {
+	width: 100% !important;
+	border: none !important;
+	padding: 16px;
+	background: #e7e9ec;
+	color: #333;
+	border-radius: 5px !important;
+	box-shadow: 0 2px #C6C6C6;
+}
+
+.btn_custom_sign button:hover,.btn_custom_sign button:visited, .btn_custom_sign button:focus {
+	background: #e7e9ec;
+	color: #fff;
+	border: none !important;
+}
+
+.btn_custom_sign button:active {
+	background-color: #e7e9ec;
+	box-shadow: 0 1px #C6C6C6;
+	transform: translateY(1px);
+}
