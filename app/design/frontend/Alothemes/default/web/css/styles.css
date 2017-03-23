@@ -10207,12 +10207,19 @@ margin-top: 0px;
 
 .account_dashboard_cust_l .current strong {
 	position: relative;
-    display: block;
-    padding: 10px 15px;
-    color: #f89a22;
+    	display: block;
+    	padding: 10px 15px;
+    	color: #f89a22;
 }
 
 .login_verify span {
 	font-weight: normal !important;
 }
+
+.popup_close {
+	top: 1px !important;
+    	right: 1px !important;
+    	border: 1px solid #fff !important;
+}
+
 
