@@ -10178,3 +10178,36 @@ margin-top: 0px;
 	box-shadow: 0 1px #C6C6C6;
 	transform: translateY(1px);
 }
+.user_acc_nav_bar_ki {
+	background-color: #ffffff !important;
+	border: 1px solid #ececec !important;
+	border-radius: 5px !important;
+	padding: 0 15px !important;
+	padding-bottom: 15px !important;
+}
+
+.nav_title_ki_l {
+	margin-bottom: -18px;
+    margin-top: 11px !important;
+}
+
+.nav_title_ki_l strong {
+	margin: 0 auto;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.review_item_ki_l {
+	background: #fcfcfc !important;
+}
+
+.market_alo_nav_l {
+	margin-top: 0px !important;
+}
+
+.account_dashboard_cust_l .current strong {
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #f89a22;
+}
