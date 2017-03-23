@@ -3611,6 +3611,7 @@ font-size: 12px;
 
 .btn-custom2 .action span {
 	color: #333333 !important;
+	font-size: 15px !important;
 }
 
 .btn-custom2 a .action {
