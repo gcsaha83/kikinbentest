@@ -10129,7 +10129,11 @@ margin-top: 0px;
  transform: translateY(1px) !important;
 }
 
-
 .checkout_sign_in_s span {
 	font-weight: normal !important;
 }
+
+.check_box_s_ki {
+	display:none !important;
+}
+
