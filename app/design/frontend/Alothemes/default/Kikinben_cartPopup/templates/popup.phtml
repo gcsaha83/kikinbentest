@@ -40,7 +40,7 @@ function ahrefHidePopup(){
 			<div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 			  <div class="related_products">
 
-			     <div class="col-lg-1 check_custom">
+			     <div class="col-lg-1 check_custom check_cust_l_s">
                                         <i class="fa fa-check-circle"></i> 
                              </div>
 
@@ -52,10 +52,10 @@ function ahrefHidePopup(){
 				</h4>
 			    </div>
 
-			   <div>
+			   <div class="popcart_btn_cust_l">
 				<input type="button" class="popup-button btn_cust_one_l"  name="" value="View Shopping Cart" onclick="location.href='<?php echo $cartUrl;?>'">
 				<input type="button" class="popup-button" name="" value="Continue Shopping" onclick="hidePopup()" >
-			 </div>	
+			 </div>
 
 			 </div>
                             <?php if(!empty($productDetailsAll)):?>
