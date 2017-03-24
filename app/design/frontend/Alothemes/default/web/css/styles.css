@@ -10223,4 +10223,6 @@ margin-top: 0px;
     	border: 1px solid #fff !important;
 }
 
-
+.view_cart_dust_l .slick-arrow {
+	top: -50px !important;
+}
