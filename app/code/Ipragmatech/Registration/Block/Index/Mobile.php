@@ -13,4 +13,8 @@ class Mobile extends BaseBlock
     {
         return "Ipragmaech Block";
     }
+   public function getPostData()
+   {      
+       return $postData =  $this->getRequest()->getParams('mobile');
+   }
 }
