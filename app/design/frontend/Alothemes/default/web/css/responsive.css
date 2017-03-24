@@ -2516,3 +2516,45 @@ height: 152px;
 		margin-bottom: 7px !important;
 	}
 }
+
+/*------- cart popup responsiveness ---------*/
+@media (max-width: 767px) {
+  	.check_cust_l_s {
+		text-align: center !important;
+	}
+
+	.pop_titile {
+		text-align: center !important;
+	}
+
+	.pop_titile h4 {
+		text-align: center !important;
+		font-size: 12px !important;
+	}
+
+	.popcart_btn_cust_l {
+		text-align: center !important;
+	}
+
+	.pop_scroll_title h3 {
+	    font-size: 12px !important;
+	}
+
+	.checkout_page_cust_n .opc-estimated-wrapper .minicart-wrapper .counter .counter-number {
+	    font-size: 12px !important;
+	    line-height: 17px !important;
+  	}
+
+	.checkout_page_cust_n .opc-estimated-wrapper .minicart-wrapper .action .counter {
+	    left: 0 !important;
+	    bottom: 3px !important;
+	    height: 17px !important;
+	    width: 30px !important;
+	}
+}
+
+@media (max-width: 639px) {
+  	.checkout_page_cust_n .shipping-address-item button {
+  		width: 25% !important;
+  	}
+}
