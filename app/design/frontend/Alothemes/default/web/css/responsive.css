@@ -2329,16 +2329,16 @@ height: 152px;
 @media (min-width: 1677px) {
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: 45%;
-		margin-left: 12px;
+		left: -120%;
+    		margin-left: 12px;
 	}
 }
 
 @media (min-width: 1501px) and (max-width: 1676px) {
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: 49%;
-		margin-left: 13px;
+		left: -103%;
+		margin-left: 11px;
 	}
 }
 
@@ -2357,8 +2357,8 @@ height: 152px;
 
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: 49%;
-		margin-left: 4px;
+		left: -104%;
+		margin-left: 6px;
 	}
 }
 
@@ -2370,8 +2370,8 @@ height: 152px;
 
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: 50%;
-		margin-left: 2px;
+		left: -99%;
+		margin-left: 1px;
 	}
 }
 
@@ -2383,8 +2383,8 @@ height: 152px;
 
 	.veggie-flyout-cus-l {
 		margin-top: 40px;
-		left: 48%;
-		margin-left: 8px;
+		left: -108%;
+		margin-left: 10px;
 	}
 }
 
@@ -2396,8 +2396,8 @@ height: 152px;
 
 	.veggie-flyout-cus-l {
 		margin-top: 40px;
-		left: 47%;
-		margin-left: 3px;
+		left: -112%;
+		margin-left: 4px;
 	}
 }
 
@@ -2409,7 +2409,7 @@ height: 152px;
 
 	.veggie-flyout-cus-l {
 		margin-top: 40px;
-		left: 46%;
+		left: -116%;
 		margin-left: 9px;
 	}
 }
@@ -2443,6 +2443,12 @@ height: 152px;
 	.veggie-flyout-cus-l {
 		left: 27%;
 		width: 47%;
+	}
+}
+
+@media (max-width: 767px) {
+	.veggie-flyout-cus-l {
+		display: none !important;
 	}
 }
 
