@@ -40,23 +40,14 @@ $isLoggedIn = $customerSession->isLoggedIn();
     <div class="header">
 	    
 		<div class="header-top">
-			<div class="container">
+<!-- 			<div class="container">
 				<div class="row">
 					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 top-left mobile-center">
 						<?php echo $this->getChildHtml('cms-static-top-support'); ?>
 					</div>
-		<!-- 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 top-right mobile-center shield_top" style="/*! display: block; *//*! margin: 0 auto; */">
-				            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 protection_kk_img">
-				                <img class="img-responsive" src="<?php echo $block->getViewFileUrl('Magento_Catalog::images/shield.png')?>">
-				            </div>
-				            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 protection_kk_cont">
-				                <h1>100% Purchase Protection</h1>
-				                <p>Original Products | Easy Returns<br> Secure Payments</p>
-				            </div>
-					</div>-->
 
 				</div> 
-			</div>
+			</div> -->
 		</div>
 
 						<!-- <div class="btn-group language_toggle"> -->
@@ -143,8 +134,12 @@ $isLoggedIn = $customerSession->isLoggedIn();
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-						<div class="col-lg-9 col-md-9">
+						<div class="col-lg-2 col-md-2 custom_shop_by_l">
 							<?php echo $this->getChildHtml('navigation.sections'); ?>
+						</div>
+
+						<div class="col-lg-7 col-md-7 col-sm-8">
+							<?php echo $this->getChildHtml('cms-static-top-support'); ?>
 						</div>
 
 						<div class="righ-header-content col-lg-3 col-md-3 col-sm-12 col-xs-12 header_right_ki">
