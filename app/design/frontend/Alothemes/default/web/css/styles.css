@@ -10266,3 +10266,50 @@ margin-top: 0px;
 .create_account_float form {
     overflow: visible !important;
 }
+
+/*..............From BD Team....................*/
+.product-options-wrapper {
+    border-bottom: none !important;
+    padding-top: 5px !important;
+    padding-bottom: 30px;
+}
+
+.product-options-wrapper .fieldset {
+    background: #fcfcfc !important;
+}
+
+.product-options-wrapper .swatch-attribute span {
+    font-weight: bold !important;
+	color: #333 !important;
+}
+
+.details_qty_l {
+float: left !important;
+}
+
+.product_size_cust_l {
+padding-top: 0px !important;
+}
+
+.product_size_cust_l .options-list .field {
+	float: left !important;
+	padding: 0px 30px 0 0 !important;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+
+.product_size_cust_l .options-list .field input {
+float: left !important;
+   margin-top: 6px !important;
+}
+
+.product_size_cust_l .options-list .field label span {
+font-weight: normal !important;
+}
+
+.sidebar_shop_by_cust {
+	background: #fff !important;
+	padding: 20px !important;
+	border: 1px solid #ddd !important;
+	border-radius: 5px !important;
+}
