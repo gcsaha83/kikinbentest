@@ -2603,3 +2603,8 @@ height: 152px;
 	}
 }
 
+@media (max-width: 767px){
+	.tooltip_cust .tooltiptext {
+	    margin-left: -205px;
+	}
+}
