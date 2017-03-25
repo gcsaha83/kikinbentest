@@ -10231,3 +10231,21 @@ margin-top: 0px;
 	width: 100% !important;
 }
 
+/*CC image by contus*/
+.cc_icon{
+	background-image:url("../images/alothemes/cards.png");
+	background-repeat: no-repeat;	
+	width:75%;
+	float:left;
+	height: 40px;
+}
+.cc_cashon_delevery{
+	background-image:url("../images/alothemes/cod.png");
+	background-repeat: no-repeat;	
+	width:75%;
+	float:left;
+	height: 109px;
+}
+.checkout-payment-method .payment-method-title{
+	border-top:0px !important;
+}
