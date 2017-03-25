@@ -7407,7 +7407,7 @@ display: none !important;
 
 .tooltip_cust .tooltiptext {
 	visibility: hidden;
-	width: 140px;
+	width: 200px;
 	background-color: #daeefa;
 	color: #333;
 	text-align: left;
@@ -7415,6 +7415,7 @@ display: none !important;
 	padding: 10px;
 	position: absolute;
 	z-index: 1;
+	margin-top: -55px;
 }
 
 .tooltip_cust:hover .tooltiptext {
@@ -10231,6 +10232,7 @@ margin-top: 0px;
 	width: 100% !important;
 }
 
+
 /*CC image by contus*/
 .cc_icon{
 	background-image:url("../images/alothemes/cards.png");
@@ -10259,4 +10261,8 @@ margin-top: 0px;
 	height: 41px;
 	margin: 0 0 0 10px;
 	
+}
+
+.create_account_float form {
+    overflow: visible !important;
 }
