@@ -2,6 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
 	xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/
 Framework/View/Layout/etc/page_configuration.xsd">
+<head>
+		<css src="Kikinben_Sslcommerz::css/style.css" />
+        <css src="Kikinben_Sslcommerz::css/bootstrap.css" />
+
+</head>
 <body>
 	<referenceBlock name="accordion.sidebar" remove="true" />
 	<referenceBlock name="catalog.topnav" remove="true" />

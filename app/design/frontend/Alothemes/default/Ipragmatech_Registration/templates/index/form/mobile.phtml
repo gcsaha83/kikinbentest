@@ -1,3 +1,4 @@
+<?php $mobileNumber = $block->getPostData();?>
 <fieldset class="fieldset create account"
 	data-hasrequired="<?php echo __('* Required Fields') ?>">
 	<div class="field my_attribute required">
@@ -6,7 +7,7 @@
 			<input required="required"
 				data-validate="{required:true, 'validate-number':true}" type="text"
 				name="mobilenumber" id="mobilenumber"
-				value="<?php echo $mobileNumber;?>" disabled />
+				value="<?php echo $mobileNumber['mobile'];?>" disabled />
 		</div>
 	</div>
 </fieldset>

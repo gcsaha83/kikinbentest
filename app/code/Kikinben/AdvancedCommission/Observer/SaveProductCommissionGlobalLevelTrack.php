@@ -48,9 +48,9 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
         $items=array();
         $commission = array();
         
-        
 
         foreach ($orderData->getAllItems() as $item) {
+        //foreach ($orderData->getAllVisibleItems() as $item) {
             $productId[] = $item->getProductId ();
             $product = $this->_product->load($item->getProductId());
             $sellerIdGlobal[] = $product->getSellerId ();
@@ -80,12 +80,36 @@ class SaveProductCommissionGlobalLevelTrack implements ObserverInterface
             		'buyer_id'      => $orderData->getCustomerId(),
             		'product_id'    => $item->getProductId (),
             		'seller_index'  => $product->getSellerId (),
-            		'seller_email'  => $sellerEmail,
-            		
+            		'seller_email'  => $sellerEmail,            		
             
             ];
+            
+               if($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
+            
+            	$_configurableInstance = $product->getTypeInstance();
+            	$_children = $_configurableInstance->getUsedProducts($product);
+            	foreach($_children as $key=>$val){
+            		$configProduct[] = $product->getId();
+            		$simpleConfigProductId[] = $val->getId();
+            		$price[$val->getId()] = $val->getPrice();
+            		//echo '<pre>';
+            		//echo "config:".$val->getId()."Product is:".$product->getId();
+            		//echo '</pre>';
+            	}
+               }
+               else{
+               	$simpleProducts[] = $product->getId();
+               	//echo "simple:".$product->getId().'<br/>';
+               }
+           
 
         }
+        
+        echo '<pre>';
+        //print_r($commission);
+        echo '</pre>';
+        die;
+        
         $sellerProductCollection = $this->_SellerProductCommission->create()->getCollection();
         $sellerProducts = $sellerProductCollection->addFieldToFilter('product_id',['in'=>$productId])->getData();
         
