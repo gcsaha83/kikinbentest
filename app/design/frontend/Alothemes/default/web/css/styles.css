@@ -10313,3 +10313,15 @@ font-weight: normal !important;
 	border: 1px solid #ddd !important;
 	border-radius: 5px !important;
 }
+
+.checkout-payment-method .payment-method-title {
+	margin-bottom: 20px !important;
+}
+
+.git_payment_check_l .gift_icon {
+    width: 340px !important;
+}
+
+.git_payment_check_l .fieldset .giftvoucher #giftvoucher {
+	margin-left: 0px !important
+}
