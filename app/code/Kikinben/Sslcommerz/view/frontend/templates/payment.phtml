@@ -1,7 +1,7 @@
 <?php $sslcz = $block->getOrderDetails();?>
 
 <?php 
-
+/*
 if(isset($sslcz['status']) && $sslcz['status']=='SUCCESS') {
 	# VISA GATEWAY
 	if(isset($sslcz['gw']['visa']) &&  $sslcz['gw']['visa']!=""){
@@ -141,5 +141,417 @@ if(isset($sslcz['status']) && $sslcz['status']=='SUCCESS') {
 	echo "Invalid Credential!";
 }
 
-
+ */
 ?>
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>SSL</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+</head>
+	
+<body>
+
+	<div class="container">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_pay_sec_ssl">
+		
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details">
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_sec_cus">
+						<div class="card_sec_tit">
+							<h1>VISA</h1>
+						</div>
+					</div>
+
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/dbbl.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">DBBL VISA</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/city.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">CITY VISA</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/ebl.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">EBL VISA</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/visa.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">VISA</a></h3>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details">
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_sec_cus">
+						<div class="card_sec_tit">
+							<h1>MASTER</h1>
+						</div>
+					</div>
+
+
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/dbbl.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">DBBL MASTER</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/city.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">CITY VISA</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/ebl.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">EBL MASTER</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/mastercard.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">MASTER</a></h3>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details">
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_sec_cus">
+						<div class="card_sec_tit">
+							<h1>AMEX</h1>
+						</div>
+					</div>
+
+
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/amex.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">AMEX</a></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details">
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_sec_cus">
+						<div class="card_sec_tit">
+							<h1>OTHER CARDS</h1>
+						</div>
+					</div>
+
+
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/nexus.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">NEXUS</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/qcash.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">QCASH</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/fcash.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">FASTCASH</a></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details">
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_sec_cus">
+						<div class="card_sec_tit">
+							<h1>INTERNET BANKING</h1>
+						</div>
+					</div>
+
+
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/citytouch.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">CITY TOUCH</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/basia.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">BANK ASIA</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/ibbl.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">IBBL</a></h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/mtbl.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">MTBL</a></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details">
+				<div class="row">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_sec_cus">
+						<div class="card_sec_tit">
+							<h1>MOBILE BANKING</h1>
+						</div>
+					</div>
+
+
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/dbblmob.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">DBBL MB</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/bkash.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">bKASH</a></h3>
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<!--Image size: 707x194-->
+									<img class="img-responsive" src="images/abdirect.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">AB DIRECT</a></h3>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+							<div class="card_details_each">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+									<img class="img-responsive" src="images/mcash.png">
+								</div>
+								<div>
+									<input class="radio_check_l" type="radio" name="visa_kikinben">
+									<h3 class=""><a href="#">IBBL MCASH</a></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_cust_details_ssl">
+				<div class="row">
+
+					<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4  card_padd_right_zero">
+						<div class="">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 card_each_img">
+								<!--Image size: 707x194-->
+								<img class="img-responsive" src="images/ssl.png">
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+	
+	</div>
+</body>
+	
+</html>	

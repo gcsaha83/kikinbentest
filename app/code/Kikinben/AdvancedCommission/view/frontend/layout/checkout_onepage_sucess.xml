@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Success Page</title>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">            
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Thank you for your purchase!</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Kikinben\AdvancedCommission\Block\Onepage\Success" name="checkout.success" template="Kikinben_AdvancedCommission::success.phtml" cacheable="false"/>            
+        </referenceContainer>
+        <container name="order.success.additional.info" label="Order Success Additional Info"/>
+    </body>
+</page>

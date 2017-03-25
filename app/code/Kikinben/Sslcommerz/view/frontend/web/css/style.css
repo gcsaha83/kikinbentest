@@ -1,0 +1,87 @@
+.card_pay_sec_ssl {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.card_sec_cus {
+    padding: 0 20px;
+    padding-bottom: 5px;
+}
+
+.card_sec_tit {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.card_sec_tit h1 {
+    font-size: 17px;
+    color: #333;
+    font-weight: 600;
+}
+
+.radio_check_l {
+    float: left;
+    margin: 0 5px 0 5px !important;
+}
+
+.card_cust_details {
+    padding: 0;
+}
+
+.card_details_each {
+    margin-top: 20px;
+    padding: 5px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.card_each_img {
+    padding:0;
+    margin-bottom: 15px;
+}
+
+.card_details_each h3 {
+    font-size: 11px;
+    color: #333;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.card_details_each h3 a {
+    color: #333;
+}
+
+.card_details_each h3 a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.card_details_each ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.card_details_each ul li {
+    padding: 5px 13px;
+}
+
+.card_details_each ul li a {
+    color: #333;
+}
+
+.card_details_each ul li a:hover {
+    color: #f89a22;
+    text-decoration: none;
+}
+
+.card_padd_right_zero {
+    padding-right: 0px !important;
+}
+
+.card_cust_details_ssl {
+    margin-top: 40px;
+}
