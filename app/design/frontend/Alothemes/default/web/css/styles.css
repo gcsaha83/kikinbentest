@@ -10232,3 +10232,6 @@ margin-top: 0px;
 	width: 100% !important;
 }
 
+.create_account_float form {
+    overflow: visible !important;
+}
