@@ -35,7 +35,7 @@ class Payment extends \Magento\Backend\Block\Template
 	public function getOrderDetails(){						
 		$fields = array();
 		$serverType = array('1'=>'https://sandbox.sslcommerz.com/gwprocess/v3/api.php',
-				'2'=>'https://sandbox.sslcommerz.com/gwprocess/v3/api.php');
+				'2'=>'https://securepay.sslcommerz.com/gwprocess/v3/api.php');
 		
 		$fields_string = "";
 		
