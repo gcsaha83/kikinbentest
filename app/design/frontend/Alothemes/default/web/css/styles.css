@@ -5423,7 +5423,7 @@ font-size: 12px;
 	    line-height: normal;
 	    z-index: 99999;
 	    margin-top: 40px;
-	    left: 26%;
+/* 	    left: 26%; */
 	}
 
 	.nav-signin-cus-l .nav-arrow-cus-l {
@@ -8735,9 +8735,9 @@ height: 35px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 	z-index: 999999;
 	border-radius: 0 0 5px 5px;
-	left: 21.6%;
+	left: 0.6%;
 	height: 275px;
-	width: 82%;
+	width: 101%;
 }
 
 .top_nav_cust .dropdown_top_nav-content a {
@@ -10226,3 +10226,9 @@ margin-top: 0px;
 .view_cart_dust_l .slick-arrow {
 	top: -50px !important;
 }
+
+.custom_shop_by_l .vmagicmenu {
+	width: 100% !important;
+}
+
+
