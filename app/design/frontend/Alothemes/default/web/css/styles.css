@@ -7135,12 +7135,12 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 .fashion_blk {
   padding: 0;
-  padding-top: 15px;
+  padding-top: 0px;
 }
 
 .fashion_blk1 {
   padding: 0;
-  border-right: 1px solid #eee;/*
+  /*border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;*/
   padding: 10px;
 }
@@ -8494,7 +8494,7 @@ height: 35px;
 }
 
 .blk_cust_new_l {
-	margin-bottom: 15px !important;
+	margin-bottom: 0px !important;
 }
 
 .new_product_ki {
@@ -8789,8 +8789,8 @@ height: 35px;
 }
 
 .blk_img_size_l img {
-	width: 200px !important;
-	height: 200px !important;
+/* 	width: 200px !important;
+	height: 200px !important; */
 
 }
 
@@ -10230,5 +10230,4 @@ margin-top: 0px;
 .custom_shop_by_l .vmagicmenu {
 	width: 100% !important;
 }
-
 
