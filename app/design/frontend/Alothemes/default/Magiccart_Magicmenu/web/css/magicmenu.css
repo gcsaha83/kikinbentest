@@ -125,7 +125,7 @@
 .magicmenu .nav-desktop .level0 .level-top-mega .content-mega-horizontal .cat-mega{padding-bottom: 30px;}
 .magicmenu .nav-desktop .level0 .level-top-mega .mage-column.cat-mega{float:left;}
 .magicmenu .nav-desktop .level0 .level-top-mega .mage-column .children{float:left;text-align:left;padding: 0;width:220px;}
-.vmagicmenu .level-top-mega .mage-column.cat-mega{padding-left: 0;height:460px !important;}
+.vmagicmenu .level-top-mega .mage-column.cat-mega{padding-left: 0;height:418px !important;}
 .mage-column.mega-block-left,.banner-vertical{float:left;}
 .banner-vertical{width: 50%;padding: 15px 30px 30px;}
 .banner-vertical.vertical-left{padding-right: 15px;}
@@ -290,7 +290,7 @@
     left: 100%;
     opacity: 0;
     visibility: hidden;
-    height:460px !important;
+    height:419px !important;
 
 /* left: 100%; transition:all 300ms ease-in-out 0s;-moz-transition:all 300ms ease-in-out 0s;-webkit-transition:all 300ms ease-in-out 0s;-o-transition:all 300ms ease-in-out 0s; -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;transition: opacity 0.5s, transform 0.5s;-webkit-transition: all 0.45s ease-out 0s;-moz-transition: all 0.45s ease-out 0s;-o-transition: all 0.45s ease-out 0s;transition: all 0.45s ease-out 0s;-moz-transform: translate(100px, 0);-webkit-transform: translate(100px, 0);transform: translate(100px, 0); */
 }
@@ -330,7 +330,7 @@
 .vmagicmenu .level0 .level-top-mega .mega-block-bottom .menu-ul .title-menu span{font-size:14px;color:#888888}
 .vmagicmenu .level0 .level-top-mega .mega-block-bottom .menu-ul .custom-menu-bottom li a{color:#888888;text-decoration:none;padding:8px 10px;font-size:14px}
 .vmagicmenu .level0 .level-top-mega .mega-block-bottom .menu-ul .custom-menu-bottom li a:hover{background-color:#8ac28f;color:#ffffff}
-.vmagicmenu .level0 .level-top-mega .mage-column .children{float:left;width:220px;text-align:left;padding-left: 20px;}
+.vmagicmenu .level0 .level-top-mega .mage-column .children{float:left;width:250px;text-align:left;padding-left: 20px;}
 .vmagicmenu .level0 .level-top-mega .mage-column li,.magicmenu .nav-desktop .level0.dropdown li, .vmagicmenu .vmagicmenu-narrow .level0.dropdown li,.magicmenu .nav-desktop .level0 .level-top-mega li{margin: 0;}
 .vmagicmenu .level0 .level-top-mega .mage-column .children ul{list-style: outside none none;margin-bottom: 10px;}
 .cms-index-index .vmagicmenu .block-vmagicmenu-content{/*opacity: 1;visibility: visible;*/}
