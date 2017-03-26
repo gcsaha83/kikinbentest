@@ -1811,7 +1811,7 @@ font-size: 12px;
 .product-sidebar .magicproduct.magicproduct-custom .magictabs{margin-bottom: 30px;}
 .product-sidebar .magicproduct-custom .products-grid .item:hover .product-item-info{padding-bottom: 0; margin-bottom: 0; box-shadow: 0 0 0 transparent; }
 .product-sidebar .products-grid .item .images-container:after, .product-sidebar .products-grid .item.slick-slide.slick-active .images-container:after{display: none;}
-.product-sidebar{margin-top: 65px}
+/* .product-sidebar{margin-top: 65px} */
 .product-sidebar .magicproduct-custom .products-grid .item .product-item-info{padding: 0;}
 .product-sidebar .magicproduct-custom .products-grid .item.slick-active:last-child .product-item-info{border-bottom: 0}
 .product-sidebar .magicproduct-custom .products-grid .item{}
@@ -1962,7 +1962,7 @@ font-size: 12px;
 .product-info-main .price-box .special-price .price-container .price, .product-info-main .price-box .old-price .price-container .price{display: block; line-height: 35px}
 .product-info-main .price-box .special-price .price-container, .product-info-main .price-box .old-price .price-container{margin: 0}
 
-.product-info-main .product-add-form .box-tocart{margin-top: 15px}
+.product-info-main .product-add-form .box-tocart{margin-top: 25px}
 .product-info-main .product-add-form .box-tocart .fieldset .control{width: 106px !important;}
 .cart.item .control{width: 83px;}
 .cart.item .control,
@@ -10324,4 +10324,47 @@ font-weight: normal !important;
 
 .git_payment_check_l .fieldset .giftvoucher #giftvoucher {
 	margin-left: 0px !important
+}
+
+/*---------- Mens Fashion Block ------------*/
+.mens_fashion_tit_l {
+	padding-top: 15px;
+    	background: #252934;
+}
+
+.mens_blk_tit_l {
+	border-bottom: 1px solid #fff;
+	height: 43px;
+}
+
+.mens_blk_tit_bor h3 {
+	float: left;
+}
+
+.mens_blk_tit_l .mens_blk_tit_bor a {
+	font-size: 24px;
+	font-weight: normal;
+	color: #fff;
+}
+
+.mens_fashion_img_l {
+	background: #252934;
+    padding: 5px;
+}
+
+.mens_fash_img {
+	padding: 0;
+}
+
+.mens_fash_blk1 {
+	border-right: none;
+	padding: 10px;
+}
+
+.mens_blk1_img  {
+	padding: 0;
+}
+
+.mens_blk1_img  img {
+	margin: 0 auto;
 }
