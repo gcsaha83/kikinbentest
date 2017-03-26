@@ -10325,3 +10325,46 @@ font-weight: normal !important;
 .git_payment_check_l .fieldset .giftvoucher #giftvoucher {
 	margin-left: 0px !important
 }
+
+/*---------- Mens Fashion Block ------------*/
+.mens_fashion_tit_l {
+	padding-top: 15px;
+    	background: #252934;
+}
+
+.mens_blk_tit_l {
+	border-bottom: 1px solid #fff;
+	height: 43px;
+}
+
+.mens_blk_tit_bor h3 {
+	float: left;
+}
+
+.mens_blk_tit_l .mens_blk_tit_bor a {
+	font-size: 24px;
+	font-weight: normal;
+	color: #fff;
+}
+
+.mens_fashion_img_l {
+	background: #252934;
+    padding: 5px;
+}
+
+.mens_fash_img {
+	padding: 0;
+}
+
+.mens_fash_blk1 {
+	border-right: none;
+	padding: 10px;
+}
+
+.mens_blk1_img  {
+	padding: 0;
+}
+
+.mens_blk1_img  img {
+	margin: 0 auto;
+}
