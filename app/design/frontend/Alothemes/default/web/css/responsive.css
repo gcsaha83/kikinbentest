@@ -2326,19 +2326,27 @@ height: 152px;
 }
 
 
-@media (min-width: 1677px) {
+@media (min-width: 1700px) {
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: -120%;
-    		margin-left: 12px;
+		left: -110%;
+    		margin-left: 9px;
 	}
 }
 
-@media (min-width: 1501px) and (max-width: 1676px) {
+@media (min-width: 1600px) and (max-width: 1699px) {
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: -103%;
-		margin-left: 11px;
+		left: -94%;
+		margin-left: 9px;
+	}
+}
+
+@media (min-width: 1501px) and (max-width: 1599px) {
+	.veggie-flyout-cus-l {
+		margin-top: 42px;
+		left: -85%;
+		margin-left: 8px;
 	}
 }
 
@@ -2351,39 +2359,39 @@ height: 152px;
 
 @media (min-width: 1327px) and (max-width: 1500px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 6px 18px;
+	    padding: 6px 17px;
 	    font-size: 12px;
 	}
 
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: -104%;
+		left: -93%;
 		margin-left: 6px;
 	}
 }
 
 @media (min-width: 1234px) and (max-width: 1326px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 6px 15px;
+	    padding: 6px 13px;
 	    font-size: 12px;
 	}
 
 	.veggie-flyout-cus-l {
 		margin-top: 42px;
-		left: -99%;
-		margin-left: 1px;
+		left: -87%;
+		margin-left: 3px;
 	}
 }
 
 @media (min-width: 1141px) and (max-width: 1233px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
-	    padding: 6px 14px;
+	    padding: 6px 12px;
 	    font-size: 11px;
 	}
 
 	.veggie-flyout-cus-l {
 		margin-top: 40px;
-		left: -108%;
+		left: -96%;
 		margin-left: 10px;
 	}
 }
@@ -2391,20 +2399,20 @@ height: 152px;
 @media (min-width: 1059px) and (max-width: 1140px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
 	    padding: 6px 11px;
-	    font-size: 11px;
+	    font-size: 10px;
 	}
 
 	.veggie-flyout-cus-l {
 		margin-top: 40px;
-		left: -112%;
-		margin-left: 4px;
+		left: -99%;
+		margin-left: 5px;
 	}
 }
 
 @media (min-width: 992px) and (max-width: 1058px) {
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
 	    padding: 6px 9px;
-	    font-size: 11px;
+	    font-size: 10px;
 	}
 
 	.veggie-flyout-cus-l {
