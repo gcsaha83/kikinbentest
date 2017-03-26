@@ -1962,7 +1962,7 @@ font-size: 12px;
 .product-info-main .price-box .special-price .price-container .price, .product-info-main .price-box .old-price .price-container .price{display: block; line-height: 35px}
 .product-info-main .price-box .special-price .price-container, .product-info-main .price-box .old-price .price-container{margin: 0}
 
-.product-info-main .product-add-form .box-tocart{margin-top: 15px}
+.product-info-main .product-add-form .box-tocart{margin-top: 25px}
 .product-info-main .product-add-form .box-tocart .fieldset .control{width: 106px !important;}
 .cart.item .control{width: 83px;}
 .cart.item .control,
