@@ -202,7 +202,6 @@
 					<legend class="legend">
 						<span><?php /* @escapeNotVerified */ echo __('Sign-in Information') ?></span>
 					</legend>
-					<br>
 
 					<div class="field password required">
 						<label for="password" class="label"><span><?php /* @escapeNotVerified */ echo __('Password') ?></span></label>
@@ -240,16 +239,18 @@
 
 				</fieldset>
 				<div class="actions-toolbar">
-					<div class="primary btn-custom">
-						<button type="submit" class="action submit primary"
+					<div class="primary btn_custom_sign">
+						<button type="submit" class="action submit primary login_verify"
 							title="<?php /* @escapeNotVerified */ echo __('Create an Account') ?>">
 							<span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span>
 						</button>
 					</div>
-					<div class="secondary">
+					
+<!-- 					<div class="secondary">
 						<a class="action back"
 							href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('Back') ?></span></a>
-					</div>
+					</div> -->
+					
 				</div>
 			</form>
 		</div>
