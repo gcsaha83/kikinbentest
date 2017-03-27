@@ -57,6 +57,7 @@ pub/media
 
 .htaccess
 .htpasswd
+composer.lock
 app/autoload.php
 app/bootstrap.php
 index.php
