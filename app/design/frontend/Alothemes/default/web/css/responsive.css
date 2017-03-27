@@ -2433,9 +2433,9 @@ height: 152px;
 
 	.top_nav_cust ul li a, .top_nav_cust .dropbtn_top_nav {
 	    padding: 6px 10px;
-	    font-size: 11px;
+	    font-size: 10px;
 	}
-
+	
 	.veggie-flyout-cus-l {
 		margin-top: 40px;
 		left: 34%;
@@ -2443,7 +2443,7 @@ height: 152px;
 	}
 }
 
-@media (max-width: 871px) {
+@media (max-width: 886px) {
 	.top_nav_cust {
 	    display: none;
 	}

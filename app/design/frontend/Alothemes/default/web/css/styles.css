@@ -8737,7 +8737,7 @@ height: 35px;
 	z-index: 999999;
 	border-radius: 0 0 5px 5px;
 	left: 0.6%;
-	height: 275px;
+	height: 271px;
 	width: 101%;
 }
 
@@ -8770,7 +8770,10 @@ height: 35px;
 }
 
 .veggie_drop_cont {
-	padding: 15px;
+	margin: 23px 0;
+    	padding: 0 23px;
+    	height: 225px;
+    	border-right: 1px solid #ddd;
 }
 
 .veggie_drop_cont h1 {
@@ -9249,7 +9252,7 @@ height: 35px;
 
 .view_cart_ordered_l {
   	background: #fff;
-	padding: 20px;
+	padding: 20px !important;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 }
@@ -10269,9 +10272,9 @@ margin-top: 0px;
 
 /*..............From BD Team....................*/
 .product-options-wrapper {
-    border-bottom: none !important;
-    padding-top: 5px !important;
-    padding-bottom: 30px;
+/*     border-bottom: none !important; */
+    padding-top: 0px !important;
+    padding-bottom: 35px !important;
 }
 
 .product-options-wrapper .fieldset {
@@ -10294,7 +10297,7 @@ padding-top: 0px !important;
 .product_size_cust_l .options-list .field {
 	float: left !important;
 	padding: 0px 30px 0 0 !important;
-	border-bottom: 1px solid #ddd;
+/* 	border-bottom: 1px solid #ddd; */
 	margin-bottom: 15px;
 }
 
@@ -10368,3 +10371,22 @@ font-weight: normal !important;
 .mens_blk1_img  img {
 	margin: 0 auto;
 }
+
+.review_inside_l .review-form .review-field-ratings .label span {
+	font-size: 17px;
+    	font-weight: 600;
+}
+
+.linker_seller {
+	text-transform: uppercase;
+}
+
+.top_nav_cust .dropbtn_top_nav {
+    font-weight: 600;
+}
+
+.view_cart_ordered_l .block_title_l {
+	padding: 0px !important;
+}
+
+
