@@ -8,21 +8,40 @@
 
 ?>
 <?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+
+
+
 <div class="checkout-success succes_check_cust_l">
+	<div class="success_thankyou_l">
+		<h1>Thank You!</h1>
+	</div>
+
     <?php if ($block->getOrderId()):?>
         <?php if ($block->getCanViewOrder()) :?>
-            <p><?php echo __('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+            <p class="orderno_success_l"><?php echo __('Order Number # %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
         <?php  else :?>
-            <p><?php echo __('Your order # is: <span>%1</span>.', $block->escapeHtml($block->getOrderId())) ?></p>
+            <p class="orderno_success_l"><?php echo __('Your order # is: <span>%1</span>', $block->escapeHtml($block->getOrderId())) ?></p>
         <?php endif;?>
-            <p><?php /* @escapeNotVerified */ echo __('We\'ll email you an order confirmation with details and tracking info.') ?></p>
+            <p class="success_msg_l"><?php /* @escapeNotVerified */ echo __('We have received your order. If we need to confirm any information regarding your purchase, a Kikinben customer service representative will call you shortly. Otherwise, your order will be automatically confirmed.') ?></p>
     <?php endif;?>
 
     <?php echo $block->getAdditionalInfoHtml() ?>
 
-    <div class="actions-toolbar">
+    <div class="actions-toolbar sucess_continue_shop_l">
         <div class="primary btn_succ_l">
             <a class="action primary continue" href="<?php /* @escapeNotVerified */ echo $block->getUrl() ?>"><span><?php /* @escapeNotVerified */ echo __('Continue Shopping') ?></span></a>
         </div>
     </div>
+</div>
+
+<div class="success_what_next">
+	<h1>WHAT'S NEXT</h1>
+</div>
+<div class="container success_progress_sec">
+	<ul>
+            <li class="active">Order Placed</li>
+            <li>Processing</li>
+            <li>In-transit</li>
+            <li>In-delivery</li>
+        </ul>
 </div>
