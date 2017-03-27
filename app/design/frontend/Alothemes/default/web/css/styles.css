@@ -9144,7 +9144,9 @@ height: 35px;
 }
 
 .checkout_page_cust_n #giftvoucher_container .form-group #giftvoucher {
-  margin-top: 6px;
+  	margin-top: 6px;
+	float: left !important;
+	margin-left: 0px !important;
 }
 
 .view_cart_dust_l {
