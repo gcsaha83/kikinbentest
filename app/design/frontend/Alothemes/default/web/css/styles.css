@@ -8737,7 +8737,7 @@ height: 35px;
 	z-index: 999999;
 	border-radius: 0 0 5px 5px;
 	left: 0.6%;
-	height: 275px;
+	height: 271px;
 	width: 101%;
 }
 
@@ -8770,7 +8770,10 @@ height: 35px;
 }
 
 .veggie_drop_cont {
-	padding: 15px;
+	margin: 23px 0;
+    	padding: 0 23px;
+    	height: 225px;
+    	border-right: 1px solid #ddd;
 }
 
 .veggie_drop_cont h1 {
@@ -10376,6 +10379,10 @@ font-weight: normal !important;
 
 .linker_seller {
 	text-transform: uppercase;
+}
+
+.top_nav_cust .dropbtn_top_nav {
+    font-weight: 600;
 }
 
 
