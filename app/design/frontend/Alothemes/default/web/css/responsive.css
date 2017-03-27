@@ -2615,6 +2615,10 @@ height: 152px;
 	.tooltip_cust .tooltiptext {
 	    margin-left: -205px;
 	}
+	
+	.checkout_page_cust_n .fieldset .field-select-billing .control .select {
+		margin-bottom: 10px;
+	}
 }
 
 /*--------------BD Team --------------*/
