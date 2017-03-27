@@ -14,6 +14,15 @@
  * @var $block \Magento\Customer\Block\Address\Edit
  */
 ?>
+
+<?php
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+ $customerSession = $objectManager->get('Magento\Customer\Model\Session');
+ $customerId = $customerSession->getId();
+ $customerDetails = $objectManager->get('Magento\Customer\Model\Customer')->load($customerId);
+ $mobileValue = $customerDetails->getMobilenumber();
+?>
+
 <form class="form-address-edit edit_customer_info_ki" action="<?php /* @escapeNotVerified */ echo $block->getSaveUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
     <fieldset class="fieldset">
         <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Contact Information') ?></span></legend><br>
@@ -30,7 +39,10 @@
         <div class="field telephone required">
             <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __('Phone Number') ?></span></label>
             <div class="control">
-                <input type="text" name="telephone" value="<?php echo $block->escapeHtml($block->getAddress()->getTelephone()) ?>" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" class="input-text <?php /* @escapeNotVerified */ echo $this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('telephone') ?>" id="telephone">
+                <!--<input type="text" name="telephone" value="<?php echo $block->escapeHtml($block->getAddress()->getTelephone()) ?>" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" class="input-text <?php /* @escapeNotVerified */ echo $this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('telephone') ?>" id="telephone">-->
+
+    <input type="text" name="telephone" value="<?php echo $mobileValue; ?>" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" class="input-text <?php /* @escapeNotVerified */ echo $this->helper('Magento\Customer\Helper\Address')->getAttributeValidationClass('telephone') ?>" id="telephone" readonly="true">
+
             </div>
         </div>
         <div class="field fax">
