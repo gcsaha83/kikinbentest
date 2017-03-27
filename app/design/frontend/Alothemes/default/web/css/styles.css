@@ -9252,7 +9252,7 @@ height: 35px;
 
 .view_cart_ordered_l {
   	background: #fff;
-	padding: 20px;
+	padding: 20px !important;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 }
@@ -10383,6 +10383,10 @@ font-weight: normal !important;
 
 .top_nav_cust .dropbtn_top_nav {
     font-weight: 600;
+}
+
+.view_cart_ordered_l .block_title_l {
+	padding: 0px !important;
 }
 
 
