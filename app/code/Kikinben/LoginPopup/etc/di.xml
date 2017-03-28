@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Customer\Block\Account\AuthenticationPopup" type="Kikinben\LoginPopup\Block\Account\AuthenticationPopup" />
-
-  <preference for="Magento\Customer\Controller\Ajax\Login" type="Kikinben\LoginPopup\Block\Account\AuthenticationPopup" />
-</config>
