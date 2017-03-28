@@ -10347,7 +10347,7 @@ font-weight: normal !important;
 
 .mens_fashion_img_l {
 	background: #252934;
-    padding: 5px;
+    	padding: 5px 10px;
 }
 
 .mens_fash_img {
@@ -10356,7 +10356,7 @@ font-weight: normal !important;
 
 .mens_fash_blk1 {
 	border-right: none;
-	padding: 10px;
+	padding: 5px;
 }
 
 .mens_blk1_img  {
@@ -10365,6 +10365,20 @@ font-weight: normal !important;
 
 .mens_blk1_img  img {
 	margin: 0 auto;
+}
+
+.mens_fash_blk1:hover img {
+	-webkit-transform: scale(1.03);
+  	transform: scale(1.03);
+  	transition: -webkit-transform .5s ease-in-out;
+    	transition: transform .5s ease-in-out;
+    	transition: transform .5s ease-in-out,-webkit-transform .5s ease-in-out;
+}
+
+.mens_fash_blk1 img {
+  	transition: -webkit-transform .5s ease-in-out;
+    	transition: transform .5s ease-in-out;
+    	transition: transform .5s ease-in-out,-webkit-transform .5s ease-in-out;
 }
 
 .review_inside_l .review-form .review-field-ratings .label span {
