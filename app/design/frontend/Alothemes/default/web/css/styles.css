@@ -10602,3 +10602,9 @@ font-weight: normal !important;
 .help_btn {
     outline: none;
 }
+
+.#giftvoucher_container #payment_form_giftvoucher #giftvoucher_message {
+	margin-top: 30px;
+}
+
+
