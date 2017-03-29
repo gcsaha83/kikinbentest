@@ -9005,6 +9005,7 @@ height: 35px;
 	background: #fff;
 	border: 1px solid #ddd;
 	margin-top: 20px;
+	border-radius: 3px;
 }
 
 .checkout_page_cust_n .authentication-wrapper {
@@ -10052,7 +10053,7 @@ margin: 0px !important;
 .succes_check_cust_l {
 	margin-top: 30px !important;
 	margin: 0 auto;
-	width: 50%;
+	width: 70%;
 	margin-bottom: 35px;
 }
 
