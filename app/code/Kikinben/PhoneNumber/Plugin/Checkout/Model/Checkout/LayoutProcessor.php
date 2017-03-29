@@ -26,12 +26,11 @@ class LayoutProcessor
 		        'id' => 'telephone'
 		    ],
 		    'dataScope' => 'shippingAddress.telephone',
-		    'label' => 'Telephone Number',
+		    'label' => 'Phone Number',
 		    'provider' => 'checkoutProvider',
 		    'visible' => true,
             'validation' => [
                 'required-entry' => true,
-                'validate-phoneStrict'=>true
             ],
 		    'sortOrder' => 250,
 		    'id' => 'telephone'
