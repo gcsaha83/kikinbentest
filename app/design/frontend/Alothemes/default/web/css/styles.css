@@ -10514,3 +10514,91 @@ font-weight: normal !important;
 .checkout_next_btn_k_l {
 	width: 100px;
 }
+
+/*....... Privacy Notice........*/
+.privacy_kikinben {
+    margin-top: 20px;
+	background: #fff;
+	padding: 30px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.privacy_kikinben p {
+    text-align: justify !important;
+    color: #333 !important;
+}
+
+.privacy_kikinben h2 b {
+    font-size: 24px !important;
+    color: #333 !important;
+}
+
+.privacy_kikinben h3 b {
+    font-size: 24px !important;
+    color: #333 !important;
+}
+
+.privacy_kikinben ul li {
+    color: #333 !important;
+    text-align: justify;
+}
+
+.privacy_kikinben .update_last {
+    color: #888 !important;
+    border-bottom: 1px solid #ddd !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 5px !important;
+}
+
+
+
+.inform_help_blk {
+    border: 1px solid #eee !important;
+    padding: 20px !important;
+    width: 45% !important;
+}
+
+.help_btn {
+    outline: none !important;
+}
+
+.con_use_kikinben h2 b{
+    font-size: 24px;
+    color: #333;
+}
+
+.con_use_kikinben h3 b {
+    color: #333 !important;
+	text-align: justify;
+}
+
+.con_use_kikinben {
+    margin-top: 20px;
+	background: #fff;
+	padding: 30px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.con_use_kikinben p {
+    text-align: justify;
+    color: #333;
+}
+
+.con_use_kikinben .update_last {
+    color: #888;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.inform_help_blk {
+    border: 1px solid #eee;
+    padding: 20px;
+    width: 45%;
+}
+
+.help_btn {
+    outline: none;
+}
