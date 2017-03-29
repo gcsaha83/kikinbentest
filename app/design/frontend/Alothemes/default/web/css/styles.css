@@ -9046,7 +9046,7 @@ height: 35px;
 
 .checkout_page_cust_n .primary button:hover,.checkout_page_cust_n .primary button:visited, .checkout_page_cust_n .primary button:focus {
     background: #e7e9ec !important;
-    color: #fff !important;
+    color: #333 !important;
     border: none !important;
 }
 
@@ -9060,7 +9060,7 @@ height: 35px;
 .checkout_page_cust_n .primary .checkout  {
 	border: none !important;
 	background: #f89a22 !important;
-	color: #333 !important;
+	color: #fff !important;
 	border-radius: 5px !important;
 	box-shadow: 0 2px #E76C33 !important;
 	padding: 16px !important;
@@ -10245,7 +10245,7 @@ padding: 0px !important;
 	background-repeat: no-repeat;	
 	width: 145px;
 	float:left;
-	height: 41px;
+	height: 30px;
 	margin: 0 0 0 10px;
 }
 .checkout-payment-method .payment-method-title{
@@ -10512,7 +10512,7 @@ font-weight: normal !important;
 }
 
 .checkout_next_btn_k_l {
-	width: 100px;
+	width: 100px !important;
 }
 
 /*....... Privacy Notice........*/
