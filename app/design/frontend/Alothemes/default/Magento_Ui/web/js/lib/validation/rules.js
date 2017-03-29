@@ -860,8 +860,8 @@ define([
             $.mage.__('The date is not within the specified range.')
         ],
 	"mobiletendigit": [
-        function(value) {
-            return value.length > 9 &&  value.length < 11 && value.match(/^\d{10}$/);
+        function(value) {            
+  	    return  value.match(/^(\+91-|\+91|0)?\d{10}$/);	
         },
         $.mage.__('Please specify a valid 10 or 11 digits mobile number')
     ]
