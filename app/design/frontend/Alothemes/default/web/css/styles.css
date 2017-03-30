@@ -10632,3 +10632,7 @@ font-weight: normal !important;
  box-shadow: 0 1px #B9B9B9 !important;
  transform: translateY(1px) !important;
 }
+.succes_check_cust_l p span {
+	font-size: 20px;
+	font-weight: 600;
+}
