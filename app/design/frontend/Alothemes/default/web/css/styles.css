@@ -6716,7 +6716,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 }
 
 .news_reg_l {
-	margin-top: -10px;
+	margin-top: -10px !important;
 }
 
 
@@ -7360,7 +7360,7 @@ display: none !important;
 }
 
 .mob_form .block-title {
-	margin-bottom: 20px !important;
+	margin-bottom: 0px !important;
 }
 
 .logo_tm_l {
@@ -8748,9 +8748,10 @@ height: 35px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 	z-index: 999999;
 /* 	border-radius: 0 0 5px 5px; */
-	left: 0.6%;
-	height: 271px;
-	width: 101%;
+	left: 0;
+/* 	height: 271px; */
+	width: 102%;
+	padding: 0px !important;
 }
 
 .top_nav_cust .dropdown_top_nav-content a {
@@ -8784,7 +8785,7 @@ height: 35px;
 .veggie_drop_cont {
 	margin: 23px 0;
     	padding: 0 23px;
-    	height: 225px;
+/*     	height: 225px; */
     	border-right: 1px solid #ddd;
 }
 
@@ -10658,6 +10659,17 @@ font-weight: normal !important;
 
 .block_title_custom {
 	margin-bottom: 20px !important;
+}
+
+.out_of_stock_color {
+	color: #fc0202 !important;
+}
+
+.stock_text_l_l {
+	font-size: 13px !important;
+	color: #8f8e94 !important;
+	text-transform: capitalize !important;
+	font-weight: 600 !important;
 }
 
 
