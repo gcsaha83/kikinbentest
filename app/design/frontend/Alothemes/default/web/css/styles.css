@@ -3605,13 +3605,14 @@ font-size: 12px;
 	color: #333333 !important;
 	border-radius: 5px !important;
 	text-align: center;
-	line-height: 32px !important;/*
-	box-shadow: 0 1px 0 rgba(255,255,255,.6) inset !important;*/
+	line-height: 32px !important;
+	height: 30px !important;
+	/*box-shadow: 0 1px 0 rgba(255,255,255,.6) inset !important;*/
 }
 
 .btn-custom2 .action span {
 	color: #333333 !important;
-	font-size: 15px !important;
+	font-size: 13px !important;
 }
 
 .btn-custom2 a .action {
@@ -3789,7 +3790,8 @@ font-size: 12px;
 	width: 100% !important;
 	margin-top: 0px !important;
 	margin-bottom: 0 !important;
-	padding-bottom: 0 !important
+	padding-bottom: 0 !important;
+	padding-top: 20px !important;
 }
 
 .btn_cust button {
@@ -3797,7 +3799,9 @@ font-size: 12px;
 }
 
 .login-container {
-	margin-top: 35px !important;
+	margin-top: 0px !important;
+    	padding-top: 15px !important;
+    	margin-bottom: 0px !important;
 }
 
 
@@ -3807,9 +3811,9 @@ font-size: 12px;
 
 .form_cont {
 	border: 1px solid #ddd;
-	padding: 30px;
+	padding: 15px 30px;
 	border-radius: 5px;
-	width: 435px;
+	width: 390px;
 	margin: 0 auto;
 	background: #fff !important;
 	box-shadow: 0 0px 5px rgba(0,0,0,0.2) !important;
@@ -6711,10 +6715,13 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 /*------- Sign in page ---------*/
 .block_tit_sign {
-	margin-top: 75px;
+	margin-top: 60px;
 	text-align: center;
 }
 
+.block_sign_tit {
+	position: relative;
+}
 
 .block_sign_tit h5 {
     line-height: 1;
@@ -6729,20 +6736,20 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 .block_sign_tit::after {
     content: "";
-    width: 32%;
+    width: 100%;
     background-color: transparent;
     display: block;
     height: 1px;
     border-top: 1px solid #e7e7e7;
     position: absolute;
-    top: 71%;
+    top: 50%;
     margin-top: 0px;
     z-index: 1;
 }
 
 .sign_form_l {
-	margin-bottom: 40px !important;
-	margin-top: 25px !important;
+	margin-bottom: 30px !important;
+	margin-top: 15px !important;
 }
 
 /*------ Password assistance --------*/
@@ -6763,7 +6770,8 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 }
 
 .pass_forg_marg {
-	margin-top: 25px;
+	margin-bottom: 30px !important;
+    	margin-top: 15px !important;
 }
 =======
 .cat_details {
@@ -7336,12 +7344,6 @@ display: none !important;
 
 
 /*.................New Logo Css...........*/
-.logo_tm_l{
-	
-	/*width: 175px;
-	height: 41px;*/
-	
-}
 
 /*.........New Css Added for style change..........*/
 
@@ -7351,8 +7353,8 @@ display: none !important;
 	margin: 0 auto;
 }
 
-.logo_tm_l{
-	width: 195px;
+.logo_tm_l {
+	width: 150px;
 	margin: 0 auto;
 }
 
@@ -7391,8 +7393,9 @@ display: none !important;
 	color: #0066c0;
 }
 
-.copyright_blk_new {
+.copyright_blk_new p {
 	font-size: 11px;
+    	color: #555;
 }
 
 .tooltip_cust {
@@ -10161,7 +10164,7 @@ padding: 0px !important;
 .btn_custom_sign button {
 	width: 100% !important;
 	border: none !important;
-	padding: 16px;
+	padding: 15px 16px;
 	background: #e7e9ec;
 	color: #333 !important;
 	border-radius: 5px !important;
@@ -10215,6 +10218,7 @@ padding: 0px !important;
 
 .login_verify span {
 	font-weight: normal !important;
+	font-size: 13px !important;
 }
 
 .popup_close {
@@ -10636,3 +10640,8 @@ font-weight: normal !important;
 	font-size: 20px;
 	font-weight: 600;
 }
+
+.sign_form_l block-title {
+	margin-bottom: 20px;
+}
+
