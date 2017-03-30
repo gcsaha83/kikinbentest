@@ -350,7 +350,7 @@ margin-top: -34px;
 	padding: 0;
     text-align: justify;
 }
-.form-create-account .create .field{margin-bottom: 15px}
+.form-create-account .create .field{margin-bottom: 10px}
 .action.edit span, .action.back span, .action.remind span, .login-container .fieldset::after {color: #f89a22;}
 .action.edit span:hover, .action.back span:hover, .action.remind span:hover {text-decoration: underline;}
 .block-new-customer .primary a.action{
@@ -3593,6 +3593,7 @@ font-size: 12px;
 .btn-custom2 {
 	width: 100% !important;
 	padding: 0 !important;
+	margin-top: -10px !important;
 }
 
 .btn-custom2 a {
@@ -3824,8 +3825,12 @@ font-size: 12px;
 	text-align: center;
 }
 
+.block_new_tit {
+	position: relative;
+}
+
 .block_new_tit h5 {
-    line-height: 1;
+    	line-height: 1;
 	color: #767676;
 	font-weight: 400 !important;
 	z-index: 2;
@@ -3843,7 +3848,7 @@ font-size: 12px;
     height: 1px;
     border-top: 1px solid #e7e7e7;
     position: absolute;
-    top: 74%;
+    top: 50%;
     margin-top: 0px;
     z-index: 1;
 }
@@ -3862,23 +3867,25 @@ font-size: 12px;
 
 
 .mob_log {
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 .mob_form form {
 	width: 100% !important;
 	border: 1px solid #ddd;
 	border-radius: 5px;
-	margin-bottom: 40px;
-	padding: 30px !important;
+	margin-bottom: 30px;
+	padding: 15px 30px !important;
 	display: block;
-	margin-top: 35px;
+	margin-top: 15px;
 	background: #fff !important;
 	box-shadow: 0 0px 5px rgba(0,0,0,0.2) !important;
 }
 
 .pass_form form {
-	padding: 30px !important;
+	padding: 15px 30px !important;
+    	margin-top: 15px !important;
+    	margin-bottom: 20px !important;
 }
 
 .create_account_float {
@@ -6709,7 +6716,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 }
 
 .news_reg_l {
-
+	margin-top: -10px;
 }
 
 
@@ -7347,10 +7354,13 @@ display: none !important;
 
 /*.........New Css Added for style change..........*/
 
-.mob_form{
-
-	width: 435px;
+.mob_form {
+	width: 390px;
 	margin: 0 auto;
+}
+
+.mob_form .block-title {
+	margin-bottom: 20px !important;
 }
 
 .logo_tm_l {
@@ -7368,7 +7378,6 @@ display: none !important;
 }
 
 .signIn_footer{
-
 	margin-top: 10px;
 	border-top: 1px solid #eee;
 	text-align: center;
@@ -8738,7 +8747,7 @@ height: 35px;
 	background: #ffffff;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 	z-index: 999999;
-	border-radius: 0 0 5px 5px;
+/* 	border-radius: 0 0 5px 5px; */
 	left: 0.6%;
 	height: 271px;
 	width: 101%;
@@ -10267,7 +10276,9 @@ padding: 0px !important;
 }
 
 .create_account_float form {
-    overflow: visible !important;
+    	overflow: visible !important;
+	margin-top: 15px !important;
+    	margin-bottom: 30px !important;
 }
 
 /*..............From BD Team....................*/
@@ -10644,4 +10655,9 @@ font-weight: normal !important;
 .sign_form_l block-title {
 	margin-bottom: 20px;
 }
+
+.block_title_custom {
+	margin-bottom: 20px !important;
+}
+
 
