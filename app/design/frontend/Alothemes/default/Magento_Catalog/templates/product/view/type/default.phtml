@@ -13,15 +13,15 @@
 <?php if ($block->displayProductStockStatus()): ?>
     <?php if ($_product->isAvailable()): ?>
         <div class="stock available" title="<?php echo __('Availability') ?>">
-            <label>Availability: </label><span><?php echo __('In stock') ?></span>
+            <label class="stock_text_l_l">Stock: </label><span><?php echo __('In stock') ?></span>
         </div>
     <?php else: ?>
         <div class="stock unavailable" title="<?php  echo __('Availability') ?>">
-            <label>Availability: </label><span><?php  echo __('Out of stock') ?></span>
+            <label class="stock_text_l_l">Stock: </label><span><?php  echo __('Out of stock') ?></span>
         </div>
     <?php endif; ?>
 <?php endif; ?>
 
 <div class="custom_sku_ki">
-<h2 style="margin-top: 4px; color: #777;">Product Code: <?php echo nl2br($_product->getSku()) ?></h2>
+<h2 style="margin-top: 4px; color: #777; text-transform: capitalize;">Item Code: <?php echo nl2br($_product->getSku()) ?></h2>
 </div>
