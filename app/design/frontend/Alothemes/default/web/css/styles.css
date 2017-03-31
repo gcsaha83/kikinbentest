@@ -3821,7 +3821,7 @@ font-size: 12px;
 }
 
 .block_tit {
-	margin-top: 100px;
+	margin-top: 80px;
 	text-align: center;
 }
 
@@ -7360,7 +7360,7 @@ display: none !important;
 }
 
 .mob_form .block-title {
-	margin-bottom: 0px !important;
+	margin-bottom: 15px !important;
 }
 
 .logo_tm_l {
@@ -10654,7 +10654,7 @@ font-weight: normal !important;
 }
 
 .sign_form_l block-title {
-	margin-bottom: 20px;
+	margin-bottom: 20px !important;
 }
 
 .block_title_custom {
