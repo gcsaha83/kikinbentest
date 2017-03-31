@@ -10672,4 +10672,13 @@ font-weight: normal !important;
 	font-weight: 600 !important;
 }
 
+.check_guest_cust_l {
+	text-align: center !important;
+	border: 1px solid #ddd !important;
+	padding: 28px !important;
+}
 
+.order_track_msg_l {
+	font-size: 16px !important;
+	color: #8c8c8c !important;
+}
