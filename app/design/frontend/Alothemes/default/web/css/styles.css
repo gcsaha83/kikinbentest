@@ -7439,13 +7439,19 @@ display: none !important;
 	
 }
 
+.faq_section_l {
+	background: #fff;
+	padding: 20px 30px;
+	border: 1px solid #ddd;
+	margin-top: 30px;
+	border-radius: 3px;
+}
 
 .faq_kikinben {
-    margin-top: 50px;
     color: #333;
 }
 
-.faq_kikinben h3 {
+.faq_kikinben h3 b {
     font-size: 24px;
     color: #333;
 }
