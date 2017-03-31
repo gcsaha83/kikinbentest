@@ -180,7 +180,7 @@ class Success extends \Magento\Framework\View\Element\Template
                 $associated_products[] = $this->_configurable->getUsedProductCollection($product)->addAttributeToSelect('*')->addFilterByRequiredOptions()->getData();
                 
                 
-			}//config products ends
+	    }//config products ends
             else if($product->getTypeId() === 'simple'){
             	
                 $simple_products[] = $product_id;
@@ -191,17 +191,30 @@ class Success extends \Magento\Framework\View\Element\Template
         if(!empty($associated_products)){
         	$associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId);
         }
-        foreach($associated_products as $key){
-        	$simpleFromConfig[] = $this->_commissioncalculation->getSimpleFromAssociated($key);
-        	
+        if(!empty($associatedcalculations)){
+        
+            foreach($associatedcalculations as $k => $v){   
+                $configProducts[] = $v['commission']['parent'];
+                $configProducts[] = $v['commission']['child'];
+               
+           
+            
+            }            
         }
+        $otherProducts = array_diff($allProductId,$configProducts);
+
+        
         
                 echo '<pre>';
                 //print_r($commission);
                 //print_r($simpleProductId);
-                //print_r($allProductId);
-                
-                print_r($simpleFromConfig);
+                print_r($allProductId);
+                echo "==";
+                print_r($associatedcalculations);
+                echo "==";
+                print_r($configProducts);
+                echo "==";
+                print_r($otherProducts);
                 
                 echo '</pre>';
 	 //return $items;

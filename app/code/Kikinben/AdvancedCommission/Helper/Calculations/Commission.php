@@ -77,8 +77,8 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 					$productPrice  =  $productOptions->getPrice();
 					$commissionAmount = $sellerProducts[$i]['amount'];
 					$commissionType   = $sellerProducts[$i]['percentage'];
-					$commission[$productIdRecord]['seller_id'] = $sellerId;
-					$commission[$productIdRecord]['commission_amount'] = $commissionAmount;
+					//$commission[$productIdRecord]['seller_id'] = $sellerId;
+					//$commission[$productIdRecord]['commission_amount'] = $commissionAmount;
 					$commissionTypeString = ($commissionType == 2) ? 'Percentage' : 'Fixed' ;
 		
 					if($commissionType == 2){ // if percentage
@@ -94,6 +94,8 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 								'commission_value'	  => $commissionAmount,
 								'product_price' => $productOptions->getPrice(),
 								'seller_index'  => $productOptions->getSellerId (),
+                                                                'parent' =>$parentId,
+                                                                'child'=>$resultConfigVal
 		
 						];
 		
@@ -111,6 +113,8 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 								'commission_value'	  => $commissionAmount,
 								'product_price' => $productOptions->getPrice(),
 								'seller_index'  => $productOptions->getSellerId (),
+                                                                'parent' =>$parentId,
+                                                                'child'=>$resultConfigVal
 		
 						];
 		
@@ -127,12 +131,13 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 		
 		
 		}
+                return $commission;
 		
 	}
 	public function getSimpleFromAssociated($configProductId){
 		
 		$parentByChild = $this->_configurable->getParentIdsByChild($configProductId);
-		$associatedProducts[] = $configProductId;
+		
 		
 		if(isset($parentByChild[0])){
 			$parentId = $parentByChild[0];
