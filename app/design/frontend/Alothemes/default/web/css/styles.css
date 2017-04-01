@@ -10586,14 +10586,15 @@ font-weight: normal !important;
     outline: none !important;
 }
 
-.con_use_kikinben h2 b{
+.con_use_kikinben h2 b {
     font-size: 24px;
     color: #333;
 }
 
 .con_use_kikinben h3 b {
-    color: #333 !important;
+    	color: #333 !important;
 	text-align: justify;
+	font-size: 18px !important;
 }
 
 .con_use_kikinben {
