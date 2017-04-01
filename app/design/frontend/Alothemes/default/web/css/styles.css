@@ -10688,3 +10688,34 @@ font-weight: normal !important;
 	font-size: 16px !important;
 	color: #8c8c8c !important;
 }
+
+/*---------- Returns and Replacements Page Start ----------------*/
+.returns_page_l {
+    background: #fff;
+    padding: 0px 20px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.returns_policy_l {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.returns_policy_l p {
+    text-align: justify;
+}
+
+.returns_sec_l {
+    padding: 10px 0;
+}
+
+.returns_tit_l {
+    margin: 7px 0 !important;
+}
+
+.returns_cont_l {
+    
+}
+
+
