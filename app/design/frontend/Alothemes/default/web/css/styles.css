@@ -10719,4 +10719,115 @@ font-weight: normal !important;
     
 }
 
+/*............Today 31 March.............*/
 
+.check_guest_cust_l {
+	text-align: center !important;
+	border: 1px solid #ddd !important;
+	padding: 28px !important;
+}
+
+.order_track_msg_l {
+	font-size: 16px !important;
+	color: #8c8c8c !important;
+}
+
+.cust_check_out_text_l {
+	padding: 0px !important;
+	width: 750px;
+	margin-top: 10px !important;
+	float: left;
+	text-align: justify;
+	margin-bottom: 30px;
+}
+
+.cust_check_out_l {
+	padding: 0;
+}
+
+.checkout_amount_l {
+	text-align: left !important;
+	float: left;
+	padding: 0;
+}
+
+.checkout_sign_cond {
+	border-top: 1px solid #ddd !important;
+	margin-top: 15px !important;
+}
+
+.check_out_total_value {
+	padding: 10px 15px !important;
+	border: 1px solid #ddd !important;
+	margin-bottom: 15px !important;
+	/*margin-left: 214px !important;
+	margin-right: 214px !important;*/
+	background: #ffffff !important;
+	border-radius: 3px !important;
+	margin-top: 0px;
+}
+
+.check_out_total_value h2 a {
+	color: #1979c3 !important;
+}
+
+.text_value_size {
+	font-size: 20px !important;
+	color: #f89a22 !important;
+}
+
+/*-------- checkout new design ----------*/
+.checkout_page_cust_n .opc {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 3px;
+	background: #fff;
+}
+
+.checkout_page_cust_n .opc-progress-bar {
+    border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 3px;
+	margin-bottom: 0 !important;
+	background: #fff;
+}
+
+.checkout_page_cust_n .modal-inner-wrap {
+	border: 1px solid #ddd;
+	background: #fff;
+	border-radius: 3px;
+}
+
+.checkout_page_cust_n #opc-sidebar .opc-block-summary {
+    background: #fff !important;
+}
+
+.checkout_page_cust_n .checkout-container {
+    margin-bottom: 0 !important;
+}
+
+.checkout_page_cust_n .minicart-items {
+    display: block !important;
+}
+
+.checkout_page_cust_n .checkout_cust_logo {
+	padding: 10px !important;
+}
+
+.checkout_page_cust_n .opc-wrapper {
+	padding-right: 20px !important;
+}
+
+.checkout_page_cust_n .continue {
+	width: 150px !important;
+}
+
+.checkout_page_cust_n #checkout .opc-sidebar {
+	margin-bottom: 30px !important;
+}
+
+.checkout_footer_new_l {
+	width: 760px;
+	overflow: auto;
+	margin-top: -360px;
+}
