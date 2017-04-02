@@ -166,6 +166,7 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach($orderData->getItems() as $allItems){
 
             $allProductId[] = $allItems->getProductId(); 
+            $oderObject = $allItems;
 
 
         }
@@ -173,7 +174,8 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach ($orderData->getAllVisibleItems() as $item) {
 
             $product_id = $item->getProductId();
-			$product = $this->_product->load($item->getProductId());
+	    $product = $this->_product->load($item->getProductId());
+            $sellerIdGlobal[] = $product->getSellerId ();
             
 			
             if($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
@@ -189,32 +191,39 @@ class Success extends \Magento\Framework\View\Element\Template
 						
         }
         if(!empty($associated_products)){
-        	$associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId);
-        }
-        if(!empty($associatedcalculations)){
-        
+            $associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId);                        
             foreach($associatedcalculations as $k => $v){   
                 $configProducts[] = $v['commission']['parent'];
-                $configProducts[] = $v['commission']['child'];
-               
-           
-            
-            }            
+                $configProducts[] = $v['commission']['child'];                      
+            }
+            $otherProducts = array_diff($allProductId,$configProducts);
+            foreach($otherProducts as $ortherVal){
+                $simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherVal);
+          }
         }
-        $otherProducts = array_diff($allProductId,$configProducts);
-
         
+        
+        
+        
+
+       // $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
+        foreach($allProductId as $productIds){
+            $categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
+        }
         
                 echo '<pre>';
+                
+                print_r($categoryComm);
+                
                 //print_r($commission);
                 //print_r($simpleProductId);
-                print_r($allProductId);
-                echo "==";
-                print_r($associatedcalculations);
-                echo "==";
-                print_r($configProducts);
-                echo "==";
-                print_r($otherProducts);
+                //print_r($allProductId);
+                //echo "==";
+               // print_r($associatedcalculations);
+                //echo "==";
+              //  print_r($configProducts);
+               // echo "==";
+              //  print_r($otherProducts);
                 
                 echo '</pre>';
 	 //return $items;
