@@ -10831,6 +10831,25 @@ font-weight: normal !important;
 	overflow: auto;
 	margin-top: -360px;
 }
+
+
+.opc-progress-bar-item._active > span::after {
+    content: '\e611' !important;
+    font-family: 'icons-blank-theme' !important;
+    line-height: 1 !important;
+    font-size: 2.8rem !important;
+    font-weight: 500 !important;
+}
+
+.opc-progress-bar-item > span::before {
+    font-family: 'icons-blank-theme' !important;
+    line-height: 1 !important;
+    font-size: 2.8rem !important;
+    font-weight: 500 !important;
+}
+/*----------- END New css code for Progress bar-------------*/
+
+/*-----------New css code for Career page-------------*/
 .career_banner_l {
     padding: 0;
     margin: 0;
