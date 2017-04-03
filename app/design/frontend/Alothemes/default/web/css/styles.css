@@ -3821,7 +3821,7 @@ font-size: 12px;
 }
 
 .block_tit {
-	margin-top: 100px;
+	margin-top: 80px;
 	text-align: center;
 }
 
@@ -7360,7 +7360,7 @@ display: none !important;
 }
 
 .mob_form .block-title {
-	margin-bottom: 0px !important;
+	margin-bottom: 15px !important;
 }
 
 .logo_tm_l {
@@ -7439,13 +7439,19 @@ display: none !important;
 	
 }
 
+.faq_section_l {
+	background: #fff;
+	padding: 20px 30px;
+	border: 1px solid #ddd;
+	margin-top: 30px;
+	border-radius: 3px;
+}
 
 .faq_kikinben {
-    margin-top: 50px;
     color: #333;
 }
 
-.faq_kikinben h3 {
+.faq_kikinben h3 b {
     font-size: 24px;
     color: #333;
 }
@@ -10580,14 +10586,15 @@ font-weight: normal !important;
     outline: none !important;
 }
 
-.con_use_kikinben h2 b{
+.con_use_kikinben h2 b {
     font-size: 24px;
     color: #333;
 }
 
 .con_use_kikinben h3 b {
-    color: #333 !important;
+    	color: #333 !important;
 	text-align: justify;
+	font-size: 18px !important;
 }
 
 .con_use_kikinben {
@@ -10654,7 +10661,7 @@ font-weight: normal !important;
 }
 
 .sign_form_l block-title {
-	margin-bottom: 20px;
+	margin-bottom: 20px !important;
 }
 
 .block_title_custom {
@@ -10672,4 +10679,417 @@ font-weight: normal !important;
 	font-weight: 600 !important;
 }
 
+.check_guest_cust_l {
+	text-align: center !important;
+	border: 1px solid #ddd !important;
+	padding: 28px !important;
+}
 
+.order_track_msg_l {
+	font-size: 16px !important;
+	color: #8c8c8c !important;
+}
+
+/*---------- Returns and Replacements Page Start ----------------*/
+.returns_page_l {
+    background: #fff;
+    padding: 0px 20px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.returns_policy_l {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.returns_policy_l p {
+    text-align: justify;
+}
+
+.returns_sec_l {
+    padding: 10px 0;
+}
+
+.returns_tit_l {
+    margin: 7px 0 !important;
+}
+
+.returns_cont_l {
+    
+}
+
+/*............Today 31 March.............*/
+
+.check_guest_cust_l {
+	text-align: center !important;
+	border: 1px solid #ddd !important;
+	padding: 28px !important;
+}
+
+.order_track_msg_l {
+	font-size: 16px !important;
+	color: #8c8c8c !important;
+}
+
+.cust_check_out_text_l {
+	padding: 0px !important;
+	width: 750px;
+	margin-top: 10px !important;
+	float: left;
+	text-align: justify;
+	margin-bottom: 30px;
+}
+
+.cust_check_out_l {
+	padding: 0;
+}
+
+.checkout_amount_l {
+	text-align: left !important;
+	float: left;
+	padding: 0;
+}
+
+.checkout_sign_cond {
+	border-top: 1px solid #ddd !important;
+	margin-top: 15px !important;
+}
+
+.check_out_total_value {
+	padding: 10px 15px !important;
+	border: 1px solid #ddd !important;
+	margin-bottom: 15px !important;
+	/*margin-left: 214px !important;
+	margin-right: 214px !important;*/
+	background: #ffffff !important;
+	border-radius: 3px !important;
+	margin-top: 0px;
+}
+
+.check_out_total_value h2 a {
+	color: #1979c3 !important;
+}
+
+.text_value_size {
+	font-size: 20px !important;
+	color: #f89a22 !important;
+}
+
+/*-------- checkout new design ----------*/
+.checkout_page_cust_n .opc {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 3px;
+	background: #fff;
+}
+
+.checkout_page_cust_n .opc-progress-bar {
+    border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 3px;
+	margin-bottom: 0 !important;
+	background: #fff;
+}
+
+.checkout_page_cust_n .modal-inner-wrap {
+	border: 1px solid #ddd;
+	background: #fff;
+	border-radius: 3px;
+}
+
+.checkout_page_cust_n #opc-sidebar .opc-block-summary {
+    background: #fff !important;
+}
+
+.checkout_page_cust_n .checkout-container {
+    margin-bottom: 0 !important;
+}
+
+.checkout_page_cust_n .minicart-items {
+    display: block !important;
+}
+
+.checkout_page_cust_n .checkout_cust_logo {
+	padding: 10px !important;
+}
+
+.checkout_page_cust_n .opc-wrapper {
+	padding-right: 20px !important;
+}
+
+.checkout_page_cust_n .continue {
+	width: 150px !important;
+}
+
+.checkout_page_cust_n #checkout .opc-sidebar {
+	margin-bottom: 30px !important;
+}
+
+.checkout_footer_new_l {
+	width: 760px;
+	overflow: auto;
+	margin-top: -360px;
+}
+
+
+.opc-progress-bar-item._active > span::after {
+    content: '\e611' !important;
+    font-family: 'icons-blank-theme' !important;
+    line-height: 1 !important;
+    font-size: 2.8rem !important;
+    font-weight: 500 !important;
+}
+
+.opc-progress-bar-item > span::before {
+    font-family: 'icons-blank-theme' !important;
+    line-height: 1 !important;
+    font-size: 2.8rem !important;
+    font-weight: 500 !important;
+}
+/*----------- END New css code for Progress bar-------------*/
+
+/*-----------New css code for Career page-------------*/
+.career_banner_l {
+    padding: 0;
+    margin: 0;
+}
+
+.career_banner_bot_l {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.career_ban_bot_1 {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    min-height: 164px;
+}
+
+.career_ban_bot_1:hover {
+    background: #dedede;
+    cursor: pointer;
+}
+
+.career_ban_bot_1 h1 {
+    font-size: 22px;
+}
+
+.career_poineer_l {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.career_poineer_l a button {
+    margin: 0 auto;
+    display: block;
+    padding: 7px 20px;
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid #f89a22;
+    border-radius: 3px;
+}
+
+.career_poineer_l a button:hover {
+    background: #f89a22;
+    color: #fff;
+}
+
+.career_poineer_l h1 {
+    font-size: 70px;
+    color: #f89a22;
+}
+
+.career_poineer_l p {
+    padding: 10px;
+}
+
+.career_poineer_l a {
+    text-decoration: none;
+}
+
+/*-------- find jobs page starts --------------*/
+
+.find_jobs_inside_l {
+    text-align: center;
+}
+
+.find_jobs_inside_l h1 {
+    font-size: 25px;
+    color: #f89a22;
+}
+
+.jobs_list_l {
+    background: #f1f1f1;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.jobs_list_l:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.jobs_list_tit_l {
+    padding: 0;
+}
+
+.jobs_list_l h1 {
+    font-size: 17px;
+    color: #1979c3;
+    margin: 0;
+}
+
+.jobs_list_l p {
+    margin: 0;
+}
+
+.jobs_list_desc_l {
+    padding: 0;
+}
+
+.jobs_list_date_l {
+    padding: 0;
+}
+
+.jobs_list_date_l ul {
+    float: right;
+    margin: 0;
+}
+
+.jobs_list_date_l ul li {
+    float: right;
+    list-style: none;
+    font-size: 12px;
+}
+
+.jobs_list_l .jobs_short_desc_l {
+    text-align: justify;
+    margin-top: 15px;
+}
+
+
+/*------- Job details page -------*/
+.details_job_section_l {
+    background: #fff;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.details_jobs_l {
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.details_jobs_tit_l {
+
+}
+
+.details_jobs_btn_l {
+    padding: 30px;
+}
+
+.details_jobs_btn_l button {
+    padding: 7px 30px;
+    background: #f89a22;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 2px #e38b1a;
+    color:#fff;
+}
+
+.details_jobs_btn_l button:hover, .details_jobs_btn_l button:focus, .details_jobs_btn_l button:visited {
+    border: none;
+    color:#fff;
+    background: #f89a22;
+    outline: none;
+}
+
+.details_jobs_btn_l button:active {
+    background-color: #f89a22;
+    box-shadow: 0 1px #e38b1a;
+    transform: translateY(1px);
+    outline: none;
+}
+
+.details_jobs_cont {
+    padding: 0;
+}
+
+.details_jobs_cont_left p {
+    margin: 0;
+    text-align: justify;
+}
+
+.job_description_l {
+    margin-top: 7px !important;
+}
+
+.details_jobs_cont_right {
+    
+}
+
+.details_jobs_cont_right p {
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+}
+
+.details_jobs_cont_right ul {
+    margin: 0;
+    padding: 0;
+}
+
+.details_jobs_cont_right ul li {
+    list-style: none;
+    color: #1979c3;
+    padding: 4px;
+}
+
+.details_jobs_cont_right ul li i {
+    color: #b4b4b4;
+    padding: 10px;
+    float: left;
+}
+
+.border_bottom_l {
+    border-bottom: 1px solid #ddd;
+}
+
+.details_jobs_date_right {
+    padding-left: 0px;
+}
+
+.details_jobs_date_right ul {
+    margin: 0;
+    padding: 10px 15px;
+    list-style: none !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.details_jobs_date_right ul li {
+    list-style: none !important;
+    color: #333 !important;
+}
+
+.share_jobs_l {
+    margin-top: 20px;
+}
+
+.share_jobs_l ul {
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+.share_jobs_l ul li {
+    float: left;
+    padding: 0 7px;
+}
+
+.share_jobs_l ul li img {
+    width: 30px;
+}
