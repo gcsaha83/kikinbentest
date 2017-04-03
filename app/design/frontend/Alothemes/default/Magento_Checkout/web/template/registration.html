@@ -7,11 +7,15 @@
 <!-- ko foreach: getRegion('messages') -->
     <!-- ko template: getTemplate() --><!-- /ko -->
 <!--/ko-->
+<div class="success_what_next">
+    <h1>YOU DON'T HAVE AN ACCOUNT !</h1>
+</div>
 <div class="check_guest_cust_l">
     <!-- ko if: isFormVisible -->
     <p class="order_track_msg_l">You can track your order status by creating an account.</p>
 
-    <a href="<?php echo $this->getUrl('customer/account/create');?>"> <span>Create an Account</span></a>
+<!--     <a href="<?php echo $this->getUrl('customer/account/create');?>"> <span>Create an Account</span></a> -->
+   <a href="{{store direct_url='customer/account/create'}}"> <span>Create an Account</span></a>
 
     <!-- <p><span data-bind="i18n: 'Email Address'"></span>: <span data-bind="text: getEmailAddress()"></span></p>
     <form method="post" data-bind="submit: createAccount">
