@@ -9020,11 +9020,11 @@ height: 35px;
 }
 
 .checkout_page_cust_n {
-	padding: 15px;
-	background: #fff;
+	padding: 15px 0 !important;
+/* 	background: #fff;
 	border: 1px solid #ddd;
 	margin-top: 20px;
-	border-radius: 3px;
+	border-radius: 3px; */
 }
 
 .checkout_page_cust_n .authentication-wrapper {
@@ -10759,7 +10759,7 @@ font-weight: normal !important;
 .check_out_total_value {
 	padding: 10px 15px !important;
 	border: 1px solid #ddd !important;
-	margin-bottom: 15px !important;
+	margin-bottom: 0px !important;
 	/*margin-left: 214px !important;
 	margin-right: 214px !important;*/
 	background: #ffffff !important;
@@ -10788,7 +10788,7 @@ font-weight: normal !important;
     border: 1px solid #ddd;
 	padding: 20px;
 	border-radius: 3px;
-	margin-bottom: 0 !important;
+	margin-bottom: 20px !important;
 	background: #fff;
 }
 
@@ -10829,7 +10829,7 @@ font-weight: normal !important;
 .checkout_footer_new_l {
 	width: 760px;
 	overflow: auto;
-	margin-top: -360px;
+	margin-top: -650px;
 }
 
 
