@@ -2643,3 +2643,82 @@ height: 152px;
         padding: 0;
     }
 }
+
+
+/*----------------------------*/
+@media (max-width: 991px) {
+	.sidebar_shop_by_cust .filter-options-content .item{
+		width: 100% !important;
+		margin-right: 0px !important;
+	}
+
+	.sidebar_shop_by_cust {
+	    padding: 10px !important;
+	}
+
+	.sidebar_shop_by_cust .filter-options .filter-options-title {
+	    font-size: 14px !important;
+	    font-weight: 500 !important;
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+	.checkout_footer_new_l {
+	    width: 606px !important;
+	}
+
+	.cust_check_out_text_l {
+	    width: 606px !important;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+	.checkout_footer_new_l {
+	    width: 460px !important;
+	}
+
+	.cust_check_out_text_l {
+	    width: 460px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.checkout_page_cust_n .opc-wrapper {
+		padding-right: 0px !important;
+	}
+
+	.checkout_footer_new_l {
+	    width: 100% !important;
+	    margin-top: -15px !important;
+	}
+
+	.cust_check_out_text_l {
+	    width: 100% !important;
+	}
+
+	.checkout_page_cust_n .opc {
+		padding: 10px !important;
+	}
+
+	.table-checkout-shipping-method thead th {
+		font-size: 11px !important;
+	}
+
+	.checkout-payment-method .payment-option {
+		margin: 0 auto !important;
+	}
+
+	.minicart-wrapper .action.showcart {
+	   background: #fcfcfc !important;
+	   border: none !important;
+	}
+
+	.text_value_size {
+	    font-size: 17px !important;
+	}
+
+	.opc-progress-bar-item > span {
+		font-weight: 400;
+		font-size: 13px;
+	}
+}
