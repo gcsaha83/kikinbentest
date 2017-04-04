@@ -2637,3 +2637,9 @@ height: 152px;
 	    font-weight: 500 !important;
 	}
 }
+/*............ New Career Page..............*/
+@media (min-width: 991px) and (max-width: 1199px) {
+    .details_page_right_l {
+        padding: 0;
+    }
+}
