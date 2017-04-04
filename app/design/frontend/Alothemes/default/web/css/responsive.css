@@ -2721,4 +2721,8 @@ height: 152px;
 		font-weight: 400;
 		font-size: 13px;
 	}
+
+	.checkout-payment-method .payment-methods {
+		padding-right: 0px !important;
+	}
 }
