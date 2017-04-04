@@ -13,13 +13,13 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 			\Magento\Framework\Registry $registry,
 			\Magento\Framework\Data\FormFactory $formFactory,
 			\Magento\Store\Model\System\Store $systemStore,
-			\Kikinben\AdvancedCommission\Model\SellerProductCommission $sellerProductCommission,
-			\Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $sellerfactory,
+			\Kikinben\AdvancedCommission\Model\SellerCategoryCommission $sellerCategoryCommission,
+			\Kikinben\AdvancedCommission\Model\SellerCategoryCommissionFactory $sellerfactory,
 			array $data = []
 			) {
 				$this->_systemStore = $systemStore;
 				$this->_formFactory =  $formFactory;
-				$this->_sellerProductCommission = $sellerProductCommission;
+				$this->_sellerProductCommission = $sellerCategoryCommission;
 				$this->_sellerCollectionFactory = $sellerfactory;
 				parent::__construct($context, $registry, $formFactory, $data);
 	}
@@ -38,6 +38,15 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 				'base_fieldset',
 				['legend' => __('Commission Information'), 'class' => 'fieldset-wide']
 				);
+		
+		$this->_sellerProductCommission->setData('seller_id',$this->getData('seller_id'));
+		$this->_sellerProductCommission->setData('category_id',$this->getData('category_id'));
+		
+		
+		$fieldset->addField('seller_id','hidden', ['name' => 'seller_id']);
+		$fieldset->addField('category_id','hidden', ['name' => 'category_id']);
+		$fieldset->addField('kikinben_advancedcommission_sellercategorycommission_id','hidden', 
+				['name' => 'kikinben_advancedcommission_sellercategorycommission_id']);
 		
 		$fieldset->addField('product_id', 'radios', array(
 				'label'     => 'Enable Price Range Commission Rule',
@@ -102,6 +111,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 				'name'      => 'amount'
 		
 		));
+		$form->setAction($this->getUrl('kikinben_advancedcommission/sellercategory/save'));		
 		$form->setUseContainer(true);
 		$this->setForm($form);
 		
