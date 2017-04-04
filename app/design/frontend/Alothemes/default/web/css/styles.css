@@ -10703,12 +10703,29 @@ font-weight: normal !important;
     padding: 10px 0;
 }
 
+.returns_policy_l h3 {
+    font-size: 24px;
+    color: #333;
+}
+
 .returns_policy_l p {
     text-align: justify;
+    color: #333;
+    font-size: 14px;
 }
 
 .returns_sec_l {
     padding: 10px 0;
+}
+
+.returns_sec_l h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.returns_sec_l h4 {
+    font-size: 18px;
+    color: #333;
 }
 
 .returns_tit_l {
@@ -10716,7 +10733,11 @@ font-weight: normal !important;
 }
 
 .returns_cont_l {
-    
+    color: #333;
+}
+
+.returns_sec_l ul li {
+    color: #333;
 }
 
 /*............Today 31 March.............*/
