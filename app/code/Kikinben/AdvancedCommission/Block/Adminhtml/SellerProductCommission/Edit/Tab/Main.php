@@ -92,6 +92,26 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 		$fieldset->addField('seller_id','hidden', ['name' => 'seller_id']);
 		$fieldset->addField('product_id','hidden', ['name' => 'product_id']);
         $fieldset->addField('kikinben_advancedcommission_sellerproductcommission_id','hidden', ['name' => 'kikinben_advancedcommission_sellerproductcommission_id']);
+        
+        $fieldset->addField('uprice_range_from', 'text', array(
+        		'label'     => 'Price Range From',
+        		'class'     => 'required-entry',
+        		'required'  => true,
+        		'name'      => 'uprice_range_from',
+        		'disabled' => false,
+        		'after_element_html' => '',
+        		'tabindex' => 1
+        ));
+        
+        $fieldset->addField('uprice_range_to', 'text', array(
+        		'label'     => 'Price Range To',
+        		'class'     => 'required-entry',
+        		'required'  => true,
+        		'name'      => 'uprice_range_to',
+        		'disabled' => false,
+        		'after_element_html' => '',
+        		'tabindex' => 1
+        ));
 	
 		$fieldset->addField('kikibin_fullfiled', 'select', array(
 				'label'     => 'Fullfiled By kikinben',

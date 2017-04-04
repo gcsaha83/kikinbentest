@@ -36,9 +36,12 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 		$this->_configurable=$configurable;
 		
 	}
-	public function calculateCommissionConfig($associated_products,$allProductId){
+	public function calculateCommissionConfig($associated_products,$allProductId,$orderId){
 		
 		$commission=array();
+		$items = array();
+		
+		
 		for($i=0;$i<count($associated_products);$i++){
 		
 			foreach($associated_products[$i] as $key => $val){
@@ -49,6 +52,25 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 			 
 		}
 		$resultConfig = array_intersect($allProductId, $simpleProductId);
+		
+		$orderData = $this->_order->load ( $orderId );
+		foreach ($orderData->getAllItems() as $item) {
+			$product = $this->_product->load($item->getProductId());
+			$commission[$item->getProductId ()] = [
+			
+					'order_id'      => $orderData->getIncrementId(),
+					'name'          => $item->getName(),
+					'sku'           => $item->getSku(),
+					'product_price' => $item->getPrice(),
+					'Qty'           => $item->getQtyOrdered(),
+					'buyer_id'      => $orderData->getCustomerId(),
+					'product_id'    => $item->getProductId (),
+					'seller_index'  => $product->getSellerId (),
+					 
+			
+			];
+			
+		}
 		
 		foreach($resultConfig as $resultConfigVal){
 			$parentByChild = $this->_configurable->getParentIdsByChild($resultConfigVal);
@@ -89,13 +111,13 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 		
 						$commission[$parentId]['commission'] =  [
 								'PriceAfterCommission'=> $productpriceAfterCommissionPercent,
-								'commissionAmount'    => $ProductchargeToSeller,
+								'commissionAmount'    => $ProductchargeToSeller ,
 								'commissiontype'	  => $commissionTypeString,
-								'commission_value'	  => $commissionAmount,
+								'commission_value'	  => $commissionAmount ,
 								'product_price' => $productOptions->getPrice(),
 								'seller_index'  => $productOptions->getSellerId (),
-                                                                'parent' =>$parentId,
-                                                                'child'=>$resultConfigVal
+                                'parent' =>$parentId,
+                                'child'=>$resultConfigVal
 		
 						];
 		
@@ -108,13 +130,13 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 		
 						$commission[$parentId]['commission'] =  [
 								'PriceAfterCommission'=> $productchargeFixedAmount,
-								'commissionAmount'    => $productpriceAfterCommission,
+								'commissionAmount'    => $productpriceAfterCommission ,
 								'commissiontype'	  => $commissionTypeString,
 								'commission_value'	  => $commissionAmount,
 								'product_price' => $productOptions->getPrice(),
 								'seller_index'  => $productOptions->getSellerId (),
-                                                                'parent' =>$parentId,
-                                                                'child'=>$resultConfigVal
+                                'parent' =>$parentId,
+                                'child'=>$resultConfigVal
 		
 						];
 		
@@ -397,6 +419,7 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         					
         					$percentage_commission = $catTop->getKikinbenProductCommission();
         					
+        					$product_amount = $commission[$productIdCat]['product_price'];
         					$qty			= $commission[$productIdCat]['Qty'];        					
         					$categoryCommissionPercentRange =  $product_amount - (($percentage_commission / 100) * $product_amount);
         					$categoryCommission              =  ($product_amount - $categoryCommissionPercentRange)*$qty;

@@ -260,6 +260,85 @@ $table = $installer->getConnection()->newTable(
 $installer->getConnection()->createTable($table);
 //END   table setup
 
+//START table setup
+    $sellerCategoryCommission = $installer->getConnection()->newTable(
+            $installer->getTable('kikinben_advancedcommission_sellercategorycommission')
+    )->addColumn(
+            'kikinben_advancedcommission_sellercategorycommission_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            [ 'identity' => true, 'nullable' => false, 'primary' => true, 'unsigned' => true, ],
+            'Entity ID'
+        )->addColumn(
+            'title',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            255,
+            [ 'nullable' => false, ],
+            'Demo Title'
+        )->addColumn(
+            'creation_time',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+            null,
+            [ 'nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT, ],
+            'Creation Time'
+        )->addColumn(
+            'update_time',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+            null,
+            [ 'nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT_UPDATE, ],
+            'Modification Time'
+        )->addColumn(
+            'is_active',
+            \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+            null,
+            [ 'nullable' => false, 'default' => '1', ],
+            'Is Active'
+        )->addColumn(
+            'seller_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Seller Id'
+    )->addColumn(
+            'category_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Category Id'
+    )->addColumn(
+            'kikibin_fullfiled',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Fulfilled By kikibin'
+    )->addColumn(
+            'percentage',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Percentage Or Amount'
+    )->addColumn(
+            'amount',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Comission Amount'
+    )->addColumn(
+            'uprice_range_from',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false ],
+            'Price Range From'
+    )->addColumn(
+            'uprice_range_to',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false ],
+            'Price Range To'
+    );
+    $installer->getConnection()->createTable($sellerCategoryCommission);
+//END   table setup
+
 $product_commission_global_level_track = $installer->getConnection()->newTable(
             $installer->getTable('kikinben_advancedcommission_prd_commission_global_level_track')
     )->addColumn(
@@ -354,6 +433,8 @@ $product_commission_global_level_track = $installer->getConnection()->newTable(
             'Is Active'
         );
 $installer->getConnection()->createTable($product_commission_global_level_track);
+
+
 
 
 $installer->endSetup();

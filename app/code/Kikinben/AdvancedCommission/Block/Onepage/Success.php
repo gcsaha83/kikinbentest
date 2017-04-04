@@ -174,7 +174,7 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach ($orderData->getAllVisibleItems() as $item) {
 
             $product_id = $item->getProductId();
-	    $product = $this->_product->load($item->getProductId());
+	    	$product = $this->_product->load($item->getProductId());
             $sellerIdGlobal[] = $product->getSellerId ();
             
 			
@@ -191,31 +191,51 @@ class Success extends \Magento\Framework\View\Element\Template
 						
         }
         if(!empty($associated_products)){
-            $associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId);                        
-            foreach($associatedcalculations as $k => $v){   
+            $associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId,$orderId);
+            
+           /* foreach($associatedcalculations as $k => $v){   
                 $configProducts[] = $v['commission']['parent'];
                 $configProducts[] = $v['commission']['child'];                      
             }
             $otherProducts = array_diff($allProductId,$configProducts);
             foreach($otherProducts as $ortherVal){
                 $simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherVal);
-          }
+          }*/
+        }
+        if(empty($associatedcalculations)){
+        	foreach($allProductId as $ortherValSimple){
+        		
+        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple);
+        	}
+        }
+        $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
+        
+        if(!empty($associatedcalculations)){
+        	array_push($commission,$associatedcalculations) ;
+        	
         }
         
+        if(!empty($simpleProductCommision))
+        	array_push($commission,$simpleProductCommision) ;
+        	
         
+        if(!empty($sellerCommission))
+        	array_push($commission,$sellerCommission) ;
+        	
+        	
         
+        	
+       
         
-
-       // $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
         foreach($allProductId as $productIds){
-            $categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
+            //$categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
         }
         
                 echo '<pre>';
                 
-                print_r($categoryComm);
+                //print_r($sellerCommission);
                 
-                //print_r($commission);
+                print_r($commission);
                 //print_r($simpleProductId);
                 //print_r($allProductId);
                 //echo "==";
