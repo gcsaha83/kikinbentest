@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left-kikinben" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<body>
+	<referenceContainer name="left">
+            <block class="Kikinben\AdvancedCommission\Block\Adminhtml\Sellercategory\Edit\Tabs" name="seller_category_edit"/>
+    </referenceContainer>
+	
+	 <referenceContainer name="content">
+			<block class="Kikinben\AdvancedCommission\Block\Adminhtml\Sellercategory\Edit"
+				name="kikinben_advancedcommission_sellercategorylist.edit" />
+	</referenceContainer>
+	</body>
+</page>

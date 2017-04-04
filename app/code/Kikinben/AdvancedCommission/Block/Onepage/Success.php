@@ -36,7 +36,13 @@ class Success extends \Magento\Framework\View\Element\Template
 			\Magento\Checkout\Model\Session $checkoutSession,
 			\Magento\Sales\Model\Order\Config $orderConfig,
 			\Magento\Framework\App\Http\Context $httpContext,
-			\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
+			
+			\Magento\Sales\Model\Order $order,
+			\Magento\Catalog\Model\Product $product,
+			\Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
+			\Kikinben\AdvancedCommission\Helper\Calculations\Commission $commissioncalculation,
+			
+			/*\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
 			\Magento\Catalog\Model\Product $product,
 			\Apptha\Marketplace\Model\Seller $seller,
 			\Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission,
@@ -47,7 +53,8 @@ class Success extends \Magento\Framework\View\Element\Template
             \Magento\Catalog\Api\Data\ProductInterfaceFactory $productFactory,  
             \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,    
             \Magento\Framework\Api\DataObjectHelper $dataObjectHelper,
-            \Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
+            \Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,*/
+			
 			array $data = []
 			) {
 				parent::__construct($context, $data);
@@ -56,7 +63,12 @@ class Success extends \Magento\Framework\View\Element\Template
 				$this->_isScopePrivate = true;
 				$this->httpContext = $httpContext;
 				
-				$this->_commissionSave = $commissionSave;
+				$this->_order          = $order;
+				$this->_product        = $product;
+				$this->_configurable   = $configurable;
+				$this->_commissioncalculation = $commissioncalculation;
+				
+				/*$this->_commissionSave = $commissionSave;
 				$this->_order          = $order;
 				$this->_product        = $product;
 				$this->_seller         = $seller;
@@ -68,7 +80,7 @@ class Success extends \Magento\Framework\View\Element\Template
                 $this->productFactory = $productFactory;      
                 $this->productRepository = $productRepository;        
                 $this->dataObjectHelper = $dataObjectHelper;
-                $this->_configurable=$configurable;
+                $this->_configurable=$configurable;*/
 	}
 
 	/**
@@ -154,6 +166,7 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach($orderData->getItems() as $allItems){
 
             $allProductId[] = $allItems->getProductId(); 
+            $oderObject = $allItems;
 
 
         }
@@ -161,60 +174,76 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach ($orderData->getAllVisibleItems() as $item) {
 
             $product_id = $item->getProductId();
-			$product = $this->_product->load($item->getProductId());
+	    	$product = $this->_product->load($item->getProductId());
+            $sellerIdGlobal[] = $product->getSellerId ();
+            
 			
             if($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
                 $associated_products[] = $this->_configurable->getUsedProductCollection($product)->addAttributeToSelect('*')->addFilterByRequiredOptions()->getData();
-                $commission[$item->getProductId ()] = [
-
-                    'order_id'      => $orderData->getIncrementId(),
-            		'name'          => $item->getName(),
-            		'sku'           => $item->getSku(),
-            		'product_price' => $item->getPrice(),
-            		'Qty'           => $item->getQtyOrdered(),
-            		'buyer_id'      => $orderData->getCustomerId(),
-            		'product_id'    => $item->getProductId (),
-            		'seller_index'  => $product->getSellerId (),
-            	                 
-                ];
-
-                               
                 
-			}//config products ends
+                
+	    }//config products ends
+            else if($product->getTypeId() === 'simple'){
+            	
+                $simple_products[] = $product_id;
+
+            }
 						
         }
-         for($i=0;$i<count($associated_products);$i++){
-
-             foreach($associated_products[$i] as $key => $val){
-
-                 $simpleProductId[] = $val['entity_id'];
-
-
-             }
-             
-         }
-        $resultConfig = array_intersect($allProductId, $simpleProductId);
-
-        foreach($resultConfig as $resultConfigVal){
-            $parentByChild = $this->_configurable->getParentIdsByChild($resultConfigVal);
-
-            if(isset($parentByChild[0])){
-                $parentId = $parentByChild[0];          
+        if(!empty($associated_products)){
+            $associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId,$orderId);
+            
+           /* foreach($associatedcalculations as $k => $v){   
+                $configProducts[] = $v['commission']['parent'];
+                $configProducts[] = $v['commission']['child'];                      
             }
-            //calculate
-
-            $productCalculation = $this->_product->load($resultConfigVal);
-
-            
-            
-
-
+            $otherProducts = array_diff($allProductId,$configProducts);
+            foreach($otherProducts as $ortherVal){
+                $simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherVal);
+          }*/
         }
+        if(empty($associatedcalculations)){
+        	foreach($allProductId as $ortherValSimple){
+        		
+        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple);
+        	}
+        }
+        $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
+        
+        if(!empty($associatedcalculations)){
+        	array_push($commission,$associatedcalculations) ;
+        	
+        }
+        
+        if(!empty($simpleProductCommision))
+        	array_push($commission,$simpleProductCommision) ;
+        	
+        
+        if(!empty($sellerCommission))
+        	array_push($commission,$sellerCommission) ;
+        	
+        	
+        
+        	
+       
+        
+        foreach($allProductId as $productIds){
+            //$categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
+        }
+        
                 echo '<pre>';
+                
+                //print_r($sellerCommission);
+                
                 print_r($commission);
                 //print_r($simpleProductId);
                 //print_r($allProductId);
-                
+                //echo "==";
+               // print_r($associatedcalculations);
+                //echo "==";
+              //  print_r($configProducts);
+               // echo "==";
+              //  print_r($otherProducts);
                 
                 echo '</pre>';
 	 //return $items;
