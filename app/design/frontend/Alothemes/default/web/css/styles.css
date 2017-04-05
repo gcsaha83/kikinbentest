@@ -1890,7 +1890,7 @@ font-size: 12px;
 .content-products .actions .stock:after {background-color: #df3737;content: "";display: block; height: 30px;position: absolute;right: 9px;top: 9px;transform: rotate(35deg);width: 2px;}
 .content-products .stock span{text-indent: -999em; width: 0;}
 .stock label{font-size: 12px; color: #8f8e94; font-weight: normal; margin: 0; padding-right: 5px; line-height: 20px; display: inline-block;}
-.stock span{font-size: 12px; color: #df3737; font-weight: bold; display: inline-block; line-height: 20px}
+.stock span{font-size: 12px; color: #df3737 !important; font-weight: bold; display: inline-block; line-height: 20px}
 .stock{padding-bottom: 8px;color: #df3737;}
 .category-product-list .stock{ border-bottom: 1px solid #dddddd;}
 .category-product-list .stock span{color: #5bb300;}
@@ -11115,8 +11115,10 @@ font-weight: normal !important;
 }
 
 .team_mates_l h3 {
-    font-size: 20px;
-    margin-bottom: 0px;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
 }
 
 .location_section {
