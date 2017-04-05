@@ -115,7 +115,8 @@ class SellercategoryList extends \Magento\Backend\Block\Widget\Grid\Extended {
 	}
 	public function getRowUrl($row)
 	{
-		return $this->getUrl('kikinben_advancedcommission/sellercategory/edit', ['id' => $row->getEntityId(),'seller_id'=>$this->getData('customer_id')]);
+		$customerId = $this->_sellerCollectionFactory->load($this->getData('customer_id'))->getCustomerId();
+		return $this->getUrl('kikinben_advancedcommission/sellercategory/edit', ['id' => $row->getEntityId(),'seller_id'=>$customerId]);
 	}
 	
 	

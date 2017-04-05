@@ -9,6 +9,7 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 			\Magento\Catalog\Model\Product $product,
 			\Apptha\Marketplace\Model\Seller $seller,
 			\Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission,
+			\Kikinben\AdvancedCommission\Model\SellerCategoryCommissionFactory $sellerCategoryCommission,
 			\Kikinben\AdvancedCommission\Model\CommissionFactory $sellerCommission,
 			\Magento\Catalog\Model\CategoryFactory $categoryFactory,
 			\Magento\Customer\Model\Customer $sellerDetails,
@@ -29,6 +30,7 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 		$this->_SellerProductCommission = $SellerProductCommission;
 		$this->_sellerCommission = $sellerCommission;
 		$this->_categoryInstance = $categoryFactory->create();
+		$this->_sellerCategoryCommission = $sellerCategoryCommission;
 		
 		$this->productFactory = $productFactory;
 		$this->productRepository = $productRepository;
@@ -298,7 +300,7 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         						
         						if(!empty($sellerProductsNonRange)){
         							
-                                                            if((floatval($range_start) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($range_end))){
+                                   if((floatval($range_start) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($range_end))){
         							
         							if($commissionType == 2){ // percentage
         								
@@ -453,6 +455,61 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
                                 return $commission;
             
         }
+        
+    public function getCategoryCommissionSeller($productIdCat,$orderData){
+    	
+    	$commission = array();
+    	
+    	foreach ($orderData->getAllItems() as $item) {
+    	
+    		$product = $this->_product->load($item->getProductId());
+    	
+    		$commission[$item->getProductId ()] = [
+    	
+    				'order_id'      => $orderData->getIncrementId(),
+    				'name'          => $item->getName(),
+    				'sku'           => $item->getSku(),
+    				'product_price' => $item->getPrice(),
+    				'Qty'           => $item->getQtyOrdered(),
+    				'buyer_id'      => $orderData->getCustomerId(),
+    				'product_id'    => $item->getProductId (),
+    				'seller_index'  => $product->getSellerId (),
+    				 
+    	
+    		];
+    	}
+    	
+    	foreach($productIdCat as $val){
+    		
+    		$productCategory = $this->_product->load($val);
+    		$categories[] = $productCategory->getCategoryIds();
+    		$seller_id[] =  $productCategory->getSellerId();
+    		
+    	}
+    	
+    	$sellerCategoryCollectionNonRange = $this->_sellerCategoryCommission->create()->getCollection();
+    	$sellerProductsNonRange = $sellerCategoryCollectionNonRange
+    							 ->addFieldToFilter('category_id',['in'=>$categories])
+    							 ->addFieldToFilter('seller_id',['in'=>$seller_id])
+    							 ->getData();
+    	
+    	
+    	/*for($i=0;$i<count($sellerProductsNonRange);$i++){
+    		foreach($sellerProductsNonRange[$i] as $rangeVal){
+    			
+    			$percentage_amount = $rangeVal['percentage'];
+    			$amount = $rangeVal['amount'];
+    			$commissionTypeStringCatg = ($percentage_amount == 1) ? 'Percentage' : 'Fixed' ;
+    			if($percentage_amount == 1){
+    				
+    			}
+    			
+    		}
+    	}*/
+    	
+    	return $commission;
+    	
+    }
         
 	public function getSimpleFromAssociated($configProductId){
 		
