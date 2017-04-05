@@ -2771,4 +2771,10 @@ height: 152px;
     }
 }
 
+@media (min-width: 992px) {
+    .git_payment_check_l .gift_icon {
+    	width: 350px !important;
+     }
+}
+
 
