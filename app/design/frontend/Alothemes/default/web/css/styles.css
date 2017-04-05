@@ -6243,32 +6243,6 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     color: #f89a22;
 }
 
-.location_section {
-    padding: 50px;
-    background: #fcfcfc;
-    margin-top: 20px;
-    height: 610px;
-}
-
-.location_section_tit h1 {
-    text-align: center;
-    color: #f89a22;
-    font-size: 33px;
-}
-
-.mapKikinben {
-    height: 400px;
-    width: 100%;
-}
-
-.loc_sec_cont {
-    margin-top: 20px;
-}
-
-.loc_sec_cont h3 {
-    font-size: 24px;
-}
-
 /*..... End of About Kikinben History.....*/
 
 
@@ -9271,7 +9245,6 @@ height: 35px;
   margin-top: 6px;
 }
 
-
 .action-save-address {
 	border: none !important;
 	background: #f89a22 !important;
@@ -9279,6 +9252,7 @@ height: 35px;
 	border-radius: 5px !important;
 	box-shadow: 0 2px #E76C33 !important;
 	padding: 16px !important;
+	margin: 5px !important;
 }
 
 .action-save-address span{
@@ -10275,7 +10249,7 @@ padding: 0px !important;
 .gift_icon{
 	background-image:url("../images/alothemes/gift.png");
 	background-repeat: no-repeat;	
-	width: 145px;
+	width: 230px;
 	float:left;
 	height: 41px;
 	margin: 0 0 0 10px;
@@ -10340,7 +10314,7 @@ font-weight: normal !important;
 }
 
 .git_payment_check_l .gift_icon {
-    width: 350px !important;
+/*     width: 350px !important; */
 }
 
 .git_payment_check_l .fieldset .giftvoucher #giftvoucher {
@@ -11114,3 +11088,58 @@ font-weight: normal !important;
 .share_jobs_l ul li img {
     width: 30px;
 }
+
+/*-------------- Meet the Team -----------------------*/
+.team_section_l {
+    text-align: center;
+    padding: 30px;
+    background: #fcfcfc;
+    margin-top: 20px;
+}
+
+.team_section_l_tit {
+    padding: 20px;
+    color: #f89a22;
+}
+
+.team_mates_l {
+    padding: 20px;
+}
+ 
+.team_mates_l .about_para {
+    text-align: justify;
+}
+
+.team_mates_l img {
+    border-radius: 75px;
+}
+
+.team_mates_l h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.location_section {
+    padding: 30px;
+    background: #fcfcfc;
+    margin-top: 20px;
+}
+
+.location_section_tit {
+    text-align: center;
+    color: #f89a22;
+}
+
+.mapKikinben {
+    width: 100%;
+}
+
+.loc_sec_cont {
+    margin-top: 20px;
+}
+
+.loc_sec_cont .mapKikinben iframe {
+    width: 600px;
+    height: 300px;
+}
+

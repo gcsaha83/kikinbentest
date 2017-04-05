@@ -2601,7 +2601,7 @@ height: 152px;
 
 @media (max-width: 639px) {
   	.checkout_page_cust_n .shipping-address-item button {
-  		width: 25% !important;
+  		width: 40% !important;
   	}
 }
 
@@ -2721,4 +2721,60 @@ height: 152px;
 		font-weight: 400;
 		font-size: 13px;
 	}
+
+	.checkout-payment-method .payment-methods {
+		padding-right: 0px !important;
+	}
+	
+	.leadership_section {
+	    	height: auto;
+		padding: 0px;
+	}
+
+	.leader_sec {
+	    	padding: 0px;
+	}
 }
+
+/*----------- meet the team responsiveness -----------*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .team_mates_l h3 {
+        font-size: 16px;
+    }
+
+    .loc_sec_cont .mapKikinben iframe {
+        width: 430px;
+        height: 210px;
+    }
+}
+
+@media (min-width: 491px) and (max-width: 767px) {
+    .loc_sec_cont {
+        text-align: center;
+    }
+
+    .loc_sec_cont .mapKikinben iframe {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 490px) {
+    .loc_sec_cont .mapKikinben iframe {
+        width: 260px;
+        height: 150px;
+    }
+
+    .loc_sec_cont {
+        padding: 0;
+	text-align: center;
+    }
+}
+
+@media (min-width: 558px) {
+    .git_payment_check_l .gift_icon {
+    	width: 350px !important;
+     }
+}
+
+
