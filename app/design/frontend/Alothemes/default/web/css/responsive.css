@@ -2601,7 +2601,7 @@ height: 152px;
 
 @media (max-width: 639px) {
   	.checkout_page_cust_n .shipping-address-item button {
-  		width: 25% !important;
+  		width: 40% !important;
   	}
 }
 
