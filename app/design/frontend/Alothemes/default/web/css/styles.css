@@ -11115,8 +11115,10 @@ font-weight: normal !important;
 }
 
 .team_mates_l h3 {
-    font-size: 20px;
-    margin-bottom: 0px;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
 }
 
 .location_section {
