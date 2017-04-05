@@ -11145,3 +11145,62 @@ font-weight: normal !important;
     height: 300px;
 }
 
+/*............. CSS code for adding Shop By Category Banner..........*/
+
+/* .content-mega-horizontal {
+	width: 750px !important;
+}
+
+.vmagicmenu .level-top-mega .mage-column.cat-mega {
+    width: 750px !important;
+} */
+
+.nav-2 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/phone.png") !important;
+	z-index: 99999;
+}
+
+.nav-3 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/laptop.png") !important;
+	z-index: 99999;
+}
+.nav-4 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/tv2.png") !important;
+	z-index: 99999;
+}
+.nav-5 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/makeup.png") !important;
+	z-index: 99999;
+}
+.nav-6 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/mens.png") !important;
+	z-index: 99999;
+}
+.nav-7 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/women.png") !important;
+	z-index: 99999;
+}
+.nav-8 .level-top-mega {
+	background-image: url("../../../../../../media/wysiwyg/category_bg/baby.png") !important;
+	z-index: 99999;
+}
+.nav-9 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/tv.png") !important;
+	z-index: 99999;
+}
+.nav-10 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/kitchen.png") !important;
+	z-index: 99999;
+}
+.nav-11 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/bags.png") !important;
+	z-index: 99999;
+}
+.nav-12 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/tv.png") !important;
+	z-index: 99999;
+}
+.nav-13 .level-top-mega {
+	background-image:url("../../../../../../media/wysiwyg/category_bg/health.png") !important;
+	z-index: 99999;
+}
