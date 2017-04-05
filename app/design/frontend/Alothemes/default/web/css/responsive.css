@@ -2735,3 +2735,40 @@ height: 152px;
 	    	padding: 0px;
 	}
 }
+
+/*----------- meet the team responsiveness -----------*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .team_mates_l h3 {
+        font-size: 16px;
+    }
+
+    .loc_sec_cont .mapKikinben iframe {
+        width: 430px;
+        height: 210px;
+    }
+}
+
+@media (min-width: 491px) and (max-width: 767px) {
+    .loc_sec_cont {
+        text-align: center;
+    }
+
+    .loc_sec_cont .mapKikinben iframe {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 490px) {
+    .loc_sec_cont .mapKikinben iframe {
+        width: 260px;
+        height: 150px;
+    }
+
+    .loc_sec_cont {
+        padding: 0;
+	text-align: center;
+    }
+}
+
+
