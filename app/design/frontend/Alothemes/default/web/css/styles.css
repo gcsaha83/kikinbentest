@@ -6243,32 +6243,6 @@ body.marketplace-seller-displayseller li.item.product.product-item {
     color: #f89a22;
 }
 
-.location_section {
-    padding: 50px;
-    background: #fcfcfc;
-    margin-top: 20px;
-    height: 610px;
-}
-
-.location_section_tit h1 {
-    text-align: center;
-    color: #f89a22;
-    font-size: 33px;
-}
-
-.mapKikinben {
-    height: 400px;
-    width: 100%;
-}
-
-.loc_sec_cont {
-    margin-top: 20px;
-}
-
-.loc_sec_cont h3 {
-    font-size: 24px;
-}
-
 /*..... End of About Kikinben History.....*/
 
 
@@ -11114,3 +11088,58 @@ font-weight: normal !important;
 .share_jobs_l ul li img {
     width: 30px;
 }
+
+/*-------------- Meet the Team -----------------------*/
+.team_section_l {
+    text-align: center;
+    padding: 30px;
+    background: #fcfcfc;
+    margin-top: 20px;
+}
+
+.team_section_l_tit {
+    padding: 20px;
+    color: #f89a22;
+}
+
+.team_mates_l {
+    padding: 20px;
+}
+ 
+.team_mates_l .about_para {
+    text-align: justify;
+}
+
+.team_mates_l img {
+    border-radius: 75px;
+}
+
+.team_mates_l h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.location_section {
+    padding: 30px;
+    background: #fcfcfc;
+    margin-top: 20px;
+}
+
+.location_section_tit {
+    text-align: center;
+    color: #f89a22;
+}
+
+.mapKikinben {
+    width: 100%;
+}
+
+.loc_sec_cont {
+    margin-top: 20px;
+}
+
+.loc_sec_cont .mapKikinben iframe {
+    width: 600px;
+    height: 300px;
+}
+
