@@ -90,13 +90,13 @@
 		float: left !important;
 	}
 
-	.search_dropdown {
+/* 	.search_dropdown {
 		display: none;
-	}
+	} */
 
-	.header-search .field.search {
+/* 	.header-search .field.search {
     width: calc(100% - 54px);
-	}
+	} */
 
 	.righ-header-content {
     	float: right;
