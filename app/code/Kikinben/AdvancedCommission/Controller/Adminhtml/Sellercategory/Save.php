@@ -24,20 +24,27 @@ class Save extends \Magento\Framework\App\Action\Action
         $productId = $this->getRequest()->getParam('category_id');
         $kikibinFulfiled = $this->getRequest()->getParam('kikibin_fullfiled'); 
         $commissionType = $this->getRequest()->getParam('percentage');
-        $amount = $this->getRequest()->getParam('amount'); 
+        $amount = $this->getRequest()->getParam('amount');
+        $price_range_enable = $this->getRequest()->getParam('price_range_enable');
+        $uprice_range_from = $this->getRequest()->getParam('uprice_range_from');
+        $uprice_range_to = $this->getRequest()->getParam('uprice_range_to');
 
         if($id){
             $this->_sellerCategoryCommission->load($id);
         }
         $this->_sellerCategoryCommission->setSellerId($sellerId);
-        $this->_sellerCategoryCommission->setProductId($productId);
+        $this->_sellerCategoryCommission->setCategoryId($productId);
         $this->_sellerCategoryCommission->setKikibinFullfiled($kikibinFulfiled);
         $this->_sellerCategoryCommission->setPercentage($commissionType);
         $this->_sellerCategoryCommission->setAmount($amount);
+        
+        $this->_sellerCategoryCommission->setPriceRangeEnable($price_range_enable);
+        $this->_sellerCategoryCommission->setUpriceRangeFrom($uprice_range_from);
+        $this->_sellerCategoryCommission->setUpriceRangeTo($uprice_range_to);
         try{
-            //$this->_sellerCategoryCommission->save();
+            $this->_sellerCategoryCommission->save();
             $this->messageManager->addSuccess ( __ ( 'Data has been saved.' ) );
-            //$this->_redirect ('kikinben_advancedcommission/sellercategory/edit',['id'=>$productId,'seller_id'=>$sellerId]);
+            $this->_redirect ('kikinben_advancedcommission/sellercategory/edit',['id'=>$productId,'seller_id'=>$sellerId]);
 
         }catch ( \Exception $e ) {
                 $this->messageManager->addError ( $e->getMessage () );

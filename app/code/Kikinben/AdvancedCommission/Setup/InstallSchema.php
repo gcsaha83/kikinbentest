@@ -335,6 +335,12 @@ $installer->getConnection()->createTable($table);
             '10,2',
             [ 'nullable' => false ],
             'Price Range To'
+    )->addColumn(
+            'price_range_enable',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Product Id'
     );
     $installer->getConnection()->createTable($sellerCategoryCommission);
 //END   table setup

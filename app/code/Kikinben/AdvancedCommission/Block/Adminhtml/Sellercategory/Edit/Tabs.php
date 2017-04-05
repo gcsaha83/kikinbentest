@@ -34,11 +34,11 @@ use Magento\Backend\Block\Widget\Tabs as WidgetTabs;
 class Tabs extends WidgetTabs {
 		
 	protected function _beforeToHtml() {
-        $product_id = $this->getRequest()->getParam('id');
+        $category_id = $this->getRequest()->getParam('id');
         $seller_id  = $this->getRequest()->getParam('seller_id');
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$productCollection = $objectManager->create('\Magento\Catalog\Model\Category');
-		$product = $productCollection->load($product_id);
+		$product = $productCollection->load($category_id);
 		
 		$this->addTab ( 'seller_products', [
 				'label' => __ ( $product->getName() ),
@@ -46,7 +46,7 @@ class Tabs extends WidgetTabs {
 				'content' => $this->getLayout()->createBlock(						
 						'Kikinben\AdvancedCommission\Block\Adminhtml\Sellercategory\Edit\Tab\Main',
 						"seller_categories",
-						['data' => ['product_id' => $product_id,'seller_id'=>$seller_id]
+						['data' => ['category_id' => $category_id,'seller_id'=>$seller_id]
                     ])->toHtml(),			
 				'active' => true
 		] );
