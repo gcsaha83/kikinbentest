@@ -23,6 +23,8 @@ class Success extends \Magento\Framework\View\Element\Template
 	 * @var \Magento\Framework\App\Http\Context
 	 */
 	protected $httpContext;
+	
+	protected $catalogSession;
 
 	/**
 	 * @param \Magento\Framework\View\Element\Template\Context $context
@@ -41,6 +43,8 @@ class Success extends \Magento\Framework\View\Element\Template
 			\Magento\Catalog\Model\Product $product,
 			\Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
 			\Kikinben\AdvancedCommission\Helper\Calculations\Commission $commissioncalculation,
+			\Magento\Catalog\Model\Session $catalogSession,
+			
 			
 			/*\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
 			\Magento\Catalog\Model\Product $product,
@@ -67,6 +71,7 @@ class Success extends \Magento\Framework\View\Element\Template
 				$this->_product        = $product;
 				$this->_configurable   = $configurable;
 				$this->_commissioncalculation = $commissioncalculation;
+				$this->catalogSession = $catalogSession;
 				
 				/*$this->_commissionSave = $commissionSave;
 				$this->_order          = $order;
@@ -222,7 +227,10 @@ class Success extends \Magento\Framework\View\Element\Template
         if(!empty($sellerCommission))
         	array_push($commission,$sellerCommission) ;
         	
-        	
+        $categoryComm = $this->_commissioncalculation->getCategoryCommissionSeller($allProductId,$orderData);
+        
+        if(!empty($categoryComm))
+        	array_push($commission,$categoryComm) ;
         
         	
        
@@ -230,10 +238,13 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach($allProductId as $productIds){
             //$categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
         }
+        //foreach($allProductId as $productIds){        	
+        	
+        //}
         
                 echo '<pre>';
                 
-                //print_r($sellerCommission);
+               // print_r($categoryComm);
                 
                 print_r($commission);
                 //print_r($simpleProductId);
