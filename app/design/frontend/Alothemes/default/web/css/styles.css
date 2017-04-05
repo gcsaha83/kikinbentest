@@ -10249,7 +10249,7 @@ padding: 0px !important;
 .gift_icon{
 	background-image:url("../images/alothemes/gift.png");
 	background-repeat: no-repeat;	
-	width: 145px;
+	width: 230px;
 	float:left;
 	height: 41px;
 	margin: 0 0 0 10px;
@@ -10314,7 +10314,7 @@ font-weight: normal !important;
 }
 
 .git_payment_check_l .gift_icon {
-    width: 350px !important;
+/*     width: 350px !important; */
 }
 
 .git_payment_check_l .fieldset .giftvoucher #giftvoucher {
