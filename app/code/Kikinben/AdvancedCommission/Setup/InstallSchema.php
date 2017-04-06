@@ -440,7 +440,106 @@ $product_commission_global_level_track = $installer->getConnection()->newTable(
         );
 $installer->getConnection()->createTable($product_commission_global_level_track);
 
-
+$kikinben_advancedcommission_commission_track = $installer->getConnection()->newTable(
+            $installer->getTable('kikinben_advancedcommission_commission_track')
+    )->addColumn(
+            'kikinben_advancedcommission_commission_track_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            [ 'nullable' => false, ],
+            'Primary Key'
+        )->addColumn(
+            'order_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            [ 'nullable' => false, ],
+            'Order ID'
+        )->addColumn(
+            'catg_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Category Id'
+        )->addColumn(
+            'product_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Product Id'
+        )->addColumn(
+            'product_qty',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            255,
+            [ 'nullable' => false, ],
+            'Product Qunatity Ordered'
+        )->addColumn(
+            'commission_for',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            255,
+            [ 'nullable' => false, ],
+            'Commission nature seller level,product level,category level seller etc'
+        )->addColumn(
+            'commission_type',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            255,
+            [ 'nullable' => false, ],
+            'Type of commission. Fixed or percentage'
+        )->addColumn(
+            'commission_amount_to_seller',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false, ],
+            'Commission Amount collected from seller'
+        )->addColumn(
+            'commission_amount',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false, ],
+            'Commission Amount'
+        )->addColumn(
+            'commission_range_from',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false, ],
+            'Commission Range From'
+        )->addColumn(
+            'commission_range_to',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false, ],
+            'Commission Range To '
+        )->addColumn(
+            'price_after_commission',
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
+            '10,2',
+            [ 'nullable' => false, ],
+            'Commission After changed'
+        )->addColumn(
+            'commission_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            20,
+            [ 'nullable' => false, ],
+            'Link to commission settings'
+        )->addColumn(
+            'seller_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            20,
+            [ 'nullable' => false ],
+            'Which seller'
+        )->addColumn(
+            'buyer_id',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            [ 'nullable' => false],
+            'Which Buyer'
+        )->addColumn(
+            'kikinben_fullfiled',
+            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+            null,
+            [ 'nullable' => false, 'default' => '1', ],
+            'Kikkinben fullfiled'
+        );
+$installer->getConnection()->createTable($kikinben_advancedcommission_commission_track);
 
 
 $installer->endSetup();
