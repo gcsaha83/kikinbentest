@@ -424,7 +424,7 @@ a.meanmenu-reveal,.meanmenu-accordion{display:none}
 .mean-remove{display:none!important}
 
 @media (min-width: 992px) and (max-width: 1200px) {
-	.vmagicmenu .level0 .level-top-mega .content-mega{padding: 20px 10px 0;}
+/* 	.vmagicmenu .level0 .level-top-mega .content-mega{padding: 20px 10px 0;} */
 	.vmagicmenu .level0 .level-top-mega .mage-column .children{width: 180px}
 }
 
