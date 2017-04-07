@@ -692,19 +692,20 @@
 
 	/*--------- footer copyright starts ----------*/
 
-	.footer_payment ul {
-	    float: none;
+	.footer_payment {
+	    	float: none;
+		text-align: center;
 	}
 
 	.footer_payment img {
 	    margin: 0 auto;
 	}
 
-	.footer_payment ul li {
+/* 	.footer_payment ul li {
 	    float: none !important;
 	    padding: 5px 10px !important;
 	    text-align: center;
-	}
+	} */
 	.copyright span {
 	    font-size: 12px;
 	    text-align: center;
