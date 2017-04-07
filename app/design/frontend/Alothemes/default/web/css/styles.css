@@ -1171,7 +1171,7 @@ font-size: 12px;
 .customer-account-index .box .box-title span{color: #333;font-weight: 600;text-transform: uppercase;}
 .block-collapsible-nav .item a:hover{background-color: transparent;}
 .abs-blocks-2columns, .abs-discount-block-desktop .block, .login-container .block, .account .column.main .block:not(.widget) .block-content .box, .block-addresses-list .items.addresses > .item, .form-edit-account .fieldset, .form-address-edit .fieldset, .storecredit .block, .paypal-review-discount .block, .cart-discount .block {
-    /*width: 48%;*/
+    width: 48% !important;
 }
 .abs-discount-block-desktop .block:nth-child(1), .login-container .block:nth-child(1), .account .column.main .block:not(.widget) .block-content .box:nth-child(1), .block-addresses-list .items.addresses > .item:nth-child(1), .form-edit-account .fieldset:nth-child(1), .form-address-edit .fieldset:nth-child(1), .storecredit .block:nth-child(1), .paypal-review-discount .block:nth-child(1), .cart-discount .block:nth-child(1) {
     clear: left;
@@ -1417,7 +1417,7 @@ font-size: 12px;
 .block-login input.input-text{display:block;width:167px;margin:3px 0}
 .block-login .actions{background:none;padding:0;margin:3px 0 0}
 .block-login .actions button.button span{border-color:#406a83;background:#618499}
-.login-container,.form.password.reset, .form.send.confirmation, .form.password.forget, .form.create.account, .form.form-edit-account, .form-address-edit, .form-newsletter-manage{border: 1px solid #ddd;border-radius: 5px; margin-bottom: 40px;padding: 30px 0px;display: block;margin-top: 35px;}
+.login-container,.form.password.reset, .form.send.confirmation, .form.password.forget, .form.create.account, .form.form-edit-account, .form-address-edit, .form-newsletter-manage{border: 1px solid #ddd;border-radius: 5px; margin-bottom: 40px;padding: 30px 0px;display: block;margin-top: 0px;}
 .login-container .actions-toolbar{margin-top: 20px;}
 /* Paypal */
 .sidebar .paypal-logo{display:none;margin:10px 0;text-align:center}
