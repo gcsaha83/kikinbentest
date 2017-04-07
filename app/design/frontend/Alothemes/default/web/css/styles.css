@@ -11213,3 +11213,9 @@ font-weight: normal !important;
 	z-index: 99999;
 }
 
+.review_inside_l .product ul {
+	list-style: disc !important;
+}
+
+
+
