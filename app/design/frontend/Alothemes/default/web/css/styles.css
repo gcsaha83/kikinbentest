@@ -1171,8 +1171,13 @@ font-size: 12px;
 .customer-account-index .box .box-title span{color: #333;font-weight: 600;text-transform: uppercase;}
 .block-collapsible-nav .item a:hover{background-color: transparent;}
 .abs-blocks-2columns, .abs-discount-block-desktop .block, .login-container .block, .account .column.main .block:not(.widget) .block-content .box, .block-addresses-list .items.addresses > .item, .form-edit-account .fieldset, .form-address-edit .fieldset, .storecredit .block, .paypal-review-discount .block, .cart-discount .block {
-    width: 48% !important;
+/*     width: 48%; */
 }
+
+.form-address-edit .fieldset {
+	width: 48%;	
+}
+	
 .abs-discount-block-desktop .block:nth-child(1), .login-container .block:nth-child(1), .account .column.main .block:not(.widget) .block-content .box:nth-child(1), .block-addresses-list .items.addresses > .item:nth-child(1), .form-edit-account .fieldset:nth-child(1), .form-address-edit .fieldset:nth-child(1), .storecredit .block:nth-child(1), .paypal-review-discount .block:nth-child(1), .cart-discount .block:nth-child(1) {
     clear: left;
     float: left;
