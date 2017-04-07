@@ -2769,6 +2769,15 @@ height: 152px;
 	.leader_sec {
 	    	padding: 0px;
 	}
+	
+	.form-address-edit .fieldset {
+		width: 100% !important;
+	}
+	
+	.form-address-edit .fieldset:nth-child(2) {
+		padding: 0 12px !important;
+		float: none !important;
+	}
 }
 
 /*----------- meet the team responsiveness -----------*/
