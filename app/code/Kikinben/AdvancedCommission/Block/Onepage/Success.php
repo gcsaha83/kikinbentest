@@ -181,8 +181,7 @@ class Success extends \Magento\Framework\View\Element\Template
             $product_id = $item->getProductId();
 	    	$product = $this->_product->load($item->getProductId());
             $sellerIdGlobal[] = $product->getSellerId ();
-            
-			
+            			
             if($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
                 $associated_products[] = $this->_configurable->getUsedProductCollection($product)->addAttributeToSelect('*')->addFilterByRequiredOptions()->getData();
                 
@@ -207,12 +206,14 @@ class Success extends \Magento\Framework\View\Element\Template
                 $simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherVal);
           }*/
         }
-        if(empty($associatedcalculations)){
+        
         	foreach($allProductId as $ortherValSimple){
         		
-        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple);
+        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple,$orderId);
+        		
         	}
-        }
+        
+        	
         $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
         
         if(!empty($associatedcalculations)){
@@ -242,11 +243,77 @@ class Success extends \Magento\Framework\View\Element\Template
         	
         //}
         
-                echo '<pre>';
-                
-               // print_r($categoryComm);
-                
-                print_r($commission);
+        //simple all
+        
+        for($simpleIter = 0; $simpleIter < count($simpleProductCommision) ; $simpleIter++){
+        	
+        	foreach($simpleProductCommision[$simpleIter] as $simpleKey => $simpleVal){
+        		
+        		/* @var mixed $simpleCommission */
+        		$simpleCommission[$simpleKey] = $simpleVal;
+        	}
+        	
+        }
+        
+        //$sellerSimple = array_push($sellerCommission,$simpleCommission); // will replace seller with simple
+        //$sellerConfig = array_push($sellerCommission,$associatedcalculations); // will replace seller with config
+        //$commission = array_push($sellerSimple,$sellerConfig);
+        
+       // $seller_simple = array_unique(array_merge($sellerCommission,$simpleCommission));
+        
+               echo '<pre>';                               
+               echo "seller";
+               print_r($sellerCommission);
+               echo "simple";
+               print_r($simpleCommission);
+               echo "config";
+               print_r($associatedcalculations);
+
+               echo "merged";
+               //var_dump(array_diff_key($a, $b) + $b);
+
+               //$simple_config_merged = array_diff_key($simpleCommission,$associatedcalculations)+$simpleCommission;
+
+               //$seller_merged  = array_diff_key($sellerCommission,$simple_config_merged)+$sellerCommission;
+
+               //$final_commission = array_diff_key($seller_merged,$simple_config_merged)+$seller_merged;
+
+               //print_r($simple_config_merged);
+               //print_r($seller_merged);
+               //print_r($final_commission);
+
+
+               
+               foreach($sellerCommission as $sellerKey => $sellerVal){
+               	
+                   foreach($simpleCommission as $simpleKey => $simpleVal){
+
+                       if($sellerKey === $simpleKey){
+                           $sellerCommission[$sellerKey] = $simpleCommission[$simpleKey];
+
+
+                       }
+               	
+               	   }
+               	
+               	
+               }
+               foreach($sellerCommission as $skey => $sVal){
+
+                   foreach($associatedcalculations as $configKey => $configVal){
+
+                       if($skey === $configKey){
+
+                           $sellerCommission[$skey] = $associatedcalculations[$configKey];
+
+                       }
+                      
+                   }
+
+               }
+               $final_commission = array_diff_key($sellerCommission,$associatedcalculations)+$sellerCommission;
+               $finalcommission = $final_commission+$associatedcalculations;  
+                 print_r($finalcommission+$simpleCommission);
                 //print_r($simpleProductId);
                 //print_r($allProductId);
                 //echo "==";
@@ -255,9 +322,39 @@ class Success extends \Magento\Framework\View\Element\Template
               //  print_r($configProducts);
                // echo "==";
               //  print_r($otherProducts);
+              
+                //$this->getCommissionSimple($commission);
                 
                 echo '</pre>';
 	 //return $items;
+    }
+    
+    public function getCommissionSimple($commission){
+    	
+    	foreach($commission as $key => $val){
+    		
+    		if(!empty($val['simple'])){
+    			echo "2nd level:";
+    			
+    			print_r($val['simple']);
+    			
+    			
+    		}
+    		else{
+    			foreach($val as $valKey => $valValue){
+    				if(!empty($valValue['simple'])){
+    					
+    					echo "3nd level:";
+    					
+    					print_r($val['simple']);
+    					
+    					 
+    				}
+    			}
+    		}
+    		
+    	}
+    	
     }
 
     
