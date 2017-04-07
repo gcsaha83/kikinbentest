@@ -3350,10 +3350,10 @@ font-size: 12px;
 
 /*--------- footer social --------------*/
 .footer_payment {
-
+	float: right;
 }
 
-.footer_payment ul {
+/* .footer_payment ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -3372,7 +3372,8 @@ font-size: 12px;
 
 .footer_payment ul li a:hover{
 
-}
+} */
+
 .footer_logo img {
 	width: 180px !important;
 }
@@ -11204,3 +11205,4 @@ font-weight: normal !important;
 	background-image:url("../../../../../../media/wysiwyg/category_bg/health.png") !important;
 	z-index: 99999;
 }
+
