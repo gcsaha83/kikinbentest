@@ -2557,12 +2557,6 @@ height: 152px;
 	}
 }
 
-@media (max-width: 662px) {
-	.btn_cust_one_l {
-		margin-bottom: 7px !important;
-	}
-}
-
 /*------- cart popup responsiveness ---------*/
 @media (max-width: 767px) {
   	.check_cust_l_s {
@@ -2613,11 +2607,51 @@ height: 152px;
 
 @media (max-width: 767px){
 	.tooltip_cust .tooltiptext {
-	    margin-left: -205px;
+	    	margin-left: -205px;
 	}
 	
 	.checkout_page_cust_n .fieldset .field-select-billing .control .select {
 		margin-bottom: 10px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 662px) {
+	.popup_modal-body .product-carosoul .owl-item {
+		height: auto !important;
+	}
+
+	.white_content {
+		left: 2%;
+    		width: 96%;
+	}
+}
+
+@media (max-width: 479px) {
+	.popup_modal-body {
+		padding-bottom: 0;
+	}
+
+	.popup_modal-body .product-carosoul .owl-item {
+		height: auto !important;
+	}
+
+	.white_content {
+		left: 2%;
+    		width: 95%;
+	}
+
+	.popup_modal-body .product-carosoul .owl-item {
+		border: none !important;
+	}
+
+	.product-carosoul .owl-item {
+	    	border-right: none !important;
+	}
+
+	.popup-button {
+		padding: 3px 5px;
+    		margin-right: 0px;
+    		font-weight: 600;
 	}
 }
 
