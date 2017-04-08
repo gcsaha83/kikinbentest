@@ -2622,14 +2622,14 @@ height: 152px;
 	}
 
 	.white_content {
-		left: 2%;
-    		width: 96%;
+		left: 2% !important;
+    		width: 96% !important;
 	}
 }
 
 @media (max-width: 479px) {
 	.popup_modal-body {
-		padding-bottom: 0;
+		padding-bottom: 0 !important;
 	}
 
 	.popup_modal-body .product-carosoul .owl-item {
@@ -2637,8 +2637,8 @@ height: 152px;
 	}
 
 	.white_content {
-		left: 2%;
-    		width: 95%;
+		left: 2% !important;
+    		width: 95% !important;
 	}
 
 	.popup_modal-body .product-carosoul .owl-item {
@@ -2650,9 +2650,9 @@ height: 152px;
 	}
 
 	.popup-button {
-		padding: 3px 5px;
-    		margin-right: 0px;
-    		font-weight: 600;
+		padding: 3px 5px !important;
+    		margin-right: 0px !important;
+    		font-weight: 600 !important;
 	}
 }
 
