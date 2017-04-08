@@ -692,19 +692,20 @@
 
 	/*--------- footer copyright starts ----------*/
 
-	.footer_payment ul {
-	    float: none;
+	.footer_payment {
+	    	float: none;
+		text-align: center;
 	}
 
 	.footer_payment img {
 	    margin: 0 auto;
 	}
 
-	.footer_payment ul li {
+/* 	.footer_payment ul li {
 	    float: none !important;
 	    padding: 5px 10px !important;
 	    text-align: center;
-	}
+	} */
 	.copyright span {
 	    font-size: 12px;
 	    text-align: center;
@@ -2557,12 +2558,6 @@ height: 152px;
 	}
 }
 
-@media (max-width: 662px) {
-	.btn_cust_one_l {
-		margin-bottom: 7px !important;
-	}
-}
-
 /*------- cart popup responsiveness ---------*/
 @media (max-width: 767px) {
   	.check_cust_l_s {
@@ -2613,11 +2608,51 @@ height: 152px;
 
 @media (max-width: 767px){
 	.tooltip_cust .tooltiptext {
-	    margin-left: -205px;
+	    	margin-left: -205px;
 	}
 	
 	.checkout_page_cust_n .fieldset .field-select-billing .control .select {
 		margin-bottom: 10px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 662px) {
+	.popup_modal-body .product-carosoul .owl-item {
+		height: auto !important;
+	}
+
+	.white_content {
+		left: 2%;
+    		width: 96%;
+	}
+}
+
+@media (max-width: 479px) {
+	.popup_modal-body {
+		padding-bottom: 0;
+	}
+
+	.popup_modal-body .product-carosoul .owl-item {
+		height: auto !important;
+	}
+
+	.white_content {
+		left: 2%;
+    		width: 95%;
+	}
+
+	.popup_modal-body .product-carosoul .owl-item {
+		border: none !important;
+	}
+
+	.product-carosoul .owl-item {
+	    	border-right: none !important;
+	}
+
+	.popup-button {
+		padding: 3px 5px;
+    		margin-right: 0px;
+    		font-weight: 600;
 	}
 }
 
@@ -2733,6 +2768,15 @@ height: 152px;
 
 	.leader_sec {
 	    	padding: 0px;
+	}
+	
+	.form-address-edit .fieldset {
+		width: 100% !important;
+	}
+	
+	.form-address-edit .fieldset:nth-child(2) {
+		padding: 0 12px !important;
+		float: none !important;
 	}
 }
 

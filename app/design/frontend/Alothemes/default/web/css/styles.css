@@ -1171,8 +1171,13 @@ font-size: 12px;
 .customer-account-index .box .box-title span{color: #333;font-weight: 600;text-transform: uppercase;}
 .block-collapsible-nav .item a:hover{background-color: transparent;}
 .abs-blocks-2columns, .abs-discount-block-desktop .block, .login-container .block, .account .column.main .block:not(.widget) .block-content .box, .block-addresses-list .items.addresses > .item, .form-edit-account .fieldset, .form-address-edit .fieldset, .storecredit .block, .paypal-review-discount .block, .cart-discount .block {
-    /*width: 48%;*/
+/*     width: 48%; */
 }
+
+.form-address-edit .fieldset {
+	width: 48%;	
+}
+	
 .abs-discount-block-desktop .block:nth-child(1), .login-container .block:nth-child(1), .account .column.main .block:not(.widget) .block-content .box:nth-child(1), .block-addresses-list .items.addresses > .item:nth-child(1), .form-edit-account .fieldset:nth-child(1), .form-address-edit .fieldset:nth-child(1), .storecredit .block:nth-child(1), .paypal-review-discount .block:nth-child(1), .cart-discount .block:nth-child(1) {
     clear: left;
     float: left;
@@ -1417,7 +1422,7 @@ font-size: 12px;
 .block-login input.input-text{display:block;width:167px;margin:3px 0}
 .block-login .actions{background:none;padding:0;margin:3px 0 0}
 .block-login .actions button.button span{border-color:#406a83;background:#618499}
-.login-container,.form.password.reset, .form.send.confirmation, .form.password.forget, .form.create.account, .form.form-edit-account, .form-address-edit, .form-newsletter-manage{border: 1px solid #ddd;border-radius: 5px; margin-bottom: 40px;padding: 30px 0px;display: block;margin-top: 35px;}
+.login-container,.form.password.reset, .form.send.confirmation, .form.password.forget, .form.create.account, .form.form-edit-account, .form-address-edit, .form-newsletter-manage{border: 1px solid #ddd;border-radius: 5px; margin-bottom: 40px;padding: 30px 0px;display: block;margin-top: 0px;}
 .login-container .actions-toolbar{margin-top: 20px;}
 /* Paypal */
 .sidebar .paypal-logo{display:none;margin:10px 0;text-align:center}
@@ -1940,14 +1945,16 @@ font-size: 12px;
 }
 
 .product-essential .stock label{font-size: 13px; color: #8f8e94; text-transform: capitalize;}
-.product-essential .stock span{font-size: 13px; color: #5bb300; text-transform: capitalize;}
+.product-essential .stock span{font-size: 13px; color: #5bb300 !important; text-transform: capitalize;}
 .product-essential .stock{padding-bottom: 0; border: 0;}
 .product-essential .product-info-main .product-social-links{border-top: 1px solid #e9e9e9; padding-top: 20px; }
 .product-essential .product-social-links .tocompare, 
 .product-essential .product-social-links .towishlist{font-size: 13px; color: #848484; display: inline-block; line-height: 20px}
 .product-essential .product-social-links .towishlist{padding-left: 10px}
 .product-essential .product-social-links .action .icon{font-size: 15px; display: inline-block; line-height: 20px; vertical-align: middle; padding-right: 5px}
-
+.product-essential .unavailable span {
+	color: #df3737 !important;	
+}
 .product-info-main .attibute ul li{font-size: 12px; color: #7d7d7d; font-weight: normal; margin: 5px 0; line-height: 15px; position: relative; padding-left: 12px}
 .product-info-main .attibute ul li:before{content: ""; width: 4px; height: 4px; position: absolute; left: 0; bottom: 3px; background-color: #7d7d7d; border-radius: 50%;}
 
@@ -3350,10 +3357,10 @@ font-size: 12px;
 
 /*--------- footer social --------------*/
 .footer_payment {
-
+	float: right;
 }
 
-.footer_payment ul {
+/* .footer_payment ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -3372,7 +3379,8 @@ font-size: 12px;
 
 .footer_payment ul li a:hover{
 
-}
+} */
+
 .footer_logo img {
 	width: 180px !important;
 }
@@ -11204,3 +11212,10 @@ font-weight: normal !important;
 	background-image:url("../../../../../../media/wysiwyg/category_bg/health.png") !important;
 	z-index: 99999;
 }
+
+.review_inside_l .product ul {
+	list-style: disc !important;
+}
+
+
+
