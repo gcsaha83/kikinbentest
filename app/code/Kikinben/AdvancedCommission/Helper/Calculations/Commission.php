@@ -117,15 +117,20 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 						$ProductchargeToSeller              =  $productPrice - $productpriceAfterCommissionPercent;
 		
 						$commissionFinal[$parentId] =  [
-								'PriceAfterCommission'=> $productpriceAfterCommissionPercent,
-								'commissionAmount'    => $ProductchargeToSeller ,
-								'commissiontype'	  => $commissionTypeString,
-								'commission_value'	  => $commissionAmount ,
+								'price_after_commission'=> $productpriceAfterCommissionPercent,
+								'commission_amount_to_seller'    => $ProductchargeToSeller * $commission['simple'][$parentId]['Qty'] ,
+								'commission_type'	  => $commissionTypeString,
+								'commission_amount_set'	  => $commissionAmount ,
 								'product_price' => $productOptions->getPrice(),
-								'seller_index'  => $productOptions->getSellerId (),
+								'seller_id'  => $productOptions->getSellerId (),
                                 'parent' =>$parentId,
-                                'child'=>$resultConfigVal
-		
+                                'child'=>$resultConfigVal,
+                                'commission_for'=>"Product_Level",
+                                'order_id' =>$orderId,
+                                'product_id' =>$productIdRecord,
+                                'product_qty' =>$commission['simple'][$parentId]['Qty'],
+                                'commission_id'=>$sellerProducts[$i]['kikinben_advancedcommission_sellerproductcommission_id']
+
 						];
 		
 					}
@@ -137,13 +142,19 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 		
 						$commissionFinal[$parentId] =  [
 								'PriceAfterCommission'=> $productchargeFixedAmount,
-								'commissionAmount'    => $productpriceAfterCommission ,
-								'commissiontype'	  => $commissionTypeString,
-								'commission_value'	  => $commissionAmount,
+								'commission_amount_to_seller'    => $productpriceAfterCommission * $commission['simple'][$parentId]['Qty'],
+								'commission_type'	  => $commissionTypeString,
+								'commission_amount_set'	  => $commissionAmount,
 								'product_price' => $productOptions->getPrice(),
-								'seller_index'  => $productOptions->getSellerId (),
+								'seller_id'  => $productOptions->getSellerId (),
                                 'parent' =>$parentId,
-                                'child'=>$resultConfigVal
+                                'child'=>$resultConfigVal,
+                                'commission_for'=>"Product_Level",
+                                'order_id' =>$orderId,
+                                'product_id' =>$productIdRecord,
+                                'product_qty' =>$commission['simple'][$parentId]['Qty'],
+                                'commission_id'=>$sellerProducts[$i]['kikinben_advancedcommission_sellerproductcommission_id']
+
 		
 						];
 		
@@ -210,17 +221,18 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 						
 		
 						$commissionFinal[$productIds] =  [
-								'PriceAfterCommission'=> $productpriceAfterCommissionPercent,
-								'commissionAmount'    => $ProductchargeToSeller * $qty,
-								'commissiontype'	  => $commissionTypeString,
-								'commission_value'	  => $commissionAmount,
+								'price_after_commission'=> $productpriceAfterCommissionPercent,
+								'commission_amount_to_seller'    => $ProductchargeToSeller * $qty,
+								'commission_type'	  => $commissionTypeString,
+								'commission_amount_set'	  => $commissionAmount,
 								'product_price' => $productOptions->getPrice(),
-								'seller_index'  => $productOptions->getSellerId (),
-								'Qty'		=> $qty,
+								'seller_id'  => $productOptions->getSellerId (),
+								'product_qty'		=> $qty,
 								'order_id'	=>$commission[$productIds]['order_id'],
-								'commission_for'=>"Product_Level"
+                                'commission_for'=>"Product_Level",
+                                'commission_id' =>$sellerProducts[$i]['kikinben_advancedcommission_sellerproductcommission_id'],
+                                'product_id'=>$productIdRecord
 								
-                                                               
 		
 						];
 		
@@ -232,15 +244,17 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 						$productpriceAfterCommission = $productPrice - $productchargeFixedAmount;
 		
 						$commissionFinal[$productIds] =  [
-								'PriceAfterCommission'=> $productchargeFixedAmount,
-								'commissionAmount'    => $productpriceAfterCommission * $qty,
-								'commissiontype'	  => $commissionTypeString,
-								'commission_value'	  => $commissionAmount,
+								'price_after_commission'=> $productchargeFixedAmount,
+								'commission_amount_to_seller'    => $productpriceAfterCommission * $qty,
+								'commission_type'	  => $commissionTypeString,
+								'commission_amount_set'	  => $commissionAmount,
 								'product_price' => $productOptions->getPrice(),
-								'seller_index'  => $productOptions->getSellerId (),
-								'Qty'		=> $qty,
+								'seller_id'  => $productOptions->getSellerId (),
+								'product_qty'		=> $qty,
 								'order_id'	=>$commission[$productIds]['order_id'],
-								'commission_for'=>"Product_Level"
+                                'commission_for'=>"Product_Level",
+                                'commission_id' =>$sellerProducts[$i]['kikinben_advancedcommission_sellerproductcommission_id'],
+                                'product_id' =>$productIdRecord
                                                                 
 		
 						];
@@ -321,15 +335,17 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         							$chargeToSeller              =  ($price - $priceAfterCommissionPercent)*$qunatity;
         							$commissionFinal[$product_id] = [
         									
-        									'PriceAfterCommission'=>$priceAfterCommissionPercent,
-        									'commissionAmount' =>$chargeToSeller,
-        									'commissiontype'	  => $commissionTypeString,
-        									'commission_value'    => $amount,
+        									'price_after_commission'=>$priceAfterCommissionPercent,
+        									'commission_amount_to_seller' =>$chargeToSeller,
+        									'commission_type'	  => $commissionTypeString,
+        									'commission_amount_set'    => $amount,
         									'product_price' => $price,
-										
-										'Qty'		=> $qunatity,
-										'order_id'	=>$itemsVal['order_id'],
-										'commission_for'=>"seller_Level"
+										    'product_qty'		=> $qunatity,
+										    'order_id'	=>$itemsVal['order_id'],
+                                            'commission_for'=>"seller_Level",
+                                            'seller_id' => $seller_id,
+                                            'commission_id' =>$sellerCommission[$i]['kikinben_advancedcommission_commission_id'],
+                                            'product_id' =>$product_id
         							
         							];
         						}
@@ -339,15 +355,18 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         							$priceAfterCommission = ($price - $chargeFixedAmount)*$qunatity;
         							$commissionFinal[$product_id] = [
         									
-        									'PriceAfterCommission'=>$chargeFixedAmount,
-        									'commissionAmount' =>$priceAfterCommission,
-        									'commissiontype'	  => $commissionTypeString,
-        									'commission_value'    => $amount,
+        									'price_after_commission'=>$chargeFixedAmount,
+        									'commission_amount_to_seller' =>$priceAfterCommission,
+        									'commission_type'	  => $commissionTypeString,
+        									'commission_amount_set'    => $amount,
         									'product_price' => $price,
-										
-										'Qty'		=> $qunatity,
-										'order_id'	=>$itemsVal['order_id'],
-										'commission_for'=>"seller_Level"
+										    'product_qty'		=> $qunatity,
+										    'order_id'	=>$itemsVal['order_id'],
+                                            'commission_for'=>"seller_Level",
+                                            'seller_id' => $seller_id,
+                                            'commission_id' =>$sellerCommission[$i]['kikinben_advancedcommission_commission_id'],
+                                            'product_id' =>$product_id
+                                            
         							
         							];
         							
@@ -368,31 +387,42 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         								$priceAfterCommissionPercentRange =  $price - (($amount / 100) * $price);
         								$chargeToSellerRange              =  ($price - $priceAfterCommissionPercentRange)*$qunatity;
         								$commissionFinal[$product_id] = [
-        										'PriceAfterCommission'=>$priceAfterCommissionPercentRange,
-        										'commissionAmount' =>$chargeToSellerRange,
-        										'commissiontype'	  => $commissionTypeString,
-        										'range'	=>[$range_start,$range_end],
-        										'commission_value'    => $amount,
-        										'Qty'		=> $qunatity,
-										'order_id'	=>$itemsVal['order_id'],
-										'commission_for'=>"seller_Level"
+        										'price_after_commission'=>$priceAfterCommissionPercentRange,
+        										'commission_amount_to_seller' =>$chargeToSellerRange,
+        										'commission_type'	  => $commissionTypeString,
+                                                'commission_range_from'	=>$range_start,
+                                                'commission_range_to'   =>$range_end,
+        										'commission_amount_set'    => $amount,
+        										'product_qty'	    	=> $qunatity,
+										        'order_id'	=>$itemsVal['order_id'],
+                                                'commission_for'=>"seller_Level",
+                                                'product_price' => $price,
+                                                'seller_id' => $seller_id,
+                                                'commission_id' =>$sellerCommission[$i]['kikinben_advancedcommission_commission_id'],
+                                                'product_id' =>$product_id
+
         										
         								];
         								 
         							}
         							else if($commissionType == 1){// fixed
-        								echo $itemsVal['seller_index'] ."==". $seller_id;
         								$chargeFixedAmountRange = $price - $amount;
         								$priceAfterCommissionRange = ($price - $chargeFixedAmountRange)*$qunatity;
         								$commissionFinal[$product_id] = [
-        										'PriceAfterCommission'=>$chargeFixedAmountRange,
-        										'commissionAmount' =>$priceAfterCommissionRange,
-        										'commissiontype'	  => $commissionTypeString,
-        										'range'	=>[$range_start,$range_end],
-        										'commission_value'    => $amount,
-        										'Qty'		=> $qunatity,
-										'order_id'	=>$itemsVal['order_id'],
-										'commission_for'=>"seller_Level"
+        										'price_after_commission'=>$chargeFixedAmountRange,
+        										'commission_amount_to_seller' =>$priceAfterCommissionRange,
+        										'commission_type'	  => $commissionTypeString,
+        										'commission_range_from'	=>$range_start,
+                                                'commission_range_to'   =>$range_end,
+        										'commission_amount_set'    => $amount,
+        										'product_qty'		=> $qunatity,
+									        	'order_id'	=>$itemsVal['order_id'],
+                                                'commission_for'=>"seller_Level",
+                                                'product_price' => $price,
+                                                'seller_id' => $seller_id,
+                                                'commission_id' =>$sellerCommission[$i]['kikinben_advancedcommission_commission_id'],
+                                                'product_id' =>$product_id
+
         								
         								];
         							}
@@ -408,14 +438,21 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         								$priceAfterCommissionPercentRange =  $price - (($amount / 100) * $price);
         								$chargeToSellerRange              =  ($price - $priceAfterCommissionPercentRange)*$qunatity;
         								$commissionFinal[$product_id] = [
-        										'PriceAfterCommission'=>$priceAfterCommissionPercentRange,
-        										'commissionAmount' =>$chargeToSellerRange,
-        										'commissiontype'	  => $commissionTypeString,
-        										'range'	=>[$range_start,$range_end],
-        										'commission_value'    => $amount,
-        										'Qty'		=> $qunatity,
-										'order_id'	=>$itemsVal['order_id'],
-										'commission_for'=>"seller_Level"
+        										'price_after_commission'=>$priceAfterCommissionPercentRange,
+        										'commission_amount_to_seller' =>$chargeToSellerRange,
+        										'commission_type'	  => $commissionTypeString,
+										        'order_id'	=>$itemsVal['order_id'],
+                                                'commission_for'=>"seller_Level",
+                                                'commission_range_from'	=>$range_start,
+                                                'commission_range_to'   =>$range_end,
+        										'commission_amount_set'    => $amount,
+        										'product_qty'		=> $qunatity,
+									        	'order_id'	=>$itemsVal['order_id'],
+                                                'commission_for'=>"seller_Level",
+                                                'product_price' => $price,
+                                                'seller_id' => $seller_id,
+                                                'commission_id' =>'',
+                                                'product_id' =>$product_id
         										
         								];
         								 
@@ -425,15 +462,22 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
         								$chargeFixedAmountRange = $price - $amount;
         								$priceAfterCommissionRange = ($price - $chargeFixedAmountRange)*$qunatity;
         								$commissionFinal[$product_id] = [
-        										'PriceAfterCommission'=>$chargeFixedAmountRange,
-        										'commissionAmount' =>$priceAfterCommissionRange,
-        										'commissiontype'	  => $commissionTypeString,
-        										'range'	=>[$range_start,$range_end],
-        										'commission_value'    => $amount,
-        										'Qty'		=> $qunatity,
-										'order_id'	=>$itemsVal['order_id'],
-										'commission_for'=>"seller_Level"
-        								
+        										'price_after_commission'=>$chargeFixedAmountRange,
+        										'commission_amount_to_seller' =>$priceAfterCommissionRange,
+        										'commission_type'	  => $commissionTypeString,
+                                                'order_id'	=>$itemsVal['order_id'],
+                                                'commission_for'=>"seller_Level",
+                                                'commission_range_from'	=>$range_start,
+                                                'commission_range_to'   =>$range_end,
+        										'commission_amount_set'    => $amount,
+        										'product_qty'		=> $qunatity,
+									        	'order_id'	=>$itemsVal['order_id'],
+                                                'commission_for'=>"seller_Level",
+                                                'product_price' => $price,
+                                                'seller_id' => $seller_id,
+                                                'commission_id' =>'',
+                                                'product_id' =>$product_id
+
         								];
         							}
         							

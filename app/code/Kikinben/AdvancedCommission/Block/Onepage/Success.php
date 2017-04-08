@@ -38,12 +38,12 @@ class Success extends \Magento\Framework\View\Element\Template
 			\Magento\Checkout\Model\Session $checkoutSession,
 			\Magento\Sales\Model\Order\Config $orderConfig,
 			\Magento\Framework\App\Http\Context $httpContext,
-			
 			\Magento\Sales\Model\Order $order,
 			\Magento\Catalog\Model\Product $product,
 			\Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
 			\Kikinben\AdvancedCommission\Helper\Calculations\Commission $commissioncalculation,
 			\Magento\Catalog\Model\Session $catalogSession,
+            \Kikinben\AdvancedCommission\Model\CommissionTrack $commissionTrack,
 			
 			
 			/*\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
@@ -72,6 +72,7 @@ class Success extends \Magento\Framework\View\Element\Template
 				$this->_configurable   = $configurable;
 				$this->_commissioncalculation = $commissioncalculation;
 				$this->catalogSession = $catalogSession;
+                $this->_commissionTrack = $commissionTrack;
 				
 				/*$this->_commissionSave = $commissionSave;
 				$this->_order          = $order;
@@ -162,7 +163,7 @@ class Success extends \Magento\Framework\View\Element\Template
 		&& $this->isVisible($order);
 	}
 	
-	public function getOrderItems($orderId){
+	public function saveKikinbenCommission($orderId){
 
         $commission=array();
 
@@ -216,87 +217,28 @@ class Success extends \Magento\Framework\View\Element\Template
         	
         $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
         
-        if(!empty($associatedcalculations)){
-        	array_push($commission,$associatedcalculations) ;
-        	
-        }
-        
-        if(!empty($simpleProductCommision))
-        	array_push($commission,$simpleProductCommision) ;
-        	
-        
-        if(!empty($sellerCommission))
-        	array_push($commission,$sellerCommission) ;
-        	
+                	
         $categoryComm = $this->_commissioncalculation->getCategoryCommissionSeller($allProductId,$orderData);
-        
-        if(!empty($categoryComm))
-        	array_push($commission,$categoryComm) ;
-        
-        	
-       
         
         foreach($allProductId as $productIds){
             //$categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
         }
-        //foreach($allProductId as $productIds){        	
         	
-        //}
-        
-        //simple all
-        
+        //selected all
+
+        if(!empty($simpleProductCommision) && !empty($associatedcalculations) && !empty($sellerCommission)){ 
         for($simpleIter = 0; $simpleIter < count($simpleProductCommision) ; $simpleIter++){
-        	
         	foreach($simpleProductCommision[$simpleIter] as $simpleKey => $simpleVal){
-        		
-        		/* @var mixed $simpleCommission */
         		$simpleCommission[$simpleKey] = $simpleVal;
         	}
         	
         }
-        
-        //$sellerSimple = array_push($sellerCommission,$simpleCommission); // will replace seller with simple
-        //$sellerConfig = array_push($sellerCommission,$associatedcalculations); // will replace seller with config
-        //$commission = array_push($sellerSimple,$sellerConfig);
-        
-       // $seller_simple = array_unique(array_merge($sellerCommission,$simpleCommission));
-        
-               echo '<pre>';                               
-               echo "seller";
-               print_r($sellerCommission);
-               echo "simple";
-               print_r($simpleCommission);
-               echo "config";
-               print_r($associatedcalculations);
-
-               echo "merged";
-               //var_dump(array_diff_key($a, $b) + $b);
-
-               //$simple_config_merged = array_diff_key($simpleCommission,$associatedcalculations)+$simpleCommission;
-
-               //$seller_merged  = array_diff_key($sellerCommission,$simple_config_merged)+$sellerCommission;
-
-               //$final_commission = array_diff_key($seller_merged,$simple_config_merged)+$seller_merged;
-
-               //print_r($simple_config_merged);
-               //print_r($seller_merged);
-               //print_r($final_commission);
-
-
-               
-               foreach($sellerCommission as $sellerKey => $sellerVal){
-               	
+        foreach($sellerCommission as $sellerKey => $sellerVal){
                    foreach($simpleCommission as $simpleKey => $simpleVal){
-
                        if($sellerKey === $simpleKey){
                            $sellerCommission[$sellerKey] = $simpleCommission[$simpleKey];
-
-
                        }
-               	
                	   }
-               	
-               	
                }
                foreach($sellerCommission as $skey => $sVal){
 
@@ -313,50 +255,64 @@ class Success extends \Magento\Framework\View\Element\Template
                }
                $final_commission = array_diff_key($sellerCommission,$associatedcalculations)+$sellerCommission;
                $finalcommission = $final_commission+$associatedcalculations;  
-                 print_r($finalcommission+$simpleCommission);
-                //print_r($simpleProductId);
-                //print_r($allProductId);
-                //echo "==";
-               // print_r($associatedcalculations);
-                //echo "==";
-              //  print_r($configProducts);
-               // echo "==";
-              //  print_r($otherProducts);
+               if($simpleCommission)
+                   $kikinbenCommissionSave = $finalcommission+$simpleCommission;
+               else
+                   $kikinbenCommissionSave = $finalcommission;
+               foreach($kikinbenCommissionSave as $listKey => $listVal){
+                   try{
+                       $this->_commissionTrack->setData($listVal)->save();
+                   }catch(\Exception $e){
+                       $this->messageManager->addError ( $e->getMessage ());
+                   }
+
+               }
+
+       }
               
-                //$this->getCommissionSimple($commission);
-                
-                echo '</pre>';
-	 //return $items;
+        
+        if(!empty($simpleProductCommision)){           
+           for($simpleLoop=0;$simpleLoop < count($simpleProductCommision); $simpleLoop++){
+           foreach($simpleProductCommision[$simpleLoop] as $simplelistKey => $simplelistVal){
+                   try{
+                       $this->_commissionTrack->setData($simplelistVal)->save();
+                   }catch(\Exception $e){
+                       $this->messageManager->addError ( $e->getMessage ());
+                   }
+
+           }
+        }
+
+       }
+        if(!empty($sellerCommission)){
+                foreach($sellerCommission as $sellerKey=>$sellerValue){
+                    try{
+                        $this->_commissionTrack->setData($sellerValue)->save();
+                    }catch(\Exception $e){
+                        $this->messageManager->addError ( $e->getMessage ());
+                    }
+
+            }
+
+        }
+
+
+               
+               //echo '<pre>';                               
+               //echo "seller";
+               //print_r($sellerCommission);
+               //echo "simple";
+               //print_r($simpleCommission);
+               //echo "config";
+               //print_r($associatedcalculations);
+               //echo "merged";
+               //print_r($finalcommission+$simpleCommission);
+               //echo '</pre>'; 
+               //return $items;
+
     }
     
-    public function getCommissionSimple($commission){
-    	
-    	foreach($commission as $key => $val){
-    		
-    		if(!empty($val['simple'])){
-    			echo "2nd level:";
-    			
-    			print_r($val['simple']);
-    			
-    			
-    		}
-    		else{
-    			foreach($val as $valKey => $valValue){
-    				if(!empty($valValue['simple'])){
-    					
-    					echo "3nd level:";
-    					
-    					print_r($val['simple']);
-    					
-    					 
-    				}
-    			}
-    		}
-    		
-    	}
-    	
-    }
-
+   
     
 
 

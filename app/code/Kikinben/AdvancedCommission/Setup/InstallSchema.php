@@ -441,12 +441,12 @@ $product_commission_global_level_track = $installer->getConnection()->newTable(
 $installer->getConnection()->createTable($product_commission_global_level_track);
 
 $kikinben_advancedcommission_commission_track = $installer->getConnection()->newTable(
-            $installer->getTable('kikinben_advancedcommission_commission_track')
+            $installer->getTable('kikinben_advancedcommission_commissiontrack')
     )->addColumn(
-            'kikinben_advancedcommission_commission_track_id',
+            'kikinben_advancedcommission_commissiontrack_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             null,
-            [ 'nullable' => false, ],
+            [ 'identity' => true, 'nullable' => false, 'primary' => true, 'unsigned' => true, ],
             'Primary Key'
         )->addColumn(
             'order_id',
@@ -491,7 +491,7 @@ $kikinben_advancedcommission_commission_track = $installer->getConnection()->new
             [ 'nullable' => false, ],
             'Commission Amount collected from seller'
         )->addColumn(
-            'commission_amount',
+            'commission_amount_set',
             \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
             '10,2',
             [ 'nullable' => false, ],
