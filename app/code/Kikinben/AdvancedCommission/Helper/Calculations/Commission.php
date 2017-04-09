@@ -603,7 +603,6 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     		$seller_id =  $productCategory->getSellerId();    		
     	}
     	
-    	
     	$sellerCategoryCollectionNonRange = $this->_sellerCategoryCommission->create()->getCollection();
     	$sellerProductsNonRange = $sellerCategoryCollectionNonRange
     							 ->addFieldToFilter('category_id',['in'=>$categories])
