@@ -8,7 +8,7 @@
     <referenceBlock name="seller_account" remove="true" />
 	<referenceBlock name="customer_account_navigation" remove="true" />
 	
-		<referenceBlock name="minicart" remove="false"/>
+		<!-- <referenceBlock name="minicart" remove="false"/>
 	 	<referenceContainer name="header.panel" remove="false"/>
 	  	<referenceBlock name="top.search" remove="false"/>
 	 	<referenceBlock name="catalog.compare.link" remove="false"/>
@@ -22,7 +22,7 @@
         <referenceBlock name="form.subscribe" remove="true" />
         <referenceBlock name="main-footer" remove="true" />
         <referenceBlock name="page.bottom" remove="true" />
-        <referenceContainer name="sidebar.additional" remove="true" />
+        <referenceContainer name="sidebar.additional" remove="true" />-->
          
     <referenceBlock name="content">
         <!--<block class="Apptha\Marketplace\Block\Seller\Displayseller" name="seller_content" template="seller/displayseller.phtml" />-->
@@ -30,9 +30,9 @@
     </referenceBlock>
     
     
-<!--<referenceContainer name="div.sidebar.main">
+<referenceContainer name="div.sidebar.main">
     <block class="Kikinben\SellerCategory\Block\Menu" name="accordion.sidebar" before="-" template="Kikinben_SellerCategory::accordion.phtml" />
-</referenceContainer>-->
+</referenceContainer>
    
    <!-- <referenceContainer name="sidebar.main">
 			 <block class="Apptha\Marketplace\Block\Seller\Displayseller"

@@ -489,9 +489,9 @@ class Menu extends \Magento\Catalog\Block\Navigation
             $active   = $this->isCategoryActive($idTop) ? ' active' : '';
             $isDropdown = in_array($idTop, $dropdownIds) ? ' dropdown' : '';
             //$urlTop      =  '<a class="level-top" href="' .$catTop->getUrl(). '">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
-            //$urlTop      =  '<a onclick="getSellerProducts('.$customerId.','.$idTop.')" class="level-top" href="' .$sellerProductUrl. '">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
+            $urlTop      =  '<a class="level-top" href="' .$sellerProductUrl. '">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
             
-            $urlTop      =  '<a onclick="getSellerProducts('.$customerId.','.$idTop.')" class="level-top" href="#">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
+            //$urlTop      =  '<a onclick="getSellerProducts('.$customerId.','.$idTop.')" class="level-top" href="#">' .$this->getThumbnail($catTop). '<span>' .__($catTop->getName()) . $this->getCatLabel($catTop). '</span><span class="boder-menu"></span></a>';
 
             $classTop    = ($i == 1) ? 'first' : ($i == $last ? 'last' : '');
             $classTop   .= $active ;

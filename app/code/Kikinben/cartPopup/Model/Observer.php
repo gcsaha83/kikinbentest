@@ -2,8 +2,16 @@
 namespace Kikinben\cartPopup\Model;
 class Observer implements \Magento\Framework\Event\ObserverInterface
 {
+	protected $_catalogSession;
+	public function __construct(
+			\Magento\Catalog\Model\Session $catalogSession
+			){
+				$this->_catalogSession = $catalogSession;
+		
+	}
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
+    	
     	/*$observer->getEvent()
     	->getBlock()
     	->getLayout()

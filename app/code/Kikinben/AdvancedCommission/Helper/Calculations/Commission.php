@@ -616,18 +616,23 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     			$percentage_amount = $rangeVal['percentage'];
     			$amount = $rangeVal['amount'];
     			$rangeSet = $rangeVal['price_range_enable']; 	
-    			$commissionTypeStringCatg = ($percentage_amount == 1) ? 'Percentage' : 'Fixed' ;
-    			if($rangeSet){
-    				
-    				if($percentage_amount == 1){
+                $commissionTypeStringCatg = ($percentage_amount == 1) ? 'Percentage' : 'Fixed' ;
+                $orderTotal = "";
+
+                if($rangeSet){
+                    $price_range_from =  $rangeVal['uprice_range_from'];
+                    $price_range_to   =  $rangeVal['uprice_range_to'];
+                    if((floatval($price_range_from) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($range_end))){
+                        if($percentage_amount == 1){
     				
     				}
     				else{
     				
     				}
-    			}
-    			
-    			else{
+
+
+                  }    
+    			}else{
     				if($percentage_amount == 1){
     				
     				}
