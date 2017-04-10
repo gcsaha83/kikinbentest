@@ -298,7 +298,7 @@ class Success extends \Magento\Framework\View\Element\Template
 
 
                
-               //echo '<pre>';                               
+               echo '<pre>';                               
                //echo "seller";
                //print_r($sellerCommission);
                //echo "simple";
@@ -306,8 +306,11 @@ class Success extends \Magento\Framework\View\Element\Template
                //echo "config";
                //print_r($associatedcalculations);
                //echo "merged";
-               //print_r($finalcommission+$simpleCommission);
-               //echo '</pre>'; 
+              //print_r($finalcommission+$simpleCommission);
+        echo "seller_categ";
+        print_r($categoryComm);
+          
+               echo '</pre>'; 
                //return $items;
 
     }

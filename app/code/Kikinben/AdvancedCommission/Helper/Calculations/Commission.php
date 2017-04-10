@@ -19,7 +19,8 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
 			\Magento\Framework\Api\DataObjectHelper $dataObjectHelper,
 			\Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
 			\Magento\Store\Model\StoreManagerInterface $storeManager,
-			\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollection
+            \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollection
+            
 			
 			)
 	{
@@ -598,17 +599,28 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     	
     	foreach($productIdCat as $val){
     		
-    		$productCategory = $this->_product->load($val);
-    		$categories = $productCategory->getCategoryIds();
-    		$seller_id =  $productCategory->getSellerId();    		
+            $productCategory = $this->productRepository->getById($val);
+            if ($categoryIds = $productCategory->getCustomAttribute('category_ids')) {
+                foreach ($categoryIds->getValue() as $categoryIdData) {
+                     $categoryId[] = $categoryIdData;
+                     $commission[$categoryIdData][$val]['Qty'] = $items[$val]['Qty'];
+                     $commission[$categoryIdData][$val]['order_id'] = $items[$val]['order_id'];
+                     $commission[$categoryIdData][$val]['product_price'] = $items[$val]['product_price'];
+
+
+                        
+                }
+            }
+
+            $seller_id =  $productCategory->getSellerId();
+
     	}
-    	
     	$sellerCategoryCollectionNonRange = $this->_sellerCategoryCommission->create()->getCollection();
     	$sellerProductsNonRange = $sellerCategoryCollectionNonRange
-    							 ->addFieldToFilter('category_id',['in'=>$categories])
+    							 ->addFieldToFilter('category_id',['in'=>$categoryId])
     							 ->addFieldToFilter('seller_id',['in'=>$seller_id])
-    							 ->getSelect();
-    	
+    							 ->getData();
+
     	
     	 
     		foreach($sellerProductsNonRange as $rangeVal){    			    			
@@ -616,6 +628,11 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     			$percentage_amount = $rangeVal['percentage'];
     			$amount = $rangeVal['amount'];
     			$rangeSet = $rangeVal['price_range_enable']; 	
+                $category_id = $rangeVal['category_id'];
+                if(in_array($category_id,$commission)){
+                    echo $category_id."<br/>";
+
+                }
                 $commissionTypeStringCatg = ($percentage_amount == 1) ? 'Percentage' : 'Fixed' ;
                 $orderTotal = "";
 
