@@ -100,7 +100,7 @@ if (count($modelOtp)) {
 }
                     // send OTP on mobile code
                     $fromNumber = $mobileNumber; // '+91 88020 45390';
-                    $message = "Your One Time Password is " . $otp;
+                    $message = "Your Kikinben one time password is " . $otp;
 
 try {
                         $to = str_replace('+', '', $fromNumber);                    
