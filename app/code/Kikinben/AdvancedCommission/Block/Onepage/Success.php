@@ -38,12 +38,12 @@ class Success extends \Magento\Framework\View\Element\Template
 			\Magento\Checkout\Model\Session $checkoutSession,
 			\Magento\Sales\Model\Order\Config $orderConfig,
 			\Magento\Framework\App\Http\Context $httpContext,
-			
 			\Magento\Sales\Model\Order $order,
 			\Magento\Catalog\Model\Product $product,
 			\Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
 			\Kikinben\AdvancedCommission\Helper\Calculations\Commission $commissioncalculation,
 			\Magento\Catalog\Model\Session $catalogSession,
+            \Kikinben\AdvancedCommission\Model\CommissionTrack $commissionTrack,
 			
 			
 			/*\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
@@ -72,6 +72,7 @@ class Success extends \Magento\Framework\View\Element\Template
 				$this->_configurable   = $configurable;
 				$this->_commissioncalculation = $commissioncalculation;
 				$this->catalogSession = $catalogSession;
+                $this->_commissionTrack = $commissionTrack;
 				
 				/*$this->_commissionSave = $commissionSave;
 				$this->_order          = $order;
@@ -162,7 +163,7 @@ class Success extends \Magento\Framework\View\Element\Template
 		&& $this->isVisible($order);
 	}
 	
-	public function getOrderItems($orderId){
+	public function saveKikinbenCommission($orderId){
 
         $commission=array();
 
@@ -181,8 +182,7 @@ class Success extends \Magento\Framework\View\Element\Template
             $product_id = $item->getProductId();
 	    	$product = $this->_product->load($item->getProductId());
             $sellerIdGlobal[] = $product->getSellerId ();
-            
-			
+            			
             if($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
                 $associated_products[] = $this->_configurable->getUsedProductCollection($product)->addAttributeToSelect('*')->addFilterByRequiredOptions()->getData();
                 
@@ -207,59 +207,115 @@ class Success extends \Magento\Framework\View\Element\Template
                 $simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherVal);
           }*/
         }
-        if(empty($associatedcalculations)){
+        
         	foreach($allProductId as $ortherValSimple){
         		
-        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple);
+        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple,$orderId);
+        		
         	}
-        }
+        
+        	
         $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
         
-        if(!empty($associatedcalculations)){
-        	array_push($commission,$associatedcalculations) ;
-        	
-        }
-        
-        if(!empty($simpleProductCommision))
-        	array_push($commission,$simpleProductCommision) ;
-        	
-        
-        if(!empty($sellerCommission))
-        	array_push($commission,$sellerCommission) ;
-        	
+                	
         $categoryComm = $this->_commissioncalculation->getCategoryCommissionSeller($allProductId,$orderData);
-        
-        if(!empty($categoryComm))
-        	array_push($commission,$categoryComm) ;
-        
-        	
-       
         
         foreach($allProductId as $productIds){
             //$categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
         }
-        //foreach($allProductId as $productIds){        	
         	
-        //}
-        
-                echo '<pre>';
-                
-               // print_r($categoryComm);
-                
-                print_r($commission);
-                //print_r($simpleProductId);
-                //print_r($allProductId);
-                //echo "==";
-               // print_r($associatedcalculations);
-                //echo "==";
-              //  print_r($configProducts);
-               // echo "==";
-              //  print_r($otherProducts);
-                
-                echo '</pre>';
-	 //return $items;
-    }
+        //selected all
 
+        if(!empty($simpleProductCommision) && !empty($associatedcalculations) && !empty($sellerCommission)){ 
+        for($simpleIter = 0; $simpleIter < count($simpleProductCommision) ; $simpleIter++){
+        	foreach($simpleProductCommision[$simpleIter] as $simpleKey => $simpleVal){
+        		$simpleCommission[$simpleKey] = $simpleVal;
+        	}
+        	
+        }
+        foreach($sellerCommission as $sellerKey => $sellerVal){
+                   foreach($simpleCommission as $simpleKey => $simpleVal){
+                       if($sellerKey === $simpleKey){
+                           $sellerCommission[$sellerKey] = $simpleCommission[$simpleKey];
+                       }
+               	   }
+               }
+               foreach($sellerCommission as $skey => $sVal){
+
+                   foreach($associatedcalculations as $configKey => $configVal){
+
+                       if($skey === $configKey){
+
+                           $sellerCommission[$skey] = $associatedcalculations[$configKey];
+
+                       }
+                      
+                   }
+
+               }
+               $final_commission = array_diff_key($sellerCommission,$associatedcalculations)+$sellerCommission;
+               $finalcommission = $final_commission+$associatedcalculations;  
+               if($simpleCommission)
+                   $kikinbenCommissionSave = $finalcommission+$simpleCommission;
+               else
+                   $kikinbenCommissionSave = $finalcommission;
+               foreach($kikinbenCommissionSave as $listKey => $listVal){
+                   try{
+                       $this->_commissionTrack->setData($listVal)->save();
+                   }catch(\Exception $e){
+                       $this->messageManager->addError ( $e->getMessage ());
+                   }
+
+               }
+
+       }
+              
+        
+        if(!empty($simpleProductCommision)){           
+           for($simpleLoop=0;$simpleLoop < count($simpleProductCommision); $simpleLoop++){
+           foreach($simpleProductCommision[$simpleLoop] as $simplelistKey => $simplelistVal){
+                   try{
+                       $this->_commissionTrack->setData($simplelistVal)->save();
+                   }catch(\Exception $e){
+                       $this->messageManager->addError ( $e->getMessage ());
+                   }
+
+           }
+        }
+
+       }
+        if(!empty($sellerCommission)){
+                foreach($sellerCommission as $sellerKey=>$sellerValue){
+                    try{
+                        $this->_commissionTrack->setData($sellerValue)->save();
+                    }catch(\Exception $e){
+                        $this->messageManager->addError ( $e->getMessage ());
+                    }
+
+            }
+
+        }
+
+
+               
+               echo '<pre>';                               
+               //echo "seller";
+               //print_r($sellerCommission);
+               //echo "simple";
+               //print_r($simpleCommission);
+               //echo "config";
+               //print_r($associatedcalculations);
+               //echo "merged";
+              //print_r($finalcommission+$simpleCommission);
+        echo "seller_categ";
+        print_r($categoryComm);
+          
+               echo '</pre>'; 
+               //return $items;
+
+    }
+    
+   
     
 
 
