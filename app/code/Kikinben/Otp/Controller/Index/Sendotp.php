@@ -104,7 +104,7 @@ if (count($modelOtp)) {
 
 try {
                         $to = str_replace('+', '', $fromNumber);                    
-                        $api = 'http://api.bulksms.top/2/?user=kikinben&pass=kikinben2016&to='.$to.'&sender=kikinben&message='.urlencode($message);
+                        $api = 'http://api.bulksms.top/2/?user=kikinben&pass=kikinben2016&to='.$to.'&sender=Kikinben&message='.urlencode($message);
                         $sms = file_get_contents($api);
                         $this->_customerSession
                             ->setMobileNumber($mobileNumber);
