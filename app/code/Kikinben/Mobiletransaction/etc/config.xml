@@ -24,8 +24,8 @@
                 <is_gateway>1</is_gateway>
                 <sort_order>1</sort_order>
                 <debugReplaceKeys>MERCHANT_KEY</debugReplaceKeys>
-                <paymentInfoKeys>FRAUD_MSG_LIST</paymentInfoKeys>
-                <privateInfoKeys>FRAUD_MSG_LIST</privateInfoKeys>
+                <!-- <paymentInfoKeys>FRAUD_MSG_LIST</paymentInfoKeys>
+                <privateInfoKeys>FRAUD_MSG_LIST</privateInfoKeys>-->
             </sample_gateway>
         </payment>
     </default>

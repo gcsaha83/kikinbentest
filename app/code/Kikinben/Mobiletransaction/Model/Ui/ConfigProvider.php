@@ -29,9 +29,10 @@ final class ConfigProvider implements ConfigProviderInterface
 			'Bkash'=>__('Bkash'),
 			'Rocket'=>__('Rocket')
                     ],
-		   'mobileNumbers' =>[],
-		   'transactionIds'=>[]
-                ]
+		   
+                ],
+            'mobileNumbers' =>'',
+            'transactionIds'=>''
             ]
         ];
     }
