@@ -24,8 +24,8 @@ define(
                 this._super()
                     .observe([
                         'transactionResult',
-			'mobileNumber',
-			'transactionId'
+                        'mobileNumber',
+                        'transactionId'
                     ]);
                 return this;
             },
@@ -39,8 +39,8 @@ define(
                     'method': this.item.method,
                     'additional_data': {
                         'transaction_result': this.transactionResult(),
-			'mobile_number':this.mobileNumber(),
-			'transaction_id':this.transactionId()
+                        'mobile_number':this.mobileNumber(),
+                        'transaction_id':this.transactionId()
                     }
                 };
             },
@@ -53,17 +53,17 @@ define(
                     }
                 });
             },
-	   getMobileNumbers:function() {
-		return _.map(window.checkoutConfig.payment.sample_gateway.mobileNumbers, function(value, key) {
+            getMobileNumbers:function() {
+            	return _.map(window.checkoutConfig.payment.sample_gateway.mobileNumbers, function(value, key) {
                     return {
                         'value': key,
                         'mobile_number': value
                     }
                 });
 
-	  },
-	 getTransactionIds:function() {
-		return _.map(window.checkoutConfig.payment.sample_gateway.transactionIds, function(value, key) {
+            },
+            getTransactionIds:function() {
+            	return _.map(window.checkoutConfig.payment.sample_gateway.transactionIds, function(value, key) {
                     return {
                         'value': key,
                         'transaction_id': value

@@ -42,7 +42,9 @@ class FraudHandler implements HandlerInterface
         );
 
         /** @var $payment Payment */
-        $payment->setIsTransactionPending(true);
-        $payment->setIsFraudDetected(true);
+        //$payment->setIsTransactionPending(false);
+        //$payment->setIsFraudDetected(true);
+        $payment->setIsTransactionPending(false);
+        $payment->setIsFraudDetected(false);
     }
 }

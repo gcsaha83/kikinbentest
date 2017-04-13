@@ -1,1 +1,12 @@
-<h1>Hi, I am here!</h1>
+<?php 
+$payment = $block->getPayment();
+$transaction_result = $payment->getAdditionalInformation('transaction_result');
+$transaction_id 	= $payment->getAdditionalInformation('transaction_id');
+$mobile_number      = $payment->getAdditionalInformation('mobile_number');
+$payment_method     = $payment->getMethod();
+?>
+<?php if($payment_method === 'sample_gateway'):?>
+Transaction Type: <?php echo $transaction_result;?><br/>
+Mobile Number:<?php echo $mobile_number;?><br/>
+Transaction ID:<?php echo $transaction_id;?>
+<?php endif;?>
