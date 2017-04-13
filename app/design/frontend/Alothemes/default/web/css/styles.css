@@ -11224,3 +11224,8 @@ font-weight: normal !important;
     color: ##df3737 !important;
 }
 
+#sample_gateway{
+	float: left;
+	margin-bottom: 6px !important;
+	margin-right: 6px;
+}
