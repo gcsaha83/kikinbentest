@@ -8,7 +8,7 @@
 	<referenceContainer name="content">
 			<block class="Kikinben\AdvancedCommission\Block\Adminhtml\SellerProductCommission\Edit"
 				name="kikinben_advancedcommission_sellerproductlist.edit" />
-		</referenceContainer>
+	</referenceContainer>
 		
         <!--<referenceContainer name="content">
            <uiComponent name="kikinben_advancedcommission_sellerproduct_edit"/>            

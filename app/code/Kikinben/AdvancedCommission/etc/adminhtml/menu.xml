@@ -34,5 +34,9 @@
   <!-- <add id="Kikinben_AdvancedCommission::kikinben_advancedcommission_menu" title="Manage Advance Commission" module="Kikinben_AdvancedCommission" sortOrder="9" parent="Apptha_Marketplace::main_menu" action="kikinben_advancedcommission/index/index" resource="Kikinben_AdvancedCommission::top" />-->
   <add id="Kikinben_AdvancedCommission::kikinben_advancedcommission_menu" title="Manage Advance Commission" module="Kikinben_AdvancedCommission" sortOrder="9" parent="Apptha_Marketplace::main_menu"  resource="Kikinben_AdvancedCommission::top" />
   <add id="Kikinben_AdvancedCommission::kikinben_advancedcommission_menu_sellers" title="Manage seller's Commission" module="Kikinben_AdvancedCommission" sortOrder="10" parent="Kikinben_AdvancedCommission::kikinben_advancedcommission_menu" action="kikinben_advancedcommission/index/index" resource="Magestore_CustomMenu::menu_item"/>
+
+<add id="Kikinben_AdvancedCommission::kikinben_advancedcommission_menu_reports" title="View Commission Report" module="Kikinben_AdvancedCommission" sortOrder="11" parent="Kikinben_AdvancedCommission::kikinben_advancedcommission_menu" action="kikinben_advancedcommission/reports/index" resource="Magestore_CustomMenu::menu_item"/>
+
+
  </menu>
 </config>

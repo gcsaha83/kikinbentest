@@ -92,7 +92,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 		$fieldset->addField('seller_id','hidden', ['name' => 'seller_id']);
 		$fieldset->addField('product_id','hidden', ['name' => 'product_id']);
         $fieldset->addField('kikinben_advancedcommission_sellerproductcommission_id','hidden', ['name' => 'kikinben_advancedcommission_sellerproductcommission_id']);
-	
+        
 		$fieldset->addField('kikibin_fullfiled', 'select', array(
 				'label'     => 'Fullfiled By kikinben',
 				'class'     => 'required-entry',
@@ -126,10 +126,6 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 
         $SellerProductCommissionData = $this->_sellerProductCommission->getData();
         $form->setValues ( $SellerProductCommissionData  );
-
-        
-
-
 
 		$this->setForm($form);
 	

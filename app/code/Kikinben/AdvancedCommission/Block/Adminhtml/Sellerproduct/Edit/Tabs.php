@@ -67,11 +67,11 @@ class Tabs extends WidgetTabs {
         $this->addTab ( 'Categories', [
 				'label' => __ ( 'Seller\'s Categories' ),
 				'title' => __ ( 'Seller\'s Categories' ),
-				/*'content' => $this->getLayout()->createBlock(
-						'Kikinben\AdvancedCommission\Block\Adminhtml\Sellerproduct\Edit\Tab\Grid',
+				'content' => $this->getLayout()->createBlock(
+						'Kikinben\AdvancedCommission\Block\Adminhtml\Sellercategory\SellercategoryList',
 						"seller_categories",
 						['data' => ['customer_id' => $customer_id]
-                    ])->toHtml(),*/
+                    ])->toHtml(),
 				
         ] );
         

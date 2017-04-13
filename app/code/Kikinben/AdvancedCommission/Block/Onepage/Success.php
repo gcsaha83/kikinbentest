@@ -23,6 +23,8 @@ class Success extends \Magento\Framework\View\Element\Template
 	 * @var \Magento\Framework\App\Http\Context
 	 */
 	protected $httpContext;
+	
+	protected $catalogSession;
 
 	/**
 	 * @param \Magento\Framework\View\Element\Template\Context $context
@@ -36,7 +38,15 @@ class Success extends \Magento\Framework\View\Element\Template
 			\Magento\Checkout\Model\Session $checkoutSession,
 			\Magento\Sales\Model\Order\Config $orderConfig,
 			\Magento\Framework\App\Http\Context $httpContext,
-			\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
+			\Magento\Sales\Model\Order $order,
+			\Magento\Catalog\Model\Product $product,
+			\Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
+			\Kikinben\AdvancedCommission\Helper\Calculations\Commission $commissioncalculation,
+			\Magento\Catalog\Model\Session $catalogSession,
+            \Kikinben\AdvancedCommission\Model\CommissionTrack $commissionTrack,
+			
+			
+			/*\Kikinben\AdvancedCommission\Model\GlobalLevelProductTrack $commissionSave,
 			\Magento\Catalog\Model\Product $product,
 			\Apptha\Marketplace\Model\Seller $seller,
 			\Kikinben\AdvancedCommission\Model\SellerProductCommissionFactory $SellerProductCommission,
@@ -47,7 +57,8 @@ class Success extends \Magento\Framework\View\Element\Template
             \Magento\Catalog\Api\Data\ProductInterfaceFactory $productFactory,  
             \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,    
             \Magento\Framework\Api\DataObjectHelper $dataObjectHelper,
-            \Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,
+            \Magento\ConfigurableProduct\Model\Product\Type\Configurable $configurable,*/
+			
 			array $data = []
 			) {
 				parent::__construct($context, $data);
@@ -56,7 +67,14 @@ class Success extends \Magento\Framework\View\Element\Template
 				$this->_isScopePrivate = true;
 				$this->httpContext = $httpContext;
 				
-				$this->_commissionSave = $commissionSave;
+				$this->_order          = $order;
+				$this->_product        = $product;
+				$this->_configurable   = $configurable;
+				$this->_commissioncalculation = $commissioncalculation;
+				$this->catalogSession = $catalogSession;
+                $this->_commissionTrack = $commissionTrack;
+				
+				/*$this->_commissionSave = $commissionSave;
 				$this->_order          = $order;
 				$this->_product        = $product;
 				$this->_seller         = $seller;
@@ -68,7 +86,7 @@ class Success extends \Magento\Framework\View\Element\Template
                 $this->productFactory = $productFactory;      
                 $this->productRepository = $productRepository;        
                 $this->dataObjectHelper = $dataObjectHelper;
-                $this->_configurable=$configurable;
+                $this->_configurable=$configurable;*/
 	}
 
 	/**
@@ -145,7 +163,7 @@ class Success extends \Magento\Framework\View\Element\Template
 		&& $this->isVisible($order);
 	}
 	
-	public function getOrderItems($orderId){
+	public function saveKikinbenCommission($orderId){
 
         $commission=array();
 
@@ -154,6 +172,7 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach($orderData->getItems() as $allItems){
 
             $allProductId[] = $allItems->getProductId(); 
+            $oderObject = $allItems;
 
 
         }
@@ -161,65 +180,142 @@ class Success extends \Magento\Framework\View\Element\Template
         foreach ($orderData->getAllVisibleItems() as $item) {
 
             $product_id = $item->getProductId();
-			$product = $this->_product->load($item->getProductId());
-			
+	    	$product = $this->_product->load($item->getProductId());
+            $sellerIdGlobal[] = $product->getSellerId ();
+            			
             if($product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE){
                 $associated_products[] = $this->_configurable->getUsedProductCollection($product)->addAttributeToSelect('*')->addFilterByRequiredOptions()->getData();
-                $commission[$item->getProductId ()] = [
-
-                    'order_id'      => $orderData->getIncrementId(),
-            		'name'          => $item->getName(),
-            		'sku'           => $item->getSku(),
-            		'product_price' => $item->getPrice(),
-            		'Qty'           => $item->getQtyOrdered(),
-            		'buyer_id'      => $orderData->getCustomerId(),
-            		'product_id'    => $item->getProductId (),
-            		'seller_index'  => $product->getSellerId (),
-            	                 
-                ];
-
-                               
                 
-			}//config products ends
+                
+	    }//config products ends
+            else if($product->getTypeId() === 'simple'){
+            	
+                $simple_products[] = $product_id;
+
+            }
 						
         }
-         for($i=0;$i<count($associated_products);$i++){
-
-             foreach($associated_products[$i] as $key => $val){
-
-                 $simpleProductId[] = $val['entity_id'];
-
-
-             }
-             
-         }
-        $resultConfig = array_intersect($allProductId, $simpleProductId);
-
-        foreach($resultConfig as $resultConfigVal){
-            $parentByChild = $this->_configurable->getParentIdsByChild($resultConfigVal);
-
-            if(isset($parentByChild[0])){
-                $parentId = $parentByChild[0];          
+        if(!empty($associated_products)){
+            $associatedcalculations = $this->_commissioncalculation->calculateCommissionConfig($associated_products,$allProductId,$orderId);
+            
+           /* foreach($associatedcalculations as $k => $v){   
+                $configProducts[] = $v['commission']['parent'];
+                $configProducts[] = $v['commission']['child'];                      
             }
-            //calculate
+            $otherProducts = array_diff($allProductId,$configProducts);
+            foreach($otherProducts as $ortherVal){
+                $simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherVal);
+          }*/
+        }
+        
+        	foreach($allProductId as $ortherValSimple){
+        		
+        		$simpleProductCommision[] = $this->_commissioncalculation->calculateCommissionSimple($ortherValSimple,$orderId);
+        		
+        	}
+        
+        	
+        $sellerCommission = $this->_commissioncalculation->sellerCommission($sellerIdGlobal,$orderData);
+        
+                	
+        $categoryComm = $this->_commissioncalculation->getCategoryCommissionSeller($allProductId,$orderData);
+        
+        foreach($allProductId as $productIds){
+            //$categoryComm = $this->_commissioncalculation->getCategoryCommissionGlobal($productIds,$orderData);
+        }
+        	
+        //selected all
 
-            $productCalculation = $this->_product->load($resultConfigVal);
+        if(!empty($simpleProductCommision) && !empty($associatedcalculations) && !empty($sellerCommission)){ 
+        for($simpleIter = 0; $simpleIter < count($simpleProductCommision) ; $simpleIter++){
+        	foreach($simpleProductCommision[$simpleIter] as $simpleKey => $simpleVal){
+        		$simpleCommission[$simpleKey] = $simpleVal;
+        	}
+        	
+        }
+        foreach($sellerCommission as $sellerKey => $sellerVal){
+                   foreach($simpleCommission as $simpleKey => $simpleVal){
+                       if($sellerKey === $simpleKey){
+                           $sellerCommission[$sellerKey] = $simpleCommission[$simpleKey];
+                       }
+               	   }
+               }
+               foreach($sellerCommission as $skey => $sVal){
 
-            
-            
+                   foreach($associatedcalculations as $configKey => $configVal){
 
+                       if($skey === $configKey){
+
+                           $sellerCommission[$skey] = $associatedcalculations[$configKey];
+
+                       }
+                      
+                   }
+
+               }
+               $final_commission = array_diff_key($sellerCommission,$associatedcalculations)+$sellerCommission;
+               $finalcommission = $final_commission+$associatedcalculations;  
+               if($simpleCommission)
+                   $kikinbenCommissionSave = $finalcommission+$simpleCommission;
+               else
+                   $kikinbenCommissionSave = $finalcommission;
+               foreach($kikinbenCommissionSave as $listKey => $listVal){
+                   try{
+                       $this->_commissionTrack->setData($listVal)->save();
+                   }catch(\Exception $e){
+                       $this->messageManager->addError ( $e->getMessage ());
+                   }
+
+               }
+
+       }
+              
+        
+        if(!empty($simpleProductCommision)){           
+           for($simpleLoop=0;$simpleLoop < count($simpleProductCommision); $simpleLoop++){
+           foreach($simpleProductCommision[$simpleLoop] as $simplelistKey => $simplelistVal){
+                   try{
+                       $this->_commissionTrack->setData($simplelistVal)->save();
+                   }catch(\Exception $e){
+                       $this->messageManager->addError ( $e->getMessage ());
+                   }
+
+           }
+        }
+
+       }
+        if(!empty($sellerCommission)){
+                foreach($sellerCommission as $sellerKey=>$sellerValue){
+                    try{
+                        $this->_commissionTrack->setData($sellerValue)->save();
+                    }catch(\Exception $e){
+                        $this->messageManager->addError ( $e->getMessage ());
+                    }
+
+            }
 
         }
-                echo '<pre>';
-                print_r($commission);
-                //print_r($simpleProductId);
-                //print_r($allProductId);
-                
-                
-                echo '</pre>';
-	 //return $items;
-    }
 
+
+               
+               echo '<pre>';                               
+               //echo "seller";
+               //print_r($sellerCommission);
+               //echo "simple";
+               //print_r($simpleCommission);
+               //echo "config";
+               //print_r($associatedcalculations);
+               //echo "merged";
+              //print_r($finalcommission+$simpleCommission);
+        echo "seller_categ";
+        print_r($categoryComm);
+          
+               echo '</pre>'; 
+               //return $items;
+
+    }
+    
+   
     
 
 
