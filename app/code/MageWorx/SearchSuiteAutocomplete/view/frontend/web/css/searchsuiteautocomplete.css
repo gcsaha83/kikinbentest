@@ -39,7 +39,7 @@
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
     left: -1px;
     margin-top: 0px;
-    width: calc(100% - 162px);
+    width: calc(100% - 54px);
     position: absolute;
     z-index: 9999999;
 }
@@ -239,12 +239,15 @@
     margin-top: 10px;
 }
 
-@media only screen and (max-width: 767px) {
-    .searchsuite-autocomplete {
+@media only screen and (max-width: 360px) {
+    /*.searchsuite-autocomplete {
         border-top: 0;
         left: 15px;
         margin-top: 0;
         right: 15px;
         width: auto;
+    }*/
+    .searchsuite-autocomplete {
+        width: calc(100% - 36px) !important;
     }
 }
