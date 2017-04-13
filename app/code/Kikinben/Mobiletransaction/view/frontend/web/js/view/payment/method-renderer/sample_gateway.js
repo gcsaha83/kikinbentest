@@ -6,17 +6,17 @@
 /*global define*/
 define(
     [
-        'Magento_Checkout/js/view/payment/default'
+        'Magento_Checkout/js/view/payment/default','ko'
     ],
-    function (Component) {
+    function (Component,ko) {
         'use strict';
 
         return Component.extend({
             defaults: {
                 template: 'Kikinben_Mobiletransaction/payment/form',
                 transactionResult: '',
-		mobileNumber:'',
-		transactionId:''
+                mobileNumber:'',
+                transactionId:''
             },
 
             initObservable: function () {
@@ -31,10 +31,12 @@ define(
             },
 
             getCode: function() {
+            	
                 return 'sample_gateway';
             },
 
             getData: function() {
+            	
                 return {
                     'method': this.item.method,
                     'additional_data': {
@@ -46,6 +48,7 @@ define(
             },
 
             getTransactionResults: function() {
+            	
                 return _.map(window.checkoutConfig.payment.sample_gateway.transactionResults, function(value, key) {
                     return {
                         'value': key,
@@ -54,6 +57,7 @@ define(
                 });
             },
             getMobileNumbers:function() {
+            	
             	return _.map(window.checkoutConfig.payment.sample_gateway.mobileNumbers, function(value, key) {
                     return {
                         'value': key,
@@ -63,6 +67,7 @@ define(
 
             },
             getTransactionIds:function() {
+            	
             	return _.map(window.checkoutConfig.payment.sample_gateway.transactionIds, function(value, key) {
                     return {
                         'value': key,
@@ -70,7 +75,56 @@ define(
                     }
                 });
 
-	  },
+            },
+            selectRow: function() {
+            	/*this.transaction_result = ko.observable();
+            	this.transaction_result.subscribe(function(latest) {
+            	    alert("Input changed");
+            	  }, this);*/
+            	//alert(this.transaction_result);
+            	
+                
+            },
+            placeOrder:function(key){
+            	var self = this;
+            	//alert(key);
+            	//if (key) {
+                    //return self._super();
+                //}
+            	//alert(this.transactionResult());
+            	//alert(this.mobileNumber());
+            	//alert(this.transactionId());
+            	//return self.placeOrder('parent');
+            	
+            	var transcationResult = this.transactionResult();
+            	var mobileNumber = this.mobileNumber();
+            	var transcationId = this.transactionId();
+            	var filter = /^\d*(?:\.\d{1,2})?$/;
+            	if(transcationResult == 'Bkash'){
+            		//10 digits validation
+            		if(filter.test(mobileNumber)){
+            			if(mobileNumber.length==11 && transcationId ){
+            				return self._super();
+            			}else{
+                			alert("Please enter valid mobile number and transaction Id");
+            			}
+            		}else{
+            			alert("Please enter valid mobile number and transaction Id");
+            		}
+            	}else{
+            		if(filter.test(mobileNumber)){
+            			if(mobileNumber.length==12 && transcationId ){
+            				return self._super();
+            			}
+            			else{
+                			alert("Please enter valid mobile number and transaction Id");
+            			}
+            		}else{
+            			alert("Please enter valid mobile number and transaction Id");
+            		}    		
+            	}
+            	
+            }
         });
     }
 );

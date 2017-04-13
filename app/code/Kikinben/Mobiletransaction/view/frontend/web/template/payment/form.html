@@ -38,7 +38,9 @@
                                   optionsValue: 'value',
                                   optionsText: 'transaction_result',
                                   optionsCaption: $t('Select Mobile Transaction Type'),
-                                  value: transactionResult">
+                                  value: transactionResult,
+                                  event: {change: selectRow(this.value)}"
+                                  >
                 </select>
 		Mobile Number:<input type="text" name="payment[mobile_number]" class="input-text"  
 		data-bind="
