@@ -3981,12 +3981,12 @@ font-size: 12px;
     appearance: none;
     padding: 0px 17px 0px 3px;
     border: none;
-    background: transparent url(http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg) no-repeat 95px center;
+    background: transparent url(https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg) no-repeat 95px center;
   }
 
   /*... flag of all countries....*/
   select#bangla option[value="BD"] {
-  	background-image: url(http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/bd.png);
+  	background-image: url(https://kikinben.com/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/bd.png);
   }
 
 /*-------- Sell on Kikinben Starts ---------*/
@@ -8233,7 +8233,7 @@ top: 2%;
 right: 0;
 bottom: 22%;
 left: 4%;
-background: url(http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg) no-repeat center center;
+background: url(https://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg) no-repeat center center;
 background-size: contain;
 /* font-size: 32px; */
 /* width: 47px; */
@@ -8269,7 +8269,7 @@ height: 35px;
 .search_bar_l .search_dropdown_l:after {
   content: "\2193";
   color: rgba(85, 85, 85, 0);
-  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+  background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
   height: 8px;
   width: 10px;
   position: absolute;
@@ -8379,7 +8379,7 @@ height: 35px;
 
 .acc_arr_l::after {
 	content: "\2";
-	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
 	position: absolute;
@@ -8411,7 +8411,7 @@ height: 35px;
 .acc_arr_s::after {
 	content: "\2";
 	color: transparent !important;
-	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
 	position: absolute;
@@ -8762,7 +8762,7 @@ height: 35px;
 .top_nav_arrow::after {
     	content: "\2";
 	color: transparent;
-	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
 	position: absolute;
@@ -9628,7 +9628,7 @@ border: none !important;
 .dropdown dt a:hover { color:#5d4617; border: 1px solid #d0c9af;}*/
 
 .dropdown dt a {
-    background: transparent url('http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg') no-repeat scroll right center;
+    background: transparent url('https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg') no-repeat scroll right center;
     display: block;
     padding-right: -10px;
     border: 1px solid #ddd;
