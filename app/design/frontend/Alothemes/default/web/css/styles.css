@@ -6925,7 +6925,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 /*...... Three blocks CSS Start from here.........*/
 .zero_padd {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .new_blk_tit {
