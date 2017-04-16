@@ -11215,13 +11215,14 @@ font-weight: normal !important;
 
 .review_inside_l .product ul {
 	list-style: disc !important;
+	text-align: justify;
 }
 
 .category-product-list .available span {
     color: #5bb300 !important;
 }
 .category-product-list .unavailable span {
-    color: ##df3737 !important;
+    color: #df3737 !important;
 }
 
 #sample_gateway{
