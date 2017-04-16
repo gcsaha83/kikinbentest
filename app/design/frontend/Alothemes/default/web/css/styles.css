@@ -10832,7 +10832,7 @@ font-weight: normal !important;
 .checkout_footer_new_l {
 	width: 760px;
 	overflow: auto;
-	margin-top: -650px;
+/* 	margin-top: -650px; */
 }
 
 
@@ -11236,6 +11236,10 @@ font-weight: normal !important;
 
 .marketplace-seller-displayseller p.mp_profiles_desc {
 	width: 100% !important;
+}
+
+.new_mobile_payment_l .control {
+	width: 72% !important;
 }
 
 
