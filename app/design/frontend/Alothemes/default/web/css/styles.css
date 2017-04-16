@@ -741,7 +741,7 @@ tr.summary-details-excluded{font-style:italic}
 .header-search .form-search:before, .header-search .form-search:after{content: ""; clear: both; display: table;}
 .header-search .form-search{border-width: 1px;border-style: solid;/*-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;*/position: relative;}
 .header-search .form-search button.button{float: right; width: 55px; text-align: center; padding: 0;border: 0; height: 38px !important; opacity: 1;border-radius: 0 0px 0px 0;cursor: pointer;pointer-events: auto;position: absolute;right: 0px;}
-.header-search .field.search{width: calc(100% - 165px)}
+.header-search .field.search{width: calc(100% - 55px)}
 .header-search .form-search button.button > span > span{padding:0;border:none; display: block; text-align: center; line-height: 45px}
 .header-search .form-search button.button > span .icon{font-size: 32px; display: inline-block; padding-top: 1px}
 .header-search .form-search input.input-text{background-color:transparent; font-size:12px; margin:0;line-height:53px;height: 38px; border: 0; color: #a0a0a0; padding: 0 15px}
@@ -6925,7 +6925,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 /*...... Three blocks CSS Start from here.........*/
 .zero_padd {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .new_blk_tit {
@@ -10832,7 +10832,7 @@ font-weight: normal !important;
 .checkout_footer_new_l {
 	width: 760px;
 	overflow: auto;
-	margin-top: -650px;
+/* 	margin-top: -650px; */
 }
 
 
@@ -11215,13 +11215,14 @@ font-weight: normal !important;
 
 .review_inside_l .product ul {
 	list-style: disc !important;
+	text-align: justify;
 }
 
 .category-product-list .available span {
     color: #5bb300 !important;
 }
 .category-product-list .unavailable span {
-    color: ##df3737 !important;
+    color: #df3737 !important;
 }
 
 #sample_gateway{
@@ -11232,3 +11233,13 @@ font-weight: normal !important;
 .new_mobile_payment_l {
 	margin-bottom: 20px !important;
 }
+
+.marketplace-seller-displayseller p.mp_profiles_desc {
+	width: 100% !important;
+}
+
+.new_mobile_payment_l .control {
+	width: 72% !important;
+}
+
+
