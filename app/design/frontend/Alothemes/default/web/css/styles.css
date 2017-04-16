@@ -11232,3 +11232,9 @@ font-weight: normal !important;
 .new_mobile_payment_l {
 	margin-bottom: 20px !important;
 }
+
+.marketplace-seller-displayseller p.mp_profiles_desc {
+	width: 100% !important;
+}
+
+
