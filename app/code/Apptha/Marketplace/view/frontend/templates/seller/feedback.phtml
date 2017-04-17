@@ -31,8 +31,8 @@ $sellerId = $this->getRequest ()->getParam ( 'id' );
 $isSellerReviewEnabled = $block->isSellerReviewEnabled ();
 if ($isSellerReviewEnabled == 1) {
     ?>
-<div class="block">
-	<div class="block-title">
+<div class="block seller_sidebar_bg_l">
+	<div class="block-title block_title_l">
 		<strong><span><?php echo __('Feedback Ratings'); ?></span></strong>
 	</div>
 <?php
@@ -186,7 +186,7 @@ if (isset ( $count ['one'] )) {
     } else {
         ?>
 <h5><?php echo __('Have you bought something from this seller?').' '; ?></h5>
-		<a class="mp_view_allreview"
+		<a class="mp_view_allreview" style="color:#1979c3;"
 			href="<?php echo $block->getLoginUrl(); ?>"><?php echo __('Login to Review'); ?></a>
 <?php } ?>
 </div>
