@@ -603,12 +603,9 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
             if ($categoryIds = $productCategory->getCustomAttribute('category_ids')) {
                 foreach ($categoryIds->getValue() as $categoryIdData) {
                      $categoryId[] = $categoryIdData;
-                     $commission[$categoryIdData][$val]['Qty'] = $items[$val]['Qty'];
-                     $commission[$categoryIdData][$val]['order_id'] = $items[$val]['order_id'];
-                     $commission[$categoryIdData][$val]['product_price'] = $items[$val]['product_price'];
-
-
-                        
+                     $commission[$items[$val]['seller_index']][$categoryIdData][$val]['Qty'] = $items[$val]['Qty'];
+                     $commission[$items[$val]['seller_index']][$categoryIdData][$val]['order_id'] = $items[$val]['order_id'];
+                     $commission[$items[$val]['seller_index']][$categoryIdData][$val]['product_price'] = $items[$val]['product_price'];                      
                 }
             }
 
@@ -622,6 +619,8 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     							 ->getData();
 
     	
+    		
+    		$allcategory = array_keys($commission);
     	 
     		foreach($sellerProductsNonRange as $rangeVal){    			    			
     			
@@ -629,35 +628,57 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     			$amount = $rangeVal['amount'];
     			$rangeSet = $rangeVal['price_range_enable']; 	
                 $category_id = $rangeVal['category_id'];
-                if(in_array($category_id,$commission)){
-                    echo $category_id."<br/>";
-
-                }
+                $seller_index = $rangeVal['seller_id'];
                 $commissionTypeStringCatg = ($percentage_amount == 1) ? 'Percentage' : 'Fixed' ;
-                $orderTotal = "";
-
-                if($rangeSet){
-                    $price_range_from =  $rangeVal['uprice_range_from'];
-                    $price_range_to   =  $rangeVal['uprice_range_to'];
-                    if((floatval($price_range_from) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($range_end))){
-                        if($percentage_amount == 1){
-    				
-    				}
-    				else{
-    				
-    				}
-
-
-                  }    
-    			}else{
-    				if($percentage_amount == 1){
-    				
-    				}
-    				else{
-    				
-    				}
-    			
-    		}
+                
+                
+                if(in_array($category_id,$categoryId)){                	                
+                	foreach($commission[$seller_index][$category_id] as $commissionKey => $commissionVal){
+                		
+                		echo $amount.'-'.$seller_index.'-'.$category_id.'<br/>';
+                		
+                		$qunatity = $commissionVal['Qty'];
+                		$price    = $commissionVal['product_price'];
+                		$orderTotal = $price * $qunatity;     
+                		
+                		if($rangeSet){
+                			$price_range_from =  $rangeVal['uprice_range_from'];
+                			$price_range_to   =  $rangeVal['uprice_range_to'];
+                			if((floatval($price_range_from) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($price_range_to))){
+                				if($percentage_amount == 1){
+                					
+                					$productpriceAfterCommissionPercent =  $orderTotal - (($amount / 100) * $price);
+                					$ProductchargeToSeller              =  $orderTotal - $productpriceAfterCommissionPercent;
+                					
+                					 
+                				}
+                				else{
+                					
+                					$productchargeFixedAmount = $orderTotal - $amount;
+                					$productpriceAfterCommission = $orderTotal - $productchargeFixedAmount;
+                					 
+                				}
+                				 
+                				 
+                			}
+                		}else{
+                			if($percentage_amount == 1){
+                				 
+                			}
+                			else{
+                				 
+                			}
+                			 
+                		}
+                		
+                		
+                	}
+                	
+                	
+                	
+                    
+                }
+               
     	}
     	
     	//echo '<pre>';
