@@ -5609,7 +5609,7 @@ font-size: 12px;
     .marketplace-seller-displayseller li.item.product.product-item:hover  .product-item-info {margin-bottom: 0 !important;}
 
 body.marketplace-seller-displayseller li.item.product.product-item {
-   width: 32% !important;
+   width: 33.3334% !important;
 }
 
 /* ----------------- Modal Start ----------------------- */
