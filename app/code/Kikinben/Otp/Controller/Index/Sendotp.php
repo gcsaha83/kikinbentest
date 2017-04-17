@@ -119,7 +119,7 @@ try {
                         //$sms = file_get_contents($api);
                         $url="http://sms.sslwireless.com/pushapi/dynamic/server.php";
                         $param="user=".$smsUserName."&pass=".$smsUserPasswd."&sms[0][0]=".$to."&sid=".$smsSid."&sms[0][1]=".urlencode($message);
-                        
+                        //echo $url.$param;die;
                         $crl = curl_init();
                         curl_setopt($crl,CURLOPT_SSL_VERIFYPEER,FALSE);
                         curl_setopt($crl,CURLOPT_SSL_VERIFYHOST,2);
@@ -134,14 +134,16 @@ try {
                         $xml = simplexml_load_string($response);
                         $json = json_encode($xml);
                         $smsArray = json_decode($json,TRUE);
-                        
+                        //echo '<pre>';
+                       // print_r($smsArray);
+                       // echo '</pre>';die;
                         
                         
                         if($smsArray['PARAMETER']==="OK" && 
-                        		$smsArray['LOGIN'] ==="SUCESSFULL" && 
-                        		$smsArray['PUSHAPI'] === 'ACTIVE' &&
-                        		$smsArray['STAKEHOLDERID'] === 'OK' &&
-                        		$smsArray['PERMITTED'] === 'OK'
+                        		$smsArray['LOGIN'] ==="SUCCESSFULL" && 
+                        		$smsArray['PUSHAPI'] === "ACTIVE" &&
+                        		$smsArray['STAKEHOLDERID'] === "OK" &&
+                        		$smsArray['PERMITTED'] === "OK"
                         		
                         		)
                         {
@@ -155,13 +157,13 @@ try {
                         		
                         	}
                         	else{
-                        		$this->messageManager->addError('We can\'t send the otp, something went wrong');
+                        		$this->messageManager->addError('1We can\'t send the otp, something went wrong');
                         		$resultRedirect->setUrl($this->_redirect->getRefererUrl());
                         	}
                         	
                         }
                         else{                        	
-                        	$this->messageManager->addError('We can\'t send the otp, something went wrong');
+                        	$this->messageManager->addError('2We can\'t send the otp, something went wrong');
                         	$resultRedirect->setUrl($this->_redirect->getRefererUrl());
                         }
                         	
