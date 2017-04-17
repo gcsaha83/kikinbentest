@@ -741,7 +741,7 @@ tr.summary-details-excluded{font-style:italic}
 .header-search .form-search:before, .header-search .form-search:after{content: ""; clear: both; display: table;}
 .header-search .form-search{border-width: 1px;border-style: solid;/*-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;*/position: relative;}
 .header-search .form-search button.button{float: right; width: 55px; text-align: center; padding: 0;border: 0; height: 38px !important; opacity: 1;border-radius: 0 0px 0px 0;cursor: pointer;pointer-events: auto;position: absolute;right: 0px;}
-.header-search .field.search{width: calc(100% - 165px)}
+.header-search .field.search{width: calc(100% - 55px)}
 .header-search .form-search button.button > span > span{padding:0;border:none; display: block; text-align: center; line-height: 45px}
 .header-search .form-search button.button > span .icon{font-size: 32px; display: inline-block; padding-top: 1px}
 .header-search .form-search input.input-text{background-color:transparent; font-size:12px; margin:0;line-height:53px;height: 38px; border: 0; color: #a0a0a0; padding: 0 15px}
@@ -1898,7 +1898,7 @@ font-size: 12px;
 .stock span{font-size: 12px; color: #df3737 !important; font-weight: bold; display: inline-block; line-height: 20px}
 .stock{padding-bottom: 8px;color: #df3737;}
 .category-product-list .stock{ border-bottom: 1px solid #dddddd;}
-.category-product-list .stock span{color: #5bb300;}
+.category-product-list .stock span{}
 .category-product-list .price-box > .price-container .price, .category-product-list .product-item .special-price .price{font-size: 23px}
 .category-product-list .item .actions .add-to-links:before, .category-product-list .item .actions .add-to-links:after{content: ""; clear: both; display: table;}
 .toolbar-bottom.toolbar-view-list{margin-top: 20px}
@@ -3981,12 +3981,12 @@ font-size: 12px;
     appearance: none;
     padding: 0px 17px 0px 3px;
     border: none;
-    background: transparent url(http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg) no-repeat 95px center;
+    background: transparent url(https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg) no-repeat 95px center;
   }
 
   /*... flag of all countries....*/
   select#bangla option[value="BD"] {
-  	background-image: url(http://localhost/kikinben/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/bd.png);
+  	background-image: url(https://kikinben.com/pub/static/frontend/Alothemes/default/en_US/Magento_Catalog/images/bd.png);
   }
 
 /*-------- Sell on Kikinben Starts ---------*/
@@ -6925,7 +6925,7 @@ body.marketplace-seller-displayseller li.item.product.product-item {
 
 /*...... Three blocks CSS Start from here.........*/
 .zero_padd {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .new_blk_tit {
@@ -8233,7 +8233,7 @@ top: 2%;
 right: 0;
 bottom: 22%;
 left: 4%;
-background: url(http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg) no-repeat center center;
+background: url(https://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg) no-repeat center center;
 background-size: contain;
 /* font-size: 32px; */
 /* width: 47px; */
@@ -8269,7 +8269,7 @@ height: 35px;
 .search_bar_l .search_dropdown_l:after {
   content: "\2193";
   color: rgba(85, 85, 85, 0);
-  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+  background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
   height: 8px;
   width: 10px;
   position: absolute;
@@ -8379,7 +8379,7 @@ height: 35px;
 
 .acc_arr_l::after {
 	content: "\2";
-	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
 	position: absolute;
@@ -8411,7 +8411,7 @@ height: 35px;
 .acc_arr_s::after {
 	content: "\2";
 	color: transparent !important;
-	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
 	position: absolute;
@@ -8762,7 +8762,7 @@ height: 35px;
 .top_nav_arrow::after {
     	content: "\2";
 	color: transparent;
-	background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+	background: url("https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
 	height: 8px;
 	width: 10px;
 	position: absolute;
@@ -9628,7 +9628,7 @@ border: none !important;
 .dropdown dt a:hover { color:#5d4617; border: 1px solid #d0c9af;}*/
 
 .dropdown dt a {
-    background: transparent url('http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg') no-repeat scroll right center;
+    background: transparent url('https://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg') no-repeat scroll right center;
     display: block;
     padding-right: -10px;
     border: 1px solid #ddd;
@@ -10832,7 +10832,7 @@ font-weight: normal !important;
 .checkout_footer_new_l {
 	width: 760px;
 	overflow: auto;
-	margin-top: -650px;
+/* 	margin-top: -650px; */
 }
 
 
@@ -11205,7 +11205,7 @@ font-weight: normal !important;
 	z-index: 99999;
 }
 .nav-12 .level-top-mega {
-	background-image:url("../../../../../../media/wysiwyg/category_bg/tv.png") !important;
+	background-image:url("../../../../../../media/wysiwyg/category_bg/build.png") !important;
 	z-index: 99999;
 }
 .nav-13 .level-top-mega {
@@ -11215,7 +11215,31 @@ font-weight: normal !important;
 
 .review_inside_l .product ul {
 	list-style: disc !important;
+	text-align: justify;
 }
 
+.category-product-list .available span {
+    color: #5bb300 !important;
+}
+.category-product-list .unavailable span {
+    color: #df3737 !important;
+}
+
+#sample_gateway{
+	float: left;
+	margin-top: 6px !important;
+	
+}
+.new_mobile_payment_l {
+	margin-bottom: 20px !important;
+}
+
+.marketplace-seller-displayseller p.mp_profiles_desc {
+	width: 100% !important;
+}
+
+.new_mobile_payment_l .control {
+	width: 72% !important;
+}
 
 
