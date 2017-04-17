@@ -157,13 +157,13 @@ try {
                         		
                         	}
                         	else{
-                        		$this->messageManager->addError('1We can\'t send the otp, something went wrong');
+                        		$this->messageManager->addError('We can\'t send the otp, something went wrong');
                         		$resultRedirect->setUrl($this->_redirect->getRefererUrl());
                         	}
                         	
                         }
                         else{                        	
-                        	$this->messageManager->addError('2We can\'t send the otp, something went wrong');
+                        	$this->messageManager->addError('We can\'t send the otp, something went wrong');
                         	$resultRedirect->setUrl($this->_redirect->getRefererUrl());
                         }
                         	
