@@ -780,7 +780,7 @@ body.marketplace-seller-displayseller .columns {
 .page.messages {
 	position: relative;
 	left: 10px;
-	top: -43px;
+/* 	top: -43px; */
 	z-index: 22;
 	display: block;
 }
