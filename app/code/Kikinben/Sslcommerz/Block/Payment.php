@@ -7,6 +7,8 @@ class Payment extends \Magento\Backend\Block\Template
 	protected $_checkoutSession;
 	protected $_storeManager;
 	protected $_urlInterface;
+	protected $response;
+	protected $_responseFactory;
 	
 	public function __construct(
 			\Magento\Backend\Block\Template\Context $context,
@@ -16,6 +18,9 @@ class Payment extends \Magento\Backend\Block\Template
 			\Magento\Checkout\Model\Cart $cart,
 			\Magento\Store\Model\StoreManagerInterface $storeManager,
 			\Magento\Framework\UrlInterface $urlInterface,
+			\Magento\Framework\App\Response\Http $response,
+			\Magento\Framework\App\ResponseFactory $responseFactory,
+			
 			array $data = []
 			) {
 		
@@ -25,6 +30,9 @@ class Payment extends \Magento\Backend\Block\Template
 				$this->_order           = $order;
 				$this->_cart = $cart;
 				$this->_urlInterface = $urlInterface;
+				$this->response = $response;
+				$this->_responseFactory = $responseFactory;
+				
 		
 				parent::__construct($context, $data);
 	}
@@ -106,17 +114,17 @@ class Payment extends \Magento\Backend\Block\Template
 				'cancel_url' => $url_cancel,
 				
 		
-		);
-		//$security_key = $this->_helper->sslcommerz_hash_key($storePasswd,$fields);
-		
-		//$fields['verify_sign'] = $security_key['verify_sign'];
-		//$fields['verify_key'] = $security_key['verify_key'];
-		
-		//foreach($fields as $key => $val){
-			//$fields_string .= $key.'='.$val.'&';
-		//}
-		//rtrim($fields_string, '&');
+		);		
 		$return = $this->_helper->curl_post_wrapper($url,$fields);
+		
+		if($return['status'] === 'SUCCESS'){
+			$gatwayUrl = $return['GatewayPageURL'];
+			$this->response->setRedirect($gatwayUrl);
+		}
+		else{
+			$RedirectUrl= $this->_urlInterface->getUrl('sslcommerz/index/notify');
+			$this->_responseFactory->create()->setRedirect($RedirectUrl)->sendResponse();
+		}
 		return $return;
 		
 	}
