@@ -1,5 +1,11 @@
 <?php $sslcz = $block->getOrderDetails();?>
+<?php 
 
+echo '<pre>';
+print_r($sslcz);
+echo '</pre>';
+
+?>
 <?php 
 
 if(isset($sslcz['status']) && $sslcz['status']=='SUCCESS') {
