@@ -20,9 +20,12 @@ Framework/View/Layout/etc/page_configuration.xsd">
 	<body>
 		<referenceBlock name="seller_account" remove="true" />
 		<referenceBlock name="customer_account_navigation" remove="true" />
-		<referenceContainer name="content">
+		<referenceContainer name="columns.top">
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
 				name="seller_content" template="Kikinben_SellerCategory::seller/displayseller.phtml" />
+		</referenceContainer>
+		<referenceContainer name="content">
+			
 			<block class="Apptha\Marketplace\Block\Seller\Displayseller"
 				name="marketplace.allproducts" template="Kikinben_SellerCategory::seller/allproducts.phtml"
 				after="-" />
