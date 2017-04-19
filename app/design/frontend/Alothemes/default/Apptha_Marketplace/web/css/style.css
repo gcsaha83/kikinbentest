@@ -2460,7 +2460,7 @@ button.action.tocart.primary.mp_addtocart_button {
     background: #eee !important;
     padding: 20px;
     margin-top: 0px;
-    width: 93%;
+    width: 95% !important;
 }
 
 .sidebar .block.map_block {
@@ -2581,7 +2581,8 @@ button.action.tocart.primary.mp_addtocart_button {
     text-align: center;
     width: auto;
     border-radius: 50%;
-    padding: 8px 8px;
+    /*padding: 8px 8px;*/
+    padding: 4px 8px;
 }
 .marketplace-seller-displayseller li.item.product.product-item .product-item-info button.action.tocart.primary span {
     display: none;
