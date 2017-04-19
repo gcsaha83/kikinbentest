@@ -74,6 +74,7 @@ class Displayseller extends \Magento\Directory\Block\Data {
         $collection = $objectModelManager->get ( 'Magento\Catalog\Model\ResourceModel\Product\Collection' )->addAttributeToSelect ( '*' )->addAttributeToFilter ( 'seller_id', $customerId )->addAttributeToFilter ( 'product_approval', 1 )->addAttributeToFilter ( 'status', 1 )->addAttributeToFilter ( 'visibility', array (
                 'eq' => \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH
         ) );
+        $collection->addUrlRewrite();
         $this->setCollection ( $collection );
     }
 
