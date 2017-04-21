@@ -1946,7 +1946,7 @@ height: 152px;
 @media (min-width: 1501px) {
   .slider_big_l {
     width: 1500px !important;
-    height: 300px !important;
+/*     height: 300px !important; */
     margin: auto !important;
   }
 
