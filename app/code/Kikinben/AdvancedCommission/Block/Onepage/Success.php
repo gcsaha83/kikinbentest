@@ -295,10 +295,21 @@ class Success extends \Magento\Framework\View\Element\Template
             }
 
         }
+        if(!empty($categoryComm)){
+        	foreach($categoryComm as $categoryCommK => $categoryCommV){        		
+        		try{
+        			$this->_commissionTrack->setData($categoryCommV)->save();
+        		}catch(\Exception $e){
+        			$this->messageManager->addError ( $e->getMessage ());
+        		}
+        		
+        	}
+        	
+        }
 
 
                
-               echo '<pre>';                               
+               //echo '<pre>';                               
                //echo "seller";
                //print_r($sellerCommission);
                //echo "simple";
@@ -306,11 +317,11 @@ class Success extends \Magento\Framework\View\Element\Template
                //echo "config";
                //print_r($associatedcalculations);
                //echo "merged";
-              //print_r($finalcommission+$simpleCommission);
-        echo "seller_categ";
-        print_r($categoryComm);
+               //print_r($finalcommission+$simpleCommission);
+        	   //echo "seller_categ";
+        	   //print_r($categoryComm);
           
-               echo '</pre>'; 
+               //echo '</pre>'; 
                //return $items;
 
     }

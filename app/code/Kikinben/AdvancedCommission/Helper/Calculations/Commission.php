@@ -578,6 +578,7 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     	
     	$commission = array();
     	$items	    = array();
+    	$calculatedCommission = array();
     	
     	foreach ($orderData->getAllItems() as $item) {
     	
@@ -617,7 +618,6 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
     							 ->addFieldToFilter('category_id',['in'=>$categoryId])
     							 ->addFieldToFilter('seller_id',['in'=>$seller_id])
     							 ->getData();
-
     	
     		
     		$allcategory = array_keys($commission);
@@ -635,13 +635,15 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
                 if(in_array($category_id,$categoryId)){                	                
                 	foreach($commission[$seller_index][$category_id] as $commissionKey => $commissionVal){
                 		
-                		echo $amount.'-'.$seller_index.'-'.$category_id.'<br/>';
                 		
                 		$qunatity = $commissionVal['Qty'];
                 		$price    = $commissionVal['product_price'];
-                		$orderTotal = $price * $qunatity;     
+                		$orderTotal = $price ;
+                		$order_id = $commissionVal['order_id'];
                 		
-                		if($rangeSet){
+                		
+                		if($rangeSet === '1'){ //range set
+                			//echo $commissionKey.'-'.$seller_index.'-'.$category_id."<br/>";
                 			$price_range_from =  $rangeVal['uprice_range_from'];
                 			$price_range_to   =  $rangeVal['uprice_range_to'];
                 			if((floatval($price_range_from) <= floatval($orderTotal)) && (floatval($orderTotal) <= floatval($price_range_to))){
@@ -649,23 +651,98 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
                 					
                 					$productpriceAfterCommissionPercent =  $orderTotal - (($amount / 100) * $price);
                 					$ProductchargeToSeller              =  $orderTotal - $productpriceAfterCommissionPercent;
-                					
+                					$calculatedCommission[$commissionKey] = [
+                							
+                							'price_after_commission'=>$productpriceAfterCommissionPercent,
+                							'commission_amount_to_seller' =>$ProductchargeToSeller * $qunatity,
+                							'commission_type'	  => $commissionTypeStringCatg,                							                							
+                							'commission_range_from'	=>$price_range_from,
+                							'commission_range_to'   =>$price_range_to,
+                							'commission_amount_set'    =>$amount,
+                							'product_qty'		=>$qunatity,
+                							'order_id'	=>$order_id,
+                							'commission_for'=>"seller_Level_category",
+                							'product_price' => $price,
+                							'seller_id' => $seller_index,
+                							'commission_id' =>$rangeVal['kikinben_advancedcommission_sellercategorycommission_id'],
+                							'product_id' =>$commissionKey,
+                							'catg_id' =>$category_id
+                							
+                					];
                 					 
                 				}
                 				else{
                 					
                 					$productchargeFixedAmount = $orderTotal - $amount;
                 					$productpriceAfterCommission = $orderTotal - $productchargeFixedAmount;
+                					$calculatedCommission[$commissionKey] = [
+                							
+                							'price_after_commission'=>$productchargeFixedAmount,
+                							'commission_amount_to_seller' 	  =>$productpriceAfterCommission * $qunatity,
+                							'commission_type'	  => $commissionTypeStringCatg,
+                							'commission_amount_set'    => $amount,
+                							'commission_range_from'	=>$price_range_from,
+                							'commission_range_to'   =>$price_range_to,
+                							'product_qty'		=>$qunatity,
+                							'order_id'	=>$order_id,
+                							'commission_for'=>"seller_Level_category",
+                							'product_price' => $price,
+                							'seller_id' => $seller_index,
+                							'commission_id' =>$rangeVal['kikinben_advancedcommission_sellercategorycommission_id'],
+                							'product_id' =>$commissionKey,
+                							'catg_id' =>$category_id
+                							
+                					];
+                					
                 					 
                 				}
                 				 
                 				 
                 			}
                 		}else{
+                			
                 			if($percentage_amount == 1){
-                				 
+                				
+                				$productpriceAfterCommissionPercent =  $orderTotal - (($amount / 100) * $price);
+                				$ProductchargeToSeller              =  $orderTotal - $productpriceAfterCommissionPercent;
+                				$calculatedCommission[$commissionKey] = [
+                						
+                						'price_after_commission'=>$productpriceAfterCommissionPercent,
+                						'commission_amount_to_seller' =>$ProductchargeToSeller * $qunatity,
+                						'commission_type'	  => $commissionTypeStringCatg,                						
+                						'commission_amount_set'    =>$amount,
+                						'product_qty'		=>$qunatity,
+                						'order_id'	=>$order_id,
+                						'commission_for'=>"seller_Level_category",
+                						'product_price' => $price,
+                						'seller_id' => $seller_index,
+                						'commission_id' =>$rangeVal['kikinben_advancedcommission_sellercategorycommission_id'],
+                						'product_id' =>$commissionKey,
+                						'catg_id' =>$category_id
+                						
+                				];
+                				
                 			}
                 			else{
+                				
+                				$productchargeFixedAmount = $orderTotal - $amount;
+                				$productpriceAfterCommission = $orderTotal - $productchargeFixedAmount;
+                				$calculatedCommission[$commissionKey] = [
+                						
+                						'price_after_commission'=>$productchargeFixedAmount,
+                						'commission_amount_to_seller' 	  =>$productpriceAfterCommission * $qunatity,
+                						'commission_type'	  => $commissionTypeStringCatg,
+                						'commission_amount_set'    => $amount,                						
+                						'product_qty'		=>$qunatity,
+                						'order_id'	=>$order_id,
+                						'commission_for'=>"seller_Level_category",
+                						'product_price' => $price,
+                						'seller_id' => $seller_index,
+                						'commission_id' =>$rangeVal['kikinben_advancedcommission_sellercategorycommission_id'],
+                						'product_id' =>$commissionKey,
+                						'catg_id' =>$category_id
+                						
+                				];
                 				 
                 			}
                 			 
@@ -681,15 +758,9 @@ class Commission extends \Magento\Framework\App\Helper\AbstractHelper
                
     	}
     	
-    	//echo '<pre>';
-    	//echo $sellerProductsNonRange;
-    	//print_r($sellerProductsNonRange);
-    	//print_r($categories);
-    	//print_r($seller_id);
-    	//print_r($productIdCat);
-    	//echo '</pre>';
     	
-    	//return $commission;
+    	
+    	return $calculatedCommission;
     	
     }
         
