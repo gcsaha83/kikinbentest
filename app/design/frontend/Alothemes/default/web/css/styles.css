@@ -877,7 +877,7 @@ font-size: 12px;
 .home-slider .slick-slide .figcaption .caption2,
 .home-slider .slick-slide .figcaption .caption3,
 .home-slider .slick-slide .figcaption .caption4{display:none;}
-.home-slider.slick-slider{margin-bottom: 30px;}
+/* .home-slider.slick-slider{margin-bottom: 30px;} */
 /* .home-slider .slick-slide.slick-active .text-slide{
 	position: absolute;top: 0;
 } */
