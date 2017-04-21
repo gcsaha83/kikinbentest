@@ -66,14 +66,14 @@ function truncateStringWords($str, $maxlen)
     if ($block->getMode() == 'grid') {
         $viewMode = 'grid';
         $image = 'category_page_grid';
-        $showDescription = true;
+        $showDescription = false;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
 		
 		echo $_aloHelper->getGridStyle('.product-items .product-item'); // Config Product Grid
     } else {
         $viewMode = 'grid';
         $image = 'category_page_grid';
-        $showDescription = true;
+        $showDescription = false;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
     }
     /**

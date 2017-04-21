@@ -29,7 +29,7 @@ class Upload extends \Magento\Backend\App\Action
                 'name' 	=> $this->_getSession()->getName(),
                 'value' 	=> $this->_getSession()->getSessionId(),
                 'lifetime'   => $this->_getSession()->getCookieLifetime(),
-           	 'path'       => $this->_getSession()->getCookiePath(),
+           	 	'path'       => $this->_getSession()->getCookiePath(),
                 'domain'   => $this->_getSession()->getCookieDomain(),
         	];
     	} catch (\Exception $e) {
