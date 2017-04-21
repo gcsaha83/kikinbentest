@@ -605,7 +605,7 @@ h6,
     position: relative;
     background: none !important;
     box-shadow: none !important;
-    z-index: 9;
+/*     z-index: 9; */
     background: #fff;
     margin: -155px 0 20px;
     width: 100%;
