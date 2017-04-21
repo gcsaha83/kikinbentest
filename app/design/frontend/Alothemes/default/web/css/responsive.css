@@ -2772,6 +2772,7 @@ height: 152px;
 
 	.checkout-payment-method .payment-methods {
 		padding-right: 0px !important;
+		margin: 0px !important;
 	}
 	
 	.leadership_section {
