@@ -27,14 +27,15 @@
  * @license     http://www.apptha.com/LICENSE.txt
  *
  */
-namespace Kikinben\AdvancedCommission\Ui\Component\Listing\Column;
+namespace Kikinben\AdvancedCommission\Ui\Component\Listing\Column\Kikinbenadvancedcommissioncommissiontrackid;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Customer\Model\Customer;
 
-class Sellername extends Column
+
+class Productname extends Column
 {
 	protected $escaper;
 	protected $_customer;
@@ -43,12 +44,14 @@ class Sellername extends Column
 		UiComponentFactory $uiComponentFactory,
 		Escaper $escaper,
 		Customer $customer,
+		\Magento\Catalog\Model\Product $product,
 		array $components = [],
 		array $data = []
 			
 			){
 		  $this->escaper = $escaper;
 		  $this->_customer = $customer;
+		  $this->_product  = $product;
 		  parent::__construct($context, $uiComponentFactory, $components, $data);
 		
 	}
@@ -70,13 +73,11 @@ class Sellername extends Column
 		return $dataSource;
 	}
 	protected function prepareItem(array $item)
-	{
-		$customer_id = (isset($item['customer_id'])) ? $item['customer_id']: $item['seller_id'];
-		$customerDetails = $this->_customer->load ($customer_id);
-		$name = $customerDetails->getFirstname ();
-		$sellerUrl = $this->getUrl ( 'customer/index/edit/id/' . $customer_id );
-		$sellerDetails = '<a  href="' . $sellerUrl . '" alt= "' . $name . '">' . $name . '</a>';
-		return $sellerDetails;
+	{		
+		$product_id =  $item['product_id'];
+		$product = $this->_product->load($product_id);
+			
+		return $product->getName();
 		
 	}
 
