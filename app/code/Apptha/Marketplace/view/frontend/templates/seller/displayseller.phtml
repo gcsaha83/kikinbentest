@@ -55,7 +55,7 @@ $bannerImage = $objectModelManager->get ( 'Magento\Store\Model\StoreManagerInter
 		<p class="mp_profiles_banner">
          <?php if($bannerName!=""){?>
            <img src="<?php echo $bannerImage.$bannerName;?>"
-				alt="store banner" class="market_place_store_img_banner">                        
+				alt="store banner" class="img-responsive market_place_store_img_banner">                        
            <?php } else{?>
            	<img
 				src="<?php echo $block->getViewFileUrl('Apptha_Marketplace::images/no-banner-image.png');?>">
@@ -70,7 +70,7 @@ $bannerImage = $objectModelManager->get ( 'Magento\Store\Model\StoreManagerInter
       
        <?php if($logoName!=""){?>
            <img src="<?php echo $logoImage.$logoName;?>"
-				alt="store logo" class="market_place_store_img_logo">                        
+				alt="store logo" class="img-responsive market_place_store_img_logo">                        
            <?php } else{?>
            	<img
 				src="<?php echo $block->getViewFileUrl('Apptha_Marketplace::images/no-store-logo.png');?>">

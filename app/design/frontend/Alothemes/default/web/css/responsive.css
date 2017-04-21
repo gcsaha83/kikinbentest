@@ -545,7 +545,7 @@
 
 	/*Shopping cart / checkout*/
 	.cart-summary{width: 100%;}
-	.cart-container .form-cart{width: 100%;}
+	.cart-container .form-cart {width: 100%;}
 	.cart.item .field.qty{display: inline-block; vertical-align: middle;}
 	.cart.table-wrapper .table > thead{display: none;}
 	.cart.table-wrapper .items .item-info > td{display: block; padding: 10px 0; text-align: center;}
@@ -733,6 +733,14 @@
 	
 	.succes_check_cust_l {
 		width: 100%;
+	}
+	
+	.view_cart_dust_l {
+		padding: 5px !important;
+	}
+	
+	.view_cart_dust_l .cart-container .form-cart {
+		padding: 0 5px !important;
 	}
 
 }
@@ -1946,7 +1954,7 @@ height: 152px;
 @media (min-width: 1501px) {
   .slider_big_l {
     width: 1500px !important;
-    height: 300px !important;
+/*     height: 300px !important; */
     margin: auto !important;
   }
 
@@ -2089,7 +2097,7 @@ height: 152px;
 	}
 
 	.view_cart_dust_l .cart-container .form-cart {
-	    padding: 0px;
+	    padding: 0px 7px;
 	}
 
 	.view_cart_dust_l #co-shipping-method-form .fieldset  label {
@@ -2133,7 +2141,7 @@ height: 152px;
 	}
 
 	.view_cart_dust_l .cart-container .form-cart {
-	    padding: 0px;
+/* 	    padding: 0px; */
 	}
 
 	.view_cart_dust_l #co-shipping-method-form .fieldset  label {
@@ -2145,7 +2153,7 @@ height: 152px;
 	}
 
 	.cart.table-wrapper .col.qty .input-text {
-	    width: 27px !important;
+	    width: 73% !important;
 	    border-left: 1px solid #ddd;
 	    border-right: 1px solid #ddd;
 	}
@@ -2288,6 +2296,7 @@ height: 152px;
 	.item button.button {
 	    width: 25px !important;
 	    height: 25px !important;
+	    padding: 0px !important;
 	}
 	
 	.item button.button .icon {
@@ -2301,7 +2310,8 @@ height: 152px;
 	}
 	
 	.marketplace-seller-displayseller li.item.product.product-item .product-item-info .product.details.product-item-details span span {
-		font-size: 14px !important;
+	    font-size: 14px !important;
+	    line-height: 15px !important;
 	}
 }
 
@@ -2762,6 +2772,7 @@ height: 152px;
 
 	.checkout-payment-method .payment-methods {
 		padding-right: 0px !important;
+		margin: 0px !important;
 	}
 	
 	.leadership_section {
